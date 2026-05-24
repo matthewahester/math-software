@@ -1,0 +1,28 @@
+---
+title: "Notes"
+toc: false
+---
+
+Short conceptual write-ups for each tool covered in the course. Each
+note is meant as a 10–15 minute read that complements the hands-on
+[labs](../labs/index.qmd) and [assignments](../assignments/index.qmd).
+
+## Planned notes
+
+Notes will be added a few at a time as the course is built. The first
+wave is in progress; this list is the roadmap.
+
+- Week 1 — Why mathematicians need tooling
+- Week 2 — LaTeX, demystified
+- Week 3 — Theorem-proof typesetting and bibliographies
+- Week 4 — R as a calculator, then as a language
+- Week 5 — `ggplot2` in one sitting
+- Week 6 — Simulation and `set.seed`: why reproducibility matters
+- Week 8 — A mental model for AI assistants
+- Week 9 — Catching AI hallucinations (a checklist)
+- Week 12 — When you'd reach for SageMath, SymPy, or a CAS
+- Week 13 — A small portfolio repo, the easy way
+
+For software install instructions, see
+[resources/software-setup.qmd](../resources/software-setup.qmd) and
+[labs/lab01-install-stack.qmd](../labs/lab01-install-stack.qmd).

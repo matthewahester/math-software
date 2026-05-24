@@ -1,0 +1,29 @@
+---
+title: "Labs"
+toc: false
+---
+
+Step-by-step walkthroughs you can run on your own machine. Labs are
+designed to be **self-serve**: read top to bottom, follow along,
+verify each step, then submit the relevant homework.
+
+The course's 2-hour weekly block is optional supported lab time in
+the MAC — you can work on these on your own or come in for help.
+
+## Available
+
+- [Lab 1 — Install the stack (R, RStudio, TinyTeX, Quarto)](lab01-install-stack.qmd)
+
+## Planned
+
+Labs are added as the course is built. The rough plan:
+
+- Lab 2 — Your first Quarto document with R and math
+- Lab 3 — A tour of a tidy dataset in R
+- Lab 4 — Writing math in LaTeX
+- Lab 5 — Theorem environments and a bibliography
+- Lab 6 — A small simulation in R
+- Lab 7 — Drafting math prose with an AI assistant (with verification)
+- Lab 8 — A first portfolio folder
+
+Lab numbering is rough — not every week has a paired lab.

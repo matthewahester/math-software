@@ -1,0 +1,72 @@
+---
+title: "HW 1 — Setup and your first Quarto document"
+subtitle: "The first artifact in your portfolio"
+toc: true
+---
+
+> **Pairs with:** [Lab 1 — Install the stack](../labs/lab01-install-stack.qmd).
+> Due date and submission link live in Blackboard.
+
+The goal of this assignment is small but real: get the course's
+software stack working on your computer and **render a Quarto
+document** that contains an equation and a small R computation.
+
+This is the first artifact in your portfolio.
+
+## What to submit
+
+Two files, both produced from the same source:
+
+1. `hw01.qmd` — your Quarto source file.
+2. `hw01.pdf` — the rendered PDF output.
+
+Submit both to Blackboard.
+
+**File naming.** Use exactly: `Lastname_First_hw01.qmd` and
+`Lastname_First_hw01.pdf`.
+
+## Requirements
+
+| # | Requirement | Points |
+|---|-------------|--------|
+| 1 | The `.qmd` file renders cleanly to PDF with no errors. | 25 |
+| 2 | The PDF contains a **title block** with your name. | 10 |
+| 3 | The PDF includes **at least one displayed equation** (between `$$...$$`). | 15 |
+| 4 | The PDF includes **at least one R code chunk** that runs and shows output. | 20 |
+| 5 | The PDF includes an **AI Use Note** (one or two sentences) stating whether AI assistance was used and, if so, what for. | 10 |
+| 6 | Your portfolio folder follows the suggested structure (`math-software-portfolio/hw01/`). | 10 |
+| 7 | Your submitted source file is the source of the submitted PDF (no last-minute manual PDF edits). | 10 |
+
+Total: 100.
+
+## Step-by-step
+
+If you haven't already, work through
+[Lab 1 — Install the stack](../labs/lab01-install-stack.qmd) first.
+The minimal `.qmd` shown there is enough to satisfy this assignment;
+you are welcome to extend it.
+
+1. Install R, RStudio, TinyTeX, Quarto (and optionally Git).
+2. Create your `math-software-portfolio/hw01/` folder.
+3. Create `hw01.qmd` and put your **name** in the front matter.
+4. Add a displayed equation (the quadratic formula, the Euler
+   identity, anything).
+5. Add an R chunk that does something simple and shows output (e.g.,
+   `mean(rnorm(10))` with `set.seed(1)`).
+6. Add a short **AI Use Note**.
+7. Run `quarto render hw01.qmd` and confirm you get a clean PDF.
+8. Submit both files to Blackboard.
+
+## AI use
+
+You may use an AI assistant to help with setup, troubleshooting, or
+syntax. Include a one- or two-sentence **AI Use Note** in your
+submission. See [resources/ai-use-guidelines.qmd](../resources/ai-use-guidelines.qmd)
+for what a good note looks like.
+
+## A reminder on portfolio location
+
+Your portfolio can live in **a local folder, a private repository, or
+a public repository if you choose**. Public posting is encouraged
+when appropriate but **not required**. Blackboard remains the
+official submission inbox.

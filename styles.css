@@ -1,0 +1,108 @@
+/* =============================================================
+   math-software — course site styles
+   -------------------------------------------------------------
+   Loose visual match to matthewhester.com and intro-stats. The
+   shared palette (stone / crystal / iron) keeps the three sites
+   feeling like one family without committing to a heavyweight
+   shared theme package.
+
+   Design rules:
+     - Quarto + Bootstrap (cosmo) handle layout. We only tune
+       colors, type, and a few component edges.
+     - No JS, no SCSS — plain CSS only.
+     - One accent color (iron). Used sparingly.
+     - This course has more code samples than intro-stats, so we
+       give the code block a slightly stronger visual weight.
+   ============================================================= */
+
+/* Color tokens — same family as the other sites, but each course
+   site keeps its own copy so it can drift if needed. */
+:root {
+  --stone-50:  #f6f5f3;
+  --stone-100: #ecebe7;
+  --stone-200: #d8d6d0;
+  --stone-400: #8a8780;
+  --stone-700: #3a3935;
+  --stone-900: #1c1b19;
+  --crystal-blue: #5b7a8c;
+  --iron-accent:  #8a4a2b;
+  --radius-card:  8px;
+}
+
+body {
+  background-color: var(--stone-50);
+  color: var(--stone-700);
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4 {
+  color: var(--stone-900);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--iron-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+a:hover {
+  border-bottom-color: var(--iron-accent);
+}
+
+/* Navbar — stone-on-stone, matches the family. */
+.navbar {
+  background-color: var(--stone-900) !important;
+  border-bottom: 1px solid var(--stone-200);
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: var(--stone-50) !important;
+  font-weight: 500;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+}
+
+/* Sidebar — quiet, with the active item in iron. */
+.sidebar-title {
+  color: var(--stone-900);
+  font-weight: 600;
+}
+.sidebar-item .sidebar-item-text {
+  color: var(--stone-700);
+}
+.sidebar-item.active > .sidebar-item-container > .sidebar-item-text {
+  color: var(--iron-accent);
+  font-weight: 600;
+}
+
+/* Code blocks — this course shows more code than intro-stats,
+   so a slightly heavier panel reads better. Inline code stays
+   light to keep prose visually quiet. */
+pre {
+  background-color: var(--stone-100);
+  border: 1px solid var(--stone-200);
+  border-left: 3px solid var(--crystal-blue);
+  border-radius: var(--radius-card);
+  padding: 0.75rem 1rem;
+}
+
+code {
+  background-color: var(--stone-100);
+  color: var(--stone-900);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Misc */
+blockquote {
+  border-left: 3px solid var(--crystal-blue);
+  background-color: var(--stone-100);
+  color: var(--stone-700);
+  padding: 0.5rem 1rem;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}

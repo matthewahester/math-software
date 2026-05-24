@@ -1,0 +1,82 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "notes/*.qmd"
+    - "labs/*.qmd"
+    - "assignments/*.qmd"
+    - "examples/*.qmd"
+    - "resources/*.qmd"
+
+website:
+  title: "Intro to Mathematical Software"
+  site-url: https://matthewhester.com/math-software/
+  description: |
+    Public course resources for Intro to Mathematical Software —
+    R, LaTeX, Git, and reproducible workflows for math and stats students.
+  open-graph: true
+
+  navbar:
+    pinned: true
+    background: dark
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+
+  sidebar:
+    style: floating
+    collapse-level: 2
+    contents:
+      - section: "Notes"
+        href: notes/index.qmd
+        contents:
+          - notes/index.qmd
+      - section: "Labs"
+        href: labs/index.qmd
+        contents:
+          - labs/index.qmd
+          - labs/lab01-install-stack.qmd
+      - section: "Assignments"
+        href: assignments/index.qmd
+        contents:
+          - assignments/index.qmd
+          - assignments/hw01-setup.qmd
+          - assignments/project-latex.qmd
+          - assignments/project-r.qmd
+          - assignments/final-portfolio.qmd
+      - section: "Examples"
+        href: examples/index.qmd
+        contents:
+          - examples/index.qmd
+      - section: "Resources"
+        href: resources/index.qmd
+        contents:
+          - resources/index.qmd
+          - resources/software-setup.qmd
+          - resources/data-guidelines.qmd
+          - resources/ai-use-guidelines.qmd
+          - resources/ai-reading-spine.qmd
+          - resources/cas-options.qmd
+
+  page-footer:
+    left: "© 2026 Matt Hester · Intro to Mathematical Software"
+    center: "[Matt Hester · matthewhester.com](https://matthewhester.com/)"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: right
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    fontsize: 1.05em
+    mainfont: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+    monofont: "JetBrains Mono, Consolas, Menlo, monospace"

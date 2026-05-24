@@ -1,0 +1,182 @@
+---
+title: "Lab 1 — Install the stack"
+subtitle: "R, RStudio, TinyTeX, Quarto (and optional Git)"
+toc: true
+---
+
+This lab gets every required tool installed and **rendering one
+Quarto document end-to-end**. It pairs with
+[HW 1](../assignments/hw01-setup.qmd).
+
+Work through this top to bottom. If you get stuck on a step, come to
+the MAC during the optional lab block or email me.
+
+## What you'll have at the end
+
+- **R** (the language) installed.
+- **RStudio** (the editor) installed.
+- **TinyTeX** (a minimal LaTeX distribution) installed via R.
+- **Quarto** installed and runnable from the command line.
+- **(Optional) Git** installed and usable.
+- A **`math-software-portfolio/`** folder somewhere sensible on your
+  computer.
+- A `.qmd` file that renders to both HTML and PDF without errors.
+
+If you already have some of these — great, skip ahead.
+
+## 0. Pick a portfolio location
+
+Make a folder you will not move or rename for the semester. Suggested:
+
+- macOS / Linux: `~/Documents/math-software-portfolio/`
+- Windows: `C:\Users\YourName\Documents\math-software-portfolio\`
+
+Inside that folder, create a `hw01/` subfolder. You'll put your first
+`.qmd` there.
+
+## 1. Install R
+
+Download R from <https://cran.r-project.org> and install with all
+defaults.
+
+- macOS — pick the `.pkg` file matching your chip (Apple Silicon or
+  Intel).
+- Windows — pick the `.exe` installer.
+- Linux — use your package manager (`apt`, `dnf`, etc.) or follow CRAN's
+  instructions for your distro.
+
+**Verify:** open the system terminal (Terminal on mac/Linux, PowerShell
+on Windows) and run:
+
+```bash
+R --version
+```
+
+You should see a version string. If "command not found," restart your
+terminal and try again; if it still fails, R is not on your PATH —
+flag this in the MAC.
+
+## 2. Install RStudio
+
+Download RStudio Desktop (Open Source) from
+<https://posit.co/download/rstudio-desktop/>. Default install.
+
+**Verify:** open RStudio. The four-pane layout should appear. In the
+Console pane, type `1 + 1` and press Enter — you should see `[1] 2`.
+
+## 3. Install TinyTeX
+
+TinyTeX is a small, install-on-demand LaTeX distribution. We use it
+because it's much smaller than full TeX Live and works well with
+Quarto. **Do this from inside R (or RStudio's Console):**
+
+```r
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+The install can take a few minutes. If `install_tinytex()` finishes
+without errors, you're done.
+
+**Verify:**
+
+```r
+tinytex::tinytex_root()
+```
+
+This should print a path like `/Users/you/Library/TinyTeX` or
+`C:\Users\You\AppData\Roaming\TinyTeX`.
+
+## 4. Install Quarto
+
+Download Quarto from <https://quarto.org/docs/get-started/>. Default
+install.
+
+**Verify:** in your system terminal:
+
+```bash
+quarto --version
+```
+
+You should see a version string like `1.x.y`.
+
+## 5. (Optional) Install Git
+
+Git is **optional** for this course. You only need it if you plan to
+make your portfolio a public or private GitHub repository. A local
+folder works fine for assignment submission.
+
+- macOS — `git` ships with Xcode command-line tools. Run
+  `xcode-select --install` if not already done.
+- Windows — install Git for Windows from <https://git-scm.com/download/win>.
+- Linux — `sudo apt install git` (or your distro's equivalent).
+
+**Verify:** `git --version` in your terminal.
+
+If you choose to use a GitHub repo for your portfolio, see the
+optional "first portfolio repo" lab later in the term.
+
+## 6. Render your first Quarto document
+
+In your `hw01/` folder, create a file called `hw01.qmd` with these
+contents:
+
+````markdown
+---
+title: "HW 1 — Hello, Quarto"
+author: "YOUR NAME"
+format:
+  html: default
+  pdf: default
+---
+
+# A first equation
+
+The quadratic formula:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+$$
+
+# A first R chunk
+
+```{{r}}
+set.seed(1)
+x <- rnorm(10)
+mean(x)
+```
+
+# An AI Use Note
+
+This document was prepared with / without help from an AI assistant.
+If with, I used [tool name] to [purpose]; I verified outputs by
+[how].
+````
+
+Then, in your **system terminal**, change into the folder and render:
+
+```bash
+cd path/to/math-software-portfolio/hw01
+quarto render hw01.qmd
+```
+
+You should now see `hw01.html` and `hw01.pdf` next to your `.qmd`.
+
+## Common problems
+
+- **PDF fails to compile.** Run `tinytex::install_tinytex()` in R again
+  to make sure TinyTeX completed. If LaTeX complains about a missing
+  package, run `quarto render hw01.qmd` a second time — TinyTeX will
+  download missing packages on demand the first time.
+- **`quarto: command not found`.** Quarto isn't on your PATH. Quit and
+  reopen the terminal. If that doesn't work, the installer didn't
+  finish — reinstall and watch for permission prompts.
+- **R chunk doesn't run.** Make sure you have the language fence
+  written exactly as ```` ```{r} ```` (lowercase `r`, no extra spaces
+  inside the braces).
+- **Equation doesn't render.** Math goes between `$ ... $` (inline) or
+  `$$ ... $$` (display). No backslashes before the dollar signs.
+
+## What to submit
+
+See [HW 1](../assignments/hw01-setup.qmd) for the submission spec.

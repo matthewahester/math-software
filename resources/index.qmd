@@ -1,0 +1,22 @@
+---
+title: "Resources"
+toc: false
+---
+
+A short, opinionated list — tool docs, setup pointers, and references.
+Not a link dump.
+
+## Available
+
+- [Software setup — R, RStudio, TinyTeX, Quarto, optional Git](software-setup.qmd)
+- [Data guidelines — how to choose appropriate datasets](data-guidelines.qmd)
+- [AI use guidelines — practical, instructional, course-specific](ai-use-guidelines.qmd)
+- [AI reading spine — the published basis for the AI module](ai-reading-spine.qmd)
+- [Computer algebra system (CAS) options — Sage, WolframAlpha, SymPy, Maple, others](cas-options.qmd)
+
+## Planned
+
+- A short list of LaTeX references that don't drown beginners
+- A `ggplot2` quick reference
+- A small Git survival guide (optional)
+- A "first 200 lines of R" cheat sheet

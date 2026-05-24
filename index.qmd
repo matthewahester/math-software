@@ -1,0 +1,45 @@
+---
+title: "Intro to Mathematical Software"
+subtitle: "Public course resources"
+toc: false
+---
+
+This site collects public-facing resources for **Intro to Mathematical
+Software** — a hands-on tour of the tools mathematicians actually use:
+**LaTeX, R, Quarto**, and **generative AI assistants used carefully**.
+Curated by [Matt Hester](https://matthewhester.com).
+
+It is a **curated resource site**, not a raw course archive. Anything
+section- or roster-specific lives in the LMS; this site is what stays
+public.
+
+## Where to start
+
+- [Syllabus](syllabus.qmd) — course goals, structure, and policies
+  (sanitized for public view)
+- [Schedule](schedule.qmd) — generic week-by-week topic map
+- [Notes](notes/index.qmd) — short conceptual write-ups
+- [Labs](labs/index.qmd) — step-by-step walkthroughs you can run on
+  your own machine
+- [Assignments](assignments/index.qmd) — homework and project briefs
+- [Examples](examples/index.qmd) — small, reproducible code examples
+- [Resources](resources/index.qmd) — software setup, AI guidelines,
+  CAS options, and outside links
+
+## What this course is about
+
+Three skills, woven together:
+
+1. **Write mathematics well** in LaTeX.
+2. **Compute, visualize, and simulate** with R.
+3. **Make your work reproducible** using Quarto.
+
+Plus a serious unit on **using AI assistants responsibly** — what they
+help with, what they get wrong, and how to verify and acknowledge.
+
+## What this course is not
+
+It is not a survey of every mathematical software package. The optional
+**[CAS options page](resources/cas-options.qmd)** points at SageMath,
+WolframAlpha, Python + SymPy, MATLAB/Octave, and Maple for students
+who want to explore a second computational tool.

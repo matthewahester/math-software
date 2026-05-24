@@ -1,0 +1,124 @@
+---
+title: "Computer algebra systems and the optional bridge"
+subtitle: "Sage, WolframAlpha, SymPy, MATLAB/Octave, Maple, and more"
+toc: true
+---
+
+> **Optional content.** Computer algebra systems (CAS) are not required
+> for the core course. The course's required pillars are LaTeX, R,
+> technical workflow (Quarto / reproducibility), and generative AI
+> literacy. This page exists because (a) mathematicians often want a
+> CAS for symbolic work, and (b) the course's **optional second-tool
+> exploration** in Week 12 may be a CAS for some students.
+
+## What a CAS is
+
+A **computer algebra system** lets you manipulate mathematical
+expressions symbolically — factoring polynomials, computing
+derivatives and integrals, solving equations exactly, working with
+matrices and groups symbolically.
+
+R is great for *numerics*. CAS is great for *exact symbolic work*.
+
+## Options worth knowing
+
+### SageMath / SageMathCell
+
+- **What it is.** A free, open-source mathematics platform that
+  unifies many CAS tools (Maxima, GAP, PARI/GP, SymPy, etc.) under
+  one Python-flavored syntax.
+- **Where to use it.**
+  - **In a browser:** <https://sagecell.sagemath.org> — no install,
+    no account, no save (copy your code into a `.sage` or `.txt` file
+    if you want to keep it). Great for the bridge homework.
+  - **CoCalc:** <https://cocalc.com> — Sage worksheets in the
+    browser, savable, free tier exists.
+  - **Local install:** <https://www.sagemath.org/download.html>.
+- **Why use it.** Free, powerful, browser-accessible, ties in with
+  Python.
+
+### Python + SymPy
+
+- **What it is.** A Python library for symbolic computation. If
+  you're already comfortable with Python, this is the lightest weight
+  way to do CAS work.
+- **Where to use it.**
+  - **Google Colab:** <https://colab.research.google.com> — browser,
+    free, savable to your Google Drive.
+  - **Locally:** `pip install sympy` once you have Python.
+- **Why use it.** Programming-friendly. Plays well with NumPy, pandas,
+  and other Python tools you might use elsewhere.
+
+### WolframAlpha
+
+- **What it is.** A computational knowledge engine. Type a natural-
+  language math query, get a worked answer.
+- **Where to use it.** <https://www.wolframalpha.com>. Free for
+  most short queries; a paid tier shows step-by-step solutions.
+- **Why use it.** Fast lookup for one-off calculations and sanity
+  checks. **Not ideal for a real bridge mini-report** — output isn't
+  scripted or reproducible.
+
+### Maple / Maple Learn
+
+- **What it is.** Maplesoft's commercial CAS.
+  - **Maple** — full desktop application; available on lab machines
+    when the institution provides it.
+  - **Maple Learn** (<https://www.maplelearn.com>) — a free
+    browser-based mini-version. Note: the **free tier does not save
+    worksheets**, which makes it awkward for sustained projects;
+    screenshots are the workaround.
+- **Why use it.** Familiar if you've taken UA Little Rock's calculus
+  sequence on the labs. Otherwise probably not worth a fresh
+  investment.
+
+### MATLAB / Octave
+
+- **What it is.**
+  - **MATLAB** — commercial numerical computing language. Heavily
+    used in engineering programs. Symbolic Math Toolbox adds CAS
+    functionality.
+  - **GNU Octave** — free, mostly MATLAB-compatible.
+- **Where to use it.**
+  - **MATLAB Online** (limited free tier): <https://matlab.mathworks.com>.
+  - **Octave locally:** <https://octave.org/download> — or
+    <https://octave-online.net> in a browser.
+- **Why use it.** Most natural choice for **engineering students**
+  who already work in MATLAB.
+
+## Which one should you pick?
+
+The Week 12 second-tool exploration is **flexible** — no single tool
+is locked. Quick orientation:
+
+- **Mathematics or math-education student, no prior CAS experience:**
+  **SageMathCell** has the lightest setup (browser, no install).
+- **You already program in Python:** **Python + SymPy** in Colab.
+- **You're an engineering or science student in MATLAB-heavy
+  courses:** **Octave** (or MATLAB Online if you have access).
+- **You've used Maple in calculus:** **Maple Learn** is fine, but
+  expect the no-save constraint to be annoying.
+
+If Week 12 includes a written deliverable, the brief calls for a
+**short mini-report** (≤ 2 pp) exploring one problem in your chosen
+second tool — not a full project. Pick whichever tool you can get
+running fastest.
+
+## Minimum reproducibility expectation
+
+Whatever tool you pick, your bridge mini-report should:
+
+- include the **commands or code** you used, copy-pasteable,
+- include the **output** or a screenshot of it,
+- name the **tool and version** at the top, and
+- be **rendered as a PDF** (you can put the screenshots and code in a
+  Quarto document and render).
+
+## A note on Maple in this course
+
+In previous terms, this course required Maple as one of three core
+tools. **It is no longer required content.** The institution doesn't
+make Maple universally available to students, and Maple Learn's
+no-save constraint makes it awkward for sustained work. If you have
+Maple access (lab machines, personal license) and prefer it, fine —
+otherwise pick a free option above.

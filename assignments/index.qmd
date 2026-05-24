@@ -1,0 +1,44 @@
+---
+title: "Assignments"
+toc: false
+---
+
+Public, generic versions of homework and project briefs. **Concrete
+due dates, point values, and section-specific submission instructions
+live in Blackboard.**
+
+The assignment spine is designed so each piece **builds toward your
+final portfolio**. By Week 15, you should be able to gather your
+weekly artifacts, the LaTeX Project, the R Project, and your AI module
+artifacts into a small, polished portfolio.
+
+## Available
+
+- [HW 1 — Setup and your first Quarto document](hw01-setup.qmd)
+- [LaTeX Project — replicate a short open-access math paper](project-latex.qmd)
+- [R Project — data analysis or simulation report](project-r.qmd)
+- [Final Portfolio + Demo](final-portfolio.qmd)
+
+## Planned
+
+Weekly briefs are added a few at a time. Rough plan:
+
+- HW 2 — Math in LaTeX
+- HW 3 — Short LaTeX writeup with a bibliography
+- HW 4 — A first R script
+- HW 5 — A visual data story (≥ 3 ggplot figures)
+- HW 6 — A reproducible simulation report
+- HW 8 — AI debugging audit
+- HW 9 — AI Use Reflection
+- HW 11 — Optional bridge mini-report (Sage / Python / Octave / CAS)
+- HW 12 — Portfolio assembly
+
+## Submission
+
+All submissions go through Blackboard. Where an assignment asks for a
+file, follow the file-naming convention in the brief and submit the
+exact files requested.
+
+If a brief asks for **a rendered PDF and the `.qmd` source**, submit
+both. If it asks for a `.tex` source plus the compiled PDF, submit
+both.

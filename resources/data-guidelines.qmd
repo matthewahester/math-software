@@ -1,0 +1,82 @@
+---
+title: "Data guidelines"
+subtitle: "How to choose appropriate datasets for course work"
+toc: true
+---
+
+Short, practical guidance on **where the data in your course
+assignments should come from**.
+
+## The short version
+
+Use data from one of these four categories:
+
+1. **Built-in R datasets** (`mtcars`, `iris`, `palmerpenguins`,
+   `gapminder`, `ggplot2::diamonds`, `dplyr::starwars`, etc.).
+2. **Simulated data** generated in-script with `set.seed()`.
+3. **Public datasets with verifiable provenance and license** —
+   OpenIntro, TidyTuesday, official statistical agencies, journal
+   supplementary materials with clear reuse terms.
+4. **Instructor-approved student-selected datasets** — bring your
+   own, but check with me first.
+
+If your data doesn't fit one of these four buckets, find different
+data. There's no shortage of clean public data on the topics this
+course cares about.
+
+## What "good dataset" means here
+
+A good dataset for a course assignment is:
+
+- **Tidy enough** that you can spend your time on the analysis, not
+  on shape-fixing.
+- **Documented** — there's a real codebook, README, or paper that
+  defines each column.
+- **Appropriately sized** — small enough to load fast, large enough
+  to support a real plot.
+- **Cleanly licensed** — you can use, share, and submit work derived
+  from it without ambiguity.
+
+## What we do not use
+
+- **Old archive datasets from prior terms of this course.** These are
+  off-limits for the rebuild. The course's data sources are listed
+  above and on
+  [assignments/project-r.qmd](../assignments/project-r.qmd).
+- **Datasets you can't cite the source of.** If you can't find the
+  origin, the license, or the codebook, don't use it.
+- **Datasets containing identifiable people** without explicit
+  permission and clear public-use terms.
+
+## Recommended starting points
+
+- **Built-in R.** Run `library(help = "datasets")` in R, or
+  `data(package = "palmerpenguins")` after loading a package.
+- **OpenIntro.** <https://www.openintro.org/data/> — categorized,
+  documented, and clearly licensed under Creative Commons.
+- **TidyTuesday.** <https://github.com/rfordatascience/tidytuesday> —
+  weekly curated datasets aimed at R learners. Each week has a
+  README, a codebook, and source attribution.
+- **Government / statistical agencies.** US Census, BLS, CDC, WHO,
+  OECD, etc. — usually open, usually documented, sometimes large.
+
+## If you bring your own
+
+Send me three things before you commit to the dataset:
+
+1. The **source link** (the canonical page, not a re-shared mirror).
+2. The **license** or terms of use.
+3. A **one-sentence description** of what the rows and columns are.
+
+I will say yes to most things in the first sentence. The check is
+about catching ambiguous licensing or accidentally-identifiable data
+before you build a project around it.
+
+## Privacy reminder
+
+If your dataset contains anything that could be tied to an
+individual — names, exact addresses, fine-grained health information,
+identifiable workplace data — **do not paste it into an AI
+assistant**, and do not put it in your portfolio. See the
+[AI use guidelines](ai-use-guidelines.qmd) for what to share and what
+not to share.

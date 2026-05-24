@@ -1,0 +1,151 @@
+---
+title: "AI reading spine"
+subtitle: "The published basis for this course's AI module"
+toc: true
+---
+
+This page lists the sources that ground the course's approach to
+generative AI literacy. It is meant to be **student-readable**: you
+can use it to follow up on the ideas behind the
+[AI use guidelines](ai-use-guidelines.qmd), the AI Use Note standard,
+and the AI module assignments (HW 8 — AI debugging audit, HW 9 — AI
+Use Reflection).
+
+The list is intentionally short — frameworks, peer-reviewed studies,
+and reputable institutional guidance. It is **not** a survey of news
+articles or hot takes.
+
+## How to use this page
+
+For each source, you'll find:
+
+- a **citation** so you can find the original,
+- a **why it matters** sentence,
+- a **student-facing takeaway**, and
+- the **course activity or policy it informs**.
+
+If a link is to a publisher landing page or organization (e.g.,
+UNESCO), search by title there for the current PDF — official
+documents are sometimes re-versioned. For peer-reviewed articles,
+search by title via Google Scholar or your library if a direct link
+is not provided here.
+
+> All sources below are cited as supplied by the instructor.
+> Page numbers and DOIs are not included unless verified independently.
+
+## Frameworks
+
+### UNESCO — *AI Competency Framework for Students* (2024)
+
+- **Citation.** UNESCO. *AI Competency Framework for Students*.
+  Paris: UNESCO, 2024.
+- **Why it matters.** A widely cited international framework that
+  articulates what "AI literacy" looks like at the learner level:
+  understanding, evaluating, and ethically using AI systems.
+- **Student takeaway.** AI literacy is not just being good at
+  prompting. It is also understanding what these systems are, where
+  they fail, and what your responsibilities are as a user.
+- **Course activity / policy it informs.** The four-pillar framing of
+  "responsible use, verification, disclosure, critique"; the AI
+  module (Weeks 8–9); the AI Use Note standard.
+
+### UNESCO — *AI Competency Framework for Teachers* (2024)
+
+- **Citation.** UNESCO. *AI Competency Framework for Teachers*.
+  Paris: UNESCO, 2024.
+- **Why it matters.** The teacher-facing counterpart to the student
+  framework. Establishes what an instructor should model and assess
+  with respect to AI competency.
+- **Student takeaway.** The instructor side of this course is being
+  built against a framework, not improvised. You can expect the
+  course's AI expectations to line up with a recognizable
+  international standard.
+- **Course activity / policy it informs.** The course's AI policy and
+  the verification-centered framing of every AI Use Note.
+
+## Peer-reviewed and policy studies
+
+### Pepin, Buchholtz, & Salinas-Hernández — *A scoping survey of ChatGPT in mathematics education* (2025)
+
+- **Citation.** Pepin, B., Buchholtz, N., & Salinas-Hernández, U.
+  "A Scoping Survey of ChatGPT in Mathematics Education."
+  *Digital Experiences in Mathematics Education*, 2025.
+- **Why it matters.** A peer-reviewed scoping survey of how
+  generative AI has been studied and used specifically in mathematics
+  education contexts.
+- **Student takeaway.** People are studying what works and what
+  doesn't when AI is used to learn math. The course's framing of "AI
+  as a study partner you must verify" sits inside an active research
+  conversation.
+- **Course activity / policy it informs.** The mathematics-specific
+  framing of the AI module; the emphasis on AI's weakness at
+  **math correctness** in the AI use guidelines.
+
+### Jin, Yan, Echeverria, Gašević, & Martinez-Maldonado — *Generative AI in higher education: a global perspective of institutional adoption policies and guidelines* (2025)
+
+- **Citation.** Jin, Y., Yan, L., Echeverria, V., Gašević, D., &
+  Martinez-Maldonado, R. "Generative AI in Higher Education: A Global
+  Perspective of Institutional Adoption Policies and Guidelines."
+  *Computers and Education: Artificial Intelligence*, 2025.
+- **Why it matters.** A peer-reviewed cross-institutional study of
+  how universities worldwide are writing policy around generative AI.
+  Useful for understanding what the institutional landscape actually
+  looks like.
+- **Student takeaway.** AI policy is not yet settled. Different
+  schools and instructors land in different places. This course
+  lands on the **disclose-and-verify** side, in line with most of
+  the peer-reviewed literature.
+- **Course activity / policy it informs.** The course's "disclose
+  with an AI Use Note, verify in line with stated habits" stance.
+
+### Liang et al. — *GPT detectors are biased against non-native English writers* (Patterns, 2023)
+
+- **Citation.** Liang, W., et al. "GPT detectors are biased against
+  non-native English writers." *Patterns* (Cell Press), 2023.
+- **Why it matters.** A peer-reviewed study finding that automated
+  AI-detection tools disproportionately misclassify writing by
+  non-native English speakers as AI-generated.
+- **Student takeaway.** **Automated AI detectors are unreliable** and
+  can cause real harm. They are not used in this course.
+- **Course activity / policy it informs.** The course's "no
+  detectors, no automated accusations" position. What matters
+  instead: a clear AI Use Note, work you can explain, visible
+  verification. (See "A note on AI detectors and accusations" in
+  the [AI use guidelines](ai-use-guidelines.qmd).)
+
+## Supplemental / preprint
+
+### Zhang & Magerko — *Generative AI Literacy: a comprehensive framework for literacy and responsible use* (2025)
+
+- **Citation.** Zhang, D., & Magerko, B. "Generative AI Literacy: A
+  Comprehensive Framework for Literacy and Responsible Use." 2025.
+  Treat as **preprint / supplemental**.
+- **Why it matters.** A broader literacy framework that maps the
+  cognitive and ethical dimensions of using generative AI well.
+  Complements the UNESCO student framework with a more granular
+  literacy structure.
+- **Student takeaway.** "AI literacy" has structure — there are
+  separable skills (understanding the model, evaluating output,
+  using ethically, critiquing). The course tries to give you
+  experience with each.
+- **Course activity / policy it informs.** The framing of the AI
+  module as four interlocking skills (use, verification, disclosure,
+  critique) rather than a single "use AI well" objective.
+
+## What's deliberately not on this list
+
+- **News articles and op-eds.** Useful context, but not stable enough
+  to anchor a syllabus.
+- **AI-vendor blog posts and marketing.** Not independent.
+- **Detector tool product pages.** The course does not use them; see
+  Liang et al. above.
+
+If you come across a source that you think belongs here, send it to me
+— this page is updated each term as the literature evolves.
+
+## Reuse note
+
+This page is part of the course's public materials and is shared
+under the same terms as the rest of the public Quarto site. Citations
+above are to third-party works held by their respective publishers
+and authors; follow the publishers' terms of use to access them.

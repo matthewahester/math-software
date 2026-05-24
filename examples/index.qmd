@@ -1,0 +1,15 @@
+---
+title: "Examples"
+toc: false
+---
+
+Small, self-contained code examples that demonstrate one idea at a
+time. Each example should be copy-pasteable and run end-to-end.
+
+Planned examples (placeholders):
+
+- A minimal Quarto document
+- Reading and plotting a CSV with R
+- A LaTeX document with a theorem environment and a figure
+- A first Git workflow: clone, edit, commit, push
+- A Quarto document that includes R, equations, and a citation

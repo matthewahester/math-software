@@ -1,0 +1,48 @@
+---
+title: "Schedule"
+toc: true
+---
+
+> **Public version.** A generic week-by-week topic map. Specific
+> calendar dates live in Blackboard for each section.
+
+The course is a **2-hour weekly lab/studio**. Most weeks the meeting
+is an **optional supported lab session** in the MAC; a few weeks are
+**required or strongly expected checkpoints**.
+
+## Week-by-week
+
+| Wk | Topic | Lab focus | Deliverable | Attendance |
+|----|-------|-----------|-------------|------------|
+| 1 | Setup & first Quarto doc | Install R, RStudio, TinyTeX, Quarto; portfolio folder | HW 1 — first rendered Quarto doc | **Required** |
+| 2 | LaTeX foundations | Math environments, sectioning, refs | HW 2 — math typesetting writeup | Optional |
+| 3 | LaTeX writing | Theorem/proof, bibliography, cross-refs | HW 3 — short LaTeX writeup of a result | Optional |
+| 4 | R foundations | Vectors, frames, `dplyr` basics | HW 4 — R script + summary table | Optional |
+| 5 | Visualization | `ggplot2`, themes, faceting | HW 5 — Quarto report with ≥ 3 plots | Optional |
+| 6 | Simulation & reproducibility | `set.seed`, replicate, CLT demo | HW 6 — reproducible simulation report | Optional |
+| 7 | **LaTeX Project — studio & sign-off** | Source-paper sign-off; studio time | LaTeX Project submission | **Strongly expected** |
+| 8 | AI module I — using assistants well | Prompting, scoping, verifying | HW 8 — AI debugging audit | Optional |
+| 9 | AI module II — drafting & critique | Drafting prose, catching hallucinations, AI critique | HW 9 — AI Use Reflection | Optional |
+| 10 | R Project work week | Track choice + plan | R Project plan / draft | Optional |
+| 11 | **R Project conference / mid-portfolio check** | 10-min individual checkpoints | R Project submission | **Required** |
+| 12 | **Optional tool bridge / second-tool exploration / open studio** | Flexible — instructor-supported exploration of a second computational tool, or open studio time | HW 12 — optional bridge mini-report | Optional |
+| 13 | Portfolio assembly | README, polish, optional Git workflow | Portfolio ready | Optional |
+| 14 | Polish & rehearse | Reflection drafts; optional demo / conference prep | Reflection draft | Optional |
+| 15 | **Final portfolio, reflection, and/or conference** | Format is flexible (submitted portfolio, short reflection, individual conference, optional short demo, or recorded walkthrough) | Portfolio + final reflection | **Required** |
+
+Required attendance: 3 sessions (Wk 1, Wk 11, Wk 15). Strongly
+expected: 1 session (Wk 7). Everything else is supported lab time —
+attend for help, troubleshooting, or work time.
+
+## How to use this schedule
+
+- **Read by row.** Each week's row gives you the topic, what the lab
+  block focuses on if you attend, and what's due at the end of the
+  week.
+- **Most weeks have an HW deliverable.** That is the actual pacing
+  mechanism for the course, regardless of whether you come to class.
+- **Dates live in Blackboard.** This site only shows "Week 1, Week 2,
+  …" so it stays useful across terms.
+
+For the assignment briefs themselves, see
+[assignments/](assignments/index.qmd).

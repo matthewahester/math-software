@@ -1,0 +1,94 @@
+---
+title: "Software setup"
+subtitle: "R, RStudio, TinyTeX, Quarto, and optional Git"
+toc: true
+---
+
+This page is the **reference summary** of the software stack used in
+this course. For a **step-by-step walkthrough** with verification
+commands, see [Lab 1 — Install the stack](../labs/lab01-install-stack.qmd).
+
+If you only have ten minutes, read Lab 1 first.
+
+## The required stack
+
+| Tool | What it does | Where to get it |
+|------|-------------|-----------------|
+| **R** | The language. Computation, simulation, plotting. | <https://cran.r-project.org> |
+| **RStudio** | The editor. Friendly UI for writing R and Quarto. | <https://posit.co/download/rstudio-desktop/> |
+| **TinyTeX** | A minimal LaTeX distribution, installed via R. Lets Quarto render PDFs and lets you compile `.tex` files. | Install from R: `install.packages("tinytex"); tinytex::install_tinytex()` |
+| **Quarto** | The reproducible-document engine. The connective tissue of this course. | <https://quarto.org/docs/get-started/> |
+
+The four together are enough to do every required piece of work in
+the course.
+
+## Optional
+
+| Tool | When you'd want it |
+|------|---------------------|
+| **Git** | If you plan to use a GitHub (or other) repository for your portfolio. Not required. |
+| **VS Code** | An alternative editor if you prefer it to RStudio. Quarto has a good VS Code extension. |
+| **A CAS** | See [CAS options](cas-options.qmd) for the optional bridge homework. |
+
+## Verifying the install
+
+Open your system terminal (Terminal on mac/Linux, PowerShell on
+Windows) and run:
+
+```bash
+R --version
+quarto --version
+```
+
+Both should print version strings. In RStudio's Console:
+
+```r
+tinytex::tinytex_root()
+```
+
+should print a path to your TinyTeX install.
+
+## Folder convention
+
+Pick a folder for the course and **don't move or rename it**:
+
+```
+math-software-portfolio/
+├── hw01/
+│   ├── hw01.qmd
+│   └── hw01.pdf
+├── hw02/
+├── ...
+├── latex-project/
+├── r-project/
+└── reflection.qmd
+```
+
+Keep paths inside your `.qmd` files **relative** to that folder. That
+way the project renders on any computer, including mine when I grade.
+
+## Common gotchas
+
+- **First PDF render fails on a fresh TinyTeX.** Run `quarto render`
+  a second time — TinyTeX downloads missing LaTeX packages on demand
+  the first time it sees them.
+- **`quarto` not on PATH.** Restart your terminal after installing
+  Quarto. On Windows, you may need to restart RStudio too.
+- **R chunk doesn't run in Quarto.** Make sure the fence is
+  `` ```{r} `` (lowercase r, no spaces inside the braces).
+- **PDF compiles but math is missing.** You probably wrote `\$x\$`
+  instead of `$x$`. Drop the backslashes.
+- **Mac asks for permission to access folders.** macOS sandboxing can
+  block R from reading certain folders. Keep your portfolio under
+  `~/Documents/` and you'll avoid this.
+
+## What about Posit Cloud / Quarto Pub?
+
+Both exist and both can host the work you do in this course:
+
+- **Posit Cloud** — RStudio in a browser. Useful if your computer
+  can't install R locally. Free tier has CPU-hour limits.
+- **Quarto Pub** — free publishing for Quarto sites. Useful only if
+  you specifically choose to publish your portfolio.
+
+Neither is required. Use them if they help.

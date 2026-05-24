@@ -1,0 +1,171 @@
+---
+title: "AI use guidelines"
+subtitle: "Practical, instructional, course-specific"
+toc: true
+---
+
+This page is the long version of the course's AI policy. The short
+version lives in the [syllabus](../syllabus.qmd). The published
+sources that inform this policy live at
+[AI reading spine](ai-reading-spine.qmd).
+
+The goal here is to make you a **better, more accountable user of AI
+assistants** — not just to enumerate what's banned.
+
+## The course stance
+
+You are **encouraged** to use generative AI assistants — ChatGPT,
+Claude, Copilot, Cursor, Gemini, and similar — as study partners,
+debugging helpers, and drafting aids.
+
+You are **responsible** for:
+
+- the **correctness** of every line of math, code, and prose you
+  submit,
+- the **citation** of any source material AI surfaces for you,
+- a short **AI Use Note** in every submission where AI was used.
+
+If you can't explain what your submission says, don't submit it. That
+rule applies whether the work came from you, a study group, or AI.
+
+## The AI Use Note — three labeled lines
+
+Every submission where AI was used must include an **AI Use Note**
+with these three labeled lines:
+
+- **Tool** — which assistant, and approximate date or version if you
+  know it (e.g., "ChatGPT-4o, ~ Oct 2025"; "Claude Sonnet, current as
+  of the assignment"; "GitHub Copilot in VS Code").
+- **Purpose** — what you used it for (e.g., "debugging a LaTeX
+  cross-reference error"; "explaining a `dplyr::across()` call";
+  "drafting the reflection paragraph").
+- **Verification** — how you checked, tested, revised, or validated
+  the output (e.g., "compiled and read the PDF"; "ran `glimpse()`
+  before and after"; "looked up the package on CTAN"; "checked the
+  citation against the actual paper").
+
+**Verification is the load-bearing line.** Using AI is not enough.
+Submitting AI output without checking it is not learning, and it is
+not professional work. The course's position throughout: **you have
+to verify, and you have to take responsibility for the final work.**
+
+**Template:**
+
+> *AI Use Note.* **Tool:** [name and approximate version]. **Purpose:**
+> [what you used it for]. **Verification:** [how you checked, tested,
+> or revised the output].
+
+You do not need to paste prompt transcripts. Summarize.
+
+## What AI is good at
+
+- **Reformatting and translating syntax.** "Rewrite this LaTeX as a
+  Quarto block." "Translate this `dplyr` pipeline to base R."
+- **Surfacing relevant packages or functions.** "What's the standard
+  R package for reading SAS files?"
+- **Explaining unfamiliar code.** "Walk me through this function."
+- **Debugging well-defined errors.** "This R chunk gives me this
+  exact error message — what's the most likely fix?"
+- **First-draft prose** that you then heavily edit.
+- **Boilerplate** — preambles, README structure, citation entries
+  from a DOI, plot themes.
+
+## What AI is bad at
+
+- **Citations.** Models routinely **hallucinate bibliography
+  entries**, invent author names, and fabricate DOIs. Verify every
+  citation by hand.
+- **LaTeX packages.** Models suggest packages that don't exist on
+  CTAN. If a package fails to compile, check it exists before
+  spending an hour debugging.
+- **Recent software.** Quarto, R packages, and AI models themselves
+  change quickly. A confident-sounding answer about behavior may
+  describe a version that no longer exists.
+- **Math correctness.** AI will produce plausible-looking proofs
+  with **wrong steps**. Treat AI math as a draft you must verify.
+- **Plot interpretation.** AI will narrate what a plot "shows" even
+  when it has only seen the code, not the plot itself.
+- **Subtle code rewrites.** AI rewrites can silently change behavior
+  — changing `na.rm` defaults, replacing `==` with `%in%`, swapping
+  factor levels.
+
+## Verification habits (the point of this page)
+
+For any output you accept:
+
+1. **Read it line by line.** If you can't explain a line, ask for an
+   explanation before pasting it into your file.
+2. **Compile / run early.** Don't let unverified AI output accumulate.
+   Render after each meaningful change.
+3. **Sanity-check at boundaries.** For data: `nrow()`, `summary()`,
+   `head()` before and after a wrangling step. For LaTeX: scan the
+   PDF, not just the source.
+4. **Verify every citation.** Click through to the actual paper. If
+   the DOI is wrong, the rest of the entry probably is too.
+5. **Treat package suggestions skeptically.** If a package doesn't
+   compile, check it exists before trying to fix what's "wrong" with
+   your installation.
+
+These habits are what the **Verification** line in your AI Use Note
+should describe.
+
+## Privacy
+
+AI assistants log and may train on what you send them. **Do not paste:**
+
+- Other students' work, full datasets that aren't public, or
+  identifiable personal data.
+- Anything from Blackboard that isn't already on the public course site.
+- Email content from classmates, instructors, or staff.
+- Anything you wouldn't want to see surface in a future model output.
+
+If a dataset is sensitive, **describe its structure** to AI rather
+than pasting it: column names, row counts, types. See
+[resources/data-guidelines.qmd](data-guidelines.qmd) for what counts
+as appropriate data in this course.
+
+## A note on AI detectors and accusations
+
+The course does **not** use automated AI detectors to flag student
+work. Detector tools are unreliable in general, and there is
+peer-reviewed evidence that they are **biased against non-native
+English writers** (see Liang et al., *Patterns* 2023, listed on the
+[AI reading spine](ai-reading-spine.qmd)). False accusations of AI
+use cause real harm, and detectors are the wrong basis for them.
+
+What matters in this course instead: a clear **AI Use Note**, work
+you can **explain**, and visible **verification**.
+
+## Course-allowed uses (examples)
+
+✅ "Explain this R error: `Error in ... : argument is of length zero`."
+✅ "Rewrite this `for` loop using `purrr::map`."
+✅ "Suggest a `ggplot2` theme that looks good in a PDF report."
+✅ "What does `\\usepackage{biblatex}` do, and what do I need with
+biber?"
+✅ "Here's my draft reflection. Critique its clarity."
+
+## Not allowed
+
+❌ Submitting AI-generated work you **can't explain** if asked.
+❌ Submitting AI output **without an AI Use Note**.
+❌ Using AI to access **paywalled solutions** to a specific assignment.
+❌ Pasting **other people's work** into AI without their permission.
+❌ Misrepresenting **AI output as your own analysis**.
+
+## A useful frame
+
+Think of AI as a **fast, knowledgeable, sometimes-wrong intern**.
+You wouldn't submit code an intern wrote without reading it. You
+wouldn't put their name on the bibliography. You wouldn't trust their
+citations without checking. You also wouldn't refuse their help out
+of principle — they're useful.
+
+Same here. **Use them, verify them, disclose them.**
+
+## See also
+
+- [AI reading spine](ai-reading-spine.qmd) — the published frameworks
+  and peer-reviewed work that inform this policy.
+- [Data guidelines](data-guidelines.qmd) — what data sources are
+  appropriate for course work.
