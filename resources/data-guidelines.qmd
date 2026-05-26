@@ -40,9 +40,8 @@ A good dataset for a course assignment is:
 ## What we do not use
 
 - **Old archive datasets from prior terms of this course.** These are
-  off-limits for the rebuild. The course's data sources are listed
-  above and on
-  [assignments/project-r.qmd](../assignments/project-r.qmd).
+  off-limits. The course's data sources are listed above; the R
+  Project brief in Blackboard echoes the same four categories.
 - **Datasets you can't cite the source of.** If you can't find the
   origin, the license, or the codebook, don't use it.
 - **Datasets containing identifiable people** without explicit

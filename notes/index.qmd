@@ -5,16 +5,20 @@ toc: false
 
 Short conceptual write-ups for each tool covered in the course. Each
 note is meant as a 10–15 minute read that complements the hands-on
-[labs](../labs/index.qmd) and [assignments](../assignments/index.qmd).
+[labs](../labs/index.qmd) and the weekly work distributed through
+Blackboard.
 
-## Planned notes
+## Available
 
-Notes will be added a few at a time as the course is built. The
-sequence follows the module spine:
+- [Week 1 — Your first render](week01-first-render.qmd) — source
+  files, rendered outputs, Quarto as the course container, AI as
+  first-pass help, and the Setup conference as the first workflow
+  check.
 
-**Workflow opening (Week 1)**
+## Planned
 
-- Week 1 — Why mathematicians need tooling
+Notes are added a few at a time as the course is built. The sequence
+follows the module spine:
 
 **LaTeX block (Weeks 2–6)**
 

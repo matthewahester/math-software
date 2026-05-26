@@ -1,0 +1,136 @@
+---
+title: "Week 1 — Your first render"
+subtitle: "Source files, rendered outputs, and Quarto as the course container"
+toc: true
+---
+
+> A short conceptual reading to accompany the Week 1 setup work. The
+> hands-on walkthrough lives in
+> [Lab 1 — Install the stack](../labs/lab01-install-stack.qmd).
+
+The first week of this course is the workflow launch. The point is
+not "learn Quarto deeply." The point is to get the whole chain
+working end-to-end:
+
+> source file → render → rendered artifact → portfolio folder →
+> Setup conference
+
+Everything that follows in the course — typeset math, R analyses,
+simulation reports, AI-assisted drafts, the final portfolio — flows
+through that same chain.
+
+## Source files vs rendered outputs
+
+A **source file** is text you can edit. In this course your source
+files end in `.qmd` (a Quarto document) or `.tex` (a LaTeX
+document). The source file is the thing you write, the thing you
+keep, and the thing that should be able to rerun on any computer.
+
+A **rendered output** is what the source produces. For Quarto, the
+typical outputs are an HTML page and a PDF. For LaTeX, the typical
+output is a PDF. The rendered output is for reading; it is not the
+source of truth. If you lose a rendered PDF you can produce a new
+one by re-rendering the source. If you lose the source, you cannot
+turn a PDF back into editable form — what you have is what you have.
+
+That asymmetry is why **the source file is the artifact** in this
+course. The rendered PDF is the evidence that the source works.
+
+## Rendering as verification
+
+Rendering is not just a final step. It is the **verification** that
+your source actually says what you think it says. If your source
+claims to display the quadratic formula but the PDF shows raw text
+with dollar signs, the source has a bug. If your source claims to
+run an R simulation but the rendered output has no plot, the source
+has a bug.
+
+The working rhythm throughout the course:
+
+1. Edit the source.
+2. Render.
+3. Look at the rendered output.
+4. If something does not match what you intended, fix the source
+   and render again.
+
+Most "this doesn't work" moments in technical work resolve to
+"render, then look at what you actually produced." Make rendering
+cheap and frequent for yourself.
+
+## Why Quarto is the course container
+
+You will write Quarto documents in almost every week of this course
+because Quarto is the thing that holds everything else together:
+
+- **Markdown** for prose,
+- **`$ ... $`** for inline math and **`$$ ... $$`** for displayed
+  math,
+- **fenced code blocks** that run R inline,
+- **citations** that resolve against a bibliography,
+- a single **render** command that produces clean HTML or PDF
+  output.
+
+You will not become a Quarto expert in Week 1. You will become one
+slowly, by writing Quarto documents every week of the course. The
+Week 1 job is just to get the engine started.
+
+## The portfolio folder is organized technical work
+
+Your **`math-software-portfolio/`** folder is where the term's work
+lives. It is a single place you can come back to — at the end of
+Week 4, in the middle of the LaTeX Project, when assembling the
+final portfolio in Week 15 — and find everything in a sensible
+layout.
+
+The folder convention is described on the
+[Software setup → Folder convention](../resources/software-setup.qmd#folder-convention)
+page. The Week 1 job is to create the folder, drop your first
+rendered document into it, and start the habit of keeping each
+weekly piece in its own subfolder with both source and rendered
+output present.
+
+## AI as first-pass help, not final authority
+
+You may use AI assistants from Week 1 forward for explanation,
+debugging, syntax lookup, and drafting. Two ideas to carry from the
+start:
+
+1. **AI is a first pass, not a verdict.** A friendly-sounding
+   answer from an assistant is a draft that you then check by
+   compiling, running, looking at the output, and reading the
+   official documentation. The full course position lives in the
+   [AI use guidelines](../resources/ai-use-guidelines.qmd).
+2. **Disclosure plus verification.** Every submission where AI was
+   used includes a short **AI Use Note** with three labeled lines:
+   **Tool**, **Purpose**, **Verification**. The verification line
+   is the load-bearing one — it is the evidence that you did not
+   just accept output uncritically.
+
+In Week 1 the AI Use Note can be short. The format stays the same
+all term; only the depth grows.
+
+## The Setup conference
+
+The Week 1 **Setup conference** is the first workflow checkpoint
+and the first one-on-one of the course. It is not a quiz. It is a
+10–15 minute conversation that confirms:
+
+- your software stack works,
+- your portfolio folder is set up,
+- you can rerender your first document cleanly from scratch,
+- you know where to submit and where to find the gradebook.
+
+If anything in the install was hard, the conference is where we name
+it and fix it. Conference sign-ups and the exact submission details
+live in Blackboard.
+
+## See also
+
+- [Lab 1 — Install the stack](../labs/lab01-install-stack.qmd) —
+  the hands-on walkthrough that gets the chain running.
+- [Software setup](../resources/software-setup.qmd) — the reference
+  summary of the stack with the folder convention.
+- [Syllabus](../syllabus.qmd) — the high-level course overview,
+  including the conference rhythm and grading categories.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — what
+  responsible AI use looks like in this course.

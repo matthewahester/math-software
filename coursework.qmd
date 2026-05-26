@@ -1,0 +1,65 @@
+---
+title: "Coursework"
+toc: true
+---
+
+> Exact assignment prompts, rubrics, due dates, submission links, and
+> conference sign-ups live in **Blackboard**. This page is a
+> high-level outline of how work is organized across the term.
+
+## What the course produces
+
+Across the semester, the course produces work in four overlapping
+forms.
+
+### Weekly Blackboard assignments
+
+Most weeks include a short Blackboard assignment — usually a Quarto
+document, a LaTeX writeup, or a small technical report — designed to
+take 30–90 minutes outside of any optional support time. Each one is
+graded inside the four course categories described on the
+[syllabus](syllabus.qmd).
+
+The **best 9 of 11** weekly labs/homework count for ordinary
+weekly-work credit. **HW 11 and HW 12 are the dedicated AI module
+assignments in the Generative AI Literacy category and are not
+droppable.** Projects, required conferences, AI verification
+components, and the final portfolio are also not droppable.
+
+### Two projects
+
+- A **LaTeX Project** in the LaTeX block (Weeks 2–6). The Week 4
+  LaTeX checkpoint conference confirms scope and direction.
+- An **R Project** in the R block (Weeks 7–10). The Week 7 R
+  transition conference and the Week 10 R Project conference frame
+  the project.
+
+### Five required conferences
+
+Short one-on-one conferences in Weeks 1, 4, 7, 10, and 13. Each is
+10–15 minutes — a practical progress check, not an oral exam. See the
+[syllabus](syllabus.qmd#required-conferences) for the full conference
+list and what each one is for.
+
+### Final portfolio + reflection
+
+A small, organized collection of the term's artifacts plus a 1–2
+page written reflection, submitted in Week 15 through Blackboard.
+
+## Where each thing lives
+
+- **This site (public course site).** Lessons, conceptual notes,
+  software setup guidance, walkthroughs, examples, and shared
+  resources. Read it the way you would read a course text.
+- **Blackboard (operational course home).** Assignment prompts,
+  rubrics, due dates, submission inboxes, conference sign-ups, the
+  gradebook, and official announcements.
+
+If anything on the public site conflicts with Blackboard, the
+Blackboard version wins.
+
+## Late work and portfolio organization
+
+Late-work expectations and portfolio-organization expectations are
+summarized in the [syllabus](syllabus.qmd#late-work). Exact dates and
+submission links are in Blackboard.

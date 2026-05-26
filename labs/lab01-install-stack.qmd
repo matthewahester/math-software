@@ -5,8 +5,9 @@ toc: true
 ---
 
 This lab gets every required tool installed and **rendering one
-Quarto document end-to-end**. It pairs with
-[HW 1](../assignments/hw01-setup.qmd).
+Quarto document end-to-end**. It is the practical companion to
+[Week 1 — Your first render](../notes/week01-first-render.qmd), which
+is the short conceptual reading for Week 1.
 
 Work through this top to bottom. If you get stuck on a step, come to
 one of the scheduled studio meetings in the MAC or email me.
@@ -123,7 +124,7 @@ contents:
 
 ````markdown
 ---
-title: "HW 1 — Hello, Quarto"
+title: "Hello, Quarto"
 author: "YOUR NAME"
 format:
   html: default
@@ -146,21 +147,28 @@ x <- rnorm(10)
 mean(x)
 ```
 
-# An AI Use Note
+# AI Use Note
 
-This document was prepared with / without help from an AI assistant.
-If with, I used [tool name] to [purpose]; I verified outputs by
-[how].
+**Tool:** [assistant name and approximate version, or "did not use AI"]
+**Purpose:** [what you used it for, if any]
+**Verification:** [how you checked the output, if any]
 ````
 
-Then, in your **system terminal**, change into the folder and render:
+You have two ways to render the file:
+
+**Easiest — RStudio.** Open `hw01.qmd` in RStudio. Click the
+**Render** button at the top of the editor pane. The PDF preview
+opens automatically when the render succeeds.
+
+**Always works — system terminal.**
 
 ```bash
 cd path/to/math-software-portfolio/hw01
 quarto render hw01.qmd
 ```
 
-You should now see `hw01.html` and `hw01.pdf` next to your `.qmd`.
+Either way, you should see `hw01.html` and `hw01.pdf` next to your
+`.qmd`.
 
 ## Common problems
 
@@ -177,6 +185,20 @@ You should now see `hw01.html` and `hw01.pdf` next to your `.qmd`.
 - **Equation doesn't render.** Math goes between `$ ... $` (inline) or
   `$$ ... $$` (display). No backslashes before the dollar signs.
 
-## What to submit
+## What this prepares you to do
 
-See [HW 1](../assignments/hw01-setup.qmd) for the submission spec.
+When you finish this lab you should be able to:
+
+- run R, RStudio, TinyTeX, and Quarto on your own computer,
+- find your **`math-software-portfolio/`** folder and a `hw01/`
+  subfolder inside it,
+- edit a `.qmd` source file,
+- render that source to both HTML and PDF without errors,
+- locate the rendered files next to the source.
+
+The Week 1 Blackboard assignment uses exactly this workflow — see
+Blackboard for the prompt, the file-naming convention, and the
+submission link. The **Week 1 Setup conference** is where we confirm
+together that the chain works end-to-end; be ready to show your
+rendered document, your source file, and your portfolio folder when
+we meet.

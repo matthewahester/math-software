@@ -56,5 +56,6 @@ components, and the final portfolio are also **not** droppable.
   authoritative source for conference sign-ups and section-specific
   due dates.
 
-For the assignment briefs themselves, see
-[assignments/](assignments/index.qmd).
+For the high-level coursework outline, see
+[Coursework](coursework.qmd). Exact assignment prompts, rubrics, and
+submission links live in Blackboard.

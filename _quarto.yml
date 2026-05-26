@@ -5,7 +5,6 @@ project:
     - "*.qmd"
     - "notes/*.qmd"
     - "labs/*.qmd"
-    - "assignments/*.qmd"
     - "examples/*.qmd"
     - "resources/*.qmd"
 
@@ -28,6 +27,8 @@ website:
         text: Syllabus
       - href: schedule.qmd
         text: Schedule
+      - href: coursework.qmd
+        text: Coursework
 
   sidebar:
     style: floating
@@ -37,19 +38,12 @@ website:
         href: notes/index.qmd
         contents:
           - notes/index.qmd
+          - notes/week01-first-render.qmd
       - section: "Labs"
         href: labs/index.qmd
         contents:
           - labs/index.qmd
           - labs/lab01-install-stack.qmd
-      - section: "Assignments"
-        href: assignments/index.qmd
-        contents:
-          - assignments/index.qmd
-          - assignments/hw01-setup.qmd
-          - assignments/project-latex.qmd
-          - assignments/project-r.qmd
-          - assignments/final-portfolio.qmd
       - section: "Examples"
         href: examples/index.qmd
         contents:

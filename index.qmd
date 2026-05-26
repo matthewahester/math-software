@@ -21,7 +21,8 @@ stays public.
 - [Notes](notes/index.qmd) — short conceptual write-ups
 - [Labs](labs/index.qmd) — step-by-step walkthroughs you can run on
   your own machine
-- [Assignments](assignments/index.qmd) — homework and project briefs
+- [Coursework](coursework.qmd) — high-level outline of how work is
+  organized; exact prompts and submission details live in Blackboard
 - [Examples](examples/index.qmd) — small, reproducible code examples
 - [Resources](resources/index.qmd) — software setup, AI guidelines,
   data guidelines, CAS options, and outside links
