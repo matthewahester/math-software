@@ -15,23 +15,32 @@ artifacts into a small, polished portfolio.
 ## Available
 
 - [HW 1 — Setup and your first Quarto document](hw01-setup.qmd)
-- [LaTeX Project — replicate a short open-access math paper](project-latex.qmd)
-- [R Project — data analysis or simulation report](project-r.qmd)
-- [Final Portfolio + Demo](final-portfolio.qmd)
+- [LaTeX Project — replicate a short open-access math paper](project-latex.qmd) (Week 6)
+- [R Project — data analysis or simulation report](project-r.qmd) (Week 10)
+- [Final Portfolio + Reflection](final-portfolio.qmd) (Week 15)
 
-## Planned
+## Planned weekly briefs
 
-Weekly briefs are added a few at a time. Rough plan:
+Weekly briefs are added a few at a time as the course is built. The
+spine is **11 weekly labs/homework** plus the two projects and the
+final portfolio.
 
-- HW 2 — Math in LaTeX
-- HW 3 — Short LaTeX writeup with a bibliography
-- HW 4 — A first R script
-- HW 5 — A visual data story (≥ 3 ggplot figures)
-- HW 6 — A reproducible simulation report
-- HW 8 — AI debugging audit
-- HW 9 — AI Use Reflection
-- HW 11 — Optional bridge mini-report (Sage / Python / Octave / CAS)
-- HW 12 — Portfolio assembly
+- HW 2 — Math in LaTeX (Week 2)
+- HW 3 — Theorem-and-proof writeup (Week 3)
+- HW 4 — Figures, tables, and a bibliography (Week 4)
+- HW 5 — LaTeX Project paper pick + outline (Week 5)
+- HW 7 — First R script (Week 7)
+- HW 8 — A visual data story with `ggplot2` (Week 8)
+- HW 9 — A reproducible simulation report (Week 9)
+- HW 11 — AI debugging audit (Week 11)
+- HW 12 — AI Use Reflection (Week 12)
+- HW 13 — Optional second-tool bridge mini-report (Week 13)
+
+The **best 9 of 11** weekly labs/homework count for ordinary
+weekly-work credit. **HW 11 and HW 12 are the dedicated AI module
+assignments in the Generative AI Literacy category and are not
+droppable.** Projects, required conferences, AI verification
+components, and the final portfolio are also not droppable.
 
 ## Submission
 

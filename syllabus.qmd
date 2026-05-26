@@ -5,82 +5,118 @@ toc: true
 
 > **Public version.** This page is the sanitized, public-facing summary
 > of the syllabus. The full course syllabus — with section numbers,
-> dates, room assignments, and institution-specific policies — lives in
-> the LMS (Blackboard).
+> calendar dates, room assignment, and institution-specific policies —
+> lives in Blackboard.
 
 ## What the course is about
 
-This is a **2-hour weekly lab/studio course** that builds practical
-fluency with the tools mathematicians and quantitative students
-actually use. There are four required pillars:
+Intro to Mathematical Software is a **conference-based studio course**
+in modern mathematical and computational workflow. It is **not** a
+traditional lecture/lab course. Most instruction lives on this public
+site; scheduled Mon/Wed class times are reserved for required
+checkpoint conferences, optional demonstrations, open studio work,
+troubleshooting, and individualized help.
 
-1. **LaTeX** — typesetting mathematics, theorem and proof blocks,
-   figures, citations, polished PDFs.
-2. **R + RStudio** — data wrangling, visualization, simulation, and
-   reporting.
-3. **Technical workflow** — Quarto, file organization, reproducibility,
-   and optional light use of Git/GitHub. Quarto is the connective
-   tissue: most assignments are `.qmd` files rendered to HTML or PDF.
-4. **Generative AI literacy** — responsible use, verification,
-   disclosure, and critique. Grounded in published frameworks and
-   peer-reviewed work — see the
+The course is built around four interlocking pillars:
+
+1. **LaTeX / mathematical writing** — typesetting mathematics, theorem
+   and proof blocks, figures, citations, polished PDFs.
+2. **R / computation, visualization, simulation, and reporting** —
+   wrangling, `ggplot2`, simulation, reproducible reports.
+3. **Technical workflow** — Quarto, project organization,
+   reproducibility, portfolio building, optional light Git/GitHub.
+4. **Responsible AI-assisted technical work** — disclosure,
+   verification, revision, and critique. Grounded in published
+   frameworks and peer-reviewed work — see the
    [AI reading spine](resources/ai-reading-spine.qmd).
 
-**Optional bridge** (one homework, student's choice): a short
-exploration of a second computational tool — SageMath / SageMathCell,
-Python + SymPy, MATLAB / Octave, or a CAS option such as Maple or
-WolframAlpha. See [resources/cas-options.qmd](resources/cas-options.qmd).
+The course is **AI-native, not AI-only.** AI assistants are legitimate
+first-pass helpers for explanation, debugging, drafting, syntax
+lookup, and workflow support. Accountability comes from rendered
+documents, executable code, official documentation, reproducible
+organization, AI Use Notes, and instructor conferences.
+
+**Optional bridge** (one homework, Week 13): a short exploration of a
+second computational tool — SageMath / SageMathCell, Python + SymPy,
+MATLAB / Octave, or a CAS option such as Maple. See
+[resources/cas-options.qmd](resources/cas-options.qmd).
 
 ## Learning outcomes
 
-By the end of the term, students will be able to:
+By the end of the term, students should be able to:
 
-- Typeset mathematics and produce polished PDFs using LaTeX.
-- Import, wrangle, visualize, and summarize data in R / RStudio.
-- Build reproducible reports in Quarto that combine prose,
-  mathematics, and code.
-- Use AI assistants productively — and **verify**, **disclose**, and
-  **take responsibility** for what they produce.
-- Manage files, projects, and reproducible workflows.
+- Typeset mathematics, theorem/proof blocks, figures, tables, and
+  bibliographies using LaTeX, and produce polished PDFs.
+- Import, wrangle, visualize, summarize, and report on data in R /
+  RStudio.
+- Build Quarto reports that combine prose, mathematics, code, output,
+  figures, and citations.
+- Write simple simulations with reproducible seeds and interpret the
+  output.
+- Organize project folders so technical work is reproducible,
+  readable, and easy to revise.
+- Use AI assistants for debugging, drafting, explanation, and revision
+  while verifying the output and disclosing the assistance.
+- Assemble a final portfolio that communicates growth across
+  mathematical writing, computation, workflow, and responsible AI use.
 
-## Format and attendance
+## Course format and attendance
 
-This course is organized around **weekly software tasks**, not
-traditional lectures. Most scheduled meetings are **supported lab
-sessions**: you may attend for help, troubleshooting, demonstrations,
-and project work time. **You are responsible for weekly deliverables
-whether or not you attend the optional lab session.**
+This is a **conference-based studio** course meeting in a hybrid
+Mon/Wed time slot. The scheduled class times are **not** ordinary
+required class meetings. They are protected time for the five required
+checkpoint conferences, plus optional demos, troubleshooting, open
+studio, and individual help. Weekly deliverables create the pacing of
+the course whether or not you attend any optional support time.
 
-A small number of **checkpoint meetings are required or strongly
-expected**:
+In-person support happens in the Math Assistance Center (MAC); online
+students participating through the hybrid format complete the same
+weekly modules and conferences by the announced remote method.
 
-- **Week 1** — setup check.
-- **Week 7** — LaTeX project sign-off / studio.
-- **Week 11** — R project / mid-portfolio conference.
-- **Week 15** — final portfolio, reflection, and/or conference.
+## Required conferences
 
-In-person work happens in the Math Assistance Center (MAC) during
-class time. Online students complete the same weekly modules.
+Five short one-on-one conferences (10–15 minutes each) are scheduled
+across the semester. They are practical progress checks, not oral
+exams, and they are structured around the work you are already
+producing.
 
-See the [schedule](schedule.qmd) for the week-by-week topic map.
+- **Week 1 — Setup conference (required).** Confirm your software
+  stack, portfolio folder, and first Quarto render.
+- **Week 4 — LaTeX checkpoint conference (required).** Confirm that
+  core LaTeX skills are working; review figures/tables/bibliography
+  workflow; check initial LaTeX Project direction while scope can
+  still be adjusted.
+- **Week 7 — R transition conference (required).** Confirm portfolio
+  is organized after the LaTeX module; confirm R/RStudio/Quarto are
+  working; preview the R visualization and simulation sequence.
+- **Week 10 — R Project conference (required).** Confirm project
+  track, dataset or simulation plan, and early report structure before
+  submission.
+- **Week 13 — Portfolio-workflow conference (required).** Review
+  portfolio organization, AI Use Notes, workflow habits, and
+  final-reflection plan before final assembly and submission.
+
+Conference sign-ups are handled through Blackboard.
 
 ## Portfolio model
 
-Across the semester, you will build a small **portfolio of
-mathematical software artifacts**. This portfolio may live in a
-**local folder, a private repository, or a public repository if you
-choose**. Public posting of your work is encouraged when appropriate;
-**it is not required** for assignment submission.
+Across the semester you build a small **portfolio of mathematical
+software artifacts**. **Portfolio organization is required; public
+posting is optional.** The portfolio may live as a **local folder**, a
+**private repository**, or a **public repository** if you specifically
+choose to make your work public. **Public GitHub is never required.**
 
 By the end of the term, your portfolio should include:
 
 - A selection of weekly homework artifacts (mostly Quarto documents).
 - A **LaTeX Project** — a polished short paper.
-- An **R Project** — a Quarto-rendered data analysis or simulation report.
-- One or two **AI module artifacts** — a debugging audit and a short
-  reflection on responsible use.
+- An **R Project** — a Quarto-rendered data analysis or simulation
+  report.
+- **AI module artifacts** — a debugging audit (HW 11) and an AI Use
+  Reflection (HW 12).
 - Optionally, a one-page **bridge mini-report** exploring a second
-  computational tool.
+  computational tool (HW 13).
+- A **1–2 page final reflection**.
 
 ## Data and software
 
@@ -89,42 +125,60 @@ You will use:
 - **R + RStudio** with TinyTeX and Quarto. See
   [resources/software-setup.qmd](resources/software-setup.qmd) and
   [Lab 1](labs/lab01-install-stack.qmd).
-- **Datasets** that come from one of four sources: **built-in R
-  datasets**, **simulated data**, **public datasets with verifiable
-  provenance and license**, or **instructor-approved student-selected
-  datasets**. See [resources/data-guidelines.qmd](resources/data-guidelines.qmd).
+- **Datasets** from one of four sources: **built-in R datasets**,
+  **simulated data**, **public datasets with verifiable provenance and
+  license**, or **instructor-approved student-selected datasets**. See
+  [resources/data-guidelines.qmd](resources/data-guidelines.qmd).
 
 ## Final assessment
 
-The final assessment is a **portfolio, a short reflection, and/or an
-individual conference**. Specific formats — submitted portfolio, short
-reflection, individual conference, optional short demo, recorded
-walkthrough — will be announced via Blackboard.
+The final assessment is a **portfolio plus a 1–2 page written
+reflection**, submitted in **Week 15** through Blackboard. There is no
+required final demo and no required Week 15 conference. The Week 13
+portfolio-workflow conference is the structured closing checkpoint.
 
-The point is to **show what you built** and **reflect on what you
-learned**. The packaging is flexible.
+## Grading
 
-## Grading (provisional)
+Work is evaluated across four categories with these weights:
 
-Assessment is **not finalized** for this version of the course. Work
-in the course will be evaluated across four provisional categories:
+| Category | Weight |
+|----------|-------:|
+| LaTeX / mathematical writing | **25 %** |
+| R / computation, visualization, simulation, and reporting | **30 %** |
+| Technical workflow — Quarto, organization, reproducibility, portfolio, optional Git/GitHub | **25 %** |
+| Generative AI literacy — responsible use, verification, disclosure, critique | **20 %** |
 
-- **LaTeX / mathematical writing**
-- **R / computation, visualization, simulation, and reporting**
-- **Technical workflow** — Quarto, file organization, reproducibility,
-  optional light Git/GitHub
-- **Generative AI literacy** — responsible use, verification,
-  disclosure, and critique
+The five required conferences are graded inside the category they
+belong to rather than as a separate category.
 
-Exact category weights and the best-of-N homework policy are finalized
-each term and announced in Blackboard.
+**Weekly drop policy.** The **best 9 of 11** weekly labs/homework
+count for ordinary weekly-work credit. **HW 11 and HW 12 are the
+dedicated AI module assignments in the Generative AI Literacy
+category and are not droppable.** Projects, required conferences, AI
+verification components, and the final portfolio are also not
+droppable. The drop policy is meant to absorb ordinary disruptions
+like illness, travel, or one difficult week — not to make any
+structural piece optional.
+
+**Grade scale.** A: 90–100; B: 80–89; C: 70–79; D: 60–69; F: < 60.
+
+## Late work
+
+**Weekly labs/homework** are accepted up to **one week past the due
+date** with a **flat 20 % late penalty**; after one week no credit is
+given unless the absence was excused.
+
+**Projects, required conferences, and the final portfolio** require
+instructor coordination and may have separate extension rules.
+Coordinate before the deadline rather than after.
 
 ## AI policy (summary)
 
 You are **encouraged** to use generative AI assistants — ChatGPT,
-Claude, Copilot, etc. — as study partners, debugging helpers, and
-drafting aids. You are **responsible** for the correctness,
-originality, and citation of the work you submit.
+Claude, Copilot, Cursor, Gemini, etc. — as study partners, debugging
+helpers, drafting aids, and syntax lookup tools. You are
+**responsible** for the correctness, originality, and citation of the
+work you submit.
 
 Every submission where AI was used must include a short **AI Use
 Note** with three labeled lines:
@@ -135,34 +189,38 @@ Note** with three labeled lines:
   the output.
 
 The **verification** line is the point. Using AI is not enough; you
-have to verify and take responsibility for the final work.
+have to verify and take responsibility for the final work. You should
+be able to explain anything you submit, including code, mathematical
+notation, figures, and written interpretations.
 
-Full guidelines, examples, and the AI reading spine:
+**Privacy.** Do not paste other students' work, non-public datasets,
+identifiable personal data, or Blackboard-only content into an AI
+tool.
+
+**Detectors.** This course does **not** use automated AI-detection
+tools. What matters instead is a clear AI Use Note, work you can
+explain, and visible verification.
+
+Full guidelines and the published sources:
 
 - [resources/ai-use-guidelines.qmd](resources/ai-use-guidelines.qmd)
 - [resources/ai-reading-spine.qmd](resources/ai-reading-spine.qmd)
 
 ## Where things live
 
-> Our **public course site** is the main home for notes, labs,
-> assignment descriptions, examples, and resources. **Blackboard** is
-> used for private and official course functions: assignment
-> submission, grades, announcements, roster-specific information, and
-> any section-specific due dates.
->
-> In practice: **check the course site to learn what we are doing, and
-> check Blackboard to submit work and view grades.**
+> The **public course site** is the main home for notes, labs,
+> assignment briefs, examples, software setup, AI guidelines, and data
+> guidelines — read it the way you would read a course text.
+> **Blackboard** is the official place for submissions, the gradebook,
+> announcements, conference sign-ups, and section-specific due dates.
 
-## Policies (public summary)
+If anything on this page conflicts with the Blackboard syllabus, the
+Blackboard version wins.
 
-- **Late work.** Weekly homework is accepted late with a credit cap;
-  projects require an extension request before the due date. Exact
-  numbers and dates live in Blackboard.
+## Other policies
+
 - **Academic integrity.** Standard institutional policy applies. Pair
   it with the [AI use guidelines](resources/ai-use-guidelines.qmd):
   cite tools, cite sources, do not submit work you cannot explain.
 - **Accessibility, weather, university policies.** Linked from the
   Blackboard syllabus. Anything binding lives there.
-
-If anything on this page conflicts with the Blackboard syllabus, the
-Blackboard version wins.

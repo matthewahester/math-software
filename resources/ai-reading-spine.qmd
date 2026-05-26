@@ -8,7 +8,7 @@ This page lists the sources that ground the course's approach to
 generative AI literacy. It is meant to be **student-readable**: you
 can use it to follow up on the ideas behind the
 [AI use guidelines](ai-use-guidelines.qmd), the AI Use Note standard,
-and the AI module assignments (HW 8 — AI debugging audit, HW 9 — AI
+and the AI module assignments (HW 11 — AI debugging audit, HW 12 — AI
 Use Reflection).
 
 The list is intentionally short — frameworks, peer-reviewed studies,
@@ -47,7 +47,7 @@ is not provided here.
   they fail, and what your responsibilities are as a user.
 - **Course activity / policy it informs.** The four-pillar framing of
   "responsible use, verification, disclosure, critique"; the AI
-  module (Weeks 8–9); the AI Use Note standard.
+  module (Weeks 11–12); the AI Use Note standard.
 
 ### UNESCO — *AI Competency Framework for Teachers* (2024)
 

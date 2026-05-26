@@ -9,7 +9,7 @@ Quarto document end-to-end**. It pairs with
 [HW 1](../assignments/hw01-setup.qmd).
 
 Work through this top to bottom. If you get stuck on a step, come to
-the MAC during the optional lab block or email me.
+one of the scheduled studio meetings in the MAC or email me.
 
 ## What you'll have at the end
 

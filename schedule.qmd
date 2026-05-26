@@ -4,45 +4,57 @@ toc: true
 ---
 
 > **Public version.** A generic week-by-week topic map. Specific
-> calendar dates live in Blackboard for each section.
+> calendar dates, conference sign-ups, and submission links live in
+> Blackboard for each section.
 
-The course is a **2-hour weekly lab/studio**. Most weeks the meeting
-is an **optional supported lab session** in the MAC; a few weeks are
-**required or strongly expected checkpoints**.
+This course is a **conference-based studio**. Scheduled Mon/Wed class
+times are **not** ordinary required lectures. They are protected time
+for the five **required conferences**, plus optional demonstrations,
+open studio work, troubleshooting, and individual help. The pacing
+mechanism for the course is the **weekly deliverable**.
+
+**Required attendance** is tied to the **five conference weeks** —
+Weeks 1, 4, 7, 10, and 13. Every other scheduled meeting is optional
+support time you may attend for help or work alongside others.
 
 ## Week-by-week
 
-| Wk | Topic | Lab focus | Deliverable | Attendance |
-|----|-------|-----------|-------------|------------|
-| 1 | Setup & first Quarto doc | Install R, RStudio, TinyTeX, Quarto; portfolio folder | HW 1 — first rendered Quarto doc | **Required** |
-| 2 | LaTeX foundations | Math environments, sectioning, refs | HW 2 — math typesetting writeup | Optional |
-| 3 | LaTeX writing | Theorem/proof, bibliography, cross-refs | HW 3 — short LaTeX writeup of a result | Optional |
-| 4 | R foundations | Vectors, frames, `dplyr` basics | HW 4 — R script + summary table | Optional |
-| 5 | Visualization | `ggplot2`, themes, faceting | HW 5 — Quarto report with ≥ 3 plots | Optional |
-| 6 | Simulation & reproducibility | `set.seed`, replicate, CLT demo | HW 6 — reproducible simulation report | Optional |
-| 7 | **LaTeX Project — studio & sign-off** | Source-paper sign-off; studio time | LaTeX Project submission | **Strongly expected** |
-| 8 | AI module I — using assistants well | Prompting, scoping, verifying | HW 8 — AI debugging audit | Optional |
-| 9 | AI module II — drafting & critique | Drafting prose, catching hallucinations, AI critique | HW 9 — AI Use Reflection | Optional |
-| 10 | R Project work week | Track choice + plan | R Project plan / draft | Optional |
-| 11 | **R Project conference / mid-portfolio check** | 10-min individual checkpoints | R Project submission | **Required** |
-| 12 | **Optional tool bridge / second-tool exploration / open studio** | Flexible — instructor-supported exploration of a second computational tool, or open studio time | HW 12 — optional bridge mini-report | Optional |
-| 13 | Portfolio assembly | README, polish, optional Git workflow | Portfolio ready | Optional |
-| 14 | Polish & rehearse | Reflection drafts; optional demo / conference prep | Reflection draft | Optional |
-| 15 | **Final portfolio, reflection, and/or conference** | Format is flexible (submitted portfolio, short reflection, individual conference, optional short demo, or recorded walkthrough) | Portfolio + final reflection | **Required** |
+| Wk | Topic | Studio focus | Deliverable | Conference |
+|----|-------|--------------|-------------|-----------|
+| 1 | Setup, Quarto, portfolio folder | Install R, RStudio, TinyTeX, Quarto; first render; portfolio layout | HW 1 — first Quarto document | **Setup conference (required)** |
+| 2 | LaTeX foundations | Sectioning, math environments, first math document | HW 2 — math typesetting writeup | — |
+| 3 | Math environments; theorem and proof | `amsmath` / `amsthm`; aligned equations; proof blocks | HW 3 — proofs and equations | — |
+| 4 | Figures, tables, bibliography | `graphicx`, tables, `biblatex` / `natbib` workflow | HW 4 — figures and bibliography | **LaTeX checkpoint conference (required)** |
+| 5 | LaTeX Project draft week | Paper pick, scope, one-page outline | HW 5 — paper pick + outline | — |
+| 6 | LaTeX Project | Studio time for the project | **LaTeX Project due** | — |
+| 7 | R foundations | Vectors, data frames, `dplyr` basics | HW 7 — first R script | **R transition conference (required)** |
+| 8 | Visualization with `ggplot2` | Geoms, faceting, themes, labels | HW 8 — visual data story | — |
+| 9 | Simulation and reproducibility | `set.seed()`, replicate, CLT ideas | HW 9 — simulation report | — |
+| 10 | R Project | Studio time for the project | **R Project due** | **R Project conference (required)** |
+| 11 | AI module I — debugging and verification | Prompting, scoping, verifying, citation hygiene | HW 11 — AI debugging audit | — |
+| 12 | AI module II — drafting and critique | Drafting prose, catching hallucinations, critique | HW 12 — AI Use Reflection | — |
+| 13 | Workflow bridge / second-tool exploration | Light Sage / Python / Octave / CAS exploration; portfolio polish | HW 13 — bridge mini-report | **Portfolio-workflow conference (required)** |
+| 14 | Portfolio assembly | Optional open studio and final-polish support | Portfolio draft | — |
+| 15 | Final polish and submission | Optional open studio | **Final portfolio + 1–2 page reflection due** | — |
 
-Required attendance: 3 sessions (Wk 1, Wk 11, Wk 15). Strongly
-expected: 1 session (Wk 7). Everything else is supported lab time —
-attend for help, troubleshooting, or work time.
+**Eleven weekly labs/homework** (HW 1, 2, 3, 4, 5, 7, 8, 9, 11, 12, 13).
+The **best 9 of 11** count for ordinary weekly-work credit.
+**HW 11 and HW 12 are the dedicated AI module assignments and are not
+droppable.** Projects, required conferences, AI verification
+components, and the final portfolio are also **not** droppable.
 
 ## How to use this schedule
 
-- **Read by row.** Each week's row gives you the topic, what the lab
-  block focuses on if you attend, and what's due at the end of the
-  week.
-- **Most weeks have an HW deliverable.** That is the actual pacing
-  mechanism for the course, regardless of whether you come to class.
+- **Read by row.** Each row gives the week's topic, what the scheduled
+  studio time focuses on if you attend, what is due that week, and
+  whether the week includes a required conference.
+- **Most weeks have a weekly deliverable.** That is the actual pacing
+  mechanism for the course, regardless of whether you come to a
+  scheduled meeting.
 - **Dates live in Blackboard.** This site only shows "Week 1, Week 2,
-  …" so it stays useful across terms.
+  …" so it stays useful across terms. Blackboard is also the
+  authoritative source for conference sign-ups and section-specific
+  due dates.
 
 For the assignment briefs themselves, see
 [assignments/](assignments/index.qmd).

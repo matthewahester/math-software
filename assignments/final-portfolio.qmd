@@ -1,42 +1,33 @@
 ---
-title: "Final portfolio, reflection, and/or conference"
+title: "Final Portfolio + Reflection"
 subtitle: "Bringing the term's work together"
 toc: true
 ---
 
-> **Pairs with:** Weeks 13–15. Due dates and submission link live in
-> Blackboard.
+> **Pairs with:** Weeks 13–15. The Week 13 portfolio-workflow
+> conference is the structured closing checkpoint; the portfolio and
+> the 1–2 page reflection are due in Week 15 through Blackboard.
 
 ## Goal
 
-Assemble the small portfolio you've built across the term into a
+Assemble the small portfolio you have built across the term into a
 **single, polished, well-organized collection**, and pair it with a
-**short written reflection**. Depending on the term's format, you may
-also have a brief **individual conference**, an **optional short
-demo**, or submit a **recorded walkthrough**.
+**short written reflection**.
 
 This is the course's capstone. There are no new technical skills to
 learn — the work is **curation, polish, and reflection**.
 
-## What's required vs. what's flexible
-
-**Required for everyone:**
+## What is required
 
 - A **portfolio** — a small, well-organized collection of the term's
   artifacts (see "What to include" below).
-- A **final reflection** — a 1–2 page Quarto document.
+- A **1–2 page final reflection** — a rendered Quarto document.
 
-**Format of the closing conversation — flexible**, announced in
-Blackboard each term. Possible formats include:
-
-- A **submitted portfolio** with no live component.
-- A **short individual conference** (5–10 minutes, in person or over
-  video).
-- An **optional short demo** during the final-week meeting.
-- A **recorded walkthrough** (screen recording with voiceover).
-
-You will know which format applies to your section well before the
-final week.
+There is **no required final demo** and **no required Week 15
+conference**. The **Week 13 portfolio-workflow conference** is the
+structured closing checkpoint — that is where we walk through your
+portfolio organization, your AI Use Notes, and your final-reflection
+plan together before final assembly.
 
 ## Portfolio location — your choice
 
@@ -47,8 +38,8 @@ The portfolio may live as:
 - a **public repository**, if and only if you specifically choose to
   make your work public.
 
-Public posting is encouraged when appropriate. **It is not required**
-for assignment submission. Most students submit a zipped local
+**Portfolio organization is required; public posting is optional.**
+Public GitHub is never required. Most students submit a zipped local
 folder; a few choose a public repo. Either way, **Blackboard is the
 submission inbox**.
 
@@ -58,12 +49,12 @@ A complete portfolio contains:
 
 | Component | What it is |
 |-----------|-----------|
-| **README** | A short index that says who you are, what's in the folder, and how to render anything. |
-| **A selection of weekly homework** | 6–8 of your stronger weekly Quarto documents. You don't need every one. |
+| **README** | A short index that says who you are, what is in the folder, and how to render anything. |
+| **A selection of weekly homework** | 6–8 of your stronger weekly Quarto documents. You do not need every one. |
 | **LaTeX Project** | The PDF and source. |
 | **R Project** | The Quarto source and rendered PDF, plus any data. |
-| **AI module artifacts** | Your AI debugging audit and your AI Use Reflection. |
-| **(Optional) Bridge mini-report** | If you did HW 11, include it. |
+| **AI module artifacts** | Your AI debugging audit (HW 11) and AI Use Reflection (HW 12). |
+| **(Optional) Bridge mini-report** | If you did HW 13, include it. |
 | **Final reflection** | 1–2 pages — see below. |
 
 ## README expectations
@@ -81,7 +72,7 @@ A small portfolio of mathematical software work from MATH 12362.
 - `hw02/` — math in LaTeX
 - ...
 - `latex-project/` — LaTeX paper replication
-- `r-project/` — R data / simulation report
+- `r-project/` — R data or simulation report
 - `ai-module/` — debugging audit and reflection
 - `reflection.pdf` — final reflection
 
@@ -91,7 +82,7 @@ Each folder contains a `.qmd` (or `.tex`) source. From a folder, run
 `quarto render <file>.qmd` (or `pdflatex` for `.tex` sources).
 ```
 
-The README isn't graded for prose quality. It's graded for whether
+The README is not graded for prose quality. It is graded for whether
 **someone unfamiliar with your work can navigate the folder**.
 
 ## Final reflection
@@ -102,46 +93,28 @@ Address these four questions, briefly and honestly:
 
 1. **What did you build?** A paragraph summarizing the portfolio.
 2. **What did you learn about each pillar** (LaTeX, R, technical
-   workflow, generative AI literacy) that you didn't know in Week 1?
+   workflow, generative AI literacy) that you did not know in Week 1?
 3. **Where did AI help, and where did it hurt?** Concrete examples.
    This connects to the **verification** line in your AI Use Notes:
    what did you catch, and what almost slipped through?
-4. **What would you do differently next term?** Tool/skill-wise and
-   workflow-wise.
+4. **What would you do differently next term?** Tool-wise,
+   skill-wise, and workflow-wise.
 
 This is reflective writing, not a brag sheet. Honest self-assessment
 is worth more than overclaiming. Include a short **AI Use Note** in
 the reflection (Tool / Purpose / Verification).
 
-## If your term includes a conference or optional demo
-
-The format will be announced in Blackboard. General expectations if
-this applies:
-
-- **Conference** — a short 1-on-1 conversation about your portfolio.
-  Be ready to walk me through one or two pieces, talk about what was
-  hard, and answer questions about your verification choices.
-- **Optional demo** — 5–10 minutes, live in the final-week meeting.
-  Open with what the artifact is, show source + rendered output,
-  highlight one technical thing you learned.
-- **Recorded walkthrough** — 5–8 minutes, screen recording with
-  voice. Same structure as a live demo.
-
-None of these is universally required. Default to "portfolio +
-reflection" unless your section is told otherwise.
-
 ## Grading
 
-This piece is evaluated across the course's four provisional
-categories, with weight on **technical workflow** (organization,
-reproducibility, README clarity), **mathematical writing** (the
-reflection itself), and **generative AI literacy** (the AI Use Note
-and the AI portion of your reflection). Specific category weights for
-the term are announced in Blackboard.
+This piece is evaluated across the course's four categories, with
+weight on **technical workflow** (organization, reproducibility,
+README clarity), **mathematical writing** (the reflection itself), and
+**generative AI literacy** (the AI Use Note and the AI portion of your
+reflection).
 
 ## AI use
 
-You're welcome to use AI to help organize, polish, or write portions
+You are welcome to use AI to help organize, polish, or draft portions
 of the reflection. The same rules apply: include an **AI Use Note**
-in the reflection (Tool / Purpose / Verification), and don't submit
-prose you can't explain.
+in the reflection (Tool / Purpose / Verification), and do not submit
+prose you cannot explain.

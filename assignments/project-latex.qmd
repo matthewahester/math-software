@@ -4,9 +4,9 @@ subtitle: "Your first major portfolio piece"
 toc: true
 ---
 
-> **Pairs with:** the LaTeX block of the course (weeks 2–3) and the
-> Week 7 LaTeX Project studio. Due date and submission link live in
-> Blackboard.
+> **Pairs with:** the LaTeX block of the course (Weeks 2–6) and the
+> **Week 4 LaTeX checkpoint conference**. Project is due at the end
+> of **Week 6**. Due date and submission link live in Blackboard.
 
 ## Goal
 
@@ -50,9 +50,11 @@ Prefer **arXiv** for reliability and easy access.
 4. Avoid manuscripts whose argument depends on prior sections that
    aren't included.
 
-**Get my sign-off** on your chosen paper at the Week 7 studio meeting
-(or via Blackboard message earlier). This is the one checkpoint that
-catches misjudged scope.
+**Get my sign-off** on your chosen paper at the **Week 4 LaTeX
+checkpoint conference** (or via Blackboard message earlier). This is
+the checkpoint that catches misjudged scope while there is still time
+to pivot. Week 5 is the project draft week; the project is due at the
+end of Week 6.
 
 If you'd rather use an open-access paper from a journal (e.g., AMS
 Notices, MAA Monthly, an OA mathematics journal), that's fine.

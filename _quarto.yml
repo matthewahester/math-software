@@ -14,7 +14,8 @@ website:
   site-url: https://matthewhester.com/math-software/
   description: |
     Public course resources for Intro to Mathematical Software —
-    R, LaTeX, Git, and reproducible workflows for math and stats students.
+    mathematical writing, R-based computation, reproducible Quarto
+    workflows, and responsible AI-assisted technical work.
   open-graph: true
 
   navbar:

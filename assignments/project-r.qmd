@@ -4,9 +4,10 @@ subtitle: "Your second major portfolio piece"
 toc: true
 ---
 
-> **Pairs with:** the R block of the course (weeks 4–6) and the Week
-> 11 R Project conference. Due date and submission link live in
-> Blackboard.
+> **Pairs with:** the R block of the course (Weeks 7–10), the
+> **Week 7 R transition conference**, and the **Week 10 R Project
+> conference**. Project is due at the end of **Week 10**. Due date
+> and submission link live in Blackboard.
 
 ## Goal
 

@@ -9,7 +9,7 @@ toc: true
 > technical workflow (Quarto / reproducibility), and generative AI
 > literacy. This page exists because (a) mathematicians often want a
 > CAS for symbolic work, and (b) the course's **optional second-tool
-> exploration** in Week 12 may be a CAS for some students.
+> exploration** in Week 13 may be a CAS for some students.
 
 ## What a CAS is
 
@@ -88,7 +88,7 @@ R is great for *numerics*. CAS is great for *exact symbolic work*.
 
 ## Which one should you pick?
 
-The Week 12 second-tool exploration is **flexible** — no single tool
+The Week 13 second-tool exploration is **flexible** — no single tool
 is locked. Quick orientation:
 
 - **Mathematics or math-education student, no prior CAS experience:**
@@ -99,7 +99,7 @@ is locked. Quick orientation:
 - **You've used Maple in calculus:** **Maple Learn** is fine, but
   expect the no-save constraint to be annoying.
 
-If Week 12 includes a written deliverable, the brief calls for a
+If Week 13 includes a written deliverable, the brief calls for a
 **short mini-report** (≤ 2 pp) exploring one problem in your chosen
 second tool — not a full project. Pick whichever tool you can get
 running fastest.
