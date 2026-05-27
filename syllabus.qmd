@@ -47,8 +47,8 @@ By the end of the term, students should be able to:
 
 - Typeset mathematics, theorem/proof blocks, figures, tables, and
   bibliographies using LaTeX, and produce polished PDFs.
-- Import, wrangle, visualize, summarize, and report on data in R /
-  RStudio.
+- Import, wrangle, visualize, summarize, and report on data in R,
+  using VS Code as the standard editor.
 - Build Quarto reports that combine prose, mathematics, code, output,
   figures, and citations.
 - Write simple simulations with reproducible seeds and interpret the
@@ -87,8 +87,9 @@ producing.
   workflow; check initial LaTeX Project direction while scope can
   still be adjusted.
 - **Week 7 — R transition conference (required).** Confirm portfolio
-  is organized after the LaTeX module; confirm R/RStudio/Quarto are
-  working; preview the R visualization and simulation sequence.
+  is organized after the LaTeX module; confirm VS Code, R, and
+  Quarto are working together; preview the R visualization and
+  simulation sequence.
 - **Week 10 — R Project conference (required).** Confirm project
   track, dataset or simulation plan, and early report structure before
   submission.
@@ -123,7 +124,8 @@ By the end of the term, your portfolio should include:
 
 You will use:
 
-- **R + RStudio** with TinyTeX and Quarto. See
+- **VS Code, R, Quarto, and TinyTeX.** VS Code is the course's
+  standard editor; R is the primary computation language. See
   [resources/software-setup.qmd](resources/software-setup.qmd) and
   [Lab 1](labs/lab01-install-stack.qmd).
 - **Datasets** from one of four sources: **built-in R datasets**,

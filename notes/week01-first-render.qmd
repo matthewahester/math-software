@@ -74,6 +74,11 @@ You will not become a Quarto expert in Week 1. You will become one
 slowly, by writing Quarto documents every week of the course. The
 Week 1 job is just to get the engine started.
 
+In this course you edit those Quarto documents in **VS Code**
+(Visual Studio Code), the course's standard editor. The
+[install lab](../labs/lab01-install-stack.qmd) walks through
+setting up VS Code together with R, Quarto, and TinyTeX.
+
 ## The portfolio folder is organized technical work
 
 Your **`math-software-portfolio/`** folder is where the term's work

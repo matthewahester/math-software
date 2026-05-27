@@ -1,6 +1,6 @@
 ---
 title: "Software setup"
-subtitle: "R, RStudio, TinyTeX, Quarto, and optional Git"
+subtitle: "VS Code, R, Quarto, TinyTeX, and optional Git / Claude Code"
 toc: true
 ---
 
@@ -14,39 +14,71 @@ If you only have ten minutes, read Lab 1 first.
 
 | Tool | What it does | Where to get it |
 |------|-------------|-----------------|
-| **R** | The language. Computation, simulation, plotting. | <https://cran.r-project.org> |
-| **RStudio** | The editor. Friendly UI for writing R and Quarto. | <https://posit.co/download/rstudio-desktop/> |
-| **TinyTeX** | A minimal LaTeX distribution, installed via R. Lets Quarto render PDFs and lets you compile `.tex` files. | Install from R: `install.packages("tinytex"); tinytex::install_tinytex()` |
-| **Quarto** | The reproducible-document engine. The connective tissue of this course. | <https://quarto.org/docs/get-started/> |
+| **R** | The primary computation language for the course — wrangling, plotting, simulation. | <https://cran.r-project.org> |
+| **VS Code** (Visual Studio Code) | The course's standard editor / workbench. Edits `.qmd`, `.tex`, `.R`, and most other text files; has an integrated terminal. | <https://code.visualstudio.com> |
+| **Quarto** | The reproducible-document engine. The connective tissue of the course. | <https://quarto.org/docs/get-started/> |
+| **TinyTeX** | A minimal LaTeX distribution, installed through R. Lets Quarto render PDFs and lets you compile `.tex` files. | Install from R: `install.packages("tinytex"); tinytex::install_tinytex()` |
 
 The four together are enough to do every required piece of work in
 the course.
 
-## Optional
+::: callout-important
+## VS Code, not Visual Studio
+The course standard is **Visual Studio Code** (also called
+**VS Code**) — the free, cross-platform editor at
+<https://code.visualstudio.com>. It is **not** the same product as
+**Visual Studio**, Microsoft's heavier IDE for .NET / C++ /
+mobile-app development. If you accidentally install Visual Studio,
+uninstall and start over with VS Code.
+:::
+
+## Useful VS Code extensions
+
+These are installed from inside VS Code (Extensions sidebar, or
+`Ctrl/Cmd + Shift + X`).
+
+| Extension | Publisher | Required? |
+|------|-------|-----------|
+| **Quarto** | quarto.quarto | Yes — adds the Render button and `.qmd` support. |
+| **R** | REditorSupport | Yes — R syntax, terminal integration, help. |
+| **vscode-pdf** | tomoki1207 | Optional — preview rendered PDFs inside VS Code. |
+| **GitLens** / **GitHub Pull Requests** | (various) | Optional — only if you use Git/GitHub. |
+
+After installing the R extension, install the R language-server
+package once from inside R for autocomplete and inline help:
+
+```r
+install.packages("languageserver")
+```
+
+## Optional tools
 
 | Tool | When you'd want it |
 |------|---------------------|
 | **Git** | If you plan to use a GitHub (or other) repository for your portfolio. Not required. |
-| **VS Code** | An alternative editor if you prefer it to RStudio. Quarto has a good VS Code extension. |
+| **Claude Code** | Optional AI-assisted coding tool from Anthropic. Requires a paid Anthropic account; no part of the course assumes you have it. If you use it, the standard AI Use Note expectations apply. |
+| **RStudio** | Optional alternative for students who already know it and strongly prefer it for R work. Not the course standard. Course demos, screenshots, and walkthroughs all use VS Code. |
 | **A CAS** | See [CAS options](cas-options.qmd) for the optional Week 13 second-tool exploration. |
 
 ## Verifying the install
 
-Open your system terminal (Terminal on mac/Linux, PowerShell on
-Windows) and run:
+Open a terminal (Terminal on mac/Linux, PowerShell on Windows; or use
+VS Code's integrated terminal) and run:
 
 ```bash
 R --version
 quarto --version
+code --version
 ```
 
-Both should print version strings. In RStudio's Console:
+All three should print version strings. To confirm TinyTeX, start an
+R session (`R` in the terminal) and run:
 
 ```r
 tinytex::tinytex_root()
 ```
 
-should print a path to your TinyTeX install.
+It should print a path to your TinyTeX install.
 
 ## Folder convention
 
@@ -64,31 +96,50 @@ math-software-portfolio/
 └── reflection.qmd
 ```
 
-Keep paths inside your `.qmd` files **relative** to that folder. That
-way the project renders on any computer, including mine when I grade.
+Open this folder in VS Code (File → Open Folder…) at the start of
+each working session. Keep paths inside your `.qmd` files
+**relative** to the folder. That way the project renders on any
+computer.
 
 ## Common gotchas
 
+- **You installed Visual Studio instead of VS Code.** Uninstall (or
+  ignore) it and install Visual Studio Code from
+  <https://code.visualstudio.com>.
 - **First PDF render fails on a fresh TinyTeX.** Run `quarto render`
   a second time — TinyTeX downloads missing LaTeX packages on demand
   the first time it sees them.
 - **`quarto` not on PATH.** Restart your terminal after installing
-  Quarto. On Windows, you may need to restart RStudio too.
+  Quarto. On Windows, you may need to close every PowerShell window,
+  not just the active one.
+- **VS Code can't find R.** Confirm `R --version` works in a fresh
+  system terminal, then restart VS Code so it picks up the updated
+  `PATH`. On Windows, you may need to add R's `bin/` directory to
+  `PATH` manually.
 - **R chunk doesn't run in Quarto.** Make sure the fence is
   `` ```{r} `` (lowercase r, no spaces inside the braces).
 - **PDF compiles but math is missing.** You probably wrote `\$x\$`
   instead of `$x$`. Drop the backslashes.
-- **Mac asks for permission to access folders.** macOS sandboxing can
-  block R from reading certain folders. Keep your portfolio under
-  `~/Documents/` and you'll avoid this.
+- **Mac asks for permission to access folders.** macOS sandboxing
+  can block R from reading certain folders. Keep your portfolio
+  under `~/Documents/` and you'll avoid this.
+- **You opened a single `.qmd` file instead of the portfolio
+  folder.** Open the folder (`hw01/`) via File → Open Folder, not
+  the single file. The Quarto extension behaves better with a
+  workspace set.
 
-## What about Posit Cloud / Quarto Pub?
+## Hosted-environment alternatives
 
-Both exist and both can host the work you do in this course:
+If your computer can't install R locally, two hosted options can
+work as fallbacks:
 
-- **Posit Cloud** — RStudio in a browser. Useful if your computer
-  can't install R locally. Free tier has CPU-hour limits.
-- **Quarto Pub** — free publishing for Quarto sites. Useful only if
-  you specifically choose to publish your portfolio.
+- **VS Code in the browser** at <https://vscode.dev> — useful for
+  editing source files but limited for running R / rendering
+  Quarto. Better for emergencies than as a daily driver.
+- **Posit Cloud** at <https://posit.cloud> — RStudio in a browser
+  with R pre-installed. Useful if you genuinely cannot install R
+  locally; the course standard is VS Code, but submitting a
+  rendered PDF produced anywhere is fine. Free tier has CPU-hour
+  limits.
 
-Neither is required. Use them if they help.
+Neither is required. Use them only if a local install is blocked.

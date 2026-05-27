@@ -20,13 +20,13 @@ support time you may attend for help or work alongside others.
 
 | Wk | Topic | Studio focus | Conference |
 |----|-------|--------------|-----------|
-| 1 | Setup, Quarto, portfolio folder | Install R, RStudio, TinyTeX, Quarto; first render; portfolio layout | **Setup conference (required)** |
+| 1 | Setup, Quarto, portfolio folder | Install VS Code, R, Quarto, TinyTeX; first render; portfolio layout | **Setup conference (required)** |
 | 2 | LaTeX foundations | Sectioning, math environments, first math document | — |
 | 3 | Math environments; theorem and proof | `amsmath` / `amsthm`; aligned equations; proof blocks | — |
 | 4 | Figures, tables, bibliography | `graphicx`, tables, `biblatex` / `natbib` workflow | **LaTeX checkpoint conference (required)** |
 | 5 | LaTeX Project draft week | Paper pick, scope, one-page outline | — |
 | 6 | LaTeX Project | Studio time for the project | — |
-| 7 | R foundations | Vectors, data frames, `dplyr` basics | **R transition conference (required)** |
+| 7 | R foundations in VS Code | Vectors, data frames, `dplyr` basics; R + Quarto inside VS Code | **R transition conference (required)** |
 | 8 | Visualization with `ggplot2` | Geoms, faceting, themes, labels | — |
 | 9 | Simulation and reproducibility | `set.seed()`, replicate, CLT ideas | — |
 | 10 | R Project | Studio time for the project | **R Project conference (required)** |

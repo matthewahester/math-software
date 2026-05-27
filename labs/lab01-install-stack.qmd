@@ -1,6 +1,6 @@
 ---
 title: "Lab 1 — Install the stack"
-subtitle: "R, RStudio, TinyTeX, Quarto (and optional Git)"
+subtitle: "VS Code, R, Quarto, TinyTeX (and optional Git / Claude Code)"
 toc: true
 ---
 
@@ -14,20 +14,37 @@ one of the scheduled studio meetings in the MAC or email me.
 
 ## What you'll have at the end
 
-- **R** (the language) installed.
-- **RStudio** (the editor) installed.
-- **TinyTeX** (a minimal LaTeX distribution) installed via R.
-- **Quarto** installed and runnable from the command line.
-- **(Optional) Git** installed and usable.
+- **R** (the computation language) installed.
+- **VS Code** — Visual Studio Code, the course's standard editor —
+  installed.
+- **Quarto** installed and runnable from a terminal.
+- **TinyTeX** (a minimal LaTeX distribution, installed through R)
+  set up so Quarto can render PDFs.
+- A minimal set of **VS Code extensions** for the course workflow
+  (Quarto, R).
+- **(Optional) Git** installed.
+- **(Optional) Claude Code** mentioned — not required, not assumed.
 - A **`math-software-portfolio/`** folder somewhere sensible on your
   computer.
 - A `.qmd` file that renders to both HTML and PDF without errors.
 
 If you already have some of these — great, skip ahead.
 
+::: callout-note
+## VS Code, not Visual Studio
+The course standard is **Visual Studio Code** (also called **VS Code**).
+This is the **free, cross-platform editor** from Microsoft. It is
+**not** the same product as **Visual Studio** (the much heavier
+Windows-only IDE). If the installer screen says "Visual Studio
+2022" or shows project templates for .NET / C++ / mobile apps, you
+have the wrong product. Cancel and start over with **Visual Studio
+Code** from <https://code.visualstudio.com>.
+:::
+
 ## 0. Pick a portfolio location
 
-Make a folder you will not move or rename for the semester. Suggested:
+Make a folder you will not move or rename for the semester.
+Suggested:
 
 - macOS / Linux: `~/Documents/math-software-portfolio/`
 - Windows: `C:\Users\YourName\Documents\math-software-portfolio\`
@@ -43,33 +60,67 @@ defaults.
 - macOS — pick the `.pkg` file matching your chip (Apple Silicon or
   Intel).
 - Windows — pick the `.exe` installer.
-- Linux — use your package manager (`apt`, `dnf`, etc.) or follow CRAN's
-  instructions for your distro.
+- Linux — use your package manager (`apt`, `dnf`, etc.) or follow
+  CRAN's instructions for your distro.
 
-**Verify:** open the system terminal (Terminal on mac/Linux, PowerShell
-on Windows) and run:
+**Verify:** open a terminal (Terminal on mac/Linux, PowerShell on
+Windows) and run:
 
 ```bash
 R --version
 ```
 
-You should see a version string. If "command not found," restart your
-terminal and try again; if it still fails, R is not on your PATH —
-flag this in the MAC.
+You should see a version string. If the terminal says the command is
+not recognized, **restart the terminal** and try again. If it still
+fails, R is not on your `PATH` — flag this in the MAC.
 
-## 2. Install RStudio
+## 2. Install VS Code
 
-Download RStudio Desktop (Open Source) from
-<https://posit.co/download/rstudio-desktop/>. Default install.
+Download Visual Studio Code from <https://code.visualstudio.com> and
+install with the defaults.
 
-**Verify:** open RStudio. The four-pane layout should appear. In the
-Console pane, type `1 + 1` and press Enter — you should see `[1] 2`.
+- macOS — drag `Visual Studio Code.app` into `/Applications`.
+- Windows — pick the **User Installer** for your architecture. During
+  install, leave "Add to PATH" checked.
+- Linux — install the `.deb`/`.rpm`, or use your distro's package
+  manager.
 
-## 3. Install TinyTeX
+**Verify:** open VS Code. You should see the Welcome page and a
+sidebar with file/Explorer/extensions icons. Open a terminal inside
+VS Code (View → Terminal, or `` Ctrl/Cmd + ` ``) and run:
 
-TinyTeX is a small, install-on-demand LaTeX distribution. We use it
-because it's much smaller than full TeX Live and works well with
-Quarto. **Do this from inside R (or RStudio's Console):**
+```bash
+code --version
+```
+
+You should see a version string.
+
+If the screenshots online showing four panes and an "RStudio" title
+bar look very different from what you see — that is expected. VS Code
+has a different layout than RStudio. You are in the right place.
+
+## 3. Install Quarto
+
+Download Quarto from <https://quarto.org/docs/get-started/> and
+install with the defaults.
+
+**Verify:** in a terminal (system terminal or VS Code's integrated
+terminal):
+
+```bash
+quarto --version
+```
+
+You should see a version string like `1.x.y`.
+
+## 4. Install TinyTeX (from R)
+
+TinyTeX is a small, install-on-demand LaTeX distribution. It lets
+Quarto render PDFs and lets you compile `.tex` files. It is installed
+**through R**, not as a separate download.
+
+Start an R session. You can do this from any terminal by running
+`R`, or you can open VS Code's terminal and run `R` there. Then run:
 
 ```r
 install.packages("tinytex")
@@ -79,7 +130,7 @@ tinytex::install_tinytex()
 The install can take a few minutes. If `install_tinytex()` finishes
 without errors, you're done.
 
-**Verify:**
+**Verify** (still in R):
 
 ```r
 tinytex::tinytex_root()
@@ -88,36 +139,70 @@ tinytex::tinytex_root()
 This should print a path like `/Users/you/Library/TinyTeX` or
 `C:\Users\You\AppData\Roaming\TinyTeX`.
 
-## 4. Install Quarto
+Exit R when you're done with `q()` (answer `n` when asked about
+saving the workspace).
 
-Download Quarto from <https://quarto.org/docs/get-started/>. Default
-install.
+## 5. Install VS Code extensions
 
-**Verify:** in your system terminal:
+VS Code becomes useful for this course once you install two
+extensions. Open VS Code → Extensions sidebar (the four-blocks icon)
+or press `Ctrl/Cmd + Shift + X`, then search and install:
 
-```bash
-quarto --version
+| Extension | Publisher | What it does for this course |
+|---|---|---|
+| **Quarto** | quarto.quarto | Recognizes `.qmd` files. Adds a **Render** button and a preview pane. Code-cell syntax highlighting. |
+| **R** | REditorSupport | R syntax highlighting, R terminal integration, package help. |
+
+Optional, install if you'll use them:
+
+| Extension | Publisher | When you'd want it |
+|---|---|---|
+| **GitLens** or **GitHub Pull Requests** | (various) | Only if you use Git/GitHub for your portfolio. |
+| **vscode-pdf** | tomoki1207 | Lets you preview rendered PDFs inside VS Code. |
+
+After installing the R extension, you may also want to install the R
+language-server package from inside R:
+
+```r
+install.packages("languageserver")
 ```
 
-You should see a version string like `1.x.y`.
+This unlocks autocomplete and inline help when editing R code in
+VS Code.
 
-## 5. (Optional) Install Git
+## 6. (Optional) Install Git
 
 Git is **optional** for this course. You only need it if you plan to
 make your portfolio a public or private GitHub repository. A local
-folder works fine for assignment submission.
+folder works fine.
 
 - macOS — `git` ships with Xcode command-line tools. Run
   `xcode-select --install` if not already done.
 - Windows — install Git for Windows from <https://git-scm.com/download/win>.
 - Linux — `sudo apt install git` (or your distro's equivalent).
 
-**Verify:** `git --version` in your terminal.
+**Verify:** `git --version` in a terminal.
 
 If you choose to use a GitHub repo for your portfolio, see the
 optional "first portfolio repo" lab later in the term.
 
-## 6. Render your first Quarto document
+## 7. (Optional) Claude Code
+
+**Claude Code** is Anthropic's AI-assisted coding tool. It is a
+**plausible advanced helper** for technical work in this course — it
+can edit files, run terminal commands, and read project structure
+under your supervision. It is **completely optional**, requires a
+paid Anthropic account, and **no part of the course assumes you
+have it**.
+
+If you choose to try it, follow the official install instructions at
+<https://docs.claude.com/en/docs/agents-and-tools/claude-code>. Pin
+its working directory to your `math-software-portfolio/` folder so
+it cannot see unrelated files on your computer. The same AI Use Note
+expectations apply (Tool / Purpose / Verification — see the
+[AI use guidelines](../resources/ai-use-guidelines.qmd)).
+
+## 8. Render your first Quarto document
 
 In your `hw01/` folder, create a file called `hw01.qmd` with these
 contents:
@@ -154,13 +239,17 @@ mean(x)
 **Verification:** [how you checked the output, if any]
 ````
 
-You have two ways to render the file:
+You have two ways to render the file. **Use either; both produce the
+same result.**
 
-**Easiest — RStudio.** Open `hw01.qmd` in RStudio. Click the
-**Render** button at the top of the editor pane. The PDF preview
-opens automatically when the render succeeds.
+**Easiest — VS Code Render button.** Open the `hw01/` folder in
+VS Code (File → Open Folder…). Open `hw01.qmd` in the editor. With
+the Quarto extension installed, you'll see a **Render** button at the
+top right of the editor pane. Click it. The first PDF render can take
+30–60 seconds because TinyTeX is downloading packages on demand.
 
-**Always works — system terminal.**
+**Always works — terminal.** From a terminal (VS Code's integrated
+terminal works fine; you don't need to leave the editor):
 
 ```bash
 cd path/to/math-software-portfolio/hw01
@@ -172,27 +261,101 @@ Either way, you should see `hw01.html` and `hw01.pdf` next to your
 
 ## Common problems
 
-- **PDF fails to compile.** Run `tinytex::install_tinytex()` in R again
-  to make sure TinyTeX completed. If LaTeX complains about a missing
-  package, run `quarto render hw01.qmd` a second time — TinyTeX will
-  download missing packages on demand the first time.
-- **`quarto: command not found`.** Quarto isn't on your PATH. Quit and
-  reopen the terminal. If that doesn't work, the installer didn't
-  finish — reinstall and watch for permission prompts.
-- **R chunk doesn't run.** Make sure you have the language fence
-  written exactly as ```` ```{r} ```` (lowercase `r`, no extra spaces
-  inside the braces).
-- **Equation doesn't render.** Math goes between `$ ... $` (inline) or
-  `$$ ... $$` (display). No backslashes before the dollar signs.
+This is the realistic-troubleshooting section. Skim it before you
+start; come back to it when something breaks.
+
+### Wrong product installed
+
+- **You installed Visual Studio instead of Visual Studio Code.** The
+  giveaway is a Microsoft installer screen showing .NET / C++ /
+  mobile-app workloads, or a Start menu entry called "Visual Studio
+  2022". Uninstall it (or leave it alone) and install **Visual
+  Studio Code** from <https://code.visualstudio.com>.
+- **You installed the R extension but R itself is not installed.**
+  The extension cannot find an R binary. Install R first (Section 1),
+  then restart VS Code.
+
+### VS Code can't find R
+
+- **VS Code Quarto extension says "R not found."** Quarto needs to
+  know where R lives. The fix is almost always: (1) confirm
+  `R --version` works in a fresh system terminal, (2) close and
+  reopen VS Code so it picks up the updated `PATH`.
+- **Windows-specific.** If R installed to a non-standard location, you
+  may need to add it to `PATH` manually: System Properties →
+  Environment Variables → add R's `bin` directory.
+
+### Quarto can't find R when rendering
+
+- **Render errors with "Unable to locate R."** Make sure R was
+  installed before Quarto. Reopen the terminal you're rendering
+  from. On Windows, log out and back in if the terminal still does
+  not see R.
+
+### PDF render problems
+
+- **First PDF render fails on a fresh TinyTeX.** Run
+  `quarto render hw01.qmd` a second time — TinyTeX downloads missing
+  LaTeX packages on demand the first time it sees them. The second
+  render usually succeeds.
+- **PDF render fails with "tlmgr" / "package not found" errors.** Run
+  `tinytex::tlmgr_install("PACKAGE_NAME")` in R for the named
+  package, or just rerun `quarto render` — Quarto will request the
+  package.
+- **PDF compiles but math is missing.** You probably wrote `\$x\$`
+  instead of `$x$`. Drop the backslashes.
+
+### Terminal / PATH problems
+
+- **`quarto: command not found`** (mac/Linux) or **`'quarto' is not
+  recognized as the name of a cmdlet...`** (Windows PowerShell).
+  Quarto isn't on your `PATH`. Quit and reopen the terminal. If that
+  doesn't work, the installer didn't finish — reinstall and watch
+  for permission prompts.
+- **Windows: opening a new PowerShell doesn't pick up the new
+  PATH.** Close every PowerShell window, then open a fresh one.
+  Sometimes a full sign-out / sign-in is needed.
+
+### VS Code workflow snags
+
+- **You opened a single `.qmd` file instead of a folder.** Open the
+  folder (`hw01/`) via File → Open Folder, not the single file. The
+  Quarto extension behaves better with a folder open and a workspace
+  set.
+- **R chunk doesn't run.** Make sure the fenced code block is written
+  exactly as ```` ```{r} ```` (lowercase `r`, no extra spaces inside
+  the braces).
+- **Render button is missing from the editor.** The Quarto extension
+  is not installed or not enabled. Open the Extensions sidebar,
+  search "Quarto," confirm the publisher is `quarto.quarto`, and
+  install/enable it.
+
+### "I keep finding RStudio instructions online"
+
+Most R tutorials assume RStudio because it has been the dominant R
+editor for years. The good news: the **R language itself is
+identical**. Anything an RStudio tutorial tells you to type at the
+R console works identically when you type it in an R terminal session
+inside VS Code (just run `R` in the terminal, then type). When a
+tutorial says "click the **Render** button in RStudio," the
+equivalent in VS Code is "click the **Render** button in the Quarto
+extension," or run `quarto render` in a terminal.
+
+If you already know RStudio well and prefer it for R work, you can
+use it for editing R-only files. The course's standard for all
+in-class demos, screenshots, and walkthroughs is VS Code, so plan to
+follow VS Code conventions for any cross-checking work and at the
+Setup conference.
 
 ## What this prepares you to do
 
 When you finish this lab you should be able to:
 
-- run R, RStudio, TinyTeX, and Quarto on your own computer,
+- run R, VS Code, Quarto, and TinyTeX on your own computer,
 - find your **`math-software-portfolio/`** folder and a `hw01/`
   subfolder inside it,
-- edit a `.qmd` source file,
+- open the portfolio folder in VS Code,
+- edit a `.qmd` source file in VS Code,
 - render that source to both HTML and PDF without errors,
 - locate the rendered files next to the source.
 
@@ -200,5 +363,5 @@ The Week 1 assignment in the course LMS uses exactly this workflow —
 the course LMS holds the prompt, the file-naming convention, and the
 submission area. The **Week 1 Setup conference** is where we confirm
 together that the chain works end-to-end; be ready to show your
-rendered document, your source file, and your portfolio folder when
-we meet.
+rendered document, your source file, and your portfolio folder
+in VS Code when we meet.
