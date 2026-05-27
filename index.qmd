@@ -10,8 +10,8 @@ and computational workflow. Curated by
 [Matt Hester](https://matthewhester.com).
 
 It is a **curated resource site**, not a raw course archive. Anything
-section- or roster-specific lives in Blackboard; this site is what
-stays public.
+section- or roster-specific lives in the course LMS; this site is
+what stays public.
 
 ## Where to start
 
@@ -21,8 +21,6 @@ stays public.
 - [Notes](notes/index.qmd) — short conceptual write-ups
 - [Labs](labs/index.qmd) — step-by-step walkthroughs you can run on
   your own machine
-- [Coursework](coursework.qmd) — high-level outline of how work is
-  organized; exact prompts and submission details live in Blackboard
 - [Examples](examples/index.qmd) — small, reproducible code examples
 - [Resources](resources/index.qmd) — software setup, AI guidelines,
   data guidelines, CAS options, and outside links
@@ -54,8 +52,8 @@ Scheduled Mon/Wed class times are reserved for the five **required
 checkpoint conferences** (Weeks 1, 4, 7, 10, 13) plus optional
 demonstrations, troubleshooting, and open studio. Ordinary scheduled
 meetings are **not** required weekly lessons; the pacing comes from
-**weekly deliverables**. Blackboard remains the operational home for
-submissions, grades, announcements, due dates, and conference
+**weekly deliverables**. The course LMS remains the operational home
+for submissions, grades, announcements, due dates, and conference
 sign-ups.
 
 ## What this course is not

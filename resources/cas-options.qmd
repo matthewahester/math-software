@@ -30,7 +30,7 @@ R is great for *numerics*. CAS is great for *exact symbolic work*.
 - **Where to use it.**
   - **In a browser:** <https://sagecell.sagemath.org> — no install,
     no account, no save (copy your code into a `.sage` or `.txt` file
-    if you want to keep it). Great for the bridge homework.
+    if you want to keep it). Great for the Week 13 bridge exploration.
   - **CoCalc:** <https://cocalc.com> — Sage worksheets in the
     browser, savable, free tier exists.
   - **Local install:** <https://www.sagemath.org/download.html>.

@@ -115,7 +115,7 @@ AI assistants log and may train on what you send them. **Do not paste:**
 
 - Other students' work, full datasets that aren't public, or
   identifiable personal data.
-- Anything from Blackboard that isn't already on the public course site.
+- Anything from the course LMS that isn't already on the public course site.
 - Email content from classmates, instructors, or staff.
 - Anything you wouldn't want to see surface in a future model output.
 

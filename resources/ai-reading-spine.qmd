@@ -8,8 +8,8 @@ This page lists the sources that ground the course's approach to
 generative AI literacy. It is meant to be **student-readable**: you
 can use it to follow up on the ideas behind the
 [AI use guidelines](ai-use-guidelines.qmd), the AI Use Note standard,
-and the AI module assignments (HW 11 — AI debugging audit, HW 12 — AI
-Use Reflection).
+and the AI module work in Weeks 11–12 (the AI debugging audit and
+the AI Use Reflection).
 
 The list is intentionally short — frameworks, peer-reviewed studies,
 and reputable institutional guidance. It is **not** a survey of news

@@ -122,7 +122,7 @@ and the first one-on-one of the course. It is not a quiz. It is a
 
 If anything in the install was hard, the conference is where we name
 it and fix it. Conference sign-ups and the exact submission details
-live in Blackboard.
+live in the course LMS.
 
 ## See also
 

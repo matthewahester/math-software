@@ -27,8 +27,6 @@ website:
         text: Syllabus
       - href: schedule.qmd
         text: Schedule
-      - href: coursework.qmd
-        text: Coursework
 
   sidebar:
     style: floating

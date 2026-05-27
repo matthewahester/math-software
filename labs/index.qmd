@@ -4,8 +4,8 @@ toc: false
 ---
 
 Step-by-step walkthroughs you can run on your own machine. Labs are
-designed to be **self-serve**: read top to bottom, follow along,
-verify each step, then submit the relevant homework.
+designed to be **self-serve**: read top to bottom, follow along, and
+verify each step on your own machine.
 
 Scheduled Mon/Wed class times are reserved for required checkpoint
 conferences, optional demonstrations, troubleshooting, and open

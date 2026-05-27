@@ -6,7 +6,7 @@ toc: true
 > **Public version.** This page is the sanitized, public-facing summary
 > of the syllabus. The full course syllabus — with section numbers,
 > calendar dates, room assignment, and institution-specific policies —
-> lives in Blackboard.
+> lives in the Assignments/LMS space.
 
 ## What the course is about
 
@@ -36,7 +36,7 @@ lookup, and workflow support. Accountability comes from rendered
 documents, executable code, official documentation, reproducible
 organization, AI Use Notes, and instructor conferences.
 
-**Optional bridge** (one homework, Week 13): a short exploration of a
+**Optional second-tool exploration** in Week 13: a short look at a
 second computational tool — SageMath / SageMathCell, Python + SymPy,
 MATLAB / Octave, or a CAS option such as Maple. See
 [resources/cas-options.qmd](resources/cas-options.qmd).
@@ -96,7 +96,7 @@ producing.
   portfolio organization, AI Use Notes, workflow habits, and
   final-reflection plan before final assembly and submission.
 
-Conference sign-ups are handled through Blackboard.
+Conference sign-ups are handled through the course LMS.
 
 ## Portfolio model
 
@@ -108,14 +108,15 @@ choose to make your work public. **Public GitHub is never required.**
 
 By the end of the term, your portfolio should include:
 
-- A selection of weekly homework artifacts (mostly Quarto documents).
+- A selection of weekly assignment artifacts (mostly Quarto
+  documents).
 - A **LaTeX Project** — a polished short paper.
 - An **R Project** — a Quarto-rendered data analysis or simulation
   report.
-- **AI module artifacts** — a debugging audit (HW 11) and an AI Use
-  Reflection (HW 12).
-- Optionally, a one-page **bridge mini-report** exploring a second
-  computational tool (HW 13).
+- **AI module artifacts** from the AI module weeks (Weeks 11–12) — a
+  debugging audit and an AI Use Reflection.
+- Optionally, a one-page **bridge mini-report** from the Week 13
+  second-tool exploration.
 - A **1–2 page final reflection**.
 
 ## Data and software
@@ -133,9 +134,10 @@ You will use:
 ## Final assessment
 
 The final assessment is a **portfolio plus a 1–2 page written
-reflection**, submitted in **Week 15** through Blackboard. There is no
-required final demo and no required Week 15 conference. The Week 13
-portfolio-workflow conference is the structured closing checkpoint.
+reflection**, submitted in **Week 15** through the course LMS. There
+is no required final demo and no required Week 15 conference. The
+Week 13 portfolio-workflow conference is the structured closing
+checkpoint.
 
 ## Grading
 
@@ -151,9 +153,9 @@ Work is evaluated across four categories with these weights:
 The five required conferences are graded inside the category they
 belong to rather than as a separate category.
 
-**Weekly drop policy.** The **best 9 of 11** weekly labs/homework
-count for ordinary weekly-work credit. **HW 11 and HW 12 are the
-dedicated AI module assignments in the Generative AI Literacy
+**Weekly drop policy.** The **best 9 of 11** weekly assignments count
+for ordinary weekly-work credit. **The two dedicated AI module
+assignments (Weeks 11 and 12) sit in the Generative AI Literacy
 category and are not droppable.** Projects, required conferences, AI
 verification components, and the final portfolio are also not
 droppable. The drop policy is meant to absorb ordinary disruptions
@@ -164,7 +166,7 @@ structural piece optional.
 
 ## Late work
 
-**Weekly labs/homework** are accepted up to **one week past the due
+**Weekly assignments** are accepted up to **one week past the due
 date** with a **flat 20 % late penalty**; after one week no credit is
 given unless the absence was excused.
 
@@ -194,8 +196,7 @@ be able to explain anything you submit, including code, mathematical
 notation, figures, and written interpretations.
 
 **Privacy.** Do not paste other students' work, non-public datasets,
-identifiable personal data, or Blackboard-only content into an AI
-tool.
+identifiable personal data, or LMS-only content into an AI tool.
 
 **Detectors.** This course does **not** use automated AI-detection
 tools. What matters instead is a clear AI Use Note, work you can
@@ -209,13 +210,15 @@ Full guidelines and the published sources:
 ## Where things live
 
 > The **public course site** is the main home for notes, labs,
-> assignment briefs, examples, software setup, AI guidelines, and data
-> guidelines — read it the way you would read a course text.
-> **Blackboard** is the official place for submissions, the gradebook,
-> announcements, conference sign-ups, and section-specific due dates.
+> examples, software setup, AI guidelines, and data guidelines —
+> read it the way you would read a course text.
+> The **course LMS** (Blackboard for Fall 2026) is the official
+> place for assignment prompts, rubrics, submissions, the gradebook,
+> announcements, conference sign-ups, and section-specific due
+> dates.
 
-If anything on this page conflicts with the Blackboard syllabus, the
-Blackboard version wins.
+If anything on this page conflicts with the course LMS, the LMS
+version wins.
 
 ## Other policies
 
@@ -223,4 +226,4 @@ Blackboard version wins.
   it with the [AI use guidelines](resources/ai-use-guidelines.qmd):
   cite tools, cite sources, do not submit work you cannot explain.
 - **Accessibility, weather, university policies.** Linked from the
-  Blackboard syllabus. Anything binding lives there.
+  course LMS syllabus. Anything binding lives there.

@@ -6,7 +6,7 @@ toc: false
 Short conceptual write-ups for each tool covered in the course. Each
 note is meant as a 10–15 minute read that complements the hands-on
 [labs](../labs/index.qmd) and the weekly work distributed through
-Blackboard.
+the course LMS.
 
 ## Available
 

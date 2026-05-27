@@ -28,7 +28,7 @@ the course.
 |------|---------------------|
 | **Git** | If you plan to use a GitHub (or other) repository for your portfolio. Not required. |
 | **VS Code** | An alternative editor if you prefer it to RStudio. Quarto has a good VS Code extension. |
-| **A CAS** | See [CAS options](cas-options.qmd) for the optional bridge homework. |
+| **A CAS** | See [CAS options](cas-options.qmd) for the optional Week 13 second-tool exploration. |
 
 ## Verifying the install
 

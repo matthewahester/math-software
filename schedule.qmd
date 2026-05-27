@@ -3,15 +3,14 @@ title: "Schedule"
 toc: true
 ---
 
-> **Public version.** A generic week-by-week topic map. Specific
-> calendar dates, conference sign-ups, and submission links live in
-> Blackboard for each section.
+> **Public version.** A generic week-by-week topic and skill outline.
+> Specific calendar dates, conference sign-ups, and assignment
+> prompts live in the Assignments/LMS space for each section.
 
 This course is a **conference-based studio**. Scheduled Mon/Wed class
 times are **not** ordinary required lectures. They are protected time
 for the five **required conferences**, plus optional demonstrations,
-open studio work, troubleshooting, and individual help. The pacing
-mechanism for the course is the **weekly deliverable**.
+open studio work, troubleshooting, and individual help.
 
 **Required attendance** is tied to the **five conference weeks** —
 Weeks 1, 4, 7, 10, and 13. Every other scheduled meeting is optional
@@ -19,43 +18,37 @@ support time you may attend for help or work alongside others.
 
 ## Week-by-week
 
-| Wk | Topic | Studio focus | Deliverable | Conference |
-|----|-------|--------------|-------------|-----------|
-| 1 | Setup, Quarto, portfolio folder | Install R, RStudio, TinyTeX, Quarto; first render; portfolio layout | HW 1 — first Quarto document | **Setup conference (required)** |
-| 2 | LaTeX foundations | Sectioning, math environments, first math document | HW 2 — math typesetting writeup | — |
-| 3 | Math environments; theorem and proof | `amsmath` / `amsthm`; aligned equations; proof blocks | HW 3 — proofs and equations | — |
-| 4 | Figures, tables, bibliography | `graphicx`, tables, `biblatex` / `natbib` workflow | HW 4 — figures and bibliography | **LaTeX checkpoint conference (required)** |
-| 5 | LaTeX Project draft week | Paper pick, scope, one-page outline | HW 5 — paper pick + outline | — |
-| 6 | LaTeX Project | Studio time for the project | **LaTeX Project due** | — |
-| 7 | R foundations | Vectors, data frames, `dplyr` basics | HW 7 — first R script | **R transition conference (required)** |
-| 8 | Visualization with `ggplot2` | Geoms, faceting, themes, labels | HW 8 — visual data story | — |
-| 9 | Simulation and reproducibility | `set.seed()`, replicate, CLT ideas | HW 9 — simulation report | — |
-| 10 | R Project | Studio time for the project | **R Project due** | **R Project conference (required)** |
-| 11 | AI module I — debugging and verification | Prompting, scoping, verifying, citation hygiene | HW 11 — AI debugging audit | — |
-| 12 | AI module II — drafting and critique | Drafting prose, catching hallucinations, critique | HW 12 — AI Use Reflection | — |
-| 13 | Workflow bridge / second-tool exploration | Light Sage / Python / Octave / CAS exploration; portfolio polish | HW 13 — bridge mini-report | **Portfolio-workflow conference (required)** |
-| 14 | Portfolio assembly | Optional open studio and final-polish support | Portfolio draft | — |
-| 15 | Final polish and submission | Optional open studio | **Final portfolio + 1–2 page reflection due** | — |
-
-**Eleven weekly labs/homework** (HW 1, 2, 3, 4, 5, 7, 8, 9, 11, 12, 13).
-The **best 9 of 11** count for ordinary weekly-work credit.
-**HW 11 and HW 12 are the dedicated AI module assignments and are not
-droppable.** Projects, required conferences, AI verification
-components, and the final portfolio are also **not** droppable.
+| Wk | Topic | Studio focus | Conference |
+|----|-------|--------------|-----------|
+| 1 | Setup, Quarto, portfolio folder | Install R, RStudio, TinyTeX, Quarto; first render; portfolio layout | **Setup conference (required)** |
+| 2 | LaTeX foundations | Sectioning, math environments, first math document | — |
+| 3 | Math environments; theorem and proof | `amsmath` / `amsthm`; aligned equations; proof blocks | — |
+| 4 | Figures, tables, bibliography | `graphicx`, tables, `biblatex` / `natbib` workflow | **LaTeX checkpoint conference (required)** |
+| 5 | LaTeX Project draft week | Paper pick, scope, one-page outline | — |
+| 6 | LaTeX Project | Studio time for the project | — |
+| 7 | R foundations | Vectors, data frames, `dplyr` basics | **R transition conference (required)** |
+| 8 | Visualization with `ggplot2` | Geoms, faceting, themes, labels | — |
+| 9 | Simulation and reproducibility | `set.seed()`, replicate, CLT ideas | — |
+| 10 | R Project | Studio time for the project | **R Project conference (required)** |
+| 11 | AI module I — debugging and verification | Prompting, scoping, verifying, citation hygiene | — |
+| 12 | AI module II — drafting and critique | Drafting prose, catching hallucinations, critique | — |
+| 13 | Workflow bridge / second-tool exploration | Light Sage / Python / Octave / CAS exploration; portfolio polish | **Portfolio-workflow conference (required)** |
+| 14 | Portfolio assembly | Optional open studio and final-polish support | — |
+| 15 | Final polish and portfolio close-out | Optional open studio | — |
 
 ## How to use this schedule
 
-- **Read by row.** Each row gives the week's topic, what the scheduled
-  studio time focuses on if you attend, what is due that week, and
-  whether the week includes a required conference.
-- **Most weeks have a weekly deliverable.** That is the actual pacing
-  mechanism for the course, regardless of whether you come to a
-  scheduled meeting.
-- **Dates live in Blackboard.** This site only shows "Week 1, Week 2,
-  …" so it stays useful across terms. Blackboard is also the
+- **Read by row.** Each row gives the week's topic, what the
+  scheduled studio time focuses on if you attend, and whether the
+  week includes a required conference.
+- **Weekly work distribution.** Weekly work is distributed through
+  the Assignments/LMS space. Exact prompts, rubrics, due dates, and
+  submission details live there.
+- **Dates live in the LMS.** This site only shows "Week 1, Week 2,
+  …" so it stays useful across terms. The course LMS is the
   authoritative source for conference sign-ups and section-specific
   due dates.
 
-For the high-level coursework outline, see
-[Coursework](coursework.qmd). Exact assignment prompts, rubrics, and
-submission links live in Blackboard.
+See the [Syllabus](syllabus.qmd) for the grading framework, drop
+policy, late-work rule, conference detail, and other course-wide
+policies.

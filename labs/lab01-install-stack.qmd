@@ -196,9 +196,9 @@ When you finish this lab you should be able to:
 - render that source to both HTML and PDF without errors,
 - locate the rendered files next to the source.
 
-The Week 1 Blackboard assignment uses exactly this workflow — see
-Blackboard for the prompt, the file-naming convention, and the
-submission link. The **Week 1 Setup conference** is where we confirm
+The Week 1 assignment in the course LMS uses exactly this workflow —
+the course LMS holds the prompt, the file-naming convention, and the
+submission area. The **Week 1 Setup conference** is where we confirm
 together that the chain works end-to-end; be ready to show your
 rendered document, your source file, and your portfolio folder when
 we meet.
