@@ -18,6 +18,11 @@ the course LMS.
   LaTeX math syntax inside Quarto, inline vs displayed math, the
   small core vocabulary, rendering as verification, visually
   inspecting math in the PDF, and AI assistance with verification.
+- [Week 3 — Structuring mathematical writing](week03-structuring-mathematical-writing.qmd) —
+  organizing notation into readable mathematical writing: setup,
+  claim, example, and justification; marking structure with headings
+  and bold labels; avoiding equation-dump writing; inspecting for
+  logic, not just formatting; and AI as a first pass for structure.
 
 ## Planned
 
@@ -26,7 +31,6 @@ follows the module spine:
 
 **LaTeX block (Weeks 2–6)**
 
-- Week 3 — Theorem-proof typesetting and aligned equations
 - Week 4 — Figures, tables, and a bibliography that actually compiles
 - Week 5 — Picking a paper to replicate
 

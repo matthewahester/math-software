@@ -36,14 +36,22 @@ website:
         href: notes/index.qmd
         contents:
           - notes/index.qmd
-          - notes/week01-first-render.qmd
-          - notes/week02-latex-foundations.qmd
+          - href: notes/week01-first-render.qmd
+            text: "1 — Your first render"
+          - href: notes/week02-latex-foundations.qmd
+            text: "2 — Writing mathematics from source"
+          - href: notes/week03-structuring-mathematical-writing.qmd
+            text: "3 — Structuring mathematical writing"
       - section: "Labs"
         href: labs/index.qmd
         contents:
           - labs/index.qmd
-          - labs/lab01-install-stack.qmd
-          - labs/lab02-first-latex-math.qmd
+          - href: labs/lab01-install-stack.qmd
+            text: "1 — Install the stack"
+          - href: labs/lab02-first-latex-math.qmd
+            text: "2 — First LaTeX math"
+          - href: labs/lab03-claim-example-justification.qmd
+            text: "3 — Claim, example, and justification"
       - section: "Examples"
         href: examples/index.qmd
         contents:

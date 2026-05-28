@@ -1,0 +1,305 @@
+---
+title: "Writing a Claim, Example, and Justification in Quarto"
+subtitle: "Structure a short mathematical writeup: setup, claim, example, and justification"
+toc: true
+---
+
+This lab walks through producing a **structured** mathematical
+writeup in Quarto — a setup, a clearly marked claim, an example, and a
+justification — using ordinary headings and bold labels. It is the
+practical companion to
+[Structuring Mathematical Writing](../notes/week03-structuring-mathematical-writing.qmd),
+the short conceptual reading for Week 3.
+
+You should already be comfortable with the Week 2 workflow: writing
+inline and displayed math in a `.qmd` file and rendering it to PDF. If
+your `hw02/` writeup rendered and the equations looked right, you are
+ready. Week 3 adds **structure** on top of that, not new syntax.
+
+## What you'll have at the end
+
+- A new `hw03/` subfolder in your `math-software-portfolio/`.
+- A `.qmd` source file in that folder containing a definition/setup, a
+  clearly marked claim, an example, and a justification, with at least
+  one displayed or aligned equation used **in the reasoning**.
+- A rendered PDF of that file, inspected on two levels — formatting,
+  and structure/logic.
+- A short **AI Use Note** in the standard three-line Tool / Purpose /
+  Verification format (only required if you used AI assistance).
+
+The exact assignment prompt and submission details for Week 3 live in
+the **Assignments/LMS space**.
+
+## 1. Create a Week 3 portfolio subfolder
+
+Inside your `math-software-portfolio/` folder, create a new subfolder
+called `hw03/`, next to your existing `hw01/` and `hw02/`. The full
+path will look like:
+
+- macOS / Linux: `~/Documents/math-software-portfolio/hw03/`
+- Windows: `C:\Users\YourName\Documents\math-software-portfolio\hw03\`
+
+This is where your Week 3 source file and rendered PDF will live.
+
+## 2. Open the `hw03/` folder in VS Code
+
+From VS Code: **File → Open Folder…** and pick the `hw03/` folder.
+Opening the folder (not a single file) lets the Quarto extension treat
+your work as a workspace — the **Quarto: Preview** command, the file
+explorer, and the integrated terminal all behave better with a folder
+open.
+
+## 3. Start from a simple template
+
+In VS Code's Explorer sidebar, create a new file inside `hw03/`. For
+this walkthrough, call it `week03-structured-writing.qmd`. (The exact
+file name for the submitted assignment is specified in the
+**Assignments/LMS space**.)
+
+Paste this starter content. It already lays out the four parts as
+headings and bold labels, so you are filling in structure rather than
+inventing it:
+
+````markdown
+---
+title: "Week 3 — A structured mathematical writeup"
+author: "YOUR NAME"
+format:
+  pdf: default
+---
+
+# Setup
+
+**Definition.** State what your objects are and define any notation.
+
+# Claim and example
+
+**Claim.** State precisely what you will argue.
+
+**Example.** Give one concrete case that illustrates the claim.
+
+# Justification
+
+**Justification.** Argue, in prose plus at least one displayed
+equation, why the claim holds in general.
+````
+
+The YAML at the top is the **title block**; `format: pdf` produces a
+PDF. The `#` lines are **section headings**. The `**Definition.**`,
+`**Claim.**`, `**Example.**`, and `**Justification.**` lead-ins are
+the **bold labels** that make the structure visible — this is the
+required Week 3 mechanism. You do not need theorem environments or
+raw `.tex`.
+
+## 4. Confirm the headings give you a visible skeleton
+
+Before writing any mathematics, render the template as-is (see step 8
+for how). You should see three sections and four bold labels in the
+PDF. That skeleton is the whole point: a reader can already tell what
+*kinds* of statement are coming. Now you fill it in.
+
+## 5. Write the definition / setup
+
+Replace the placeholder after `**Definition.**` with your real setup.
+Name your objects and **define any notation before you use it.** For
+the running example "the sum of two even integers is even," the setup
+is:
+
+```
+**Definition.** An integer $n$ is *even* if $n = 2k$ for some integer
+$k$. Let $m$ and $n$ be even integers.
+```
+
+Everything you use later — here, "even" and the variables $m$ and
+$n$ — is introduced here first. A symbol that appears in your
+justification but never in your setup is a red flag.
+
+## 6. Write the claim
+
+Replace the placeholder after `**Claim.**` with one precise sentence
+stating what you will argue:
+
+```
+**Claim.** The sum $m + n$ is even.
+```
+
+Keep it to a single clear statement. "Precise" means a reader knows
+exactly what you are asserting, with nothing left vague.
+
+## 7. Include an example, then write the justification
+
+**Example.** Give a concrete case. It illustrates the claim and builds
+intuition; it does not replace the justification.
+
+```
+**Example.** If $m = 4$ and $n = 6$, then $m + n = 10$, which is even.
+```
+
+**Justification.** Now argue the general case, in prose, with at least
+one displayed equation carrying a step of the reasoning:
+
+```
+**Justification.** Since $m$ and $n$ are even, we can write $m = 2a$
+and $n = 2b$ for integers $a$ and $b$. Then
+
+$$
+m + n = 2a + 2b = 2(a + b).
+$$
+
+Because $a + b$ is an integer, $m + n$ has the form $2 \times (\text{an
+integer})$, which is the definition of even. Therefore $m + n$ is even.
+```
+
+Two things to notice, because they are exactly what gets graded:
+
+- The displayed equation is **a step of the argument**, with prose
+  before it ("we can write…") and prose after it ("because $a + b$ is
+  an integer…"). It is not decoration.
+- The connective words — *since*, *then*, *because*, *therefore* —
+  are the logic. They tell the reader how each statement follows from
+  the last. Do not drop them.
+
+## 8. Render to PDF
+
+Render the file exactly as in Week 2. **Either method works:**
+
+- **Preferred — Quarto: Preview.** Open
+  `week03-structured-writing.qmd` in the editor, then press
+  `Ctrl/Cmd + Shift + P` and run **Quarto: Preview**, or press
+  `Ctrl/Cmd + Shift + K`. (If the Quarto extension shows a
+  **Preview** button in the upper-right editor toolbar, that works
+  too.)
+- **Always works — terminal.** Open VS Code's integrated terminal
+  (View → Terminal), make sure it is in the `hw03/` folder, then run:
+
+  ```bash
+  quarto render week03-structured-writing.qmd
+  ```
+
+A PDF should appear next to your `.qmd`. If VS Code shows no Quarto
+commands, check the **lower-right corner** of the window: if it says
+**Plain Text**, click it and choose **Quarto** (or **Markdown**), and
+confirm the Quarto extension is installed. If the terminal says
+**"No valid input files passed to render,"** the terminal is in the
+wrong folder or the filename is misspelled.
+
+## 9. Inspect the PDF on two levels
+
+This is the load-bearing step. Open the PDF and check it twice.
+
+**Formatting (the Week 2 check).**
+
+- Are the variables italic and the operators upright?
+- Did `\frac`, subscripts, and superscripts come out the way you
+  intended?
+- If you used an aligned block, do the lines line up at `=`?
+
+**Structure and logic (new in Week 3).**
+
+- Can you find the definition, the claim, the example, and the
+  justification at a glance? Are the bold labels visually distinct?
+- Does your justification argue the claim you actually **stated** —
+  not a weaker or different one?
+- Does every displayed equation support a step of the reasoning?
+- Is every symbol introduced in the setup before it appears?
+- Read the justification with the equations covered: do the prose
+  steps ("since… therefore…") still reach the claim on their own?
+
+Fix anything that is off in the source, and re-render.
+
+## Common problems
+
+Skim this before you start; come back when something feels wrong.
+
+### A claim with no reasoning
+
+- **Symptom.** You wrote a bold `**Claim.**`, an example, and then
+  stopped. There is no justification, or the "justification" just
+  restates the claim.
+- **Fix.** Add a real argument: start from the setup and reach the
+  claim by steps. An example is not a justification — one case does
+  not establish the general statement.
+
+### A justification that proves the wrong thing
+
+- **Symptom.** Your argument is internally reasonable, but it
+  establishes something other than (or weaker than) the claim you
+  stated.
+- **Fix.** Re-read your `**Claim.**` sentence, then re-read the last
+  line of your justification. They should match. If the justification
+  ends somewhere else, either fix the argument or restate the claim to
+  match what you actually showed.
+
+### Equation dump — equations with no prose
+
+- **Symptom.** A column of displayed equations and almost no
+  sentences. It compiles and looks mathematical, but a reader cannot
+  tell what is being claimed or why each line follows.
+- **Fix.** Put prose **before** each displayed equation (what it is)
+  and **after** it (what it gives you). If an equation has no
+  sentence explaining why it is there, add one or delete it.
+
+### AI-generated reasoning you cannot explain
+
+- **Symptom.** You asked an assistant for a proof, pasted in
+  proof-shaped text, and cannot explain one of the steps in your own
+  words.
+- **Fix.** Proof-shaped is not proof-correct. Read every step, confirm
+  it follows from your setup and reaches your claim, and rewrite
+  anything you cannot justify yourself. Record what you checked in the
+  **Verification** line of your AI Use Note. If you cannot explain a
+  step, it does not belong in your writeup.
+
+### Labels that do not stand out
+
+- **Symptom.** Your definition, claim, example, and justification all
+  look like ordinary paragraphs, so a reader cannot tell the parts
+  apart.
+- **Fix.** Use the bold lead-ins (`**Definition.**`, `**Claim.**`,
+  `**Example.**`, `**Justification.**`) and/or section headings so
+  each part is visually distinct in the rendered PDF.
+
+### Vague proof prose ("clearly", "obviously")
+
+- **Symptom.** A step is hand-waved with "clearly" or "obviously"
+  instead of being argued.
+- **Fix.** Those words usually hide the one step that needs writing.
+  Replace them with the actual reason: *why* is it clear? Write that
+  sentence.
+
+### Symbols used but never defined
+
+- **Symptom.** A variable or piece of notation appears in your claim
+  or justification but was never introduced in the setup.
+- **Fix.** Introduce and define every symbol in the setup before you
+  use it. If a symbol shows up out of nowhere, the reader cannot
+  follow.
+
+### Renders correctly but the logic is wrong
+
+- **Symptom.** The PDF is clean and well formatted, and the argument
+  is still invalid — a step does not follow, or the example is doing
+  the work the justification should do.
+- **Fix.** There is no error message for broken logic. The only way to
+  catch it is to **read the rendered PDF as a skeptical reader** and
+  check that each step truly follows and the argument reaches the
+  stated claim.
+
+## What this prepares you to do
+
+When you finish this lab you should be able to:
+
+- organize a short mathematical writeup into a setup, a claim, an
+  example, and a justification,
+- mark those parts clearly with headings and bold labels,
+- write a justification whose prose carries the logic and whose
+  displayed equations carry real steps,
+- avoid equation-dump writing,
+- inspect a rendered PDF for **structure and logic**, not just
+  formatting,
+- use AI assistance for outlines, prose, and examples while verifying
+  the reasoning yourself.
+
+The Week 3 assignment in the course LMS uses exactly this workflow.
+The course LMS holds the exact prompt, the file-naming convention, and
+the submission area.

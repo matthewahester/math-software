@@ -1,0 +1,292 @@
+---
+title: "Structuring Mathematical Writing"
+subtitle: "Setup, claim, example, and justification — and inspecting for logic, not just formatting"
+toc: true
+---
+
+> A short conceptual reading to accompany the Week 3 work on
+> organizing mathematical writing. The hands-on walkthrough lives in
+> [Writing a Claim, Example, and Justification in Quarto](../labs/lab03-claim-example-justification.qmd).
+
+Week 2 taught you to write mathematical notation from source: inline
+math, displayed equations, aligned blocks, and the habit of rendering
+and looking at the PDF. Week 3 takes the next step. The skill this
+week is **not more symbols**. It is **organizing** the mathematics you
+can already typeset so that a reader can follow it.
+
+By the end of the week, a reader of your writeup should be able to
+point at the page and say: *this is what is being assumed, this is
+what is being claimed, here is an example of it, and here is the
+reasoning that supports the claim.* That is what it means to write
+mathematics, as opposed to merely typesetting it.
+
+## Mathematical writing has structure, not just equations
+
+A page full of correct equations is not automatically a piece of
+mathematical writing. Equations are the **vocabulary**; structure is
+the **grammar**. Week 2 gave you the vocabulary. Week 3 is about the
+grammar: the arrangement of definitions, claims, examples, and
+arguments that lets a reader reconstruct your thinking.
+
+Think of the difference between a list of true sentences and a
+paragraph that makes a point. Both can be "correct." Only one of them
+communicates. Mathematical writing communicates when its parts are
+**distinguishable** and **ordered**: the reader always knows which
+kind of sentence they are reading and why it is there.
+
+## Four kinds of mathematical sentence
+
+Most short mathematical writeups are built from four kinds of
+sentence, each doing a different job.
+
+- **Definition / setup.** Fixes meaning. It names the objects you are
+  working with and states the assumptions in force. "Let $m$ and $n$
+  be even integers." Every symbol you use later should be introduced
+  here first.
+- **Claim (or proposition).** Asserts that something is true, stated
+  precisely enough that it could in principle be argued or refuted.
+  "The sum $m + n$ is even." A claim is a *promise* to the reader that
+  you will justify it.
+- **Example.** Exhibits a concrete case. "If $m = 4$ and $n = 6$, then
+  $m + n = 10$, which is even." An example *illustrates* a claim and
+  builds intuition. It does **not** prove the claim — one case is not
+  all cases — but it shows the reader what the claim is about.
+- **Justification (or proof).** Argues *why* the claim holds, in
+  general, from the setup. This is the part that does the intellectual
+  work, and the part most students under-write.
+
+A reader who can tell these four apart can follow your writeup. A
+reader who cannot is lost, no matter how clean your equations are.
+
+## What a claim, proposition, or theorem is — lightly
+
+You will hear several words for "a mathematical statement asserted to
+be true." They differ mainly in *importance*, not in kind:
+
+- a **theorem** is a major result;
+- a **proposition** or **lemma** is a smaller supporting result;
+- a **claim** is a local assertion you make and then back up.
+
+For this course you do not need to agonize over which word to use.
+"Claim" or "proposition" is perfectly good for a short writeup. What
+matters is that the statement is **precise**: a reader should be able
+to tell exactly what you are asserting, with no "it depends" left
+unstated.
+
+## What a justification is doing — rhetorically
+
+A justification — or a proof — is an **argument aimed at a reader**.
+It is not a pile of symbols and it is not a re-statement of the claim.
+It starts from what you assumed in the setup, proceeds by steps the
+reader can follow, and ends by establishing the claim.
+
+The shape is almost always the same:
+
+> Since [what we assumed], we have [a consequence]. Therefore [the
+> next consequence]. Hence [the claim].
+
+The connective words — *since*, *we have*, *therefore*, *hence* —
+are not filler. They are the **logic**. They tell the reader that one
+statement follows from another. A justification that drops them
+becomes a list of equations with no stated relationship between them,
+and the reader has to guess at the reasoning. Do not make the reader
+guess.
+
+A worked shape, for "the sum of two even integers is even":
+
+> **Definition.** An integer is *even* if it can be written as $2k$
+> for some integer $k$.
+>
+> **Claim.** If $m$ and $n$ are even integers, then $m + n$ is even.
+>
+> **Justification.** Since $m$ and $n$ are even, we can write
+> $m = 2a$ and $n = 2b$ for integers $a$ and $b$. Then
+>
+> $$
+> m + n = 2a + 2b = 2(a + b).
+> $$
+>
+> Because $a + b$ is an integer, $m + n$ has the form $2 \times
+> (\text{an integer})$, which is the definition of even. Therefore
+> $m + n$ is even.
+
+Notice what the displayed equation is doing: it is **a step of the
+argument**, not decoration. The prose before it sets it up ("we can
+write…"), and the prose after it interprets it ("because $a + b$ is
+an integer…"). The equation and the prose work together.
+
+## Prose matters as much as the equations
+
+In Week 2 the equations were the point. In Week 3 the **prose
+carries the logic**, and the equations carry the algebra. Neither
+alone is a justification.
+
+A useful test: read your writeup with the displayed equations covered
+up. Can you still follow the argument from the prose alone? If the
+prose by itself is a sequence of "since… therefore…" steps that reach
+the claim, you have written a justification. If covering the equations
+leaves a few disconnected sentences, your prose is doing too little.
+
+Then read it the other way: with the prose covered, is there a
+displayed equation that does real work — a step the argument actually
+needs? If the only equations are restatements of the claim, your
+math is decorative.
+
+## How to mark structure: headings and bold labels
+
+You do **not** need theorem environments, `amsthm`, or raw `.tex` to
+mark structure. The required mechanism for this course is the simplest
+robust one: **ordinary headings plus bold labels**. Begin the
+relevant paragraph with a bold lead-in:
+
+```
+**Definition.** An integer is *even* if it equals $2k$ for some
+integer $k$.
+
+**Claim.** If $m$ and $n$ are even, then $m + n$ is even.
+
+**Example.** With $m = 4$ and $n = 6$, $m + n = 10$ is even.
+
+**Justification.** Since $m$ and $n$ are even, write $m = 2a$ and
+$n = 2b$ ...
+```
+
+When this renders, each labeled paragraph stands out, and a reader
+skimming the PDF can find the parts instantly. You can also use
+section headings (`##`) to separate a "Setup," a "Claim and example,"
+and a "Justification" section — whatever makes the structure most
+visible. The goal is simply that **the parts are distinguishable on
+the page**.
+
+## How to avoid "equation dump" writing
+
+The most common Week 3 failure is the **equation dump**: a column of
+displayed equations with no prose saying what is being claimed or why
+each step follows. It is the Week 3 version of Week 2's "math that
+renders but is wrong" — it compiles, it looks mathematical, and it
+communicates nothing.
+
+The cure is structural. Before you write a single equation, write the
+**claim** in words. Then, for each displayed equation, make sure there
+is prose **before it** that sets it up and prose **after it** that
+says what it gives you. If a displayed equation has no sentence
+explaining why it is there, either add one or delete the equation.
+
+A short, well-explained argument beats a long wall of symbols. One
+page of reasoning a reader can follow is the target — not length.
+
+## Rendering now includes inspecting the logic
+
+Week 2 built the habit of rendering and **looking at the PDF** to
+check the formatting. Week 3 extends that habit to a second layer.
+When you open your rendered PDF, inspect it twice:
+
+1. **Formatting (the Week 2 check).** Are the symbols, fractions,
+   subscripts, and aligned `=` signs the way you intended?
+2. **Structure and logic (new in Week 3).**
+   - Can a reader find the definition, the claim, the example, and
+     the justification? Are the parts visually distinct?
+   - Does the justification argue the claim you actually **stated** —
+     not a different or weaker one?
+   - Does every displayed equation support a step of the reasoning?
+   - Is every symbol you use introduced in the setup before it
+     appears?
+
+A render that succeeds is not an argument that works. The only way to
+catch a justification that proves the wrong thing is to **read the
+rendered PDF as a skeptical reader would** and follow the logic.
+
+## AI can help with structure — but cannot verify your reasoning
+
+You may use AI assistants for Week 3 work, as for any technical
+writing in this course. AI is genuinely useful for:
+
+- suggesting an **outline** ("how should I structure an argument that
+  the product of two odd numbers is odd?"),
+- explaining how to **mark structure** clearly in a document,
+- **revising the connective prose** so the "since… therefore…" steps
+  read cleanly,
+- **diagnosing a render error**,
+- **proposing an example** to illustrate a claim.
+
+What AI is **not** is a verifier of reasoning. AI assistants are
+fluent at producing **proof-shaped text** — paragraphs that look like
+a proof, read smoothly, and are sometimes wrong: they prove a
+different statement, skip the load-bearing step, or assert "clearly"
+where the actual work should be.
+
+The course rule from Weeks 1–2 applies with extra force here: **AI is
+a first pass, not a verdict.** Any AI-suggested reasoning must be read
+step by step, checked against the claim you stated, and rewritten in
+your own words. If you cannot explain a step, you have not verified
+it — and it does not belong in your writeup.
+
+The three-line **AI Use Note** (Tool / Purpose / Verification) applies
+to Week 3 work. For Week 3 the Verification line should describe how
+you confirmed the **reasoning** is correct, for example:
+
+> **Verification:** rewrote the justification in my own words and
+> checked that each step followed from the definition; confirmed the
+> final sentence restates the claim I made.
+
+See the [AI use guidelines](../resources/ai-use-guidelines.qmd) for
+the full course position.
+
+## Optional level-up: Quarto's theorem blocks
+
+::: {.callout-note collapse="true"}
+## Optional — not required for Week 3
+
+If you want auto-numbered, formally styled statement blocks, Quarto
+has a native theorem/proof feature using fenced divs, e.g.
+
+````
+::: {#thm-evens}
+## Sum of two even integers
+The sum of two even integers is even.
+:::
+
+::: {.proof}
+Let $m = 2a$ and $n = 2b$ ...
+:::
+````
+
+These render to numbered "Theorem 1," "Definition 1," "Proof" blocks.
+They are a nice touch, but they are **entirely optional** for this
+course and **not** required. The required, fully supported mechanism
+for Week 3 is **headings plus bold labels**, which is simpler and
+never fights the PDF renderer. Reach for theorem blocks only if you
+are comfortable and want the extra polish — and verify they render the
+way you expect, the same as any other markup.
+:::
+
+## What you'll do this week
+
+The Week 3 work, in one paragraph:
+
+You will create a Week 3 portfolio subfolder, start a new `.qmd`
+source file in VS Code, and write a short **structured** mathematical
+writeup on a familiar statement — a setup, a clearly marked claim, an
+example, and a justification, with at least one displayed equation
+doing real work in the reasoning. You will render it to PDF and
+inspect it on both levels: formatting, and the logic and structure.
+The
+[Writing a Claim, Example, and Justification in Quarto](../labs/lab03-claim-example-justification.qmd)
+walkthrough takes you through it step by step. The exact assignment
+prompt and submission details live in the **Assignments/LMS space**.
+
+A light look ahead: Week 4 includes a required **LaTeX checkpoint
+conference**, where you will discuss the scope of your LaTeX Project.
+The structured-writing habit you build this week is exactly what that
+project will rely on.
+
+## See also
+
+- [Writing a Claim, Example, and Justification in Quarto](../labs/lab03-claim-example-justification.qmd) —
+  the hands-on walkthrough for Week 3.
+- [Week 2 — Writing mathematics from source](week02-latex-foundations.qmd) —
+  the LaTeX-math-syntax foundations this note builds on.
+- [Software setup](../resources/software-setup.qmd) — reference
+  summary of the VS Code + R + Quarto + TinyTeX stack.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the
+  course's position on AI assistance and the AI Use Note format.

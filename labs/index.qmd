@@ -19,13 +19,16 @@ help.
 - [Lab 2 — First LaTeX math](lab02-first-latex-math.qmd) — write,
   render, and visually verify a short mathematical document in
   Quarto.
+- [Lab 3 — Writing a Claim, Example, and Justification in Quarto](lab03-claim-example-justification.qmd) —
+  structure a short mathematical writeup with a setup, claim, example,
+  and justification, then inspect for logic, not just formatting.
 
 ## Planned
 
 Labs are added as the course is built. The rough plan, aligned with
 the weekly module spine:
 
-- Lab 3 — Theorem environments and a bibliography *(Weeks 3–4)*
+- Lab 4 — Figures, tables, and a bibliography that compiles *(Week 4)*
 - Lab 5 — A tour of a tidy dataset in R *(Week 7)*
 - Lab 6 — A `ggplot2` walkthrough *(Week 8)*
 - Lab 7 — A small reproducible simulation in R *(Week 9)*
