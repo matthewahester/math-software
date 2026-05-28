@@ -37,11 +37,13 @@ website:
         contents:
           - notes/index.qmd
           - notes/week01-first-render.qmd
+          - notes/week02-latex-foundations.qmd
       - section: "Labs"
         href: labs/index.qmd
         contents:
           - labs/index.qmd
           - labs/lab01-install-stack.qmd
+          - labs/lab02-first-latex-math.qmd
       - section: "Examples"
         href: examples/index.qmd
         contents:

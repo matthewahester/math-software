@@ -1,0 +1,344 @@
+---
+title: "Week 2 — Writing mathematics from source"
+subtitle: "LaTeX math syntax inside Quarto, and rendering as verification"
+toc: true
+---
+
+> A short conceptual reading to accompany the Week 2 work on
+> mathematical typesetting. The hands-on walkthrough lives in
+> [Lab 2 — First LaTeX math](../labs/lab02-first-latex-math.qmd).
+
+Week 1 got the chain running end-to-end: source `.qmd`, render, PDF
+in your portfolio folder. Week 2 starts using that chain to write
+**real mathematics**.
+
+The Week 2 job is to make this loop feel routine:
+
+> intended math → source → render → look at the PDF → fix → render again
+
+The vocabulary you use to write math in the source is **LaTeX math
+syntax**. We are not yet writing raw `.tex` files. For Week 2 you
+keep working inside Quarto `.qmd` documents in VS Code — the same
+workflow you set up in Week 1 — and Quarto hands the math off to
+LaTeX (through TinyTeX) when it renders to PDF. That keeps the
+typesetting muscle isolated to one new thing at a time: **the math,
+not the project structure**.
+
+## Mathematical writing is source-based technical writing
+
+In this course, mathematics is **written, not pasted**. Your
+equations live in the same `.qmd` source file as your prose, in a
+typeable text form that you can edit, search, version, and re-render.
+The PDF is the *evidence* that the source says what you mean — it is
+not the artifact you keep.
+
+Three reasons that matters:
+
+1. **Editable.** A typeset equation in source can be revised in place
+   — change a subscript, fix a denominator, add an intermediate step
+   — and re-rendered in seconds. A picture of an equation can't be
+   edited; it can only be replaced.
+2. **Searchable and diffable.** Your future self (or a collaborator,
+   or a grader) can search for `\sigma^2` or `\int_0^\infty` and find
+   it. They can diff two drafts of an argument and see the changes.
+3. **Reproducible.** A `.qmd` that compiles today on your machine
+   compiles tomorrow on a different machine with the same stack. A
+   screenshot is not reproducible — it is a single image, locked at
+   one resolution, in one rendering of one editor on one day.
+
+## Why we do not paste screenshots of equations
+
+You will encounter screenshots of equations in slides, in PDFs of old
+notes, and in chat threads. They are convenient for one-way reading
+and they are **not acceptable** in this course's submitted work.
+
+A screenshot of an equation:
+
+- cannot be edited if you mistyped it,
+- cannot be searched or referenced symbolically,
+- cannot be re-typeset in a different size or output (HTML vs PDF),
+- depends on the original rendering's resolution and may pixelate,
+- breaks the principle that **the source is the artifact**.
+
+If you can read an equation, you can typeset it. The Week 2 lab
+walks through how.
+
+## Source vs rendered mathematics
+
+You write math in a text form like
+
+```
+$$
+\int_0^1 x^2 \, dx = \frac{1}{3}
+$$
+```
+
+and the renderer produces
+
+$$
+\int_0^1 x^2 \, dx = \frac{1}{3}.
+$$
+
+The text form is **source mathematics**. The typeset form is
+**rendered mathematics**. They carry the same information. Source is
+the form you write and keep; rendered is the form you read and check.
+
+The implication is the same one from Week 1, said again for math:
+**rendering is verification.** A source equation that compiles
+without errors is *not* automatically a correct equation — it is an
+equation the renderer was able to draw. Whether it is the equation
+you meant to write is something you confirm by **looking at the
+rendered PDF**.
+
+## Inline math vs displayed math
+
+Math comes in two flavors based on how it sits in the prose.
+
+**Inline math** is written between single dollar signs and flows
+with the surrounding text: the variance $\sigma^2$ is the expected
+squared deviation. You write it as `$\sigma^2$` and you use it for
+short symbols and tiny expressions that read naturally as part of a
+sentence.
+
+**Displayed math** is written between double dollar signs (or inside
+a math environment) and gets its own centered line:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+$$
+
+You write it as `$$ ... $$` and you use it whenever the equation is
+the thing you want the reader to look at — derivations, theorems,
+formulas, anything where the symbols and structure need room.
+
+A rule of thumb: if the equation has a fraction, a square root with
+a long argument, a summation, an integral, or runs longer than a few
+characters, **display it**. Inline math with stacked subscripts and
+superscripts collapses into something dense and ugly.
+
+## Math mode is a different writing mode
+
+Inside the dollar signs, you are in **math mode**. The renderer
+interprets characters differently than it does in prose. Three
+specific things change:
+
+1. **Variables come out italic.** `$x$` renders as $x$, not as the
+   upright text letter $\mathrm{x}$. This is a feature, not a bug:
+   conventional mathematical notation italicizes variables and
+   uprights operators.
+2. **Operators have their own commands.** Multiplication is `\cdot`
+   (or `\times`), not `*`. Less-than-or-equal-to is `\leq`, not
+   the Unicode `≤`. Functions like $\sin$, $\cos$, $\log$ are
+   `\sin`, `\cos`, `\log`. Writing them as bare letters
+   (`sin`, `cos`) makes them italic, as if they were variables.
+3. **Spacing is automatic.** You do not put spaces to make math look
+   right; the math engine handles spacing based on the structure.
+   `$a+b$` and `$a + b$` render identically.
+
+When something in your math looks "off" — variables look upright,
+operators look italic, weird spacing — the answer is almost always:
+you slipped out of math mode somewhere, or you wrote a Unicode
+symbol where a LaTeX command was expected.
+
+## A small core vocabulary of LaTeX math syntax
+
+You do not need to memorize a textbook of LaTeX commands to write
+Week 2's mathematics. The working vocabulary is small.
+
+**Powers and indices**
+
+- `x^2` for superscripts: $x^2$
+- `x_i` for subscripts: $x_i$
+- `x^{ij}` and `x_{ij}` when more than one character: $x^{ij}$,
+  $x_{ij}$ (the braces are how the renderer knows where the
+  super- or subscript ends)
+
+**Fractions and roots**
+
+- `\frac{a}{b}` for a real fraction with a bar: $\frac{a}{b}$
+- `\sqrt{x}` for square root: $\sqrt{x}$
+- `\sqrt[n]{x}` for $n$-th root: $\sqrt[3]{x}$
+
+The same expressions read more naturally in displayed math, where
+the renderer has room to give them their full size. For example,
+
+$$
+\sqrt[3]{x + y + z} \quad \text{and} \quad \frac{a + b}{c + d}.
+$$
+
+In general, if a fraction or a root has anything more than a single
+character inside it, display the equation.
+
+**Operators that take limits and ranges**
+
+- `\sum_{i=1}^n a_i` for a sum: $\sum_{i=1}^n a_i$
+- `\int_0^1 f(x)\, dx` for an integral: $\int_0^1 f(x)\, dx$
+- `\lim_{x \to 0}` for a limit: $\lim_{x \to 0}$
+
+(These look much better in displayed math than in inline math.)
+
+**Greek letters**
+
+- `\alpha`, `\beta`, `\gamma`, `\Delta`, `\sigma`, `\Sigma`,
+  `\theta`, `\pi`, `\mu`, … — lowercase is lowercase Greek, uppercase
+  is the capital form.
+
+**Relations and set notation**
+
+- `\leq`, `\geq`, `\neq`, `\approx`, `\sim`, `\in`, `\notin`,
+  `\subset`, `\subseteq`.
+
+**Parentheses that grow with what they hold**
+
+- `\left( \frac{a}{b} \right)` produces $\left( \frac{a}{b} \right)$
+  with the parentheses sized to match the fraction. Compare
+  `( \frac{a}{b} )` which gives $( \frac{a}{b} )$ — short
+  parentheses around tall content. Always pair `\left` with `\right`.
+- `\bigl( ... \bigr)` (and the larger `\Bigl/\Bigr`, `\biggl/\biggr`)
+  give you parentheses at a fixed step up in size — sometimes a
+  cleaner, less aggressive choice than the fully automatic
+  `\left/\right`, which can over-size around taller-than-expected
+  content. Reach for `\bigl/\bigr` when you want one step up; reach
+  for `\left/\right` when you want the parentheses to match
+  whatever is inside them.
+
+**Aligned multi-line equations**
+
+When you have a chain of equalities or a multi-step manipulation,
+use the `align` environment inside a display:
+
+```
+$$
+\begin{aligned}
+(a + b)^2 &= (a + b)(a + b) \\
+         &= a^2 + 2ab + b^2.
+\end{aligned}
+$$
+```
+
+The `&` is the alignment marker — every line lines up at the `&`.
+The `\\` ends a line. The output reads as a clean column-aligned
+derivation:
+
+$$
+\begin{aligned}
+(a + b)^2 &= (a + b)(a + b) \\
+         &= a^2 + 2ab + b^2.
+\end{aligned}
+$$
+
+You will reach for `align` whenever you have more than one line of
+math that needs to read as a connected argument.
+
+## Rendering as verification
+
+Render is not the last step. Render is the **check**. The Week 2
+workflow looks the same as Week 1, with one new failure category:
+
+1. Write the math in source.
+2. Render the document.
+3. **Look at the rendered PDF.** Ask: is the numerator the right
+   expression? Is the subscript attached to the right symbol? Do the
+   parentheses scale around the right thing? Is the upper bound of
+   the sum what I meant?
+4. If anything does not match what you intended, fix the source and
+   render again.
+
+A render that succeeds without errors is not a render that is
+correct. The most common Week 2 failure mode is **math that
+renders but is wrong** — a `\frac{x+1}{x-1}` that displays
+beautifully and is not the equation you meant. Source-based math is
+worth the trouble *because* it makes that failure visible: you can
+see, on a clean PDF page, exactly what your source said.
+
+## Visual inspection of rendered mathematics
+
+When you look at the rendered PDF, here is the short list of things
+to check:
+
+- **Are the variables italic and the operators upright?** If `sin`
+  came out italic, you wrote `sin` instead of `\sin`.
+- **Are super- and subscripts on the right symbol?** `x^2 + y_i`
+  should have the `2` attached to the `x` and the `i` attached to
+  the `y`. If a subscript appears under a sum sign instead of next to
+  the variable, you forgot braces.
+- **Did `\frac` produce a real horizontal-bar fraction?** If you see
+  `x+1/x-1` rendered as text instead of a stacked fraction, you
+  forgot the `\frac{...}{...}` braces or wrote `frac` without the
+  backslash.
+- **Are the parentheses sized to their contents?** Tall fractions
+  inside short `(...)` look cramped. Switch to `\left( ... \right)`.
+- **Do the sum / integral bounds appear above and below?** They will
+  in displayed math; they collapse to the side in inline math.
+  Display the equation.
+- **Does the line in an aligned equation line up at `=`?** If not,
+  you are missing the `&` immediately before `=` on each line.
+
+This is the verification habit Week 2 is building. It is the same
+verification habit you will use for R figures in Week 8 and for the
+final portfolio in Week 15.
+
+## AI can help with syntax — but cannot be trusted without rendering
+
+You may use AI assistants for math typesetting from Week 2 forward,
+exactly as you do for any other technical-writing problem in this
+course. AI is genuinely useful for:
+
+- looking up a symbol you've forgotten,
+- generating a starting LaTeX expression for an equation you
+  describe in words,
+- diagnosing a cryptic LaTeX error message,
+- suggesting a cleaner way to typeset a derivation you already have.
+
+What AI is **not** is a verifier. A LaTeX assistant will happily
+produce syntax that:
+
+- compiles cleanly and is the wrong equation,
+- looks plausible and uses a deprecated or environment-mismatched
+  command,
+- mixes Unicode math symbols with LaTeX commands so it renders on
+  one machine and fails on another,
+- silently changes a `+` to a `-`, a subscript to a superscript, or
+  a $\leq$ to a $<$.
+
+The course-wide rule from Week 1 applies with extra force in Week 2:
+**AI is a first pass, not a verdict.** You render every piece of
+AI-suggested LaTeX and **look at the PDF**. If the PDF does not
+match the mathematics you intended, the AI's syntax is wrong,
+regardless of how confident it sounded.
+
+The same three-line **AI Use Note** (Tool / Purpose / Verification)
+applies to Week 2 work. The Verification line is where you say what
+you rendered and what you checked it against. For Week 2 that often
+reads something like:
+
+> **Verification:** rendered the PDF and compared each equation to
+> my hand-written derivation; corrected one wrong subscript on the
+> second line of the aligned block.
+
+See the [AI use guidelines](../resources/ai-use-guidelines.qmd) for
+the full course position.
+
+## What you'll do this week
+
+The Week 2 work, in one paragraph:
+
+You will create a Week 2 portfolio subfolder, start a new `.qmd`
+source file in VS Code, write a short mathematical writeup on a
+familiar topic, render it to PDF, and visually verify that the
+rendered mathematics matches what you intended. The
+[Lab 2 walkthrough](../labs/lab02-first-latex-math.qmd) takes you
+step by step through that workflow, including the common syntax
+mistakes and how to recover from them. The exact assignment prompt
+and submission details live in the **Assignments/LMS space**.
+
+## See also
+
+- [Lab 2 — First LaTeX math](../labs/lab02-first-latex-math.qmd) —
+  the hands-on walkthrough for Week 2.
+- [Week 1 — Your first render](week01-first-render.qmd) — the
+  source-vs-rendered framing this note builds on.
+- [Software setup](../resources/software-setup.qmd) — reference
+  summary of the VS Code + R + Quarto + TinyTeX stack.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the
+  course's position on AI assistance and the AI Use Note format.

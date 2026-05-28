@@ -39,7 +39,7 @@ These are installed from inside VS Code (Extensions sidebar, or
 
 | Extension | Publisher | Required? |
 |------|-------|-----------|
-| **Quarto** | quarto.quarto | Yes — adds the Render button and `.qmd` support. |
+| **Quarto** | quarto.quarto | Yes — adds the **Quarto: Preview** command (`Ctrl/Cmd + Shift + K`) and `.qmd` support. |
 | **R** | REditorSupport | Yes — R syntax, terminal integration, help. |
 | **vscode-pdf** | tomoki1207 | Optional — preview rendered PDFs inside VS Code. |
 | **GitLens** / **GitHub Pull Requests** | (various) | Optional — only if you use Git/GitHub. |
@@ -118,6 +118,17 @@ computer.
   `PATH` manually.
 - **R chunk doesn't run in Quarto.** Make sure the fence is
   `` ```{r} `` (lowercase r, no spaces inside the braces).
+- **No Quarto commands, or the file shows as "Plain Text".** Check the
+  **lower-right corner** of VS Code. If it says **Plain Text**, click
+  it and choose **Quarto** (or **Markdown**); confirm the Quarto
+  extension is installed and the file ends in `.qmd`. To render,
+  press `Ctrl/Cmd + Shift + P` → **Quarto: Preview** (or
+  `Ctrl/Cmd + Shift + K`); the terminal command `quarto render
+  yourfile.qmd` always works as a fallback.
+- **"No valid input files passed to render".** Your terminal is not in
+  the folder that holds the `.qmd`, or the filename is misspelled.
+  `cd` into the right folder, run `ls` / `dir` to confirm the file is
+  there, and check the spelling in your `quarto render` command.
 - **PDF compiles but math is missing.** You probably wrote `\$x\$`
   instead of `$x$`. Drop the backslashes.
 - **Mac asks for permission to access folders.** macOS sandboxing

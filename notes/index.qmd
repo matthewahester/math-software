@@ -14,6 +14,10 @@ the course LMS.
   files, rendered outputs, Quarto as the course container, AI as
   first-pass help, and the Setup conference as the first workflow
   check.
+- [Week 2 — Writing mathematics from source](week02-latex-foundations.qmd) —
+  LaTeX math syntax inside Quarto, inline vs displayed math, the
+  small core vocabulary, rendering as verification, visually
+  inspecting math in the PDF, and AI assistance with verification.
 
 ## Planned
 
@@ -22,7 +26,6 @@ follows the module spine:
 
 **LaTeX block (Weeks 2–6)**
 
-- Week 2 — LaTeX, demystified
 - Week 3 — Theorem-proof typesetting and aligned equations
 - Week 4 — Figures, tables, and a bibliography that actually compiles
 - Week 5 — Picking a paper to replicate

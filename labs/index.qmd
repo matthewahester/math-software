@@ -16,15 +16,16 @@ help.
 ## Available
 
 - [Lab 1 — Install the stack (VS Code, R, Quarto, TinyTeX)](lab01-install-stack.qmd)
+- [Lab 2 — First LaTeX math](lab02-first-latex-math.qmd) — write,
+  render, and visually verify a short mathematical document in
+  Quarto.
 
 ## Planned
 
 Labs are added as the course is built. The rough plan, aligned with
 the weekly module spine:
 
-- Lab 2 — First Quarto document with R and math *(Weeks 1–2)*
-- Lab 3 — Writing math in LaTeX *(Weeks 2–3)*
-- Lab 4 — Theorem environments and a bibliography *(Weeks 3–4)*
+- Lab 3 — Theorem environments and a bibliography *(Weeks 3–4)*
 - Lab 5 — A tour of a tidy dataset in R *(Week 7)*
 - Lab 6 — A `ggplot2` walkthrough *(Week 8)*
 - Lab 7 — A small reproducible simulation in R *(Week 9)*

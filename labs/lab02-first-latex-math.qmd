@@ -1,0 +1,348 @@
+---
+title: "Lab 2 — First LaTeX math"
+subtitle: "Write, render, and visually verify a short mathematical document in Quarto"
+toc: true
+---
+
+This lab walks through producing a short mathematical writeup in
+Quarto, using LaTeX math syntax inside a `.qmd` document. It is the
+practical companion to
+[Week 2 — Writing mathematics from source](../notes/week02-latex-foundations.qmd),
+which is the short conceptual reading for Week 2.
+
+You should already have the stack from
+[Lab 1](lab01-install-stack.qmd) installed and working: **VS Code**
+with the **Quarto** and **R** extensions, **R**, **Quarto**, and
+**TinyTeX**. If your Week 1 `hw01/` document rendered to PDF, you
+are ready.
+
+## What you'll have at the end
+
+- A new `hw02/` subfolder in your `math-software-portfolio/`.
+- A `.qmd` source file in that folder with prose, section headings,
+  inline math, displayed math, and at least one multi-line aligned
+  equation.
+- A rendered PDF of that file, with every piece of mathematics
+  visually checked against what you intended.
+- A short **AI Use Note** in the standard three-line Tool / Purpose
+  / Verification format (only required if you used AI assistance).
+
+The exact assignment prompt and submission details for Week 2 live
+in the **Assignments/LMS space**.
+
+## 1. Create a Week 2 portfolio subfolder
+
+Inside your `math-software-portfolio/` folder (the one you set up
+in Week 1), create a new subfolder called `hw02/`. The full path will
+look like:
+
+- macOS / Linux: `~/Documents/math-software-portfolio/hw02/`
+- Windows: `C:\Users\YourName\Documents\math-software-portfolio\hw02\`
+
+This is where your Week 2 source file and rendered PDF will live.
+Keep both files in this folder for the rest of the semester.
+
+## 2. Open the `hw02/` folder in VS Code
+
+From VS Code: **File → Open Folder…** and pick the `hw02/` folder.
+
+Opening the folder (not a single file) is what lets the Quarto
+extension treat your work as a workspace — the **Quarto: Preview**
+command, file explorer, and integrated terminal all behave better
+with a folder open.
+
+## 3. Create a `.qmd` source file
+
+In VS Code's Explorer sidebar, create a new file inside `hw02/`. For
+this walkthrough, call it `week02-math.qmd`. (The exact file name
+for the submitted assignment is specified in the
+**Assignments/LMS space**.)
+
+Paste this starter content as the top of your new file:
+
+````markdown
+---
+title: "Week 2 — A short mathematical writeup"
+author: "YOUR NAME"
+format:
+  pdf: default
+---
+
+# Introduction
+
+A short paragraph of prose introducing what you're going to typeset.
+
+# The mathematics
+
+More prose, then equations, then more prose.
+
+# Conclusion
+
+A short closing paragraph.
+````
+
+The YAML at the top is the **title block**. `format: pdf` tells
+Quarto to produce a PDF. (You can add `html: default` on a new line
+if you also want an HTML version.)
+
+The three `#` lines are **section headings**. They will appear in
+the rendered PDF as numbered sections (or labeled sections,
+depending on the format).
+
+## 4. Write prose around the math
+
+The mathematical writing matters. **Prose** is what tells the reader
+what an equation means. The grade is not "did you type LaTeX
+correctly"; the grade is "can a reader follow a piece of
+mathematics from your document."
+
+A typical paragraph might look like:
+
+> The quadratic formula gives the roots of a quadratic equation
+> $ax^2 + bx + c = 0$. We derive it by completing the square,
+> isolating $x$ on the left side, and solving the resulting square
+> root.
+
+Notice the prose introduces the equation, names what the symbols
+mean, and gestures at *why* the result holds. Bare equations
+floating without context are hard to read.
+
+## 5. Write inline math
+
+**Inline math** sits between single dollar signs and reads as part
+of a sentence. Add a sentence or two with inline math to your
+writeup. Examples:
+
+```
+The slope of the line $y = mx + b$ is the coefficient $m$.
+
+The Pythagorean theorem states that $a^2 + b^2 = c^2$ for the legs
+$a$ and $b$ and hypotenuse $c$ of a right triangle.
+
+Let $f(x) = x^2 + 3x + 2$. The roots of $f$ are the values of $x$
+for which $f(x) = 0$.
+```
+
+Use inline math for short expressions that fit in a line of prose:
+single variables, short formulas, named constants.
+
+## 6. Write displayed math
+
+**Displayed math** sits between double dollar signs and gets its
+own centered line. Add at least one displayed equation:
+
+```
+The quadratic formula is
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+$$
+```
+
+Display equations when:
+
+- the equation is the thing the reader should look at,
+- the equation contains a fraction, a square root with non-trivial
+  contents, a summation, an integral, or a limit,
+- the equation runs longer than a few characters.
+
+A useful pattern: introduce the equation in prose, display it, then
+say one sentence about what it means.
+
+## 7. Write one aligned multi-line equation
+
+When you have a chain of equalities or a multi-step manipulation,
+the `aligned` environment inside `$$ ... $$` is what you want:
+
+```
+Expanding $(a + b)^2$ gives
+
+$$
+\begin{aligned}
+(a + b)^2 &= (a + b)(a + b) \\
+         &= a^2 + ab + ab + b^2 \\
+         &= a^2 + 2ab + b^2.
+\end{aligned}
+$$
+```
+
+Two pieces of syntax to notice:
+
+- The `&` immediately before each `=` is the **alignment marker**.
+  Every line lines up at that `&`.
+- The `\\` at the end of each line (except the last) is the
+  **line break**.
+
+Add one aligned block somewhere in your document. It can be a
+derivation, a worked example, or any place where you want a column
+of equations rather than a single equation.
+
+## 8. Render to PDF
+
+Render the file exactly the way you rendered `hw01.qmd` in Week 1.
+**Either method works:**
+
+- **Preferred — Quarto: Preview.** Open `week02-math.qmd` in the
+  editor, then press `Ctrl/Cmd + Shift + P` and run **Quarto:
+  Preview**, or press `Ctrl/Cmd + Shift + K`. (If the Quarto
+  extension shows a **Preview** button in the upper-right editor
+  toolbar, that works too.)
+- **Always works — terminal.** Open VS Code's integrated terminal
+  (View → Terminal), make sure it is in the `hw02/` folder, then
+  run:
+
+  ```bash
+  quarto render week02-math.qmd
+  ```
+
+A PDF file (`week02-math.pdf`) should appear next to your `.qmd`.
+
+If VS Code shows no Quarto commands, check the **lower-right corner**
+of the window: if it says **Plain Text**, click it and choose
+**Quarto** (or **Markdown**), and confirm the Quarto extension is
+installed. If the terminal says **"No valid input files passed to
+render,"** the terminal is in the wrong folder or the filename is
+misspelled — confirm `week02-math.qmd` is in the current folder.
+
+## 9. Inspect the rendered PDF
+
+Open the PDF and **look carefully**. This is the load-bearing step
+of the Week 2 workflow. The render succeeding is not the same as
+the math being correct.
+
+Go equation by equation. For each one, ask:
+
+- **Are the variables italic and the operators upright?** If `\sin`
+  looks italic, you probably wrote `sin` instead.
+- **Is the right thing in the numerator?** A `\frac{x+1}{x-1}` should
+  show `x + 1` over `x - 1`, with a horizontal bar between them. If
+  you see `x+1/x-1` as raw text, you forgot the braces or the
+  backslash.
+- **Is the subscript on the right symbol?** `x^2 + y_i` should put
+  the `2` on the `x` and the `i` on the `y`.
+- **Are the parentheses sized correctly?** Tall fractions inside
+  short `(...)` look cramped — use `\left( ... \right)`.
+- **In a sum or integral, do the bounds appear above and below the
+  symbol?** They do in displayed math. In inline math they collapse
+  to the side, which is usually not what you want.
+- **In an aligned block, do all the lines line up at `=`?** They
+  should, if you put `&` immediately before each `=`.
+- **And most importantly: is this the equation I meant to write?**
+  Read it the way a reader would. If something is off — a sign, a
+  variable name, a missing term — go back to the source and fix it.
+
+## Common problems
+
+This is the realistic-troubleshooting section. Skim it before you
+start; come back to it when something breaks.
+
+### Missing dollar signs
+
+- **Symptom.** Your equation prints as garbled text in the PDF:
+  `x^2 + y^2 = r^2` instead of a formatted equation.
+- **Fix.** Wrap inline math in `$...$` and displayed math in
+  `$$...$$`. The opening and closing dollars must match.
+
+### Unmatched braces
+
+- **Symptom.** TinyTeX errors out with a message about an unexpected
+  character or end of file, often citing a line number.
+- **Fix.** Every `{` in a LaTeX command needs a matching `}`. The
+  usual culprits are `\frac{...}{...}`, `\sqrt{...}`, and
+  multi-character super/subscripts like `x^{ij}`. The line number in
+  the error message points at (or just after) the broken expression.
+
+### Forgetting backslashes
+
+- **Symptom.** `frac` appears as the literal letters "frac" in your
+  PDF, or `sum` renders as italic letters next to your subscript.
+- **Fix.** LaTeX commands start with a backslash: `\frac`, `\sum`,
+  `\int`, `\sin`, `\cos`, `\leq`, `\alpha`. If a command isn't
+  taking, the most common cause is a missing `\`.
+
+### Copying Unicode symbols instead of LaTeX commands
+
+- **Symptom.** Math sometimes renders, sometimes does not, and looks
+  different on different machines. Or you typed `≤` and got something
+  that looks like a box.
+- **Fix.** Type LaTeX commands, not Unicode glyphs. `\leq` not `≤`,
+  `\infty` not `∞`, `\pm` not `±`, `\cdot` not `·`. Unicode in math
+  mode is fragile.
+
+### Using display math where inline math is better (or vice versa)
+
+- **Symptom.** Either (a) a tiny symbol like $x^2$ stops the flow of
+  the sentence and sits on its own line, looking ridiculous, or (b)
+  a complicated formula appears mid-sentence with collapsed bounds
+  on a summation and barely readable nested fractions.
+- **Fix.** Inline (`$...$`) for short expressions inside prose;
+  displayed (`$$...$$`) for anything you want the reader to
+  contemplate.
+
+### `align` block missing `&`
+
+- **Symptom.** Your multi-line equation renders, but the lines do
+  not line up at `=`. Each line starts at the left margin.
+- **Fix.** Add `&` immediately before each `=` (or whatever you want
+  to align):
+
+  ```
+  \begin{aligned}
+  (a + b)^2 &= (a + b)(a + b) \\
+           &= a^2 + 2ab + b^2.
+  \end{aligned}
+  ```
+
+### Render succeeds but the math is wrong
+
+- **Symptom.** Everything compiles. The PDF looks clean. The
+  equation in the PDF is not the equation you meant to write.
+- **Fix.** This is the most important Week 2 mistake to catch. There
+  is no error message; the only way to find it is to **read the
+  rendered PDF and compare it to your intended math**. Common cases:
+  the wrong sign (`+` vs `-`), the wrong variable, the wrong
+  subscript, an off-by-one in a sum's bounds. Fix the source and
+  re-render.
+
+### AI gives plausible but incorrect LaTeX
+
+- **Symptom.** You asked an AI assistant for the LaTeX for some
+  equation, pasted the result into your document, and the render
+  produced something that compiles cleanly but is not the equation
+  you described.
+- **Fix.** Every piece of AI-suggested LaTeX has to be rendered and
+  **visually verified against the mathematics you intended**. "It
+  compiled" is not verification. If the PDF does not match, the AI's
+  syntax is wrong — fix it in the source and re-render. Record what
+  you checked in your AI Use Note's **Verification** line.
+
+### Render fails with a long, cryptic LaTeX error
+
+- **Symptom.** A wall of red text in the terminal, mentioning files
+  in TinyTeX you have never heard of.
+- **Fix.** Scroll up. Find the first line that mentions a **line
+  number in your `.qmd`** (usually `l.123` or `lines 14 ff`). Open
+  your `.qmd`, go to that line, and look for an unmatched brace, a
+  missing backslash, a stray `&` outside an `align`, or a missing
+  `\end{...}` for an environment you opened.
+
+## What this prepares you to do
+
+When you finish this lab you should be able to:
+
+- write mathematics directly in a `.qmd` source file using LaTeX
+  math syntax,
+- choose between inline and displayed math based on context,
+- typeset fractions, roots, sums, integrals, subscripts,
+  superscripts, Greek letters, and aligned multi-line equations,
+- render the document to PDF in VS Code or from the terminal,
+- visually inspect the rendered PDF and recognize the common Week 2
+  failure modes,
+- recover from typical LaTeX syntax errors by reading the line
+  number in the error message,
+- use AI assistance for syntax lookup or error diagnosis while
+  verifying the rendered output yourself.
+
+The Week 2 assignment in the course LMS uses exactly this workflow.
+The course LMS holds the exact prompt, the file-naming convention,
+and the submission area.

@@ -150,8 +150,20 @@ or press `Ctrl/Cmd + Shift + X`, then search and install:
 
 | Extension | Publisher | What it does for this course |
 |---|---|---|
-| **Quarto** | quarto.quarto | Recognizes `.qmd` files. Adds a **Render** button and a preview pane. Code-cell syntax highlighting. |
+| **Quarto** | quarto.quarto | Recognizes `.qmd` files. Adds the **Quarto: Preview** command (and a preview pane). Code-cell syntax highlighting. |
 | **R** | REditorSupport | R syntax highlighting, R terminal integration, package help. |
+
+::: callout-important
+## Install the Quarto extension, and check the language mode
+The Quarto extension is what makes `.qmd` files work in VS Code. If
+it is not installed, VS Code may treat your file as **Plain Text**
+and none of the Quarto features will activate. After installing it,
+open a `.qmd` file and look at the **lower-right corner of the VS
+Code window**: it should say **Quarto** (or **Quarto Markdown** /
+**Markdown**), not **Plain Text**. If it says **Plain Text**, click
+that label and pick **Quarto** (or **Markdown**) from the list. Also
+confirm the file name actually ends in `.qmd`.
+:::
 
 Optional, install if you'll use them:
 
@@ -242,14 +254,21 @@ mean(x)
 You have two ways to render the file. **Use either; both produce the
 same result.**
 
-**Easiest — VS Code Render button.** Open the `hw01/` folder in
-VS Code (File → Open Folder…). Open `hw01.qmd` in the editor. With
-the Quarto extension installed, you'll see a **Render** button at the
-top right of the editor pane. Click it. The first PDF render can take
-30–60 seconds because TinyTeX is downloading packages on demand.
+**Preferred — VS Code "Quarto: Preview".** Open the `hw01/` folder in
+VS Code (File → Open Folder…). Open `hw01.qmd` in the editor. Then:
 
-**Always works — terminal.** From a terminal (VS Code's integrated
-terminal works fine; you don't need to leave the editor):
+1. Press `Ctrl/Cmd + Shift + P` to open the Command Palette and run
+   **Quarto: Preview**, **or**
+2. press the keyboard shortcut `Ctrl/Cmd + Shift + K`, **or**
+3. if the Quarto extension shows a **Preview** button in the
+   upper-right editor toolbar, click that.
+
+All three do the same thing. The first PDF render can take 30–60
+seconds because TinyTeX is downloading packages on demand.
+
+**Always works — terminal.** Open a terminal **in the folder that
+contains the `.qmd` file** (VS Code's integrated terminal works fine;
+you don't need to leave the editor) and run:
 
 ```bash
 cd path/to/math-software-portfolio/hw01
@@ -325,10 +344,21 @@ start; come back to it when something breaks.
 - **R chunk doesn't run.** Make sure the fenced code block is written
   exactly as ```` ```{r} ```` (lowercase `r`, no extra spaces inside
   the braces).
-- **Render button is missing from the editor.** The Quarto extension
-  is not installed or not enabled. Open the Extensions sidebar,
-  search "Quarto," confirm the publisher is `quarto.quarto`, and
-  install/enable it.
+- **No Quarto commands, or the file shows as "Plain Text".** Look at
+  the **lower-right corner** of the VS Code window. If it says
+  **Plain Text**, the Quarto extension hasn't taken over the file.
+  Click the **Plain Text** label and choose **Quarto** (or
+  **Markdown**). If there is no Quarto option at all, the Quarto
+  extension is not installed or not enabled — open the Extensions
+  sidebar, search "Quarto," confirm the publisher is `quarto.quarto`,
+  and install/enable it. Also confirm the file name ends in `.qmd`.
+  When in doubt, fall back to the terminal: `quarto render hw01.qmd`.
+- **"No valid input files passed to render".** The terminal is not in
+  the folder that holds your `.qmd`, or the filename is misspelled.
+  Run `ls` (mac/Linux) or `dir` (Windows) to confirm `hw01.qmd` is
+  listed in the current folder, `cd` into the right folder if not,
+  and check the spelling of the filename in your `quarto render`
+  command.
 
 ### "I keep finding RStudio instructions online"
 
@@ -338,8 +368,9 @@ identical**. Anything an RStudio tutorial tells you to type at the
 R console works identically when you type it in an R terminal session
 inside VS Code (just run `R` in the terminal, then type). When a
 tutorial says "click the **Render** button in RStudio," the
-equivalent in VS Code is "click the **Render** button in the Quarto
-extension," or run `quarto render` in a terminal.
+equivalent in VS Code is to run **Quarto: Preview** from the Command
+Palette (`Ctrl/Cmd + Shift + P`), press `Ctrl/Cmd + Shift + K`, or
+run `quarto render` in a terminal.
 
 If you already know RStudio well and prefer it for R work, you can
 use it for editing R-only files. The course's standard for all
