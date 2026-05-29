@@ -23,6 +23,12 @@ the course LMS.
   claim, example, and justification; marking structure with headings
   and bold labels; avoiding equation-dump writing; inspecting for
   logic, not just formatting; and AI as a first pass for structure.
+- [Week 4 — Figures, tables, and references](week04-figures-tables-references.qmd) —
+  the supporting apparatus of a technical document in Quarto: included
+  figures and captions, small tables, citations from a `.bib` file
+  with an auto-generated reference list, automatic cross-references,
+  inspecting the PDF for apparatus problems, and the Week 4 LaTeX
+  checkpoint.
 
 ## Planned
 
@@ -31,7 +37,6 @@ follows the module spine:
 
 **LaTeX block (Weeks 2–6)**
 
-- Week 4 — Figures, tables, and a bibliography that actually compiles
 - Week 5 — Picking a paper to replicate
 
 **R block (Weeks 7–10)**

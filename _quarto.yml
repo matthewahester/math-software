@@ -42,6 +42,8 @@ website:
             text: "2 — Writing mathematics from source"
           - href: notes/week03-structuring-mathematical-writing.qmd
             text: "3 — Structuring mathematical writing"
+          - href: notes/week04-figures-tables-references.qmd
+            text: "4 — Figures, tables, and references"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -52,6 +54,8 @@ website:
             text: "2 — First LaTeX math"
           - href: labs/lab03-claim-example-justification.qmd
             text: "3 — Claim, example, and justification"
+          - href: labs/lab04-figure-table-citation.qmd
+            text: "4 — Figure, table, and citation"
       - section: "Examples"
         href: examples/index.qmd
         contents:

@@ -23,7 +23,7 @@ support time you may attend for help or work alongside others.
 | 1 | Setup, Quarto, portfolio folder | Install VS Code, R, Quarto, TinyTeX; first render; portfolio layout | **Setup conference (required)** |
 | 2 | LaTeX foundations | Sectioning, math environments, first math document | — |
 | 3 | Structuring mathematical writing | Setup, claim, example, and justification in Quarto; headings and bold labels; inspecting for logic, not just formatting | — |
-| 4 | Figures, tables, bibliography | `graphicx`, tables, `biblatex` / `natbib` workflow | **LaTeX checkpoint conference (required)** |
+| 4 | Figures, tables, references | Figures, tables, citations, and cross-references in Quarto; the LaTeX checkpoint | **LaTeX checkpoint conference (required)** |
 | 5 | LaTeX Project draft week | Paper pick, scope, one-page outline | — |
 | 6 | LaTeX Project | Studio time for the project | — |
 | 7 | R foundations in VS Code | Vectors, data frames, `dplyr` basics; R + Quarto inside VS Code | **R transition conference (required)** |

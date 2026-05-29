@@ -1,0 +1,202 @@
+---
+title: "Figures, Tables, and References"
+subtitle: "The supporting apparatus of a technical document — and the Week 4 LaTeX checkpoint"
+toc: true
+---
+
+> A short conceptual reading to accompany the Week 4 work on enriching
+> a technical document. The hands-on walkthrough lives in
+> [Adding a Figure, Table, and Citation in Quarto](../labs/lab04-figure-table-citation.qmd).
+
+Week 3 taught you to *organize* mathematical writing — setup, claim,
+example, justification. Week 4 adds the **supporting apparatus** that
+turns structured writing into something that looks and works like a
+small paper: a **figure**, a **table**, and a **citation**, with
+**automatic cross-references** tying them into the prose.
+
+You stay in Quarto `.qmd` this week. You do **not** need raw `.tex`,
+`\documentclass`, a preamble, `graphicx`, or a bibliography package —
+Quarto produces figures, tables, citations, and cross-references for
+you and hands them to LaTeX when it renders to PDF. The new ideas are
+the document *parts*, not a new toolchain.
+
+This is also a **checkpoint week**. The Week 4 LaTeX checkpoint
+conference confirms your core LaTeX skills are working and helps you
+pick a realistic LaTeX Project before the project block begins.
+
+## A technical document is more than prose and math
+
+A page of correct prose and equations is not yet a technical
+document. Papers also **show** things (figures), **organize** things
+(tables), and **stand on** other work (references). These are not
+decoration — they carry information the prose cannot carry as well on
+its own, and a reader expects them.
+
+Week 4's job is to add that apparatus to the structured writing you
+can already do, at small scale: one figure, one table, one citation.
+The skill is making them **work** — captioned, numbered, referred to,
+and real.
+
+## Figures: showing, with a caption
+
+A **figure** is something you show: a diagram, a sketch, a photo, an
+illustration. In a technical document a figure almost always carries a
+**caption** — a sentence below it that says what the figure is. The
+caption matters because a reader often looks at the figures first, and
+a good caption lets a figure be understood on its own.
+
+This week, a figure is an **included image** — a picture file you put
+next to your document and include by name. (Plots generated from data
+with code come later in the course, when you start working in R.) The
+mechanics are simple: you point at an image file, give it a caption,
+and give it a label so you can refer to it by number.
+
+A useful habit: every figure should be **referred to in the prose**
+("as shown in Figure 1, …"). A figure that no sentence points at is
+usually a figure that should not be there.
+
+## Tables: structured comparison
+
+A **table** organizes information into rows and columns so a reader can
+compare values at a glance — something prose does badly. Like a figure,
+a table gets a **caption** that says what it shows.
+
+Keep tables **small and readable**. A table with three columns and a
+few rows communicates; a giant table that overflows the page does not.
+And, as with figures, a table should be **referred to in the prose**
+("Table 1 summarizes …").
+
+## Why technical work cites its sources
+
+Technical writing **cites** the work it builds on: the paper a result
+comes from, the source of a definition, the reference behind a claim.
+Citing sources is partly about credit and partly about letting a
+reader follow the trail — and it is a habit your LaTeX Project will
+depend on, since that project replicates an existing paper.
+
+A citation has two parts: a short **in-text marker** (which renders as
+something like a number or an author–year tag) and a full entry in a
+**reference list** at the end of the document.
+
+### What a `.bib` file does
+
+You keep your references in a small plain-text file — a **`.bib`
+file** (BibTeX format). Each entry describes one source: its author,
+title, year, and so on, under a short **key** you choose. In your
+document you cite a source by its key, and the reference list at the
+end is **generated automatically** from the `.bib` entries you actually
+cited. You write the source once; the document formats and lists it for
+you.
+
+For Week 4 this stays minimal: **one entry, one citation, one
+auto-generated References section.** You are learning the mechanism,
+not managing a hundred-source bibliography.
+
+## Cross-references: "see Figure 1," automatically
+
+When you refer to a figure or table, resist writing "the figure below"
+or "the table above." Those phrases **break** the moment you move
+something or the renderer places it on a different page. Instead, give
+the figure or table a **label** and refer to it by an **automatic
+cross-reference**. The renderer fills in the right number — "Figure 1,"
+"Table 1" — and keeps it correct even if things move, with a clickable
+link in the HTML.
+
+This is the cross-reference idea we held back in Week 3: now that you
+have figures and tables — the things you most need to point at — it
+earns its place. You only need figure and table cross-references this
+week; you do not need to cross-reference equations or sections.
+
+## Inspecting a rendered PDF for apparatus problems
+
+Week 2 and Week 3 built the habit of rendering and **looking at the
+PDF**. Week 4 adds a short apparatus checklist to that habit. After you
+render, check:
+
+- **The figure appears** — not a broken-image box — and has its
+  **caption**.
+- **The table is readable** and **captioned**, and does not overflow
+  the page.
+- **Every cross-reference resolves** to a number. If you see
+  **"Figure ??"** or **"Table ??"**, a label does not match its
+  reference.
+- **The in-text citation renders** and a **References section** appears
+  at the end, listing the source.
+- **The cited source is real.** (See the next section — this is the
+  one a machine cannot check for you.)
+
+A document that renders is not a document that is correct. The
+apparatus has to be *right*, and the only way to know is to read the
+rendered PDF.
+
+## AI can generate the syntax — but cannot verify the source
+
+AI assistants are genuinely useful for Week 4 mechanics: drafting a
+`.bib` entry, formatting a table, suggesting a caption, or diagnosing a
+cross-reference that renders as `??`. Use them as a first pass.
+
+What AI **cannot** do is vouch for a source. Assistants routinely
+**invent citations** — a real-sounding author, title, journal, year,
+and even a DOI, for a paper that **does not exist**. The syntax will be
+perfect and the reference will be fake. A fabricated citation is the
+most serious Week 4 error.
+
+So the course rule from Weeks 1–3 applies with a sharp Week-4 edge:
+**AI is a first pass, not a verdict.** Any reference an assistant gives
+you must be **verified to be real** — find the actual paper or book,
+confirm the author and title, and confirm a DOI or link resolves — and
+any cross-reference it sets up must be confirmed in the rendered PDF.
+
+The three-line **AI Use Note** (Tool / Purpose / Verification) applies.
+For Week 4 the Verification line should describe how you confirmed your
+**source is real** and your **cross-references resolve**, for example:
+
+> **Verification:** confirmed the cited paper exists on the publisher's
+> site and the DOI resolved; rendered the PDF and confirmed the figure
+> and table cross-references showed "Figure 1" / "Table 1" with no
+> `??`.
+
+See the [AI use guidelines](../resources/ai-use-guidelines.qmd) for the
+full course position.
+
+## The Week 4 checkpoint, at a high level
+
+Week 4 includes a required **LaTeX checkpoint conference** — a short,
+low-stakes conversation, not a test. Its purpose is to confirm your
+LaTeX skills are working, look over your figures/tables/references
+workflow, and help you choose a realistic **LaTeX Project** (a short
+replication of an open-access mathematics paper or excerpt) while there
+is still time to adjust the scope.
+
+The most useful thing you can do beforehand is come with **one
+candidate direction** in mind: a paper, excerpt, or topic you might
+replicate, and a rough sense of how big it is. Conference sign-up,
+timing, and any due dates live in the **Assignments/LMS space**.
+
+## What you'll do this week
+
+The Week 4 work, in one paragraph:
+
+You will create a Week 4 portfolio subfolder and write a short enriched
+technical document in Quarto that builds on your Week 3 structured
+writing and adds **one captioned figure** (an included image), **one
+small captioned table**, and **one citation** drawn from a
+`references.bib` file, using **automatic cross-references** to point at
+the figure and table. You will render it to PDF and inspect the
+apparatus — figure, table, cross-references, and References section.
+The
+[Adding a Figure, Table, and Citation in Quarto](../labs/lab04-figure-table-citation.qmd)
+walkthrough takes you through it step by step. The exact assignment
+prompt, submission details, and checkpoint sign-up live in the
+**Assignments/LMS space**.
+
+## See also
+
+- [Adding a Figure, Table, and Citation in Quarto](../labs/lab04-figure-table-citation.qmd) —
+  the hands-on walkthrough for Week 4.
+- [Week 3 — Structuring mathematical writing](week03-structuring-mathematical-writing.qmd) —
+  the structured-writing skill this week's document builds on.
+- [Software setup](../resources/software-setup.qmd) — reference
+  summary of the VS Code + R + Quarto + TinyTeX stack.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the
+  course's position on AI assistance and the AI Use Note format.
