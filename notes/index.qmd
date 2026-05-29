@@ -35,6 +35,12 @@ the course LMS.
   open, bounding the scope to one self-contained unit, turning the unit
   into an annotated outline, and scaffolding a `latex-project/` folder
   that renders a clean skeleton PDF.
+- [Week 6 — Finishing the LaTeX Project](week06-finishing-the-latex-project.qmd) —
+  closing the two-week LaTeX Project: continuing from the Week 5
+  scaffold and finishing in the same `latex-project/` folder,
+  finishing rather than adding, apparatus on demand (only what the
+  unit needs), reading the rendered PDF as the grader will, common
+  late-week debugging checks, and AI in the finishing week.
 
 ## Planned
 

@@ -1,0 +1,226 @@
+---
+title: "Finishing the LaTeX Project"
+subtitle: "Week 6 studio: finish your replication in `latex-project/`, polish it, render the short paper, and submit"
+toc: true
+---
+
+> A short studio reading for **Week 6**, the second and final week of
+> the LaTeX Project. This week is about *finishing*: taking the
+> scaffold you stood up in Week 5 and turning it into a polished
+> short paper. The exact project prompt, rubric, deadline, submission
+> details, and extension procedures live in the
+> **Assignments/LMS space**.
+
+Week 5 was planning and scaffolding. Week 6 is **finishing**.
+
+By now your `latex-project/` folder — set up last week — has a
+title block, a project plan, an annotated outline, a
+`references.bib` with your source, and a clean skeleton PDF render.
+This week you replace the placeholders with the actual replication,
+add only the apparatus your unit needs, polish the prose, render the
+polished PDF, and submit.
+
+There is **no new tool** this week. You stay in Quarto `.qmd`,
+rendering to PDF exactly as you have since Week 1. (Raw `.tex` is
+still optional and not part of the project.)
+
+## What "finishing" looks like
+
+A finished LaTeX Project is **a polished short paper of a few
+pages**. It has:
+
+- a **title block** with your name;
+- a short **introduction** naming the source paper and the
+  self-contained unit you replicated;
+- the **setup or definitions** the unit needs to be self-contained;
+- the **replicated unit** — the theorem and its proof, the
+  derivation, the figure-with-exposition, or the short passage — in
+  **your own words and notation**;
+- at least one **own-words explanation paragraph** in plain prose,
+  so a reader who has not opened the source can follow what the unit
+  says and why it matters;
+- in-text **citations** to the source, and an auto-generated
+  **References section** that resolves cleanly;
+- a captioned **figure or table only if your unit needs one** — see
+  the next section;
+- an **AI Use Note** with three labeled lines — Tool, Purpose,
+  Verification.
+
+The target is "polished short paper, a few pages." The grader
+should be able to read it from the top as a stranger and follow it
+without opening the source.
+
+## Finish, don't add
+
+The most common Week 6 mistake is the pull to **add more** in the
+last few days — a second unit, a longer Discussion, an extra figure,
+a sidebar derivation. That turns a polished short paper into an
+unpolished long one.
+
+By now your unit is locked. **Replicate the unit you locked, in your
+own words, with the source cited, and stop.** A clear, tight
+replication of one self-contained unit is the project. If the unit
+you chose in Week 5 no longer feels manageable, cut it down to a
+smaller piece of the **same source** rather than starting over with a
+new paper.
+
+## Apparatus on demand
+
+You spent Week 4 building captioned figures, captioned tables, and
+citations with cross-references. Those are tools, not a checklist for
+this week. **Use them only where your chosen unit needs them.**
+
+- If your unit **is** a figure or a table — for example, you are
+  replicating a figure and its surrounding exposition — include it,
+  caption it, and cross-reference it where you discuss it in prose.
+- If your unit is a **theorem and its proof, a derivation, or a
+  short passage** that does not need a figure or table, do **not**
+  add one for the sake of having one.
+- Cite the source with `[@yourkey]` and let the auto-generated
+  References section appear at the end. The same Week 4 pattern.
+
+A good short paper uses apparatus where the unit calls for it and
+leaves it out where it does not — a figure for a figure-and-exposition
+unit, no figure for a proof that does not need one.
+
+## Reading the rendered PDF as the grader will
+
+The PDF is the artifact. The clean-render habit from Weeks 1–4 is
+now load-bearing.
+
+Before you submit, open `latex-project.pdf` and read it from the top
+as a stranger would. Confirm:
+
+- the **title block and your name** appear;
+- the **introduction** names the source and the unit clearly;
+- the **setup / definitions** are tight and serve the unit;
+- the **replicated unit** is present, in your own words and
+  notation, and follows step by step;
+- there is at least one **explanation paragraph** in plain prose;
+- every place you lean on the source has a citation, and the
+  **References section** at the end lists the source — no `??`, no
+  `[?]`, no empty list;
+- any figure or table you used is captioned and cross-referenced
+  where you mention it in prose;
+- the **AI Use Note** is present with the three labeled lines.
+
+If anything is off, fix it in the source and re-render. The skeleton
+that rendered cleanly in Week 5 will keep rendering cleanly all
+week if you change one thing at a time and look at the PDF after
+each change.
+
+## Common debugging checks
+
+The five most common late-week failures and one-line fixes:
+
+- **References section is empty or missing.** Confirm
+  `bibliography: references.bib` is in your YAML, that
+  `references.bib` is in the same folder as `latex-project.qmd`,
+  and that your `[@key]` matches the key in the `.bib` file.
+- **`??` somewhere in the PDF.** A citation key or a cross-reference
+  label does not match. Make `[@yourkey]` match the `.bib` key
+  exactly; make `@fig-foo` match the `#fig-foo` on the figure.
+- **A figure does not appear.** The image path is wrong. Keep image
+  files inside `latex-project/` and use a relative path from
+  `latex-project.qmd`.
+- **The math looks ugly.** VS Code may have opened the file as
+  Plain Text. Confirm Quarto or Markdown in the lower-right of VS
+  Code (and that the Quarto extension is installed), then re-render.
+- **A render that worked last night fails today.** Roll back to the
+  last clean state and re-apply your edit in smaller steps until
+  you find the change that broke it.
+
+For a longer walkthrough of the rendering toolchain, see
+[Software setup](../resources/software-setup.qmd).
+
+## AI in the finishing week
+
+AI assistants are useful for the finishing work: they can **tighten
+prose**, **catch a math typo**, **debug a render error**, **suggest
+a transition**, or **re-explain a step in the source in plain
+language** that you then re-write in your own words and notation.
+
+There are two things AI **must not** do this week:
+
+- **Invent or replace your mathematics.** If the assistant offers a
+  "cleaner" proof or derivation that is not in your source, you are
+  no longer replicating your source. Stick to the unit you cited.
+- **Generate citations you did not verify.** AI fabricates DOIs,
+  journals, page numbers, and authors. Anything in
+  `references.bib` is your responsibility to confirm — the same
+  rule as Week 5.
+
+The three-line **AI Use Note** (Tool / Purpose / Verification)
+applies, and this week the load-bearing Verification line shifts.
+In Week 5 you verified your **source was real and open**; in Week
+6 you verify your **replication is faithful to that source**. A
+useful Week-6-shaped Verification example:
+
+> **Verification:** opened the source PDF and re-read the proof of
+> Theorem 1 line by line, confirmed each algebra step in my
+> replication matches the source's, and rendered the polished PDF
+> and confirmed the title block, the Theorem 1 statement, the
+> proof, the citation, and the References section all appear with
+> no `??`.
+
+If you did not use AI, write "did not use AI" on the Tool line and
+leave the other two blank or N/A.
+
+See the [AI use guidelines](../resources/ai-use-guidelines.qmd) for
+the course's full position.
+
+## This week continues the Week 5 project scaffold
+
+The LaTeX Project picks up directly from the Week 5 pre-draft. You
+should already have **a chosen open-access source**, a **scoped
+self-contained unit**, and a clean **skeleton render** of
+`latex-project/` — that is the material you finish this week.
+
+If your scaffold is incomplete, **contact me through the course LMS
+immediately**. The Week 6 project standard is the same regardless,
+and the exact project procedures (including how to flag an
+incomplete scaffold) live in the course LMS.
+
+## Projects, deadlines, and extensions
+
+A few syllabus reminders, framed for the finishing week:
+
+- The LaTeX Project is **not droppable**. Projects sit outside the
+  weekly best-9-of-11 drop pool.
+- **Extensions for projects require a request submitted *before*
+  the due date**, granted at the instructor's discretion. The
+  weekly 20%/one-week-late rule does **not** automatically apply
+  to this project.
+- If something genuinely unexpected is going to keep you from
+  finishing on time, ask before the deadline. The exact request
+  procedure is in the course LMS.
+
+The exact prompt, rubric, point breakdown, file-naming contract,
+submission area, due date, and extension procedure are in the
+**course LMS**.
+
+## What you'll do this week
+
+In one paragraph: you will **open the `latex-project/` folder you
+scaffolded in Week 5, replace the outline placeholders with the
+actual replication of your one self-contained unit, write at least
+one own-words explanation paragraph, add a figure or table only if
+your unit needs one, polish the prose, re-render the polished PDF,
+inspect it as the grader will, and submit the folder in the course
+LMS.**
+
+## See also
+
+- [Week 5 — Picking a paper to replicate](week05-paper-pick.qmd) —
+  the planning + scaffolding week that fed this one; the
+  walkthrough you scaffolded against.
+- [Finding open-access mathematics sources](../resources/finding-open-access-papers.qmd) —
+  where to look and how to check a source if you are starting from
+  scratch this week.
+- [Week 4 — Figures, tables, and references](week04-figures-tables-references.qmd) —
+  the apparatus skills you reach for only if your unit calls for
+  them.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the
+  course's position on AI assistance and the AI Use Note format.
+- [Software setup](../resources/software-setup.qmd) — reference
+  summary of the VS Code + R + Quarto + TinyTeX stack.

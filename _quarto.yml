@@ -46,6 +46,8 @@ website:
             text: "4 — Figures, tables, and references"
           - href: notes/week05-paper-pick.qmd
             text: "5 — Picking a paper to replicate"
+          - href: notes/week06-finishing-the-latex-project.qmd
+            text: "6 — Finishing the LaTeX Project"
       - section: "Labs"
         href: labs/index.qmd
         contents:
