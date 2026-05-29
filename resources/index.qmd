@@ -10,6 +10,7 @@ Not a link dump.
 
 - [Software setup — VS Code, R, Quarto, TinyTeX, optional Git / Claude Code](software-setup.qmd)
 - [Data guidelines — how to choose appropriate datasets](data-guidelines.qmd)
+- [Finding open-access mathematics sources — where to look and how to check a source before you commit](finding-open-access-papers.qmd)
 - [AI use guidelines — practical, instructional, course-specific](ai-use-guidelines.qmd)
 - [AI reading spine — the published basis for the AI module](ai-reading-spine.qmd)
 - [Computer algebra system (CAS) options — Sage, WolframAlpha, SymPy, Maple, others](cas-options.qmd)

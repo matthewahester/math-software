@@ -1,0 +1,129 @@
+---
+title: "Finding open-access mathematics sources"
+subtitle: "Where to look for a paper to replicate — and how to check it before you commit"
+toc: true
+---
+
+Short, practical guidance on **where the source for your LaTeX Project
+should come from**, and how to confirm it is usable before you build a
+project around it. This pairs with
+[Picking a Paper to Replicate](../notes/week05-paper-pick.qmd).
+
+## What "open-access" means for this course
+
+For our purposes, a source is **open-access** if:
+
+- you can read the **full text** — not just the abstract — **without
+  paying** and without a library login;
+- it is a **real, findable** work, with authors, a title, and a stable
+  link or DOI you can cite;
+- you are allowed to **read and cite** it (which you almost always are
+  for openly posted work).
+
+You are reproducing a small unit of mathematics in **your own words and
+notation** and citing the source. You are not republishing the original,
+so you do not need a special reuse license to write a replication — but
+you **do** need to be able to read the whole thing and cite it cleanly.
+See the note below on the difference between *reading* a source and
+*copying* it.
+
+## Recommended starting points
+
+- **arXiv** — <https://arxiv.org>. The largest open repository of
+  mathematics preprints. Every paper has a free full-text PDF and a
+  stable identifier (e.g., `arXiv:2401.01234`). Browse by subject
+  (math.NT, math.CO, math.PR, …) or search by topic. A great first stop
+  for short, self-contained results.
+- **Open-access mathematics journals** — journals that publish full
+  articles free to read. The **Directory of Open Access Journals**
+  (<https://doaj.org>) lets you filter for mathematics journals whose
+  articles are openly available. Many society and university journals
+  are open-access too.
+- **Public-domain and classic texts** — older mathematics (out of
+  copyright) is often freely and legally available through, for example,
+  Project Gutenberg, the Internet Archive, or university digital
+  libraries. A clean excerpt from a classic text can make an excellent,
+  very self-contained unit.
+
+If a source does not fit one of these — for instance, it sits behind a
+paywall or you can only see an abstract — **find a different source.**
+There is no shortage of open mathematics on almost any topic this
+course cares about.
+
+## Reading a source vs. permission to copy
+
+Two different things, easy to confuse:
+
+- **Can you read it?** — Is the full text freely available to you? This
+  is what "open-access" is about, and it is what you need to replicate a
+  result.
+- **Can you copy it verbatim?** — Reusing the original's exact text,
+  figures, or layout is a **licensing** question. You sidestep it
+  entirely by writing the unit **in your own words and notation** and
+  **citing** the original, which is exactly what a replication is.
+
+So: read freely, **write it yourself**, and **cite the source**. Do not
+paste the original's prose or lift its figures; reproduce the
+mathematics in your own document.
+
+## Capturing a citation
+
+Once you pick a source, grab a clean citation:
+
+- On **arXiv**, the abstract page has an **"Export BibTeX citation"**
+  link that gives you a ready-to-use `.bib` entry. Confirm the fields
+  (authors, title, year) match the paper.
+- For a **journal article**, the article or DOI page usually offers a
+  "cite" or "export citation" option in BibTeX format.
+- For a **book or classic text**, build a simple entry by hand: author,
+  title, year, publisher or source.
+
+Save the entry in your project's `references.bib`, cite it with
+`[@yourkey]`, and let the document generate the reference list — the
+workflow you learned in Week 4.
+
+## AI can invent papers — verify before you trust
+
+An AI assistant can suggest topics and summarize papers, and that is a
+fine way to start looking. But assistants **routinely invent sources**:
+a real-sounding author, title, journal, year, and even a working-looking
+DOI — for a paper that **does not exist**. They will also confidently
+call a paywalled paper "freely available."
+
+So treat any source an assistant hands you as a **lead, not a fact**.
+Before you commit:
+
+- **find the source yourself** at its canonical page (arXiv, the
+  journal, the archive);
+- **open the full text** and confirm you can read it without paying;
+- **confirm the details** — authors, title, year — match what you were
+  told.
+
+If you cannot find it, it does not exist. Pick something you can open
+with your own eyes.
+
+## A source-check checklist
+
+Before you build your project on a source, confirm all five:
+
+1. **I found it at its real, canonical page** (not a re-shared mirror or
+   an AI summary).
+2. **I can open the full text without paying.**
+3. **The mathematics is something I can follow and explain.**
+4. **There is one self-contained unit** — a theorem + proof, a
+   derivation, a figure/table + exposition, or a short passage — I can
+   lift out without needing pages of prior setup.
+5. **I have a clean citation** (authors, title, year, stable link or
+   DOI) saved in `references.bib`.
+
+If any of the five is shaky, choose a different source now — it is far
+cheaper than discovering the problem mid-project.
+
+## See also
+
+- [Picking a Paper to Replicate](../notes/week05-paper-pick.qmd) — how to
+  scope the project once you have a source.
+- [Data guidelines](data-guidelines.qmd) — the same
+  know-your-provenance discipline, applied to datasets.
+- [AI use guidelines](ai-use-guidelines.qmd) — the course's position on
+  AI assistance and verification.

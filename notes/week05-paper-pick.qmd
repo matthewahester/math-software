@@ -1,0 +1,211 @@
+---
+title: "Picking a Paper to Replicate"
+subtitle: "Starting the LaTeX Project — choose a source, lock your scope, outline, and scaffold"
+toc: true
+---
+
+> A short conceptual reading to start the **LaTeX Project**, the
+> two-week project that runs across Weeks 5 and 6. This week is about
+> *planning and setting up* the project. The exact assignment prompt,
+> any source-check or approval steps, due dates, and submission details
+> live in the **Assignments/LMS space**.
+
+Weeks 2–4 built the pieces of mathematical writing in Quarto:
+notation, structure, and the supporting apparatus of figures, tables,
+and citations. Week 5 stops adding new tools and turns those pieces
+into the start of a real short paper.
+
+The **LaTeX Project** is a **short replication of an open-access
+mathematics paper or excerpt** — a polished short paper, a few pages
+long. It runs across two weeks: **this week you plan and scaffold it;
+next week you write and polish it.** There is **no new tool** this
+week. You work in Quarto `.qmd` and render to PDF exactly as you have
+since Week 1. (If you are curious what raw `.tex` looks like underneath,
+you are welcome to look — but it is entirely optional and not part of
+the project.)
+
+## What "replication" means here
+
+Replication means **reproducing a small, self-contained piece of an
+existing source in your own typeset document**, citing that source. It
+is **not** retyping a whole paper, and it is **not** inventing new
+mathematics. You take one well-chosen unit, write it up clearly in your
+own words and notation, and point back to where it came from.
+
+A good Week 5–6 unit is **one** of these:
+
+- a **theorem and its proof**;
+- a **derivation** worked through step by step;
+- a **figure or table and the exposition** that explains it;
+- a **short passage or section** — a self-contained definition with an
+  example, a lemma, a single worked argument.
+
+That is the whole project. One unit, reproduced well, in a few clean
+pages.
+
+## Scope is the main risk — not syntax
+
+By now the syntax is not the hard part; you can already typeset math,
+structure writing, and add a figure, a table, and a citation. The thing
+that makes a short replication project go wrong is almost always
+**scope**: choosing a whole paper, a hard theorem, or several results
+at once, and then running out of time.
+
+So the most important decision this week is **how much you take on**.
+Pick small. A project that is scoped well nearly writes itself next
+week; one that is too big stalls. If you are unsure whether something is
+small enough, it probably is not — cut it down to one unit.
+
+## Choosing a realistic source
+
+Prefer a source that is **short, self-contained, and readable at your
+level** over an ambitious one. Concretely, look for:
+
+- a paper or excerpt where **one unit can be lifted out** without
+  needing ten pages of prior setup;
+- mathematics you can **follow and explain** — if you cannot follow the
+  proof, you cannot replicate it;
+- a source that is **genuinely open-access**, so you can read all of it
+  and cite it cleanly.
+
+The companion resource —
+[Finding open-access mathematics sources](../resources/finding-open-access-papers.qmd) —
+shows where to look (arXiv, open-access journals, public-domain texts)
+and how to check a source before you commit to it.
+
+## Verifying a source is genuinely open-access
+
+"Open-access" here has a practical meaning: **you can read the full
+text without a paywall, and you are allowed to read and cite it.** Before
+you build a project on a source, confirm three things yourself:
+
+- you can **open the full text** (not just an abstract) **without
+  paying**;
+- the source is **real** — it actually exists and is what you think it
+  is;
+- you can **capture a clean citation** for it (authors, title, year,
+  and a stable link or DOI).
+
+This is the same provenance discipline the course applies to data: know
+where it came from, and be able to cite it. The
+[open-access sources resource](../resources/finding-open-access-papers.qmd)
+has a short checklist you can run through.
+
+## From source to annotated outline
+
+Once you have your source and your one unit, **outline before you
+write**. An outline is the list of section headings your finished paper
+will use, with a sentence under each saying what will go there. A
+workable shape for a replication is:
+
+- **Setup** — the definitions and notation the reader needs.
+- **Statement** — the theorem, result, or claim you are reproducing.
+- **Replication** — your own write-up of the proof, derivation, or
+  exposition.
+- **Discussion** — a short note on what it means or why it is
+  interesting (optional, brief).
+- **References** — the source, cited.
+
+Those headings become the section headings in your document, and the
+one-sentence notes become your **annotated outline** — placeholders that
+tell next-week-you exactly what to write.
+
+## Scaffolding the project folder
+
+The project gets its **own permanent folder**, `latex-project/`, which
+you build over two weeks and finish in place. Setting it up now — and
+getting it to render — removes almost all of the painful surprises from
+next week.
+
+A scaffold is **not** a draft. It is the skeleton of the paper that
+already compiles: a title block, your outline as headings, a
+placeholder sentence under each, and your source already cited so the
+References section appears. It should look like an outline of a paper
+that builds cleanly — mostly empty, but working.
+
+### The Week 5 workflow
+
+You can do all of this on your own machine; bring anything that won't
+render to one of the scheduled studio times in the MAC.
+
+1. **Create the project folder.** In `math-software-portfolio/`, make a
+   subfolder named `latex-project/` (next to `hw01/`–`hw04/`).
+2. **Create `latex-project.qmd`** with a YAML title block: a project
+   title and `author: "Your Name"`, and `format: pdf`.
+3. **Create `references.bib`** in the same folder and add a real entry
+   for your chosen source.
+4. **Add `bibliography: references.bib`** to your YAML.
+5. **Cite the source once** in your plan with `[@yourkey]`.
+6. **Add your headings.** A short **project-plan** section (source,
+   why it's open, your unit, your scope) and the **annotated outline**
+   headings, each with a placeholder sentence.
+7. **Render to PDF.** Open `latex-project.qmd` in VS Code and run
+   **Quarto: Preview** (`Ctrl/Cmd + Shift + P`), press
+   `Ctrl/Cmd + Shift + K`, or run `quarto render latex-project.qmd` in a
+   terminal opened in the folder.
+8. **Confirm the citation and References section resolve** — the in-text
+   `[@yourkey]` renders, the **References** list appears at the end, and
+   there is **no `??`** on the page.
+9. **Confirm the skeleton is clean but not content-complete.** It should
+   compile and look like an outline of a paper — that is exactly right
+   for Week 5.
+
+If the skeleton renders cleanly now, Week 6 is mostly writing.
+
+## What Week 6 looks like
+
+In Week 6 you **finish the project in this same `latex-project/`
+folder**. You fill the annotated outline with the actual replication of
+your unit, add any figure or table you need (the Week 4 apparatus
+skills), tighten the prose, and render the polished short paper. The
+better your plan and scaffold this week, the calmer next week is.
+
+## AI can help you plan — but cannot verify the source
+
+AI assistants are useful for the planning work: they can **suggest
+candidate topics or papers**, **summarize a source** so you can judge
+its scope, **sanity-check whether a unit is small enough**, **draft a
+`.bib` entry**, or **propose an outline** you then edit.
+
+What AI **cannot** do is tell you whether a paper **exists**, whether it
+is **actually open-access**, or whether you have **understood it
+correctly**. Assistants routinely recommend papers that do not exist,
+claim a paywalled paper is "freely available," and invent DOIs and
+publication details. The course rule from earlier weeks applies with a
+Week-5 edge: **AI is a first pass, not a verdict.** You open the source
+yourself, confirm you can read it without paying, confirm it is real,
+and confirm it says what you think.
+
+The three-line **AI Use Note** (Tool / Purpose / Verification) applies.
+This week the Verification line should describe how you confirmed your
+**source is real and genuinely open-access**, for example:
+
+> **Verification:** found the paper on arXiv, opened the full PDF and
+> confirmed it is free to read, confirmed the title and authors, and
+> rendered my skeleton to confirm the citation and References section
+> resolved with no `??`.
+
+See the [AI use guidelines](../resources/ai-use-guidelines.qmd) for the
+course's full position.
+
+## What you'll do this week
+
+In one paragraph: you will **choose an open-access mathematics paper or
+excerpt, verify it is genuinely open and real, pick one self-contained
+unit to replicate, write a short scope statement and an annotated
+outline, and scaffold a `latex-project/` folder that renders a clean
+skeleton PDF** — the start of the polished short paper you finish in
+Week 6. The exact assignment prompt, any source-check or approval steps,
+due dates, and submission details live in the **Assignments/LMS space**.
+
+## See also
+
+- [Finding open-access mathematics sources](../resources/finding-open-access-papers.qmd) —
+  where to look and how to check a source before you commit.
+- [Week 4 — Figures, tables, and references](week04-figures-tables-references.qmd) —
+  the apparatus skills you'll use when you write the replication in
+  Week 6.
+- [Software setup](../resources/software-setup.qmd) — reference summary
+  of the VS Code + R + Quarto + TinyTeX stack.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the course's
+  position on AI assistance and the AI Use Note format.

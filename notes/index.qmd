@@ -29,15 +29,17 @@ the course LMS.
   with an auto-generated reference list, automatic cross-references,
   inspecting the PDF for apparatus problems, and the Week 4 LaTeX
   checkpoint.
+- [Week 5 — Picking a paper to replicate](week05-paper-pick.qmd) —
+  starting the two-week LaTeX Project: what "replication" means,
+  choosing a realistic open-access source and verifying it is genuinely
+  open, bounding the scope to one self-contained unit, turning the unit
+  into an annotated outline, and scaffolding a `latex-project/` folder
+  that renders a clean skeleton PDF.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
-
-**LaTeX block (Weeks 2–6)**
-
-- Week 5 — Picking a paper to replicate
 
 **R block (Weeks 7–10)**
 

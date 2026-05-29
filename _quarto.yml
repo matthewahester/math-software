@@ -44,6 +44,8 @@ website:
             text: "3 — Structuring mathematical writing"
           - href: notes/week04-figures-tables-references.qmd
             text: "4 — Figures, tables, and references"
+          - href: notes/week05-paper-pick.qmd
+            text: "5 — Picking a paper to replicate"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -66,6 +68,7 @@ website:
           - resources/index.qmd
           - resources/software-setup.qmd
           - resources/data-guidelines.qmd
+          - resources/finding-open-access-papers.qmd
           - resources/ai-use-guidelines.qmd
           - resources/ai-reading-spine.qmd
           - resources/cas-options.qmd
