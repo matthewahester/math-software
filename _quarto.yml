@@ -48,6 +48,8 @@ website:
             text: "5 — Picking a paper to replicate"
           - href: notes/week06-finishing-the-latex-project.qmd
             text: "6 — Finishing the LaTeX Project"
+          - href: notes/week07-r-foundations-in-vscode.qmd
+            text: "7 — R foundations in VS Code"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -60,6 +62,8 @@ website:
             text: "3 — Claim, example, and justification"
           - href: labs/lab04-figure-table-citation.qmd
             text: "4 — Figure, table, and citation"
+          - href: labs/lab05-first-r.qmd
+            text: "5 — A tour of a tidy dataset in R"
       - section: "Examples"
         href: examples/index.qmd
         contents:

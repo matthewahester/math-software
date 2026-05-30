@@ -1,0 +1,240 @@
+---
+title: "R foundations in VS Code"
+subtitle: "Week 7 — first R-in-Quarto report: code chunks, output, prose, and the render-then-read habit"
+toc: true
+---
+
+> A short conceptual reading to start **Module B — R / computation,
+> visualization, simulation, reporting**. The companion hands-on
+> walkthrough is
+> [Lab 5 — A tour of a tidy dataset in R](../labs/lab05-first-r.qmd).
+> The exact assignment prompt, due dates, submission details, and the
+> Week 7 R transition conference sign-up live in the
+> **Assignments/LMS space**.
+
+The first six weeks of the course built the document side of the
+craft: typeset math, structured writing, captioned figures and
+tables, citations, and a polished short LaTeX paper. Week 7 keeps
+the same Quarto container and pivots the *substance* of the weekly
+document — from typeset mathematics to **computed output and prose
+interpretation**.
+
+There is **no new editor, no new render engine, and no new portfolio
+convention** this week. You stay in VS Code, you render with Quarto
+to PDF, your weekly artifact lives next to `hw01/`–`hw04/` and
+`latex-project/` in `math-software-portfolio/`. What's new is that
+the heart of the document is a small piece of **R code** that runs
+when you render — and your job is to put a sentence of prose around
+each piece of output saying what it means.
+
+## One container, two substances
+
+Modules A and B share the same Quarto-to-PDF render chain, the same
+editor, and the same "render then read" verification habit. The
+weekly arc you ran six times in the LaTeX module — edit the source,
+render, look at the rendered PDF, fix what's off, re-render — is the
+exact arc you run in Module B. The new wrinkle is that R **runs your
+code as part of the render**, so what shows up in the PDF is whatever
+your chunks actually produced when the render happened.
+
+This is good news. It means you do not need to learn a new tool to
+start computing inside the same documents you already know how to
+build. And it means everything you already practice — clean section
+headings, prose around the substance, render-and-look — still
+applies.
+
+## What an R chunk is, in plain terms
+
+An R chunk is a fenced code block tagged with `{r}` that Quarto runs
+when it renders the document. In a `.qmd`, it looks like this:
+
+````markdown
+```{{r}}
+mean(mtcars$mpg)
+```
+````
+
+When this chunk renders, the output is a single number: the average
+miles per gallon for the 32 cars in `mtcars`. The chunk's **code**
+is the source-of-truth — it is what you edit and what you can
+re-run later. The chunk's **output** (the number, the table, the
+plot) appears underneath the code in the rendered PDF.
+
+You have actually seen one R chunk already: the Week 1 install lab
+included a tiny `set.seed(1); rnorm(10); mean(x)` chunk in the
+sample `hw01.qmd` template. Week 7 is where R chunks stop being a
+one-off ornament and become the substance of the weekly document.
+
+## Code, output, and prose — in that order, around every chunk
+
+Module A had a lesson: an equation needs surrounding prose. A
+formula sitting alone, with no setup and no interpretation, is an
+*equation-dump*, and a document made of equation-dumps is hard to
+read.
+
+Module B has the same lesson, applied to code. **A chunk that runs
+is not a chunk that is understood.** A summary that appears in the
+PDF without a sentence saying what it means is a *code-dump*, and a
+report made of code-dumps is hard to grade and harder to read.
+
+The shape to write toward, every time:
+
+1. A short sentence of context — what is this chunk going to show?
+2. The chunk itself.
+3. A short sentence of interpretation — what does this output mean?
+
+You may collapse step 1 if it would be repetitive (a series of
+related summaries can share one lead-in). You should *never* collapse
+step 3.
+
+## The "render then read" habit, applied to computed output
+
+Rendering has been verification since Week 1: edit the source,
+render, look at the PDF, fix anything that does not match what you
+intended, re-render. The Module B wrinkle: **R output can succeed
+but be wrong**. The chunk runs without an error, but it shows the
+wrong column, the wrong group, the wrong mean.
+
+The habit:
+
+- After each render, **open the rendered PDF** and read what is
+  actually there — not what you intended to be there.
+- For each chunk, confirm: did the right thing run? Is the output
+  what you expected? Does the sentence after it accurately describe
+  what the output shows?
+- If something is off, fix the **source** (`.qmd`) and re-render —
+  do not edit the PDF.
+
+This reads as "the same Week 1 lesson, said again." It is. The Week
+1 lesson now carries a slightly heavier load.
+
+## A tidy dataset, briefly
+
+A **tidy** dataset is one where each row is an observation and each
+column is a variable. No headers embedded in cells, no merged cells,
+no spreadsheet color-coding standing in for a variable.
+
+Built-in R datasets — `mtcars`, `iris`, and others — are tidy by
+construction, which is why we start with one. You can list R's
+built-in datasets with `library(help = "datasets")` in an R session,
+and read the codebook for any of them with `?mtcars`, `?iris`, etc.
+For Week 7 work, see the [Data guidelines](../resources/data-guidelines.qmd)
+page — built-in R datasets are the first acceptable category.
+
+## What this week's lab does
+
+[Lab 5 — A tour of a tidy dataset in R](../labs/lab05-first-r.qmd)
+walks the whole arc — load → inspect → summarize → interpret →
+render → read — on `mtcars`, the cars-and-fuel-economy dataset
+that ships with base R. It shows the cleanest possible first
+R-in-Quarto report, with both the modern `dplyr` path and the
+base-R fallback path side by side, so you can pick whichever works
+on your install.
+
+Do the lab on your own machine, in your own portfolio folder. The
+walkthrough produces a tiny rendered report; treat it as a working
+template you can read and adapt.
+
+## R from VS Code, not RStudio
+
+The course standard for editing and rendering R is **VS Code with
+the Quarto and R extensions**, not RStudio. Most R tutorials online
+assume RStudio because it has been the dominant R editor for years,
+and that is fine — **the R language itself is identical**. When a
+tutorial says "click **Render** in RStudio," the course's equivalent
+is **Quarto: Preview** (`Ctrl/Cmd + Shift + P` → Quarto: Preview, or
+the keyboard shortcut `Ctrl/Cmd + Shift + K`) in VS Code, or
+`quarto render hw07.qmd` in a terminal. Same result.
+
+If you already know RStudio well and use it for R-only work
+sometimes, that is fine — but the course demos, conference
+walkthroughs, and lab instructions all assume the VS Code workflow.
+See [Software setup](../resources/software-setup.qmd) for the full
+stack reference and [Lab 1 — Install the stack](../labs/lab01-install-stack.qmd)
+if you need to reinstall anything.
+
+## Packages, lightly
+
+R has thousands of installable packages. Lab 5 introduces a small
+number of verbs from **`dplyr`** because they read like prose
+(`glimpse`, `count`, `group_by`, `summarise`) — which is the gentlest
+possible first R-language experience. **You do not need
+`tidyverse`** for Week 7, and you do not need **`ggplot2`** —
+visualization is Week 8's introduction.
+
+If `dplyr` fails to install on your machine — most often a CRAN
+mirror or compiler issue — the lab also shows the **base-R fallback**
+for every `dplyr` verb it uses (`str` for `glimpse`, `table` for
+`count`, `aggregate` for grouped summaries). The base-R path always
+works because nothing extra needs to install. Either path is fine
+for your Week 7 work.
+
+## The R transition conference (required)
+
+Week 7 carries a required **R transition conference** — a short
+10–15 minute one-on-one workflow check. It is **not** a quiz. It
+confirms three things:
+
+- the LaTeX-module workflow wrapped cleanly and your portfolio is
+  organized,
+- the VS Code + R + Quarto + TinyTeX chain works on your machine,
+- you can render a Quarto document with R chunks end-to-end.
+
+Bring your rendered Week 7 report, the source it came from, and your
+portfolio folder open in VS Code. If your setup is not working when
+we meet, the conference itself becomes the setup-debug session —
+bring whatever you have, and we will use the time to get the chain
+working. Sign-up and the exact slot mechanics are in the course LMS.
+
+## AI in Week 7
+
+AI assistants are useful in the same ways they have been since
+Week 1: explanation, debugging, syntax lookup, drafting. In Week 7
+specifically, they help with **R syntax lookup** (which function
+does X), **debugging** an erroring chunk, **explaining** what an
+unfamiliar output means, and **rephrasing** prose around the chunks.
+
+Two things AI **cannot** do for you in Week 7:
+
+- **Read your data for you.** What your report says about the
+  dataset must match what your rendered chunk output actually
+  shows — not what an assistant told you the dataset looks like.
+- **Generate output you did not run.** If your `.qmd` claims to
+  show a chunk's output, that output must come from the chunk
+  actually running during the render. Do not paste an assistant's
+  guess at what a chunk would produce.
+
+The three-line **AI Use Note** (Tool / Purpose / Verification)
+applies. This week the Verification line should describe how you
+confirmed that **what your report says about the data matches what
+the data actually shows**. See the
+[AI use guidelines](../resources/ai-use-guidelines.qmd) for the
+full pattern.
+
+## What you'll do this week
+
+In one paragraph: you will **open a small tidy dataset in R from
+inside a Quarto document in VS Code, inspect its structure, compute
+two or three basic summaries, write a short interpretation paragraph
+in plain prose, and render the result as a clean short PDF**. You
+follow the same edit → render → read habit you have used since
+Week 1; the only new thing is that some of what the PDF shows comes
+from R running your chunks. The exact assignment prompt, due dates,
+submission details, and the R transition conference sign-up live in
+the **Assignments/LMS space**.
+
+## See also
+
+- [Lab 5 — A tour of a tidy dataset in R](../labs/lab05-first-r.qmd) —
+  the hands-on walkthrough that runs the whole arc on `mtcars` with
+  both the dplyr and base-R paths.
+- [Software setup](../resources/software-setup.qmd) — the reference
+  summary of the VS Code + R + Quarto + TinyTeX stack.
+- [Lab 1 — Install the stack](../labs/lab01-install-stack.qmd) —
+  reinstall reference if your R, VS Code, Quarto, or TinyTeX is not
+  cooperating.
+- [Data guidelines](../resources/data-guidelines.qmd) — the four
+  acceptable categories of course data; built-in R datasets are
+  the first one.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the
+  course's position on AI assistance and the AI Use Note format.

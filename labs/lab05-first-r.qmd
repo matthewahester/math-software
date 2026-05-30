@@ -1,0 +1,411 @@
+---
+title: "Lab 5 — A tour of a tidy dataset in R"
+subtitle: "Load, inspect, summarize, and interpret mtcars inside a Quarto report"
+toc: true
+---
+
+This lab walks the **first R-in-Quarto report** end to end on
+`mtcars`, a small dataset that ships with base R. It is the
+practical companion to
+[R foundations in VS Code](../notes/week07-r-foundations-in-vscode.qmd),
+the short conceptual reading for Week 7.
+
+You should be comfortable with the Week 1–6 workflow: opening a
+folder in VS Code, editing a `.qmd`, and rendering to PDF with
+Quarto: Preview or `quarto render`. Week 7 adds **R chunks** that
+run when the render happens, plus the habit of writing a sentence of
+prose around each piece of output. No new editor, no new render
+engine, no `\documentclass`, no bibliography.
+
+## What you'll have at the end
+
+- A new `lab05/` subfolder in your `math-software-portfolio/`
+  containing a `.qmd` source and a rendered `.pdf`.
+- A short report on `mtcars` with: a dataset introduction
+  paragraph, one inspection chunk, two or three small summary
+  chunks, an optional one-line base-R plot, and a short
+  interpretation paragraph — each chunk with a sentence of prose
+  saying what its output means.
+- Hands-on familiarity with two ways to write the same summaries:
+  a small slice of `dplyr` (the modern path) and base R (the
+  always-available fallback).
+- A short **AI Use Note** in the standard three-line Tool / Purpose
+  / Verification format (only if you used AI assistance).
+
+The exact assignment prompt, submission details, and the Week 7
+**R transition conference** sign-up live in the
+**Assignments/LMS space**.
+
+## 1. Create and open the Week 7 lab folder
+
+Inside `math-software-portfolio/`, create `lab05/` next to your
+existing `hw01/`–`hw04/` and `latex-project/`. From VS Code:
+**File → Open Folder…** and pick `lab05/`. Opening the folder (not
+a single file) keeps the Quarto extension, the file explorer, and
+the terminal all pointed at the same place.
+
+## 2. Start from a `.qmd` template
+
+Create `lab05.qmd` in `lab05/`. Paste this starter:
+
+````markdown
+---
+title: "Lab 5 — A tour of mtcars"
+author: "YOUR NAME"
+format:
+  pdf: default
+---
+
+# What this report is about
+
+A short paragraph naming the dataset and what the report covers.
+
+# Inspect the dataset
+
+# A few summaries
+
+# Interpretation
+````
+
+The headings are placeholders — you will fill in chunks and prose
+under each.
+
+## 3. (Optional) Install `dplyr`
+
+The lab uses a small slice of `dplyr` for clarity. If you have not
+installed it before, run this **once** in an R session (any R
+terminal — the integrated terminal in VS Code is fine):
+
+```r
+install.packages("dplyr")
+```
+
+then close R with `q()` (answer `n` to the save-workspace prompt).
+You only need to install once per machine.
+
+**If the install fails** — most commonly a CRAN mirror or compiler
+issue — skip it for now. Every `dplyr` step below has a base-R
+fallback that is **always available**. The lab works either way.
+
+## 4. Inspect the dataset
+
+`mtcars` is auto-attached in every R session, so you do not need
+to load or import anything. Open the first chunk and look at the
+dataset's shape.
+
+**dplyr path** — add a setup chunk and an inspection chunk:
+
+````markdown
+```{{r setup}}
+library(dplyr)
+```
+
+```{{r}}
+glimpse(mtcars)
+```
+````
+
+After the chunk runs in your own document, write **one sentence of
+prose** under it:
+
+> `mtcars` has 32 rows and 11 columns — fuel economy (`mpg`),
+> engine size (`cyl`, `disp`, `hp`), and a few other measurements
+> for 32 cars.
+
+**Base-R fallback** — same idea, no extra package:
+
+````markdown
+```{{r}}
+str(mtcars)
+```
+````
+
+`str()` shows you exactly the same thing as `glimpse()`: number of
+rows, number of columns, column names, and column types. Pick
+whichever path your install supports; the prose sentence underneath
+is the same.
+
+## 5. Render the skeleton
+
+Before writing the rest, render what you have. **Either method
+works:**
+
+- **Preferred — Quarto: Preview.** Press
+  `Ctrl/Cmd + Shift + P` and run **Quarto: Preview**, or press
+  the keyboard shortcut `Ctrl/Cmd + Shift + K`.
+- **Always works — terminal.** Open VS Code's integrated terminal,
+  confirm the prompt is in the `lab05/` folder, then run:
+
+  ```bash
+  quarto render lab05.qmd
+  ```
+
+Open the rendered PDF and confirm: the title and your name appear;
+the inspection chunk shows code **and** its output (rows, columns,
+types); your one sentence of prose is underneath. If `glimpse()`
+errors and you have not installed `dplyr`, swap to `str()` and
+re-render — that is the dplyr-vs-base fork in action.
+
+## 6. Add two or three small summaries
+
+Each summary is one chunk and one sentence. Below are three
+candidates — pick any two or three. **Pair each chunk with one
+sentence of prose underneath** saying what the output means.
+
+### A numeric summary
+
+**dplyr path** — not really needed for a single column; base R is
+cleaner here:
+
+**Base R (recommended for this one):**
+
+````markdown
+```{{r}}
+summary(mtcars$mpg)
+```
+````
+
+> `mpg` ranges from about 10 to 34, with a median near 19. Most
+> cars cluster around 15–22.
+
+### A counts table (categorical-feeling column)
+
+The `cyl` column counts engine cylinders — most cars have 4, 6, or
+8.
+
+**dplyr path:**
+
+````markdown
+```{{r}}
+mtcars |> count(cyl)
+```
+````
+
+**Base-R fallback:**
+
+````markdown
+```{{r}}
+table(mtcars$cyl)
+```
+````
+
+> 14 cars have 8 cylinders, 7 have 6, and 11 have 4. Most of the
+> sample is 4- or 8-cylinder.
+
+(Both produce the same counts; the `dplyr` version returns a small
+tibble with named columns, while `table()` returns a vector with
+named slots.)
+
+### A grouped summary
+
+What is the average `mpg` by cylinder count?
+
+**dplyr path:**
+
+````markdown
+```{{r}}
+mtcars |>
+  group_by(cyl) |>
+  summarise(mean_mpg = mean(mpg))
+```
+````
+
+**Base-R fallback:**
+
+````markdown
+```{{r}}
+aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+```
+````
+
+> 4-cylinder cars average about 27 mpg; 6-cylinder cars about
+> 20; 8-cylinder cars about 15. More cylinders, less fuel
+> economy.
+
+## 7. (Optional) One small base-R plot
+
+If a quick visual would help your interpretation, add **one** small
+base-R plot. **Do not use `ggplot2`** — that is Week 8.
+
+The canonical one for this lab is a scatter of horsepower against
+fuel economy:
+
+````markdown
+```{{r}}
+plot(
+  mtcars$hp,
+  mtcars$mpg,
+  xlab = "Horsepower",
+  ylab = "Miles per gallon"
+)
+```
+````
+
+After the chunk, one sentence of prose underneath (rewrite in your
+own words):
+
+> Cars with higher horsepower tend to have lower miles per gallon
+> in this dataset.
+
+That is the whole optional-plot section — one chunk, one sentence.
+If you do not add a plot, your report is still complete; the
+summaries from step 6 already carry the story.
+
+## 8. Write the interpretation paragraph
+
+Add one short paragraph under your `# Interpretation` heading,
+outside any code chunk, that ties the summaries together. The goal
+is that a reader who has not opened the source can read this
+paragraph and learn one or two true things about `mtcars`.
+
+A workable template (rewrite in your own words):
+
+> The dataset has 32 cars described by 11 variables. The cars in
+> this sample fall mostly into 4- and 8-cylinder groups, with fewer
+> 6-cylinder cars. Fuel economy drops sharply with cylinder count:
+> 4-cylinder cars average around 27 mpg, while 8-cylinder cars
+> average around 15.
+
+Two short sentences, grounded in what your summary chunks actually
+showed, is plenty.
+
+## 9. Render and inspect the PDF
+
+Render again and open the PDF. Read it from the top as a stranger
+would. Confirm:
+
+- title and your name appear,
+- the dataset paragraph reads clearly,
+- the inspection chunk has output **and** a sentence underneath,
+- each summary chunk has output **and** a sentence underneath,
+- the optional plot (if you added one) has a sentence under it,
+- the interpretation paragraph is present and grounded in the
+  summaries above it,
+- no chunk's code shows an error message in the PDF,
+- everything fits in **a few pages** — if the PDF is 10 pages of
+  output, you printed too much (cut to `head(mtcars)` and one
+  column's `summary()`).
+
+Fix anything off in the source, then re-render. The render-and-look
+habit is the load-bearing skill of Week 7.
+
+## Common problems
+
+Skim this before you start; come back when something breaks.
+
+### `library(dplyr)` errors
+
+- **Symptom.** "there is no package called 'dplyr'" or a network
+  error.
+- **Fix.** Run `install.packages("dplyr")` once in an R session,
+  then restart R or re-render. If the install fails (mirror
+  unreachable, compiler error on Windows, version mismatch),
+  **swap to the base-R fallback** for every step. The lab works
+  either way.
+
+### A chunk errors and the whole render stops
+
+- **Symptom.** The PDF does not build; the error points at a
+  specific chunk.
+- **Fix.** Comment out the chunk for now (wrap in `<!-- ... -->`
+  or set the chunk option `eval: false`), render to confirm the
+  rest is clean, then fix the problem chunk in isolation.
+
+### Output is huge
+
+- **Symptom.** `summary(mtcars)` and `head(mtcars, 50)` together
+  fill three pages.
+- **Fix.** Use `head(mtcars)` (default 6 rows) and one column at a
+  time for `summary()` (`summary(mtcars$mpg)`). One inspection
+  chunk + two or three small summary chunks is plenty.
+
+### `object 'mtcars' not found`
+
+- **Symptom.** Very rare in base R; `mtcars` is auto-attached.
+- **Fix.** Run `data(mtcars)` once at the top of your `.qmd` to
+  force-load it.
+
+### VS Code shows the file as "Plain Text"
+
+- **Symptom.** The lower-right of the VS Code window says **Plain
+  Text** instead of **Quarto** or **Markdown**; Quarto commands do
+  not work.
+- **Fix.** Click the **Plain Text** label and pick **Quarto** (or
+  **Markdown**). Confirm the Quarto extension is installed and the
+  filename ends in `.qmd`.
+
+### `quarto render lab05.qmd` says "No valid input files"
+
+- **Symptom.** The terminal cannot find the file.
+- **Fix.** `cd` into `lab05/` and re-run. `ls` (mac/Linux) or
+  `dir` (Windows) should show `lab05.qmd`.
+
+### "I keep finding RStudio instructions online"
+
+The R code itself is identical. When a tutorial says "click
+**Render** in RStudio," the course's equivalent is **Quarto:
+Preview** (`Ctrl/Cmd + Shift + K`) in VS Code or
+`quarto render lab05.qmd` in a terminal. Same result. The Week 7
+note explains this in more detail.
+
+### A chunk runs but shows the wrong thing
+
+- **Symptom.** No error in the PDF, but the output is not what
+  you expected.
+- **Fix.** Read the chunk's code and its output side by side. R
+  output can succeed but be wrong (wrong column, wrong group,
+  wrong function). This is exactly why "render then read" matters
+  in Module B.
+
+### A code-dump report
+
+- **Symptom.** Five chunks in a row, no prose between them.
+- **Fix.** Add a sentence under each chunk saying what the output
+  means. A chunk that runs is not a chunk that is understood.
+
+## Prepare for the Week 7 R transition conference
+
+Week 7 includes a required **R transition conference** — a 10–15
+minute one-on-one workflow check, not a quiz. Bring:
+
+- your **rendered weekly report PDF** open in a PDF viewer,
+- the matching `.qmd` source open in VS Code,
+- your `math-software-portfolio/` folder open in VS Code (so the
+  week's folder is visible next to `hw01/`–`hw04/` and
+  `latex-project/`),
+- a terminal or Quarto Preview ready, so you can **render live**
+  if asked.
+
+If your setup is not working when we meet, that is fine — the
+conference itself becomes the setup-debug session. Bring whatever
+you have. If `dplyr` is the blocker, we will walk through the
+base-R fallback path together and get a minimum-viable report
+rendering. Conference sign-up and exact slot timing are in the
+course LMS.
+
+## What this prepares you to do
+
+When you finish this lab you should be able to:
+
+- create a `lab05/` (and similarly any week's) folder next to your
+  existing portfolio folders, open it in VS Code, and create a
+  `.qmd` that renders to PDF;
+- write a chunk that runs R code and shows its output in the
+  rendered PDF;
+- inspect a small tidy dataset with `glimpse()` / `str()`;
+- compute a few small summaries with either `dplyr` verbs
+  (`count`, `group_by`, `summarise`) or base-R verbs
+  (`table`, `aggregate`);
+- (optionally) add one small base-R plot to a report;
+- write one sentence of prose interpretation under every chunk and
+  one short paragraph that ties the summaries together;
+- read the rendered PDF as a stranger would and fix anything that
+  does not match what you intended;
+- use AI for syntax lookup and debugging while verifying that what
+  your report says about the data matches what the rendered chunks
+  actually show.
+
+The Week 7 assignment in the course LMS uses exactly this workflow
+on a different built-in dataset. The course LMS holds the exact
+prompt, the file-naming convention, the submission area, and the
+conference sign-up.

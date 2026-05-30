@@ -26,13 +26,19 @@ help.
   enrich a short technical document with a captioned figure, a small
   captioned table, a citation from a `.bib` file, and automatic
   cross-references, then inspect the PDF for apparatus problems.
+- [Lab 5 — A tour of a tidy dataset in R](lab05-first-r.qmd) —
+  the first R-in-Quarto report: load and inspect `mtcars`, compute a
+  few small summaries (with both the `dplyr` path and the base-R
+  fallback path side by side), optionally add one small base-R plot,
+  write a short interpretation paragraph, and render to PDF — the
+  load → inspect → summarize → interpret → render → read habit
+  applied to computed output.
 
 ## Planned
 
 Labs are added as the course is built. The rough plan, aligned with
 the weekly module spine:
 
-- Lab 5 — A tour of a tidy dataset in R *(Week 7)*
 - Lab 6 — A `ggplot2` walkthrough *(Week 8)*
 - Lab 7 — A small reproducible simulation in R *(Week 9)*
 - Lab 8 — Drafting and verifying technical prose with an AI assistant *(Weeks 11–12)*
