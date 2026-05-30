@@ -48,15 +48,22 @@ the course LMS.
   chunk; the render-then-read habit applied to computed output; a
   tidy dataset, lightly defined; R from VS Code (not RStudio); the
   R transition conference framing.
+- [Week 8 — Visualization with ggplot2](week08-ggplot.qmd) —
+  continuing Module B: one Quarto container, three substances now —
+  a plot joins the chunks and summaries; the grammar of graphics in
+  three words (data + aesthetic mapping + geometry) plus labels;
+  code, plot, and prose in that order around every figure; the
+  render-then-read habit applied to plots; what Week 8 deliberately
+  defers (faceting, themes, scales, `ggsave`); and AI in Week 8 —
+  what AI can and cannot do with a rendered plot.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
 
-**R block (Weeks 8–10)**
+**R block (Weeks 9–10)**
 
-- Week 8 — `ggplot2` in one sitting
 - Week 9 — Simulation and `set.seed`: why reproducibility matters
 
 **AI module (Weeks 11–12)**

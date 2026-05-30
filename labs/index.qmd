@@ -33,13 +33,19 @@ help.
   write a short interpretation paragraph, and render to PDF — the
   load → inspect → summarize → interpret → render → read habit
   applied to computed output.
+- [Lab 6 — A `ggplot2` walkthrough](lab06-ggplot.qmd) —
+  the first `ggplot` inside a Quarto report: install `ggplot2`,
+  inspect `mtcars` lightly, build the minimum-viable scatterplot
+  (`ggplot(data, aes(x, y)) + geom_point()`), add axis labels with
+  `labs()`, optionally map color to a categorical variable using
+  `factor(cyl)`, render the plot inside a PDF, and write one
+  sentence of prose under the figure saying what it shows.
 
 ## Planned
 
 Labs are added as the course is built. The rough plan, aligned with
 the weekly module spine:
 
-- Lab 6 — A `ggplot2` walkthrough *(Week 8)*
 - Lab 7 — A small reproducible simulation in R *(Week 9)*
 - Lab 8 — Drafting and verifying technical prose with an AI assistant *(Weeks 11–12)*
 - Lab 9 — A first portfolio folder, optional Git workflow *(Week 13)*

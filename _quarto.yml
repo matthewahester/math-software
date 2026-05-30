@@ -50,6 +50,8 @@ website:
             text: "6 — Finishing the LaTeX Project"
           - href: notes/week07-r-foundations-in-vscode.qmd
             text: "7 — R foundations in VS Code"
+          - href: notes/week08-ggplot.qmd
+            text: "8 — Visualization with ggplot2"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -64,6 +66,8 @@ website:
             text: "4 — Figure, table, and citation"
           - href: labs/lab05-first-r.qmd
             text: "5 — A tour of a tidy dataset in R"
+          - href: labs/lab06-ggplot.qmd
+            text: "6 — A ggplot2 walkthrough"
       - section: "Examples"
         href: examples/index.qmd
         contents:

@@ -1,0 +1,284 @@
+---
+title: "Visualization with `ggplot2`"
+subtitle: "Week 8 — first ggplot inside a Quarto report: data, aesthetics, geometry, labels, and plots as evidence"
+toc: true
+---
+
+> A short conceptual reading to continue **Module B — R /
+> computation, visualization, simulation, reporting**. The companion
+> hands-on walkthrough is
+> [Lab 6 — A `ggplot2` walkthrough](../labs/lab06-ggplot.qmd). The
+> exact assignment prompt, due dates, and submission details for
+> the Week 8 visualization report live in the **Assignments/LMS
+> space**.
+
+Week 7 opened Module B by adding **R chunks** to the same Quarto
+container students had used since Week 1: load a small tidy
+dataset, inspect it, compute a few summaries, and write a sentence
+of prose under each piece of output. Week 8 adds one more piece of
+substance to the same document — **a figure**.
+
+There is still **no new editor, no new render engine, and no new
+portfolio convention** this week. You stay in VS Code, you render
+with Quarto to PDF, and your weekly artifact lives next to
+`hw01/`–`hw04/`, `hw07/`, and `latex-project/` in
+`math-software-portfolio/`. The only new thing is one package —
+`ggplot2` — and one new expectation: the report contains a plot
+that helps answer a question, with one short sentence of prose
+under the plot saying what the rendered figure shows.
+
+## One container, three substances now
+
+Modules A and B share the same Quarto-to-PDF render chain, the
+same editor, and the same "render then read" verification habit.
+Week 7 added R chunks + numeric summaries + prose to the document.
+Week 8 adds figures. The container did not change; the substance
+got richer.
+
+The arc of the weekly document, at the end of Week 8, looks like
+this from the top of the rendered PDF down: title block, short
+intro paragraph naming the dataset and the question, an
+inspection chunk with a sentence under it, a `ggplot` chunk with
+a sentence under the rendered figure, optionally one supporting
+summary chunk, and a short interpretation paragraph that ties the
+plot back to the question. The same edit → render → look →
+re-render loop you have used since Week 1 still applies — now to
+a figure instead of just to typeset math or to numeric output.
+
+## A plot answers a question
+
+Before you write `ggplot(...)`, you should be able to say in one
+sentence what **question** your plot is going to help answer. A
+plot without a question is decoration; a plot with a question is
+evidence.
+
+Examples of questions a small plot can help answer:
+
+- *Does fuel economy fall as horsepower rises across the cars in
+  `mtcars`?*
+- *Do the three iris species differ visibly in petal length and
+  petal width?*
+- *Is the relationship between two measured variables similar
+  across the categorical groups in this dataset, or does it differ
+  by group?*
+
+If you cannot state the question, the plot is not ready to draw
+yet — pick a question first.
+
+## The grammar of graphics, briefly
+
+`ggplot2` builds plots out of three small ideas. Week 8 only needs
+the surface of each:
+
+- **Data** — the tidy data frame you are plotting from. One row
+  per observation, one column per variable. Week 7's "tidy"
+  framing carries forward unchanged.
+- **Aesthetic mapping** — `aes(x = …, y = …, color = …)`. A rule
+  that says which *column* of the data becomes which *visual
+  property* of the plot (horizontal position, vertical position,
+  color, fill, shape, size). The aesthetic mapping is what makes
+  the same `ggplot` call into different plots when you change one
+  column reference.
+- **Geometry** — `geom_point()`, `geom_boxplot()`, `geom_bar()`,
+  and so on. The kind of mark actually drawn on the page once the
+  aesthetic mapping is set. Lab 6 covers `geom_point()` as the
+  canonical first geom and mentions `geom_boxplot()` and
+  `geom_bar()` as alternates.
+
+Layers add up with `+`. The minimum-viable ggplot is two lines of
+code:
+
+````markdown
+```{{r}}
+ggplot(data = mtcars, aes(x = hp, y = mpg)) +
+  geom_point()
+```
+````
+
+A third call, `labs(x = "...", y = "...", title = "...")`, adds
+axis labels and an optional title. Lab 6 walks the whole arc on
+`mtcars`.
+
+That is the entire minimum-viable ggplot vocabulary for Week 8.
+Faceting (`facet_wrap`/`facet_grid`), themes (`theme_*`), and
+custom scales/palettes are real value, but they are deferred — the
+goal this week is one clean first plot, not a polished publication
+figure.
+
+## Code, plot, and prose — in that order, around every figure
+
+Module A had a lesson: an equation needs surrounding prose. An
+equation sitting alone, with no setup and no interpretation, is an
+*equation-dump*, and a document made of equation-dumps is hard to
+read.
+
+Week 7 had the same lesson, applied to code: a chunk that runs is
+not a chunk that is understood; a summary that appears in the PDF
+without a sentence saying what it means is a *code-dump*.
+
+Week 8 has the same lesson, applied to figures: **a plot inside a
+report needs one short sentence of prose underneath it saying what
+the rendered figure shows**. A figure without prose is a
+*plot-dump*, and a report whose figures stand on their own is hard
+to grade and harder to read.
+
+The shape to write toward, every time you add a plot:
+
+1. A short sentence of context — what is this plot going to show?
+   What question does it help answer?
+2. The `ggplot` chunk itself.
+3. A short sentence of interpretation — what does the rendered
+   figure *actually* show?
+
+Step 3 is non-negotiable. The sentence describes what the
+rendered figure shows, not the plot's shape ("this is a
+scatterplot") and not a guess from the code ("this plot would
+probably show...").
+
+## The "render then read" habit, applied to plots
+
+Rendering has been verification since Week 1: edit the source,
+render, look at the PDF, fix anything that does not match what
+you intended, re-render. Week 7 extended the habit to computed
+output: R chunks can succeed but show the wrong thing.
+
+Week 8 extends the habit to figures. **A `ggplot` chunk can
+render successfully and still mislead**:
+
+- the chunk runs without error, but the axis is on a variable
+  that does not answer your question,
+- the chunk runs, but color is mapped to a variable that produces
+  a meaningless rainbow rather than the grouping you wanted,
+- the chunk runs, but the axis labels are missing or use raw
+  column names that the reader does not understand,
+- the chunk runs, but overplotting hides the pattern the plot was
+  supposed to surface.
+
+The habit:
+
+- After each render, **open the rendered PDF** and look at the
+  figure that appears — not at the code that produced it.
+- Confirm: do the axes show what you intended? Are the labels
+  readable? Does the rendered figure visibly answer the question
+  named in the intro paragraph? Does the sentence under the plot
+  accurately describe what the figure shows?
+- If something is off, fix the **source** (`.qmd`) and re-render
+  — do not edit the PDF.
+
+This is the same Week 1 lesson, said again. By Week 8 it is
+carrying a noticeably heavier load.
+
+## A tidy dataset, briefly
+
+A **tidy** dataset is one where each row is an observation and
+each column is a variable. No headers embedded in cells, no
+merged cells, no spreadsheet color-coding standing in for a
+variable.
+
+Built-in R datasets — `mtcars`, `iris`, and others — are tidy by
+construction, which is why Lab 6 uses one. For Week 8 work, see
+the [Data guidelines](../resources/data-guidelines.qmd) page —
+built-in R datasets are the first acceptable category, and
+`ggplot2::diamonds` becomes available the moment you load
+`ggplot2`.
+
+## What this week's lab does
+
+[Lab 6 — A `ggplot2` walkthrough](../labs/lab06-ggplot.qmd) walks
+the whole arc — install `ggplot2` → load → inspect → minimum
+viable plot → add labels → optionally map color → render → read
+— on `mtcars`, the same built-in dataset Lab 5 used in Week 7. It
+shows the cleanest possible first ggplot inside a Quarto report
+on a dataset students already know from Week 7.
+
+Do the lab on your own machine, in your own portfolio folder. The
+walkthrough produces a tiny rendered report; treat it as a working
+template you can read and adapt.
+
+## What Week 8 deliberately does not teach
+
+`ggplot2` is large enough to fill an entire course on its own.
+The first ggplot week deliberately stays narrow. The following
+are real value and are part of professional ggplot practice, but
+they are not Week 8 material:
+
+- **Faceting** (`facet_wrap`, `facet_grid`) — splitting one plot
+  into a grid of small plots, one per group. Excellent for
+  multi-group comparisons; deferred until later in the R block.
+- **Custom themes** (`theme_*`, `theme()`) — restyling colors,
+  fonts, gridlines, and so on. Default ggplot looks fine for a
+  course report.
+- **Custom scales and palettes** (`scale_color_*`, `scale_x_*`).
+- **Annotations** (`annotate`, `geom_text`).
+- **Multi-plot layout** (`patchwork` and friends).
+- **`ggsave()`** — saving a plot to a separate image file.
+  Unnecessary; the Quarto render embeds the plot inside the PDF
+  directly.
+
+If you have used these before, you may notice they are missing
+from Lab 6 and the Week 8 assignment. That is intentional. The
+**R Project (Week 10) Track A** — *data analysis and
+visualization with `ggplot2`* — is where these tools come into
+play for students who want them.
+
+## AI in Week 8
+
+AI assistants are useful in the same ways they have been since
+Week 1: explanation, debugging, syntax lookup, drafting. In Week
+8 specifically, they help with **`ggplot2` syntax lookup** (which
+geom, which aesthetic, which `labs()` argument), **debugging** an
+erroring or empty plot chunk, **explaining** what a piece of
+`ggplot` code does, and **rephrasing** the sentence of prose
+under the plot.
+
+Two things AI **cannot** do for you in Week 8:
+
+- **Read your plot for you.** What your prose says about the
+  plot must match what the **rendered figure** actually shows —
+  not what an assistant told you the plot would look like from
+  the code. AI assistants narrate plots from code they have not
+  seen rendered; their narration is a guess, not a reading. The
+  [AI use guidelines](../resources/ai-use-guidelines.qmd) name
+  this directly under "What AI is bad at: Plot interpretation."
+- **Generate plots you did not run.** If your `.qmd` claims to
+  show a `ggplot`, the figure in the PDF must come from a
+  `ggplot()` chunk that actually ran during the render. Do not
+  paste an assistant's described plot as a screenshot.
+
+The three-line **AI Use Note** (Tool / Purpose / Verification)
+applies. This week the Verification line should describe how you
+confirmed that **what your prose says about the plot is what
+your rendered plot actually shows**. See the
+[AI use guidelines](../resources/ai-use-guidelines.qmd) for the
+full pattern.
+
+## What you'll do this week
+
+In one paragraph: you will **build a short Quarto-to-PDF report
+on a small tidy dataset that contains at least one `ggplot`
+inside it, with axis labels and one sentence of prose under the
+rendered figure saying what the plot shows about a question you
+name in the intro paragraph**. You follow the same edit → render
+→ read habit you have used since Week 1; the only new thing is
+that some of what the PDF shows is a figure produced by a
+`ggplot` chunk that ran during the render. The exact assignment
+prompt, due dates, and submission details for the Week 8
+visualization report live in the **Assignments/LMS space**.
+
+## See also
+
+- [Lab 6 — A `ggplot2` walkthrough](../labs/lab06-ggplot.qmd) —
+  the hands-on walkthrough that builds a first ggplot on `mtcars`
+  end to end.
+- [R foundations in VS Code](week07-r-foundations-in-vscode.qmd) —
+  the Week 7 conceptual reading on R chunks, output, and prose;
+  Week 8 builds directly on it.
+- [Software setup](../resources/software-setup.qmd) — the
+  reference summary of the VS Code + R + Quarto + TinyTeX stack.
+- [Data guidelines](../resources/data-guidelines.qmd) — the four
+  acceptable categories of course data; built-in R datasets are
+  the first one, and `ggplot2::diamonds` enters that category
+  once `ggplot2` is installed.
+- [AI use guidelines](../resources/ai-use-guidelines.qmd) — the
+  course's position on AI assistance and the AI Use Note format,
+  including the explicit "Plot interpretation" caution.

@@ -1,0 +1,478 @@
+---
+title: "Lab 6 — A `ggplot2` walkthrough"
+subtitle: "Build your first plot with ggplot2 inside a Quarto report on mtcars"
+toc: true
+---
+
+This lab walks the **first `ggplot2` plot inside a Quarto report**
+end to end on `mtcars`, the same small built-in dataset Lab 5
+used in Week 7. It is the practical companion to
+[Visualization with `ggplot2`](../notes/week08-ggplot.qmd), the
+short conceptual reading for Week 8.
+
+You should be comfortable with the Week 1–7 workflow: opening a
+folder in VS Code, editing a `.qmd`, rendering to PDF with
+Quarto: Preview or `quarto render`, and writing R chunks with one
+sentence of prose under each chunk's output. Week 8 adds **one
+package** — `ggplot2` — and **one new substance** for the weekly
+document: a plot that helps answer a question, with axis labels
+and one sentence of prose underneath. No new editor, no new
+render engine, no `\documentclass`, no bibliography.
+
+## What you'll have at the end
+
+- A new `lab06/` subfolder in your `math-software-portfolio/`
+  containing a `.qmd` source and a rendered `.pdf`.
+- A short report on `mtcars` with: a dataset and question intro
+  paragraph, one inspection chunk, one **`ggplot` chunk** with
+  axis labels, one short sentence of plot-interpretation prose,
+  optionally one second plot demonstrating a color aesthetic,
+  and a short interpretation paragraph.
+- Hands-on familiarity with the minimum-viable ggplot
+  vocabulary: `ggplot(data, aes(x, y))` + `geom_point()` +
+  `labs(...)`.
+- A short **AI Use Note** in the standard three-line Tool /
+  Purpose / Verification format (only if you used AI assistance).
+
+The exact assignment prompt and submission details for the Week
+8 visualization report live in the **Assignments/LMS space**.
+
+## 1. Create and open the Week 8 lab folder
+
+Inside `math-software-portfolio/`, create `lab06/` next to your
+existing `hw01/`–`hw04/`, `hw07/`, `lab05/`, and `latex-project/`.
+From VS Code: **File → Open Folder…** and pick `lab06/`. Opening
+the folder (not a single file) keeps the Quarto extension, the
+file explorer, and the terminal all pointed at the same place.
+
+## 2. Start from a `.qmd` template
+
+Create `lab06.qmd` in `lab06/`. Paste this starter:
+
+````markdown
+---
+title: "Lab 6 — A first ggplot on mtcars"
+author: "YOUR NAME"
+format:
+  pdf: default
+---
+
+# What this report is about
+
+A short paragraph naming the dataset and the question the plot
+will help answer.
+
+# Inspect the dataset
+
+# A first ggplot
+
+# Interpretation
+````
+
+The headings are placeholders — you will fill in chunks and prose
+under each. This is the same shape as Lab 5; only the substance
+of the middle chunk changes.
+
+## 3. Install `ggplot2`
+
+Lab 6 uses `ggplot2`. If you have not installed it before, run
+this **once** in an R session (any R terminal — the integrated
+terminal in VS Code is fine):
+
+```r
+install.packages("ggplot2")
+```
+
+then close R with `q()` (answer `n` to the save-workspace
+prompt). You only need to install once per machine.
+
+**If the install fails** — most commonly a CRAN mirror or
+compiler issue — try again on a different network, try a
+different CRAN mirror (run `chooseCRANmirror()` in R), or use
+[Posit Cloud](https://posit.cloud) as a hosted fallback (it has
+`ggplot2` pre-installed). **Unlike Week 7's `dplyr` step, there
+is no base-R fallback for `ggplot2`** — `plot()` can produce a
+chart for diagnostic purposes, but the Week 8 deliverable is
+built around `ggplot`. If the install is genuinely blocked on
+your machine, come to office hours or open studio time and we
+will get it working.
+
+## 4. Inspect the dataset
+
+`mtcars` is auto-attached in every R session, so you do not need
+to load or import anything for the data. You do need to load
+`ggplot2`. Open a setup chunk and an inspection chunk:
+
+````markdown
+```{{r setup}}
+library(ggplot2)
+```
+
+```{{r}}
+head(mtcars)
+```
+````
+
+After the chunk runs in your own document, write **one sentence
+of prose** under it:
+
+> `mtcars` has 32 rows and 11 columns — fuel economy (`mpg`),
+> engine size (`cyl`, `disp`, `hp`), and a few other measurements
+> for 32 cars.
+
+This step is small on purpose. Week 8 is *new* on visualization,
+not on inspection — `head()` or `str()` is enough orientation
+before the plot.
+
+## 5. The minimum-viable ggplot
+
+The smallest useful ggplot has three parts: `ggplot(data, aes(...))`,
+a `geom_*()` layer, and a `+` between them. Add this chunk to
+your `.qmd`:
+
+````markdown
+```{{r}}
+ggplot(data = mtcars, aes(x = hp, y = mpg)) +
+  geom_point()
+```
+````
+
+Render the document (Quarto: Preview with `Ctrl/Cmd + Shift + K`,
+or `quarto render lab06.qmd` in a terminal opened in `lab06/`).
+Open the rendered PDF and confirm: a scatterplot appears with
+horsepower on the x-axis and miles per gallon on the y-axis. No
+title, no axis labels — that comes next.
+
+**What just happened, in one sentence per piece:**
+
+- `ggplot(data = mtcars, aes(x = hp, y = mpg))` told ggplot which
+  data frame to use and which two columns to map to horizontal
+  and vertical position.
+- `geom_point()` told ggplot to draw one point per row.
+- The `+` is how ggplot composes layers; everything that comes
+  after the initial `ggplot()` call is added on with `+`.
+
+If the chunk produced an axis grid with no points, you forgot the
+`+ geom_point()` line. Add it and re-render.
+
+## 6. Add axis labels
+
+A plot whose axes read `hp` and `mpg` is fine for a working
+draft. A plot **inside a report** that a stranger reads needs
+real labels. Add a `labs()` call:
+
+````markdown
+```{{r}}
+ggplot(data = mtcars, aes(x = hp, y = mpg)) +
+  geom_point() +
+  labs(
+    x = "Horsepower",
+    y = "Miles per gallon",
+    title = "Fuel economy falls with horsepower in mtcars"
+  )
+```
+````
+
+Render. Read. Compare to the unlabeled version: the axes now read
+in English, and the title states the rendered figure's headline
+in one sentence. **This is the minimum bar for a plot inside a
+graded report.** Below the rendered figure, write one sentence of
+plot-interpretation prose:
+
+> Cars with more horsepower tend to get fewer miles per gallon in
+> this dataset.
+
+The sentence is short, names what the rendered figure shows, and
+does not overclaim (it does not say "more horsepower causes lower
+mpg," it does not say "this holds for all cars in general," it
+does not say "the relationship is exactly linear").
+
+## 7. (Optional) Map color to a third variable
+
+The same `ggplot` call becomes a different plot when you add one
+more aesthetic. Map color to the cylinder-count column —
+**wrapped in `factor()`** so ggplot treats it as a categorical
+variable rather than a continuous one:
+
+````markdown
+```{{r}}
+ggplot(data = mtcars, aes(x = hp, y = mpg, color = factor(cyl))) +
+  geom_point() +
+  labs(
+    x = "Horsepower",
+    y = "Miles per gallon",
+    color = "Cylinders",
+    title = "Fuel economy by horsepower, colored by cylinder count"
+  )
+```
+````
+
+Render. Read. The same 32 points are drawn, but now each point's
+color encodes the car's cylinder count, and a legend appears on
+the right naming the categories. **The grammar of graphics is
+just a name for this pattern**: change one aesthetic mapping in
+the source, and the plot rearranges itself to show the new
+question.
+
+A workable prose sentence (rewrite in your own words) under the
+rendered plot:
+
+> The negative relationship between horsepower and miles per
+> gallon shows up clearly, and the cylinder groups form three
+> visible bands: 4-cylinder cars in the upper-left, 8-cylinder
+> cars in the lower-right.
+
+If you do not want the third aesthetic, skip Section 7. The
+report is complete with the labeled scatterplot from Section 6.
+
+## 8. (Optional) One second plot with a different geom
+
+If your question is better served by a different shape of plot,
+swap the geom. Two alternates are worth knowing about for Week 8;
+**you only need one plot in your report**, so this section is
+strictly optional.
+
+A **boxplot** compares a numeric variable across categorical
+groups:
+
+````markdown
+```{{r}}
+ggplot(data = mtcars, aes(x = factor(cyl), y = mpg)) +
+  geom_boxplot() +
+  labs(
+    x = "Cylinders",
+    y = "Miles per gallon",
+    title = "Fuel economy by cylinder count"
+  )
+```
+````
+
+A **bar chart** of counts (one bar per category):
+
+````markdown
+```{{r}}
+ggplot(data = mtcars, aes(x = factor(cyl))) +
+  geom_bar() +
+  labs(
+    x = "Cylinders",
+    y = "Count",
+    title = "Cars by cylinder count in mtcars"
+  )
+```
+````
+
+Each is one `ggplot(aes)` + one `geom_*()` + one `labs()`. Same
+three pieces, different geom.
+
+**The point of this section is not to teach all geoms.** The
+point is to see that the grammar — data + aesthetic mapping +
+geometry + labels — covers every shape of plot you might draw,
+and the only thing that changes between them is one `geom_*()`
+line.
+
+## 9. Write the interpretation paragraph
+
+Add one short paragraph under your `# Interpretation` heading,
+outside any code chunk, that ties the plot back to the question.
+The goal is that a reader who has not opened the source can read
+this paragraph plus the rendered figure and learn one or two true
+things about `mtcars`.
+
+A workable template (rewrite in your own words):
+
+> The dataset describes 32 cars by 11 measurements. The labeled
+> scatterplot shows fuel economy falling as horsepower rises:
+> the 4-cylinder cars cluster in the upper-left (low horsepower,
+> high mpg) and the 8-cylinder cars in the lower-right (high
+> horsepower, low mpg). The relationship is clear within this
+> sample of 32 cars; whether it generalizes to other cars or
+> reflects a causal mechanism is not something this small
+> dataset can tell us.
+
+The last sentence is the "not overclaiming" move. A small dataset
+shows what it shows; the prose should not stretch beyond that.
+
+## 10. Render and inspect the PDF
+
+Render again and open the PDF. Read it from the top as a
+stranger would. Confirm:
+
+- title and your name appear,
+- the dataset-and-question paragraph reads clearly,
+- the inspection chunk has output **and** a sentence underneath,
+- the **`ggplot` chunk produced an actual rendered plot inside
+  the PDF** — not a broken image, not a separate file, not a
+  screenshot,
+- the plot has **axis labels** (and ideally a title),
+- a sentence of prose sits **directly under the plot** saying
+  what the figure shows,
+- if you added Section 7 or Section 8, the second plot also has
+  labels and a sentence underneath,
+- the interpretation paragraph is present and grounded in the
+  plot above it,
+- no chunk's code shows an error message in the PDF,
+- everything fits in **a few pages** — if the PDF is 10 pages,
+  cut.
+
+Fix anything off in the source, then re-render. The render-and-
+look habit is still the load-bearing skill in Module B.
+
+## Common problems
+
+Skim this before you start; come back when something breaks.
+
+### `library(ggplot2)` errors
+
+- **Symptom.** "there is no package called 'ggplot2'" or a
+  network error.
+- **Fix.** Run `install.packages("ggplot2")` once in an R
+  session, then restart R or re-render. If the install fails
+  (mirror unreachable, compiler error on Windows, version
+  mismatch), try a different CRAN mirror with
+  `chooseCRANmirror()` in R, try again on a different network,
+  or use [Posit Cloud](https://posit.cloud) as a hosted
+  fallback. **Unlike `dplyr` in Week 7, there is no base-R
+  fallback for `ggplot2`** for the week's deliverable. If the
+  install is blocked, bring the error to office hours.
+
+### The plot region appears but no points are drawn
+
+- **Symptom.** The PDF shows axes, a grid, and an empty plot
+  area — but no actual data points.
+- **Fix.** You have `ggplot(data, aes(...))` but you forgot
+  `+ geom_point()` (or whichever geom). Add the
+  `+ geom_<something>()` line and re-render.
+
+### `Error: object 'cyl' not found`
+
+- **Symptom.** The chunk errors with "object not found" on a
+  column name that is plainly in the dataset.
+- **Fix.** You wrote `aes(color = cyl)` without `data = mtcars`
+  in the `ggplot()` call. Pass the data frame explicitly:
+  `ggplot(data = mtcars, aes(...))`. Alternatively (less
+  idiomatic) use `aes(color = mtcars$cyl)`.
+
+### `aes(color = "cyl")` colored everything the same
+
+- **Symptom.** You wanted a multi-colored plot but every point
+  came out the same color, and the legend reads "cyl" with one
+  entry.
+- **Fix.** A column reference inside `aes()` is a **name**, not
+  a string. `aes(color = "cyl")` maps the literal string
+  `"cyl"` and gives every point that one constant color; you
+  want `aes(color = cyl)`, which maps the `cyl` *column* to
+  color.
+
+### Color shows up as a continuous rainbow instead of distinct categories
+
+- **Symptom.** You mapped `aes(color = cyl)` and the legend is a
+  smooth gradient bar instead of three named categories.
+- **Fix.** `cyl` is numeric in `mtcars`, so ggplot treats it as
+  continuous. Wrap it in `factor()` to force categorical
+  treatment: `aes(color = factor(cyl))`. In `mtcars`,
+  `factor(cyl)` is how we tell ggplot to treat the cylinder
+  count as a categorical grouping variable for color rather
+  than as a continuous number.
+
+### A chunk errors and the whole render stops
+
+- **Symptom.** The PDF does not build; the error points at a
+  specific chunk.
+- **Fix.** Comment out the chunk for now (wrap in `<!-- ... -->`
+  or set the chunk option `eval: false`), render to confirm the
+  rest is clean, then fix the problem chunk in isolation.
+
+### Plot is too small or too large
+
+- **Symptom.** The rendered figure is squashed, gigantic, or
+  has illegible axis labels.
+- **Fix.** Quarto chunk options `fig-width:` and `fig-height:`
+  set the rendered figure size in inches. The default is
+  usually fine for a short report. If you change them, add the
+  options at the top of the chunk:
+
+  ````markdown
+  ```{{r}}
+  #| fig-width: 5
+  #| fig-height: 3.5
+  ggplot(data = mtcars, aes(x = hp, y = mpg)) +
+    geom_point() +
+    labs(x = "Horsepower", y = "Miles per gallon")
+  ```
+  ````
+
+### VS Code shows the file as "Plain Text"
+
+- **Symptom.** The lower-right of the VS Code window says
+  **Plain Text** instead of **Quarto** or **Markdown**; Quarto
+  commands do not work.
+- **Fix.** Click the **Plain Text** label and pick **Quarto**
+  (or **Markdown**). Confirm the Quarto extension is installed
+  and the filename ends in `.qmd`.
+
+### `quarto render lab06.qmd` says "No valid input files"
+
+- **Symptom.** The terminal cannot find the file.
+- **Fix.** `cd` into `lab06/` and re-run. `ls` (mac/Linux) or
+  `dir` (Windows) should show `lab06.qmd`.
+
+### "I keep finding RStudio instructions online"
+
+The R code itself is identical. When a tutorial says "click
+**Render** in RStudio," the course's equivalent is **Quarto:
+Preview** (`Ctrl/Cmd + Shift + K`) in VS Code or
+`quarto render lab06.qmd` in a terminal. Same result. The Week
+7 note explains this in more detail.
+
+### The plot renders but does not answer the question
+
+- **Symptom.** The plot is technically fine — axes, points,
+  labels — but reading it does not help with the question you
+  named in the intro paragraph.
+- **Fix.** This is a *plot choice* problem, not a *ggplot
+  syntax* problem. Pick a different mapping: swap x and y, try
+  a different `aes()` column, try a different geom
+  (`geom_boxplot()` for numeric-by-category questions;
+  `geom_bar()` for count-by-category questions). Re-render
+  after each change and check whether the figure now reads as
+  evidence for the question.
+
+### A plot-dump
+
+- **Symptom.** A figure appears in the report with no prose
+  underneath.
+- **Fix.** Add one sentence under the rendered plot saying what
+  the figure shows about the question. A plot that runs is not
+  a plot that is understood — the same Module B failure mode as
+  Week 7's "code-dump," now with figures.
+
+## What this prepares you to do
+
+When you finish this lab you should be able to:
+
+- create a `lab06/` (or similarly any week's) folder next to
+  your existing portfolio folders, open it in VS Code, and
+  create a `.qmd` that renders to PDF;
+- install `ggplot2` and load it in a setup chunk;
+- name in one sentence the question your plot is going to help
+  answer;
+- write the minimum-viable ggplot — `ggplot(data, aes(x, y)) +
+  geom_point()` — and render it inside a PDF;
+- add axis labels via `labs(x = ..., y = ...)` so a stranger
+  reading the PDF can interpret the plot;
+- (optionally) map a third column to a color or fill aesthetic,
+  using `factor()` if the column is numeric but categorical in
+  meaning;
+- write one short sentence of plot-interpretation prose under
+  the rendered figure, in your own words, naming what the plot
+  shows about the question;
+- read the rendered PDF as a stranger would and fix anything
+  that does not match what you intended;
+- use AI for ggplot syntax lookup and debugging while
+  verifying that what your prose says about the plot matches
+  what the rendered figure actually shows.
+
+The Week 8 assignment in the course LMS uses exactly this
+workflow on a different built-in dataset. The course LMS holds
+the exact prompt, the file-naming convention, and the
+submission area.
