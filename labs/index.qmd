@@ -40,13 +40,21 @@ help.
   `labs()`, optionally map color to a categorical variable using
   `factor(cyl)`, render the plot inside a PDF, and write one
   sentence of prose under the figure saying what it shows.
+- [Lab 7 — A small reproducible simulation in R](lab07-simulation.qmd) —
+  the first reproducible simulation inside a Quarto report on a
+  base-R-only coin-flip process: set a seed with `set.seed()`,
+  generate 1000 simulated flips with `sample()`, summarize with
+  `table()` and `mean()`, optionally visualize with
+  `barplot(table(...))`, optionally extend with `replicate()` to
+  see sampling behavior, render twice, and write one short
+  interpretation paragraph that stays within what the simulation
+  under the stated seed actually produced.
 
 ## Planned
 
 Labs are added as the course is built. The rough plan, aligned with
 the weekly module spine:
 
-- Lab 7 — A small reproducible simulation in R *(Week 9)*
 - Lab 8 — Drafting and verifying technical prose with an AI assistant *(Weeks 11–12)*
 - Lab 9 — A first portfolio folder, optional Git workflow *(Week 13)*
 

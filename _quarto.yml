@@ -52,6 +52,8 @@ website:
             text: "7 — R foundations in VS Code"
           - href: notes/week08-ggplot.qmd
             text: "8 — Visualization with ggplot2"
+          - href: notes/week09-simulation.qmd
+            text: "9 — Simulation and reproducibility"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -68,6 +70,8 @@ website:
             text: "5 — A tour of a tidy dataset in R"
           - href: labs/lab06-ggplot.qmd
             text: "6 — A ggplot2 walkthrough"
+          - href: labs/lab07-simulation.qmd
+            text: "7 — A small reproducible simulation in R"
       - section: "Examples"
         href: examples/index.qmd
         contents:

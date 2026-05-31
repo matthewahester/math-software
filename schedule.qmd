@@ -28,7 +28,7 @@ support time you may attend for help or work alongside others.
 | 6 | LaTeX Project | Studio time for the project | — |
 | 7 | R foundations in VS Code | Vectors, data frames, `dplyr` basics; R + Quarto inside VS Code | **R transition conference (required)** |
 | 8 | Visualization with `ggplot2` | Data, aesthetics, geoms, labels, and plots as evidence | — |
-| 9 | Simulation and reproducibility | `set.seed()`, replicate, CLT ideas | — |
+| 9 | Simulation and reproducibility | `set.seed()`, repeated trials, and sampling behavior | — |
 | 10 | R Project | Studio time for the project | **R Project conference (required)** |
 | 11 | AI module I — debugging and verification | Prompting, scoping, verifying, citation hygiene | — |
 | 12 | AI module II — drafting and critique | Drafting prose, catching hallucinations, critique | — |

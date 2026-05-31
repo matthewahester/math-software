@@ -56,15 +56,21 @@ the course LMS.
   render-then-read habit applied to plots; what Week 8 deliberately
   defers (faceting, themes, scales, `ggsave`); and AI in Week 8 —
   what AI can and cannot do with a rendered plot.
+- [Week 9 — Simulation and reproducibility](week09-simulation.qmd) —
+  continuing Module B: one Quarto container, four substances now —
+  simulated data joins the chunks, summaries, and figures; why
+  `set.seed()` is the load-bearing function; the minimum-viable
+  simulation in two chunks; code, output, and prose around every
+  simulation chunk; the render-then-read habit applied to
+  simulated output (render twice, confirm numbers match); a brief
+  note on repeated trials with `replicate()` and sampling behavior;
+  and AI in Week 9 — what AI can and cannot do with simulation
+  output.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
-
-**R block (Weeks 9–10)**
-
-- Week 9 — Simulation and `set.seed`: why reproducibility matters
 
 **AI module (Weeks 11–12)**
 

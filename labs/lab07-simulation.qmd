@@ -1,0 +1,469 @@
+---
+title: "Lab 7 — A small reproducible simulation in R"
+subtitle: "Set a seed, simulate 1000 coin flips, summarize, interpret, and render inside a Quarto report"
+toc: true
+---
+
+This lab walks the **first reproducible simulation inside a
+Quarto report** end to end on a tiny toy process — 1000 flips of
+a fair coin, simulated with base-R `sample()` under a stated
+seed. It is the practical companion to
+[Simulation and reproducibility](../notes/week09-simulation.qmd),
+the short conceptual reading for Week 9.
+
+You should be comfortable with the Week 1–8 workflow: opening a
+folder in VS Code, editing a `.qmd`, rendering to PDF with
+Quarto: Preview or `quarto render`, writing R chunks with one
+sentence of prose under each chunk's output, and (from Week 8)
+including small figures in a report. Week 9 adds **one new
+discipline** — setting a random seed so the simulation is
+reproducible — and **one new family of base-R functions**
+(`set.seed()`, `sample()`, optionally `replicate()`). **No new
+package install is required** — everything in this lab is base
+R.
+
+## What you'll have at the end
+
+- A new `lab07/` subfolder in your `math-software-portfolio/`
+  containing a `.qmd` source and a rendered `.pdf`.
+- A short report on 1000 simulated coin flips with: a
+  simulation-and-question intro paragraph, a setup chunk
+  setting the seed, a simulation chunk that generates the
+  flips, a summary chunk that counts heads and tails, a short
+  prose interpretation paragraph, and optionally a tiny
+  visualization or a short `replicate()` extension.
+- Hands-on familiarity with the seed-first, simulate, summarize,
+  interpret workflow on a base-R-only simulation.
+- A short **AI Use Note** in the standard three-line Tool /
+  Purpose / Verification format (only if you used AI
+  assistance).
+
+The exact assignment prompt and submission details for the
+Week 9 simulation report live in the **Assignments/LMS space**.
+
+## 1. Create and open the Week 9 lab folder
+
+Inside `math-software-portfolio/`, create `lab07/` next to your
+existing `hw01/`–`hw04/`, `hw07/`, `hw08/`, `lab05/`, `lab06/`,
+and `latex-project/`. From VS Code: **File → Open Folder…** and
+pick `lab07/`. Opening the folder (not a single file) keeps the
+Quarto extension, the file explorer, and the terminal all
+pointed at the same place.
+
+## 2. Start from a `.qmd` template
+
+Create `lab07.qmd` in `lab07/`. Paste this starter:
+
+````markdown
+---
+title: "Lab 7 — A small reproducible simulation in R"
+author: "YOUR NAME"
+format:
+  pdf: default
+---
+
+# What this report is about
+
+A short paragraph naming the simulation, the seed I will use,
+and the question I want the simulation to help answer.
+
+# Setup
+
+# Simulate
+
+# Summarize
+
+# Interpretation
+````
+
+The headings are placeholders — you will fill in chunks and
+prose under each. This is the same shape as Lab 5 and Lab 6;
+only the substance of the middle chunks changes.
+
+## 3. The seed — what `set.seed()` does
+
+R's random number generator is *pseudo-random*: it produces
+numbers that look random but are completely determined by a
+starting point called a **seed**. Calling `set.seed(N)` once
+before any random call locks the entire sequence of random
+numbers to a known starting point. Two students running the
+same code with the same seed get the same numbers.
+
+A simulation **without** `set.seed()` is not reproducible.
+Every render produces different numbers, and the prose
+interpretation drifts away from the rendered output every time.
+Set the seed in a setup chunk **before** any random call:
+
+````markdown
+```{{r setup}}
+set.seed(2026)
+```
+````
+
+That single line is the whole setup chunk. You may use any
+non-negative integer for the seed; what matters is that the
+seed is set **before** the simulation chunk runs.
+
+## 4. The minimum-viable simulation in two chunks
+
+The smallest useful simulation has two chunks: a setup chunk
+(above) and a generation chunk. Try this tiny first version —
+just 10 flips, so you can read each value:
+
+````markdown
+```{{r}}
+sample(c("H", "T"), size = 10, replace = TRUE)
+```
+````
+
+Render the document (Quarto: Preview with `Ctrl/Cmd + Shift +
+K`, or `quarto render lab07.qmd` in a terminal opened in
+`lab07/`). Open the rendered PDF and confirm: a vector of 10
+H/T values appears. **Then render the document a second time
+without changing anything** and confirm the rendered values are
+**the same** — this is the reproducibility check that `set.seed`
+guarantees.
+
+Now try the load-bearing experiment of Section 3: temporarily
+change the seed in the setup chunk to a different number (say,
+`set.seed(42)`), re-render, and watch the 10 H/T values change.
+Then change the seed back to `2026`, re-render, and watch the
+**original** 10 H/T values return. That round-trip — same
+seed, same numbers — is what `set.seed()` does.
+
+## 5. The simulation the rest of the lab is about
+
+Now scale up. Replace the 10-flip sample with the 1000-flip
+simulation the lab will summarize:
+
+````markdown
+```{{r}}
+flips <- sample(c("H", "T"), size = 1000, replace = TRUE)
+```
+````
+
+This stores a length-1000 vector of `"H"`/`"T"` values in
+`flips` for the rest of the report to use. **Do not print the
+full `flips` vector** — 1000 H/T values fills several pages.
+The next chunk's summary is what the reader looks at.
+
+If you have not already written the intro paragraph at the top
+of your `.qmd`, do that now: name the simulation (1000 flips of
+a fair coin), name the seed value (e.g., "I use `set.seed(2026)`
+throughout this report"), and state your question in one
+sentence. A workable question: *Under this seed, how often does
+the simulated fair coin come up heads in 1000 flips?*
+
+## 6. Summarize the simulation
+
+A `table()` is the cleanest summary for a categorical
+simulation:
+
+````markdown
+```{{r}}
+table(flips)
+```
+````
+
+After the chunk runs in your own document, write **one sentence
+of prose** under it naming what the counts show *under your
+seed*. The sentence describes the rendered counts; it does not
+guess what counts a fair coin "should" produce in general:
+
+> Under `set.seed(2026)`, the 1000 simulated flips produced 503
+> heads and 497 tails.
+
+(Your exact counts will depend on the seed you used. The
+sentence describes whatever the rendered table actually shows.)
+
+For a single summary value, the simulated proportion of heads
+is a useful complement:
+
+````markdown
+```{{r}}
+mean(flips == "H")
+```
+````
+
+The expression `flips == "H"` produces a length-1000 vector of
+`TRUE`/`FALSE` values, one per flip; `mean(...)` of that vector
+is the proportion of `TRUE`s — i.e., the simulated proportion
+of heads. Write one sentence underneath:
+
+> Under `set.seed(2026)`, the simulated proportion of heads
+> across the 1000 flips was about 0.503.
+
+## 7. (Optional) A small visualization
+
+If a quick visual would help your interpretation, add **one**
+small bar chart of the H/T counts. The simplest no-dependency
+option is base-R `barplot(table(...))`:
+
+````markdown
+```{{r}}
+barplot(
+  table(flips),
+  xlab = "Outcome",
+  ylab = "Count",
+  main = "Counts of heads and tails in 1000 simulated flips"
+)
+```
+````
+
+If you installed `ggplot2` for Lab 6 and want to use it
+instead, the equivalent is:
+
+````markdown
+```{{r}}
+library(ggplot2)
+
+ggplot(data = data.frame(outcome = flips), aes(x = outcome)) +
+  geom_bar() +
+  labs(
+    x = "Outcome",
+    y = "Count",
+    title = "Counts of heads and tails in 1000 simulated flips"
+  )
+```
+````
+
+Either version is fine; the base-R version requires no install.
+Write one sentence underneath naming what the chart shows
+*under your seed*. Skip this section entirely if you do not
+want a plot; the summary table from Section 6 already carries
+the story.
+
+## 8. (Optional) Repeated trials with `replicate()`
+
+So far you have run **one** 1000-flip simulation. A natural
+follow-up question: if you ran a 100-flip simulation many
+different times, what would the per-run *proportion of heads*
+look like across those many runs?
+
+The base-R function `replicate(n, expr)` runs the expression
+`expr` a total of `n` times and collects the results into a
+vector. To collect 200 sample proportions, each from a fresh
+100-flip simulation:
+
+````markdown
+```{{r}}
+proportions <- replicate(
+  n = 200,
+  expr = mean(sample(c("H", "T"), size = 100, replace = TRUE) == "H")
+)
+```
+````
+
+`proportions` is a length-200 numeric vector — one simulated
+proportion of heads per 100-flip run. A summary and quick plot:
+
+````markdown
+```{{r}}
+summary(proportions)
+hist(
+  proportions,
+  xlab = "Proportion of heads in 100 flips",
+  main = "200 repeated 100-flip simulations"
+)
+```
+````
+
+The histogram clusters around 0.5 with a spread that shrinks if
+you increase the size of each simulation (the inner `size =
+100`). This kind of clustering shows up across many simulations
+in statistics; it is sometimes called *sampling behavior*, and
+the formal name and proof live in a probability course you may
+take later. For Week 9 the **demonstration** is all you need —
+no theorem, no proof, no formula.
+
+The optional `replicate()` extension is **strictly optional**.
+The Week 9 deliverable is complete without it. Include it if
+you want to see the pattern; skip it otherwise.
+
+## 9. Write the interpretation paragraph
+
+Add one short paragraph under your `# Interpretation` heading,
+outside any code chunk, that ties the simulation back to your
+question. The goal is that a reader who has not opened the
+source can read this paragraph and learn one or two true things
+about *what the simulation under the stated seed produced*.
+
+A workable template (rewrite in your own words, using your
+actual counts):
+
+> Under `set.seed(2026)`, the 1000-flip simulation produced 503
+> heads and 497 tails — a simulated proportion of heads of
+> about 0.503, which is close to the 0.5 a fair coin would
+> suggest. A single 1000-flip simulation under one seed cannot
+> prove the coin is fair or unfair; what it shows is that under
+> this seed, the rendered output is consistent with a fair
+> coin.
+
+The last sentence is the "not overclaiming" move. A small
+simulation under one seed shows what it shows; the prose should
+not stretch beyond that.
+
+## 10. Render and inspect the PDF
+
+Render the document, then **render it a second time without
+changing the source**. Open both rendered PDFs. They should be
+identical — same counts, same proportions, same plots, same
+prose alignment. If they are not, the seed is missing,
+misplaced, or different from the value in your prose.
+
+A final pass through the PDF as a stranger would read it,
+confirming:
+
+- title and your name appear,
+- the simulation-and-question paragraph reads clearly,
+- the seed is **named in the intro prose** and **set in the
+  setup chunk**,
+- the simulation chunk runs and the summary chunk shows real
+  counts,
+- one sentence of prose sits under the summary,
+- the optional visualization (if present) has axis labels and
+  a sentence underneath,
+- the interpretation paragraph is grounded in the summary
+  above it and does not overclaim,
+- no chunk's code shows an error message in the PDF,
+- everything fits in **a few pages** — if the PDF is 10 pages,
+  cut.
+
+Fix anything off in the source, then re-render. The render-
+and-look-twice habit is the load-bearing skill of Week 9.
+
+## Common problems
+
+Skim this before you start; come back when something breaks.
+
+### No `set.seed()` call
+
+- **Symptom.** Every render produces different counts; your
+  prose says "503 heads" but the next render shows "511."
+- **Fix.** Add a `set.seed(N)` chunk **above** the simulation
+  chunk, then re-render twice to confirm the numbers are now
+  the same.
+
+### Seed set *after* the simulation chunk
+
+- **Symptom.** `set.seed()` is in the document but the
+  simulation still produces different numbers each render.
+- **Fix.** R reads chunks top to bottom. `set.seed()` must run
+  *before* any random call. Move the setup chunk above the
+  simulation chunk.
+
+### Different seed in prose vs. in code
+
+- **Symptom.** The intro paragraph says `set.seed(42)` but the
+  chunk uses `set.seed(2026)`. The rendered counts do not match
+  what the prose implies.
+- **Fix.** Pick one seed value and use it in both places.
+
+### `replace = TRUE` accidentally `FALSE`
+
+- **Symptom.** `sample(c("H", "T"), size = 1000, replace =
+  FALSE)` errors out — you cannot sample 1000 values without
+  replacement from a length-2 vector.
+- **Fix.** Keep `replace = TRUE` for any simulation where the
+  same outcome can occur more than once (every Week 9
+  simulation).
+
+### A chunk errors and the whole render stops
+
+- **Symptom.** The PDF does not build; the error points at a
+  specific chunk.
+- **Fix.** Comment out the chunk for now (wrap in `<!-- ...
+  -->` or set the chunk option `eval: false`), render to
+  confirm the rest is clean, then fix the problem chunk in
+  isolation.
+
+### Output is huge
+
+- **Symptom.** Printing the full 1000-element `flips` vector
+  fills three pages of H/T values.
+- **Fix.** Print `table(flips)`, `head(flips)`, or
+  `length(flips)` instead — the reader does not need every
+  value. The summary chunk is where the story lives.
+
+### VS Code shows the file as "Plain Text"
+
+- **Symptom.** The lower-right of the VS Code window says
+  **Plain Text** instead of **Quarto** or **Markdown**;
+  Quarto commands do not work.
+- **Fix.** Click the **Plain Text** label and pick **Quarto**
+  (or **Markdown**). Confirm the Quarto extension is installed
+  and the filename ends in `.qmd`.
+
+### `quarto render lab07.qmd` says "No valid input files"
+
+- **Symptom.** The terminal cannot find the file.
+- **Fix.** `cd` into `lab07/` and re-run. `ls` (mac/Linux) or
+  `dir` (Windows) should show `lab07.qmd`.
+
+### A "simulation-dump"
+
+- **Symptom.** Several simulation chunks in a row, no prose
+  between them, no interpretation paragraph.
+- **Fix.** Add one sentence under each simulation/summary chunk
+  naming what the chunk produced *under the stated seed*. A
+  chunk that runs is not a chunk that is understood — the same
+  Module B failure mode as Week 7's "code-dump" and Week 8's
+  "plot-dump," now with simulated output.
+
+### AI hallucinates simulation output
+
+- **Symptom.** An AI assistant told you that `set.seed(2026);
+  sample(c("H","T"), size = 1000, replace = TRUE)` produces
+  exactly 510 heads, and you paste that number into your prose
+  — but the rendered output shows 503 heads.
+- **Fix.** AI assistants sometimes hallucinate the exact
+  numeric output of `set.seed(N); sample(...)` calls because
+  they do not actually run R. What your prose says about the
+  simulation must match what your **rendered output** actually
+  shows. Re-run the chunk and read the actual count; rewrite
+  the prose to match.
+
+## What this prepares you to do
+
+When you finish this lab you should be able to:
+
+- create a `lab07/` (or similarly any week's) folder next to
+  your existing portfolio folders, open it in VS Code, and
+  create a `.qmd` that renders to PDF;
+- set a random seed at the top of the document with
+  `set.seed(N)` so the simulation is reproducible;
+- write a simulation chunk using `sample(...)` that generates
+  a small repeated random process;
+- summarize the simulated outcomes with `table(...)`,
+  `mean(...)`, or a similar basic summary;
+- (optionally) add one small base-R bar chart of the counts
+  with axis labels;
+- (optionally) use `replicate(n, expr)` to repeat a simulation
+  many times and look at the distribution of per-run
+  summaries;
+- write one short interpretation paragraph that names what
+  the simulation **under the stated seed** produced, without
+  overclaiming;
+- read the rendered PDF as a stranger would, render the
+  document **twice** with the unchanged source to confirm the
+  numbers match, and fix anything that does not match what
+  you intended;
+- use AI for syntax lookup and debugging while verifying that
+  what your prose says about the simulation matches what your
+  rendered output actually shows.
+
+The Week 9 assignment in the course LMS uses exactly this
+workflow on a different simulation context. The course LMS
+holds the exact prompt and submission details.
+
+## Looking ahead to the R Project
+
+Week 10 includes an **R Project** with two tracks. **Track A**
+extends Week 8 (data analysis and visualization with
+`ggplot2`); **Track B** extends Week 9 (simulation, sampling
+behavior, or a CLT-style investigation). The seed-first,
+simulate, summarize, interpret workflow you just built is the
+exact workflow Track B extends into a longer report. The
+project prompt, the track-selection mechanics, the conference
+sign-up, and the submission details all live in the course
+LMS.
