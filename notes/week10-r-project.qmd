@@ -1,0 +1,317 @@
+---
+title: "The R Project"
+subtitle: "Week 10 — composing your Module B skills into one short focused R-in-Quarto report on a question of your choice"
+toc: true
+---
+
+> A short conceptual reading on the **R Project**, the project
+> that closes **Module B — R / computation, visualization,
+> simulation, reporting**. The Week 10 schedule slot is studio
+> time for the project, and the **Week 10 R Project conference**
+> is the required term-anchor conference for the week. The exact
+> project prompt, rubric, deadlines, submission details,
+> extension procedures, and conference sign-up mechanics live in
+> the **Assignments/LMS space**.
+
+Week 7 opened Module B with the first R-in-Quarto report on a
+small tidy dataset. Week 8 added **one focused `ggplot2`
+figure** inside the same Quarto container. Week 9 added a
+**reproducible simulation** to the same container, with
+`set.seed()` as the load-bearing function. **Week 10 is the
+week where you put those three substances together into one
+short focused report on a question of your choice.**
+
+The R Project is **not a new-skills week**. There is no new
+editor, no new render engine, no new portfolio convention, and
+**no new package install required**. Everything the project asks
+for is already in the kit you built across Weeks 7–9: R chunks
+inside a Quarto-to-PDF report (Week 7), one focused `ggplot2`
+figure with labels and prose interpretation (Week 8), and a
+small reproducible simulation under a stated seed (Week 9).
+What changes in Week 10 is **composition** — you choose the
+question, choose the track, scope the work to a short report,
+defend the choices at the midweek conference, and ship.
+
+The R Project sits in your portfolio next to the **LaTeX
+Project** from Week 6 — both are short, polished, reproducible
+artifacts that compose a module's skills into one document.
+
+## One container, three substances, one project
+
+Modules A and B share the same Quarto-to-PDF render chain. Week
+1 set up the render chain; Weeks 2–4 added math notation,
+structure, and apparatus; Weeks 5–6 produced the LaTeX Project.
+Week 7 reopened the container for R; Week 8 added a figure;
+Week 9 added a simulation. **Week 10 asks one question — what
+does it look like to write a short focused report that uses
+one or two of those substances on a question you care about?**
+
+The deliverable is the same shape as your weekly Week 7, 8, or
+9 reports — a single Quarto-to-PDF rendered document a few
+pages long, structured as headings + chunks + prose, with an
+AI Use Note at the end. The difference is that you choose the
+question, you choose the data or the simulation, and you have
+a midweek conference to confirm the choice before submission.
+
+## The R Project is non-droppable
+
+The weekly drop pool (best 9 of 11) covers HW 7, HW 8, HW 9,
+and most other weekly assignments. **The R Project is not in
+that pool.** It is the major artifact for the
+R / computation / visualization / simulation / reporting
+category of your grade, and it cannot be skipped — exactly the
+same role the LaTeX Project played for the LaTeX /
+mathematical-writing category.
+
+**Project extensions require a request submitted *before* the
+due date**, granted at the instructor's discretion, per the
+syllabus. The weekly flat-20% / one-week-late rule does **not**
+automatically apply to the project. The exact request
+procedure lives in the course LMS.
+
+## The two tracks
+
+The R Project has **two named tracks**. **You pick exactly
+one.** The Week 10 R Project conference is where the track
+choice gets confirmed.
+
+### Track A — Data analysis and visualization with `ggplot2`
+
+You pick a small dataset and a small question about it,
+inspect the data, compute summaries that bear on the question,
+build **one focused `ggplot2` figure** that addresses the
+question, and write prose interpreting what the rendered
+evidence shows.
+
+This is the R Project track that extends Week 8 most directly.
+If Lab 6 and your Week 8 assignment felt like the work you
+want to do more of, Track A is probably your shape.
+
+### Track B — Simulation, sampling behavior, or a CLT-style investigation
+
+You pick a small random process and a small question about it,
+set a seed with `set.seed()`, simulate the process reproducibly,
+summarize the simulated outcomes, optionally visualize the
+simulated distribution, and write prose interpreting what the
+simulation **under the stated seed** shows — without
+overclaiming about probability theory, populations, or other
+seeds.
+
+This is the R Project track that extends Week 9 most directly.
+If Lab 7 and your Week 9 assignment felt like the work you
+want to do more of, Track B is probably your shape.
+
+**You do not have to do both tracks.** A project that tries to
+do Track A *and* Track B in one report is a scope problem —
+the report loses focus and neither track gets finished cleanly.
+Pick one.
+
+## Picking a track — an honest selection guide
+
+There are three useful questions for picking a track:
+
+- **Which Module B lab did you enjoy more — Lab 6 or Lab 7?**
+  Lab 6 → Track A. Lab 7 → Track B.
+- **Which Module B weekly did you feel more confident on —
+  the ggplot one or the simulation one?** ggplot → Track A.
+  Simulation → Track B.
+- **Do you have a question about a real dataset you have been
+  curious about, or about a small random process you have
+  been curious about?** Dataset → Track A. Random process →
+  Track B.
+
+If after these three questions you are still unsure, bring the
+question you most want to answer to the Week 10 R Project
+conference and we can pick the track together at the
+conference. That is part of what the conference is for.
+
+## Track A — what data is allowed?
+
+For Track A, use a **built-in R dataset**, a **small public
+dataset with verifiable provenance**, or a **student-selected
+dataset approved through the course process**. **Simulated data
+with `set.seed()` belongs to Track B, not Track A** — a Track A
+project analyzes data that already exists; it does not generate
+its own data.
+
+- **Built-in R datasets** (`mtcars`, `iris`, `airquality`,
+  `Orange`, `ToothGrowth`, `women`, `cars`, `trees`, and other
+  built-ins) are always allowed. You have already used some of
+  these in Weeks 7 and 8. They are not a downgrade — a tight
+  Track A project on `mtcars` or `iris` is a complete project.
+- **Small public datasets with verifiable provenance** are
+  allowed. Include a citation or URL the reader can resolve,
+  and keep the data file inside your project folder so the
+  document renders reproducibly.
+- **Student-selected datasets approved through the course
+  process** are allowed; bring the candidate to conference and
+  the exact approval mechanics live in the course LMS.
+
+The general data policy for the course is on the
+[Data guidelines](../resources/data-guidelines.qmd) page;
+Track A draws from the three options above.
+
+You do **not** need to find an external dataset to do Track A.
+A focused analysis of a small built-in dataset is a complete
+Track A project.
+
+## Track B — what reproducibility looks like
+
+Track B's load-bearing skill is the same one from Week 9:
+**call `set.seed(N)` once, before any random call, in a chunk
+that runs first.** Without that, the report's numbers change on
+every render and the prose interpretation drifts away from the
+rendered output silently.
+
+State the integer seed value explicitly in your introduction
+paragraph as well as in the chunk — for example, "with
+`set.seed(2026)`" — so a reader can re-run with the same seed
+and get the same numbers.
+
+Track B does **not** require a formal Central Limit Theorem
+statement, a proof, a hypothesis test, a confidence interval,
+a standard-error formula, or a Monte Carlo error analysis. It
+asks for a small reproducible simulation, an honest summary,
+and a careful interpretation **under the stated seed**.
+Sampling-behavior extensions with `replicate()` are welcome
+but optional.
+
+## A polished short report, a few pages
+
+The target on both tracks is a **polished short report of a
+few pages**. The same calibration that worked for the LaTeX
+Project works here: one focused piece of rendered evidence
+(one summary + one figure for Track A; one simulation + one
+summary for Track B), a clear prose interpretation around it,
+and a clean PDF render. Not five plots. Not three datasets.
+Not a sweeping discussion section.
+
+The pull toward the end of the week is to **add more** — a
+second dataset, a second ggplot, a second seed, a third
+distribution to simulate, a long Discussion. That turns a
+polished short report into an unpolished long one. **Finish
+the one focused report you planned at conference.**
+
+## The Week 10 R Project conference
+
+The Week 10 R Project conference is the **required term-anchor
+conference for the week**. It is one of the five required
+conferences (Weeks 1, 4, 7, 10, 13) — see the
+[Syllabus](../syllabus.qmd) for the full list. It is **part of
+the project**, not a separate event.
+
+- **When.** Early in Week 10. Exact sign-up slots live in the
+  course LMS.
+- **What it confirms.** Per the syllabus: your **project
+  track, dataset or simulation plan, and early report
+  structure** before the project submission.
+- **What to bring.**
+  - A draft Quarto source with at least the title block, the
+    track declaration, the intro paragraph, and rough section
+    headings.
+  - Your dataset (Track A) or the seed value plus simulated
+    process you plan to run (Track B).
+  - A one-sentence answer to "what is this project trying to
+    show?"
+- **What the conference is for.** A short *project-go/no-go*.
+  If the track or scope is not viable in the time left, the
+  conference is the moment to course-correct. After the
+  conference you have the rest of the week to finish.
+
+If the time you signed up for stops working, **reschedule
+inside the same week** through the course LMS. The exact
+sign-up and rescheduling procedures live there.
+
+## Finishing well — debugging hints
+
+Before you submit, **render the project twice in a row** and
+confirm the numbers and figures are the same in both renders.
+This catches the most common Week 10 problems before the LMS
+grader does.
+
+- **The render fails.** Look at the first error line; comment
+  out the failing chunk; render; isolate the problem. Bring
+  the error message to a scheduled studio meeting in the MAC
+  for help.
+- **The numbers change on the second render (Track B).**
+  `set.seed()` is missing, or is being called *after* the
+  random call instead of before. Move it to the top of a
+  setup chunk that runs first. This is the Week 9 failure
+  mode, applied to the project.
+- **The numbers or the figure change on the second render
+  (Track A).** A Track A analysis should produce the same
+  rendered output on every render of the same dataset.
+  Confirm the data file is inside your project folder so the
+  path is stable, and confirm you are loading and summarizing
+  the dataset directly (not generating its own random
+  sample — that would be Track B work).
+- **The figure does not appear (Track A).** The chunk
+  silently errored on an unknown column name. Check
+  `colnames(data)`. Quotation marks in `aes()` are a classic
+  Week-8 carryover bug — see Lab 6's troubleshooting section.
+- **The interpretation paragraph contradicts the rendered
+  output.** Re-render, then re-read. If your prose and the
+  PDF disagree, fix the prose to match the PDF, or fix the
+  analysis or simulation to actually produce the result your
+  prose describes, then re-render and re-read again.
+- **The PDF is suddenly enormous.** Either an oversized
+  embedded image or an accidentally printed long vector.
+  Summarize instead of printing.
+
+The **render-twice habit** is the load-bearing finishing move
+for both tracks. The PDF the LMS grader will see is the second
+render, not the first.
+
+## AI in the R Project
+
+AI assistance is appropriate for the same kinds of help you
+have used across Weeks 7–9: R syntax lookup, debugging a chunk
+error, explaining what a chunk does, rephrasing prose, catching
+a typo, suggesting a label for a plot axis, reading a Quarto or
+LaTeX render warning. See the
+[AI use guidelines](../resources/ai-use-guidelines.qmd) for
+the full pattern.
+
+What AI cannot do in the R Project:
+
+- **AI cannot read your rendered evidence for you.** Track A:
+  what the rendered analysis shows about your dataset is what
+  you see in the rendered PDF, not what an assistant predicts
+  the analysis would show. Track B: what the simulation under
+  your seed produces is what is in the rendered PDF, verified
+  by re-running with the same seed yourself.
+- **AI cannot decide whether your interpretation is honest.**
+  Honesty about what a small dataset or a small simulation
+  can and cannot support is your call.
+- **AI fabricates dataset URLs and citations.** Anything you
+  cite is your responsibility to confirm.
+
+The **Verification** line of your AI Use Note is the
+load-bearing one for the project. It must name what you
+actually checked — not "I used Claude." If you did not use AI,
+say so on the Tool line; that is a complete AI Use Note.
+
+## Where the project folder lives
+
+The project's portfolio location is
+`math-software-portfolio/r-project/`, alongside `latex-project/`
+from Week 6 and the weekly `hw01/`–`hw09/` folders you built in
+Weeks 1–9. The folder is the project's **permanent home** — you
+finish it in place and submit it from there.
+
+The exact project material — including the prompt and the
+submission details — lives in the course LMS.
+
+## Looking ahead
+
+Module B closes at the end of Week 10. Next week, **Module D**
+opens with the **AI module** (Weeks 11–12). Those two weeks
+carry the two non-droppable weekly AI assignments — the AI
+module's parallel to the LaTeX Project (Module A) and the R
+Project (Module B). The **Week 13 portfolio/workflow
+conference** is where the finished `r-project/` folder is
+reviewed as part of the portfolio next to the finished
+`latex-project/` folder and your weekly artifacts.
+
+Submit the R Project in the state you want to read again at
+the end of the term.

@@ -54,6 +54,8 @@ website:
             text: "8 — Visualization with ggplot2"
           - href: notes/week09-simulation.qmd
             text: "9 — Simulation and reproducibility"
+          - href: notes/week10-r-project.qmd
+            text: "10 — The R Project"
       - section: "Labs"
         href: labs/index.qmd
         contents:

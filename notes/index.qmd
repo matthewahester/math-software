@@ -66,6 +66,15 @@ the course LMS.
   note on repeated trials with `replicate()` and sampling behavior;
   and AI in Week 9 — what AI can and cannot do with simulation
   output.
+- [Week 10 — The R Project](week10-r-project.qmd) —
+  closing Module B with the R Project: composing your Weeks 7–9
+  skills into one short focused R-in-Quarto report on a question
+  of your choice; the two named tracks (Track A — data analysis
+  and visualization with `ggplot2`; Track B — simulation, sampling
+  behavior, or a CLT-style investigation); how to pick a track;
+  what Track A data is allowed; what Track B reproducibility looks
+  like; the required Week 10 R Project conference as project
+  go/no-go; render-twice finishing; and AI in the R Project.
 
 ## Planned
 
