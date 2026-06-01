@@ -56,6 +56,8 @@ website:
             text: "9 — Simulation and reproducibility"
           - href: notes/week10-r-project.qmd
             text: "10 — The R Project"
+          - href: notes/week11-using-ai.qmd
+            text: "11 — A mental model for AI assistants"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -74,6 +76,8 @@ website:
             text: "6 — A ggplot2 walkthrough"
           - href: labs/lab07-simulation.qmd
             text: "7 — A small reproducible simulation in R"
+          - href: labs/lab08-ai-debugging.qmd
+            text: "8 — Drafting and verifying with AI"
       - section: "Examples"
         href: examples/index.qmd
         contents:

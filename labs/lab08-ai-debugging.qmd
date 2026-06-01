@@ -1,0 +1,282 @@
+---
+title: "Lab 8 — Drafting and verifying technical prose with an AI assistant"
+subtitle: "Weeks 11–12 — a workflow walkthrough on a small Quarto YAML rendering issue"
+toc: true
+---
+
+> A hands-on walkthrough of the **ask → record → verify →
+> correct → disclose** workflow you will use on the Week 11 AI
+> debugging audit and the Week 12 drafting and critique work.
+> The companion conceptual reading is
+> [A mental model for AI assistants and a verification
+> habit](../notes/week11-using-ai.qmd). Lab 8 is shared across
+> the AI module; you will return to it in Week 12.
+
+You have written ten three-line AI Use Notes already. This lab
+is the first time the AI use itself is the substance of the
+walkthrough.
+
+The lab walks a single small workflow on a single small
+illustrative sample — a Quarto YAML block with a deliberate
+typo that breaks numbering. **The lab sample is illustrative
+only; the Week 11 work uses a different sample.** What carries
+over is the workflow: ask the assistant, record what it says,
+verify the load-bearing claims, correct what needs correcting,
+disclose with a three-line AI Use Note.
+
+This lab is **tool-agnostic**. ChatGPT, Claude, Copilot,
+Gemini, Cursor — any of these is fine. **A free-tier account
+is sufficient.** No paid subscription is required.
+
+## What you'll need
+
+- VS Code with the Quarto extension installed and working
+  (Lab 1).
+- A working Quarto + TinyTeX render chain (you have rendered
+  PDFs in Weeks 1–10).
+- A browser tab open to an AI assistant of your choice.
+
+You do not need any new R packages, any new LaTeX packages, or
+any new editor. The lab is short — a single sitting.
+
+## The illustrative sample
+
+The sample for this lab is a small Quarto YAML block. Save the
+following as `lab08.qmd` in a `lab08/` folder inside your
+`math-software-portfolio/`:
+
+````markdown
+---
+title: "A small report"
+author: "Your Name"
+format:
+  pdf:
+    toc: true
+    number-section: true
+geometry:
+  - margin=1in
+---
+
+# Setup
+
+This is a placeholder section. Lorem ipsum dolor sit amet.
+
+# Results
+
+This is another placeholder section.
+
+# Discussion
+
+This is a third placeholder section.
+````
+
+Render this document (Quarto: Preview, or `quarto render
+lab08.qmd` in a terminal). The render will complete without
+an error message. **But the section numbers will not appear
+in the rendered PDF.** Open the PDF and confirm: you see
+"Setup," "Results," "Discussion" as headings, but no "1",
+"2", "3" in front of them.
+
+That is the bug for the lab. The render works, the document
+looks reasonable at a glance, but a specific YAML option is
+silently being ignored.
+
+The lab is about using an AI assistant to figure out *why*
+and verifying the assistant's claim against the artifact.
+
+## Step 1 — ask the assistant
+
+Open your assistant of choice in a browser tab. Ask a scoped,
+specific question — not "fix this for me" or "rewrite this for
+me." A scoped ask describes what you observed and asks for
+help diagnosing.
+
+Two examples of the same ask, in different shapes. Use one of
+these or your own in the same shape — do not paste a prompt
+verbatim from a course page into the assistant; ask in your
+own words:
+
+- *I have a Quarto document with `number-section: true` under
+  `format: pdf:` in the YAML header. The document renders to
+  PDF without errors, but the section numbers don't appear.
+  Can you help me figure out why?*
+- *In Quarto, what is the correct YAML key for turning on
+  automatic numbering of sections in a PDF render? I have
+  `number-section: true` but it doesn't seem to do anything.*
+
+Paste the YAML block from above (or describe it briefly) so
+the assistant has the actual artifact to comment on.
+
+## Step 2 — record what the assistant says
+
+Read the assistant's response. **Summarize it in your own
+words.** Do not paste the full conversation into your lab
+document; this is a walkthrough, not a transcript.
+
+A few common patterns you may see:
+
+- The assistant identifies the typo (`number-section` should
+  be `number-sections`, plural) and explains that Quarto
+  silently ignores unknown YAML keys.
+- The assistant gives a long, vague answer about Quarto
+  numbering in general without spotting the typo.
+- The assistant suggests adding a different option (e.g.,
+  `number-depth`, `section-numbering`, or some invented key)
+  that won't actually fix the problem.
+- The assistant produces a confident-sounding explanation
+  that includes one true and one fabricated detail.
+
+You do not need to know in advance which pattern your
+assistant will produce. **You audit whatever your assistant
+actually said.** The verification chain in Step 3 is what
+supports the lab — not the AI's response.
+
+## Step 3 — verify the load-bearing claims
+
+This is the load-bearing step of the lab. Whatever the
+assistant said in Step 2, you verify the claims it made about
+the YAML key, the Quarto behavior, and the fix.
+
+Two checks are sufficient for this sample; do all of them
+even if the assistant skipped one:
+
+1. **Check the Quarto YAML key documentation.** Open the
+   Quarto reference for PDF format options
+   ([quarto.org/docs/reference/formats/pdf.html](https://quarto.org/docs/reference/formats/pdf.html)
+   or whatever the current canonical page is). Search the
+   page for `number-section` (singular) and for
+   `number-sections` (plural). One of them is the canonical
+   option name; the other is not.
+2. **Apply the assistant's suggested fix and re-render.**
+   Edit your `lab08.qmd` to apply whatever change the
+   assistant proposed. Render. Open the PDF. Did the section
+   numbers appear?
+   - If yes, the assistant's fix worked. The verification
+     chain entry is: *"Applied the assistant's fix
+     (`number-section: true` → `[whatever the assistant
+     suggested]`); re-rendered; section numbers now appear
+     as 1 / 2 / 3 in the rendered PDF."*
+   - If no, the assistant's suggested fix did not work. The
+     verification chain entry names what you tried and what
+     you saw.
+
+Write each verification operation as a short entry. Each
+entry is **verb + target + outcome** — what you did, what you
+checked it against, and what you observed.
+
+## Step 4 — correct what needs correcting
+
+If the assistant's fix worked, you are done with the
+correction step. Show the corrected YAML block in your lab
+document, with a one-sentence note describing the change.
+
+If the assistant's fix did not work, identify the actual fix
+yourself (likely: change `number-section` to
+`number-sections` — plural — based on what you found in the
+Quarto reference). Apply the actual fix, re-render, and
+confirm that section numbers now appear. Show the corrected
+YAML block in your lab document.
+
+Either way, the corrected version belongs in your lab
+document so a reader can see *what* changed.
+
+## Step 5 — disclose with an AI Use Note
+
+The lab document closes with the standard three-line **AI
+Use Note**:
+
+> **Tool:** [assistant name and approximate version or date]
+>
+> **Purpose:** [one sentence — what you asked the assistant
+> to do]
+>
+> **Verification:** [a short paragraph — name the verification
+> operations you performed and what each one showed]
+
+The Verification line for Week 11 is a **short paragraph**,
+not a single line. It summarizes the verification chain in
+the body. **Three labeled lines, not four.** "Verification"
+is still the third labeled line.
+
+An example Verification line for this lab (yours will be
+shorter or longer depending on what your assistant said):
+
+> *Verification: I checked the Quarto PDF reference page and
+> found that the canonical key is `number-sections` (plural),
+> not `number-section`. I changed the typo in my YAML, ran
+> `quarto render lab08.qmd`, and opened the PDF. Section
+> numbers now appear as 1, 2, 3 in front of Setup, Results,
+> and Discussion.*
+
+Save the lab document. Render once. Open the PDF and read it
+as a stranger would.
+
+## What this lab prepares you for
+
+This is the workflow you will apply to the **Week 11 AI
+debugging audit**. The Week 11 sample is different — it is
+*not* a Quarto YAML typo — but the workflow is the same:
+
+- ask the assistant a scoped, specific question;
+- record what the assistant says;
+- verify the load-bearing claims against stable external
+  evidence;
+- correct what needs correcting;
+- disclose with a three-line AI Use Note where the
+  Verification line is a short paragraph.
+
+The exact Week 11 prompt and submission details live in the
+course LMS.
+
+You will return to this lab in **Week 12** for the drafting
+and critique work. The same workflow steps apply, with Week
+12 emphasizing the *draft + critique + revise* half of the
+arc.
+
+## Common patterns you may encounter
+
+- **The assistant identified the typo immediately.** Lucky
+  draw. Your verification chain is still the same — confirm
+  the canonical YAML key in the Quarto reference, apply the
+  fix, re-render, and observe the numbers appearing.
+- **The assistant gave a confident wrong answer.** Apply the
+  assistant's suggested change. Re-render. Observe that the
+  numbers do not appear. That is your verification chain
+  entry: *I applied the change the assistant suggested; the
+  document still rendered without section numbers.* Then go
+  find the correct option in the Quarto reference yourself.
+- **The assistant mentioned a real Quarto option that
+  doesn't fix this particular bug** (e.g., suggested
+  `number-depth: 3`). Apply it; observe what happens; check
+  the reference. The audit chain naturally records what was
+  suggested, what was tried, and what happened.
+- **The free-tier assistant ran out before the conversation
+  finished.** Note that in your lab document. Continue the
+  verification yourself.
+- **The assistant produced a long technical explanation
+  about LaTeX `\setcounter{secnumdepth}{...}` machinery.**
+  This is possible. Quarto does not require manipulating
+  the LaTeX preamble for section numbers; the canonical
+  Quarto option is the right answer. The chain captures
+  what you tried.
+
+The point of the lab is that **every load-bearing claim the
+assistant makes gets checked against an artifact you can see
+or a reference page you can read**. The lab is not "did the
+AI get it right?" — it is "did I verify what the AI said?"
+
+## Looking ahead
+
+The Week 11 work — your AI debugging audit — uses a different
+sample and applies the same workflow on a topic with
+externally checkable answers. The exact prompt and submission
+details live in the course LMS.
+
+In Week 12 you will return to Lab 8 for the drafting-and-
+critique half of Module D. The same five-step workflow
+applies; Week 12 emphasizes drafting prose with an assistant
+and then critiquing what the assistant produced.
+
+Then Week 13 brings the Portfolio/workflow conference, where
+your AI Use Notes — from Week 11, Week 12, and earlier weeks
+— are part of the portfolio review.

@@ -49,13 +49,22 @@ help.
   see sampling behavior, render twice, and write one short
   interpretation paragraph that stays within what the simulation
   under the stated seed actually produced.
+- [Lab 8 — Drafting and verifying technical prose with an AI assistant](lab08-ai-debugging.qmd) *(Weeks 11–12)* —
+  the ask → record → verify → correct → disclose workflow on a
+  small Quarto YAML rendering issue: ask an AI assistant of your
+  choice (tool-agnostic; no paid tier required) about a deliberate
+  YAML typo, summarize what the assistant says, verify the
+  load-bearing claims against the Quarto reference and a re-render
+  of the actual document, correct what needs correcting, and
+  disclose with a three-line AI Use Note. The lab is shared
+  across Weeks 11 (debugging audit prep) and 12 (drafting +
+  critique prep).
 
 ## Planned
 
 Labs are added as the course is built. The rough plan, aligned with
 the weekly module spine:
 
-- Lab 8 — Drafting and verifying technical prose with an AI assistant *(Weeks 11–12)*
 - Lab 9 — A first portfolio folder, optional Git workflow *(Week 13)*
 
 Lab numbering is rough — not every week has a paired lab.

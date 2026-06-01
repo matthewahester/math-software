@@ -1,0 +1,268 @@
+---
+title: "A mental model for AI assistants and a verification habit"
+subtitle: "Week 11 — opening Module D: AI use becomes the substance of the work this week"
+toc: true
+---
+
+> A short conceptual reading on **AI assistants** and the
+> course's **verification habit**, opening **Module D —
+> Generative AI literacy** (Weeks 11–12). The companion
+> hands-on walkthrough is
+> [Lab 8 — Drafting and verifying technical prose with an AI
+> assistant](../labs/lab08-ai-debugging.qmd). The exact prompts,
+> rubrics, deadlines, submission details, extension procedures,
+> and grading mechanics for the Week 11 work live in the
+> **Assignments/LMS space**.
+
+For ten weeks, every assignment in this course has carried a
+three-line **AI Use Note** — Tool / Purpose / Verification —
+appended to whatever else you were submitting. **The
+Verification line has been the load-bearing line all along.**
+This week, the AI use itself is the substance of the work, and
+the Verification line is the substance of the report.
+
+You stay in the same VS Code + R + Quarto + TinyTeX stack you
+have used since Week 1. There is **no new editor, no new
+render engine, and no new portfolio convention**. There is also
+**no required AI assistant** — ChatGPT, Claude, Copilot,
+Gemini, or any similar tool is fine, and **a free-tier
+account is sufficient**. What changes this week is that you
+are auditing an AI interaction rather than appending a
+disclosure to someone else's substance.
+
+## Module D opens
+
+Module D — **Generative AI literacy** — runs through Weeks 11
+and 12.
+
+- **Week 11 (this week).** *AI module I: debugging and
+  verification.* The focus is the **mental model** for what an
+  AI assistant is, the **verification habit** the course has
+  been building toward all term, and a small **AI debugging
+  audit** — you use the assistant on a small sample, then
+  verify what it said.
+- **Week 12 (next week).** *AI module II: drafting and
+  critique.* The focus extends the same lab into drafting
+  technical prose with the assistant's help, then critiquing
+  what it produced.
+
+Both weeks' assignments are **not droppable** under the
+weekly best-9-of-11 rule. From the syllabus: "The AI module
+assignments in Weeks 11–12 are part of the Generative AI
+Literacy category and are not droppable." They are the AI
+module's parallel to the LaTeX Project (Module A) and the R
+Project (Module B).
+
+The **Week 13 Portfolio/workflow conference** picks up your
+Week 11 and Week 12 work along with your AI Use Notes from
+earlier weeks. The conference reviews your portfolio as a
+whole — including your evolving verification habit — before
+the final assembly weeks.
+
+## What an AI assistant is, in plain terms
+
+A generative AI assistant is a **pattern matcher that produces
+fluent text**. It is:
+
+- **not a database**,
+- **not a search engine**,
+- **not a fact checker**,
+- **not a reasoner in the sense of a person who has read the
+  source and thought about it**.
+
+Plausible-sounding output is the default. **Correctness is
+not.** This is the central thing to internalize about how the
+assistant fits into your work.
+
+The course's public
+[AI use guidelines](../resources/ai-use-guidelines.qmd)
+already lays out what the assistant is **good at**
+(reformatting, surfacing packages, explaining unfamiliar code,
+first-draft prose, boilerplate) and what it is **bad at**
+(citations, LaTeX packages, recent software, math
+correctness, plot interpretation, subtle code rewrites). The
+note you are reading now does not duplicate that list. **Read
+that page if you have not already, and treat it as the
+operational reference for Week 11.**
+
+For background on where the course's AI position comes from,
+see the [AI reading spine](../resources/ai-reading-spine.qmd) —
+UNESCO frameworks, peer-reviewed studies on generative AI in
+education, and the published evidence behind the course's
+"no automated detectors" position. The reading is optional;
+the Week 11 work does not require citing the literature.
+
+## Verification, not outsourcing
+
+The most common misuse of an AI assistant — in this course and
+outside it — is treating its output as authoritative.
+
+A working technical professional uses an assistant the way you
+might use a fast intern: helpful, fluent, and **wrong often
+enough that you have to check**. You wouldn't put an intern's
+work into production without reading it. You wouldn't list the
+intern's name in a bibliography. You wouldn't trust the
+intern's citations without checking. The same posture applies
+to a generative AI assistant.
+
+Practically, in this course, that posture comes down to a
+short list of habits:
+
+- **Anything the assistant says that matters** — a citation,
+  a package name, a code behavior, a math step, a definition,
+  a claim about a paper — has to be **verified against the
+  actual artifact**. The rendered PDF. The R console output.
+  The CTAN or CRAN page. The cited paper itself.
+- **The Verification line of the AI Use Note** is the
+  discipline that makes this concrete. It is the third of
+  three labeled lines (Tool / Purpose / Verification), and in
+  Week 11 it is a *short paragraph* (still labeled
+  Verification, still the third line — there is no fourth
+  line) that summarizes what you actually checked.
+- **The verb-target-outcome shape** — *I ran the code; the
+  output was X.* *I clicked through to the DOI; the page did
+  not resolve.* *I searched for the package on CTAN; no
+  result.* Each verification operation is a check **you
+  performed** on **evidence you can point at**.
+
+## The Week 11 work
+
+The Week 11 work is an **AI debugging audit**. You use an AI
+assistant on a small, fixed technical sample, and you write a
+short Quarto-to-PDF report — a few pages — on what the
+assistant said and what you verified.
+
+The audit has the same shape regardless of which AI assistant
+you use:
+
+1. **Ask** the assistant a scoped, specific question about the
+   sample.
+2. **Record** the assistant's response, in summary, in your
+   own words.
+3. **Verify** the assistant's load-bearing claims against
+   stable external evidence.
+4. **Identify** what the assistant got right, got wrong,
+   fabricated, or omitted.
+5. **Correct** what needs correcting.
+6. **Disclose** with the three-line AI Use Note.
+
+[Lab 8](../labs/lab08-ai-debugging.qmd) walks this workflow on
+a small generic illustrative sample (a Quarto rendering
+issue), so you have rehearsed the ask → record → verify →
+correct → disclose sequence on something low-stakes before
+the Week 11 work. **The Lab 8 sample is different from your
+Week 11 sample.** The lab walks the workflow; the Week 11
+work applies it.
+
+**The exact prompt, the sample, the rubric, the deadlines, the
+submission details, the extension procedures, and the grading
+mechanics live in the course LMS.**
+
+## Tool-agnosticism
+
+The course does **not** require any specific AI assistant.
+ChatGPT, Claude, Copilot, Gemini, Cursor, Codeium, or a
+campus-licensed assistant are all fine. **No paid tier is
+required.** A free-tier account on ChatGPT or Claude is
+sufficient for the Week 11 work.
+
+You name whichever assistant you used on the **Tool** line of
+the AI Use Note. The Verification habit is the same regardless
+of which assistant produced the response.
+
+If a free-tier assistant runs out of usage mid-conversation,
+that is itself worth noting — summarize what you have, name
+the usage cap on the Tool line, and continue the verification
+yourself. The verification chain is what the work is graded
+on.
+
+## The "no detectors" position
+
+This course does **not** use automated AI-detection tools to
+flag student work. Detector tools are unreliable in general,
+and there is **peer-reviewed evidence** that they are
+**biased against non-native English writers** (see the
+[AI reading spine](../resources/ai-reading-spine.qmd) for
+the cited study).
+
+What matters in this course instead — and especially in
+Week 11 — is:
+
+- a clear **AI Use Note**,
+- **work you can explain** if asked,
+- visible **verification**.
+
+If you used AI productively and verified the output, you have
+nothing to hide. The course is built so you don't need to.
+
+## Privacy carryforward
+
+The AI use guidelines' privacy section applies in Week 11
+unchanged: do not paste **other students' work**, **non-public
+datasets**, **identifiable personal data**, or **LMS-only
+course content** into an AI tool. The Week 11 sample is
+deliberately a small public-style artifact so the audit can
+proceed without privacy risk.
+
+## Common patterns to expect
+
+When you do the Week 11 work, watch for these:
+
+- **The assistant gives a fluent, plausible-sounding response
+  with invented details.** Most common pattern. The
+  verification chain becomes a list of *each invented
+  detail* checked against external evidence.
+- **The assistant refuses to comment.** A legitimate
+  observation. Note the refusal, then verify the sample
+  against external evidence yourself.
+- **The assistant gives a long vague response.** Quote one
+  short load-bearing claim from it and audit that. Do not
+  try to verify every sentence — the chain should focus on
+  claims that matter.
+- **The free-tier assistant runs out before the conversation
+  finishes.** Document this and continue verifying yourself.
+
+In all of these, the audit findings are grounded in the
+verification chain, not in the assistant's response volume.
+
+## Finishing well
+
+Before you submit, **render the document twice in a row** and
+confirm the document is the same in both renders. This catches
+the same kinds of stability issues you saw in Weeks 9 and 10
+(`set.seed()` placement; non-deterministic steps), now applied
+to a prose-heavy audit document.
+
+A small audit-week debugging-hint list:
+
+- **The render fails.** Comment out a chunk if you have one;
+  isolate the error; bring it to a scheduled studio meeting in
+  the MAC.
+- **The PDF is suddenly enormous.** Probably a pasted long
+  transcript. Summarize instead of pasting.
+- **The verification chain reads as generic.** Each entry
+  should be **verb + target + outcome**. "Verified the DOI"
+  is not an entry; "Clicked through to doi.org/...; received
+  'DOI not found'" is.
+- **The audit findings sound like opinions.** Ground them in
+  the verification chain. "The assistant fabricated the
+  journal name" is a finding only if a verification entry
+  shows the journal does not exist.
+- **The AI Use Note Verification line is one line.** In
+  Week 11 it is a short paragraph that summarizes the
+  verification chain.
+
+## Looking ahead
+
+Module D continues next week with **Week 12 — AI module II:
+drafting and critique**. Lab 8 spans both Week 11 and Week 12:
+this week you use it as audit prep; next week you return to
+it for drafting-and-critique prep.
+
+The **Week 13 Portfolio/workflow conference** picks up your
+Week 11 and Week 12 work as part of the portfolio review,
+together with your AI Use Notes from earlier weeks. Then
+Weeks 14–15 are portfolio assembly and final polish.
+
+The exact Week 11 prompt and submission details live in the
+course LMS. Bring the rest yourself.

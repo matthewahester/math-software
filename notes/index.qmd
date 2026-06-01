@@ -75,15 +75,23 @@ the course LMS.
   what Track A data is allowed; what Track B reproducibility looks
   like; the required Week 10 R Project conference as project
   go/no-go; render-twice finishing; and AI in the R Project.
+- [Week 11 — A mental model for AI assistants and a verification habit](week11-using-ai.qmd) —
+  opening Module D (Generative AI literacy): AI use becomes the
+  substance of the work this week; what an AI assistant is in
+  plain terms (a pattern matcher, not a database or a reasoner);
+  verification over outsourcing; the Verification line of the AI
+  Use Note as the load-bearing line; tool-agnosticism with no
+  paid tier required; the "no detectors" position; privacy
+  carryforward; the Week 11 AI debugging audit shape; pointers
+  to the existing AI use guidelines and AI reading spine.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
 
-**AI module (Weeks 11–12)**
+**AI module continued (Week 12)**
 
-- Week 11 — A mental model for AI assistants and a verification habit
 - Week 12 — Catching AI hallucinations: a checklist for math, code, and citations
 
 **Workflow bridge and portfolio (Weeks 13–15)**
