@@ -1,0 +1,423 @@
+---
+title: "Catching AI hallucinations: a checklist for math, code, and citations"
+subtitle: "Week 12 — closing Module D: AI as drafter, you as critic and reviser"
+toc: true
+---
+
+> A short conceptual reading on the **hallucination checklist**
+> and the **critique → verify → revise** loop, closing
+> **Module D — Generative AI literacy** (Weeks 11–12). The
+> companion hands-on walkthrough is
+> [Lab 8 — Drafting and verifying technical prose with an AI
+> assistant](../labs/lab08-ai-debugging.qmd), which spans both
+> Week 11 and Week 12. The exact prompts, rubrics, deadlines,
+> submission details, extension procedures, and grading
+> mechanics for the Week 12 work live in the **Assignments/LMS
+> space**.
+
+In Week 11, the AI assistant was the **diagnoser** and you
+were the **auditor** — the assistant tried to make sense of a
+flawed sample the instructor handed you, and you verified
+what it said. This week the roles reverse: **you ask the
+assistant to draft a small technical artifact, and you become
+the critic and the reviser**. You apply a structured
+hallucination checklist to what the assistant produced, you
+verify the load-bearing claims against stable evidence, you
+revise the draft into a corrected version, and you write a
+short evidence-grounded Reflection paragraph.
+
+You stay in the same VS Code + R + Quarto + TinyTeX stack you
+have used since Week 1. There is **no new editor, no new
+render engine, no new portfolio convention, and no new
+package install required**. The course's
+[AI use guidelines](../resources/ai-use-guidelines.qmd)
+remain the operational reference; the
+[AI reading spine](../resources/ai-reading-spine.qmd)
+remains the published basis for the course's AI position.
+
+## Module D closes
+
+Module D — **Generative AI literacy** — finishes this week.
+
+- **Week 11.** *AI module I: debugging and verification.* You
+  used an AI assistant on a small fixed sample and verified
+  what it said. The
+  [Week 11 note](week11-using-ai.qmd) lays out the mental
+  model and the verification habit.
+- **Week 12 (this week).** *AI module II: drafting and
+  critique.* You ask the assistant to draft a small
+  technical artifact, apply a structured hallucination
+  checklist, verify the load-bearing claims, revise, and
+  reflect.
+
+Both weeks' assignments are **not droppable** under the
+weekly best-9-of-11 rule. From the syllabus: "The AI module
+assignments in Weeks 11–12 are part of the Generative AI
+Literacy category and are not droppable." Together, the
+Week 11 and Week 12 work is the **AI module's parallel to the
+LaTeX Project (Module A) and the R Project (Module B)**.
+
+The **Week 13 Portfolio/workflow conference** picks up your
+Week 11 and Week 12 work along with your AI Use Notes from
+earlier weeks. The conference reviews your portfolio as a
+whole — including your evolving verification habit and your
+critique discipline — before the final assembly weeks.
+
+## What this week is
+
+This week's work is a **critique-and-revise + Reflection
+report** on a small mixed technical paragraph that you ask an
+AI assistant to draft. The shape of the work mirrors how a
+working technical professional uses AI for drafting:
+
+1. **Ask** the assistant to draft a small focused artifact.
+2. **Preserve** the AI draft as the starting point — what it
+   produced before you touched it.
+3. **Critique** the draft category by category against a
+   structured hallucination checklist.
+4. **Verify** the load-bearing claims against stable external
+   evidence.
+5. **Revise** the draft into a corrected version that shows a
+   real, justified improvement.
+6. **Reflect** in a short paragraph grounded in the
+   before/after evidence above.
+7. **Disclose** with the standard three-line AI Use Note.
+
+The verb pivots from *verify* (Week 11) to **critique +
+revise + reflect** (Week 12). The direction reverses: in
+Week 11 the AI was the diagnoser and you were the auditor;
+this week you are the asker and the AI is the drafter. The
+verification chain you built in Week 11 carries forward
+unchanged in form — verb + target + outcome per entry — but
+now it supports the critique findings and the revised draft.
+
+## The hallucination checklist
+
+The checklist is **five categories** that recur in AI-drafted
+technical work. They are the structured version of the
+"What AI is bad at" list on the
+[AI use guidelines](../resources/ai-use-guidelines.qmd) page.
+Each category has a short "what to check" question and a
+short "how to check" answer.
+
+### Math
+
+- **What to check.** Did the AI's math actually compute what
+  the AI says it computes? Closed-form expressions, sign
+  changes, factors of two, the choice of summation index, and
+  the algebraic manipulation are all common places for
+  plausible-looking errors.
+- **How to check.** Re-derive the step on paper, or in a
+  short Quarto chunk that you run yourself. Confirm the
+  final value matches what the AI wrote. Confirm the
+  intermediate steps are coherent.
+
+### Code
+
+- **What to check.** Does the code actually run? Does the
+  output the AI describes in prose match what the code
+  actually prints? Are subtle defaults (the `na.rm` argument,
+  the difference between `==` and `%in%`, factor-level
+  ordering) silently changing behavior?
+- **How to check.** Open a fresh R session. Run the chunk.
+  Read the actual printed output line by line. Compare to
+  what the AI's prose claims about the output.
+
+### Citations / source claims
+
+- **What to check.** Does the cited paper, book, package,
+  function, or documentation page actually exist? If it
+  exists, does it actually say what the AI claims it says?
+- **How to check.** Click through to the cited URL or
+  documentation page. Search the title on Google Scholar.
+  Search the package name on CRAN. Open the R help page for
+  the cited function. Read the source itself; do not trust
+  the AI's summary of it.
+
+### Prose claims
+
+- **What to check.** Are the AI's narrative sentences
+  internally consistent with the equation, the code, and the
+  citation? Does the prose overclaim what the artifact
+  actually shows? Are the claims appropriately qualified?
+- **How to check.** Read the prose against each load-bearing
+  element of the draft. Ask whether each sentence would
+  still be true if a reader checked the underlying artifact
+  carefully. Sharpen overclaimed sentences with explicit
+  qualifications.
+
+### Rendered output consistency
+
+- **What to check.** When the document is rendered, does what
+  the AI says about the rendered output actually match what
+  the rendered output shows? AI assistants narrate what code
+  and figures "show" even though they have only seen the
+  source, not the rendered result.
+- **How to check.** Render the document. Open the rendered
+  PDF or HTML. Compare the AI's prose claim about the
+  rendered output to what the document actually displays.
+
+These five categories cover the failure modes the public
+[AI use guidelines](../resources/ai-use-guidelines.qmd)
+already flag at the operational level. The list is structured
+here as a critique tool: you apply each category to the AI's
+draft and write down what you find — including when the AI's
+draft is correct in that category and you have nothing to
+fix.
+
+## The critique → verify → revise loop
+
+Critiquing a draft against the checklist is not the same as
+verifying the critique findings, and neither is the same as
+revising the draft. The three steps are distinct, and each
+appears as its own section of the Week 12 report.
+
+- **Critique.** Walk the five categories one at a time. For
+  each category, write one or two sentences naming what the
+  AI did in that category and what your critique finding is.
+  Categories where the AI's draft is fine still get an entry
+  stating that you checked and found nothing to fix; you do
+  not skip categories.
+- **Verify.** For each critique finding, perform a specific
+  verification operation against stable external evidence
+  (a paper re-derivation, a fresh R session, a help page,
+  the rendered PDF). Write each operation as one entry in
+  the verification chain: **verb + target + outcome** —
+  what you did, what you checked it against, and what you
+  observed. The verification chain is the load-bearing
+  evidence that supports both the critique findings and the
+  revised draft.
+- **Revise.** Apply the corrections, qualifications, and
+  sharpenings the critique surfaced. The revised draft
+  appears in your report after the critique and verification
+  — the grader sees what changed by comparing the AI draft
+  (before) to the revised draft (after). A revised draft
+  that is byte-identical to the AI draft is not a revised
+  draft.
+
+The Week-12-distinct artifact is the **before/after
+evidence** the loop produces: the AI draft, the structured
+critique, the verification chain, and the revised draft are
+all visible in the report.
+
+## The Reflection paragraph, in plain terms
+
+The Reflection paragraph is a **short evidence-grounded
+paragraph** at the end of the report, separate from the AI
+Use Note. It is the syllabus's named "AI Use Reflection"
+artifact made operational.
+
+A good Reflection paragraph:
+
+- **Names what the critique surfaced.** Which categories had
+  flaws? Which categories were clean? What specifically did
+  you find?
+- **Names what the revision changed.** What specific
+  corrections produced the revised draft? Was a citation
+  replaced? A qualification added? Code clarified?
+- **Names one or two operational lessons.** What will you do
+  differently the next time you ask an AI assistant to draft
+  technical prose with math, code, or citations?
+
+A bad Reflection paragraph:
+
+- *"I think AI is helpful for drafting because …"*
+- *"AI is dangerous because …"*
+- *"This was an interesting assignment because it made me
+  think about …"*
+- A philosophical essay about AI in general.
+- A summary of the AI use guidelines.
+
+The Reflection is about *this* AI drafting interaction with
+*this* small technical paragraph, not about AI as a research
+field or as a societal force. Honest scope, evidence-
+grounded.
+
+**The Reflection paragraph is a separate artifact from the
+AI Use Note.** The AI Use Note keeps the standard three
+labeled lines (Tool / Purpose / Verification) that have
+appeared in every assignment since Week 1, with the
+Verification line as a short paragraph in Module D weeks
+(carryforward from Week 11). The Reflection paragraph is
+*not* a fourth line of the AI Use Note. Three labeled lines,
+not four.
+
+## Tool-agnosticism
+
+The course does **not** require any specific AI assistant.
+ChatGPT, Claude, Copilot, Gemini, Cursor, Codeium, or a
+campus-licensed assistant are all fine. **No paid tier is
+required.** A free-tier ChatGPT or Claude account is
+sufficient for the Week 12 drafting work.
+
+You name whichever assistant you used on the **Tool** line of
+the AI Use Note. The five-category checklist applies to any
+assistant; the verification chain depends on the substance of
+the draft, not on which assistant produced it.
+
+If a free-tier assistant runs out of usage mid-draft, that is
+itself worth noting — preserve whatever load-bearing portion
+of the draft you have, name the cap on the Tool line, and
+continue the critique-and-revise yourself.
+
+## The "no detectors" position
+
+This course does **not** use automated AI-detection tools to
+flag student work. Detector tools are unreliable in general,
+and there is **peer-reviewed evidence** that they are
+**biased against non-native English writers** (see the
+[AI reading spine](../resources/ai-reading-spine.qmd) for
+the cited study).
+
+What matters in Week 12 instead is:
+
+- a clear **AI Use Note**,
+- **work you can explain** if asked,
+- a defensible **verification chain**,
+- a revised draft that differs from the AI draft in **named,
+  justified ways**,
+- a Reflection paragraph **grounded in evidence**.
+
+If you used AI to draft, applied the checklist honestly, and
+revised based on what the critique surfaced, you have nothing
+to hide. The course is built so you don't need to.
+
+## Privacy carryforward
+
+The AI use guidelines' privacy section applies in Week 12
+unchanged: do not paste **other students' work**, **non-public
+datasets**, **identifiable personal data**, or **LMS-only
+course content** into an AI tool. The Week 12 drafting task
+is a deliberately neutral micro-task with no privacy-sensitive
+content; the assignment has no legitimate need for any of
+those inputs.
+
+## Lab 8 as the workflow walkthrough
+
+[Lab 8](../labs/lab08-ai-debugging.qmd) walks the **ask →
+record → verify → correct → disclose** workflow on a small
+Quarto YAML rendering issue. The lab was designed to span
+both weeks of Module D:
+
+- **In Week 11** you used Lab 8 as debugging-audit prep —
+  ask the assistant about a flawed sample, verify, correct,
+  disclose.
+- **In Week 12** you return to Lab 8 for drafting-and-
+  critique prep. The five-step workflow is the same. The
+  mapping is:
+  - *Ask* → ask the assistant to draft (rather than to
+    debug),
+  - *Record* → preserve the AI draft as the starting point,
+  - *Verify* → walk the five-category critique and confirm
+    each finding against stable evidence,
+  - *Correct* → produce the revised draft,
+  - *Disclose* → write the AI Use Note (and, new this week,
+    the Reflection paragraph).
+
+The lab document itself does not need to be redone in Week
+12. The workflow translates directly from the debugging
+context to the drafting context.
+
+## Common patterns to expect
+
+When you do the Week 12 work, watch for these:
+
+- **The AI draft contains errors.** This is the case the
+  critique-and-revise loop is most naturally designed for.
+  Identify the errors in the structured critique, verify
+  them in the chain, correct them in the revised draft.
+- **The AI draft appears mostly correct.** This is also a
+  valid case. You still walk every checklist category,
+  documenting what each check actually showed. You still
+  produce a revised draft that shows a real, justified
+  improvement — sharper qualification, better citation
+  specificity, clearer code, more precise rendered-output
+  prose. A revised draft that is byte-identical to the AI
+  draft is not a revised draft.
+- **The AI refuses to draft.** A legitimate observation.
+  Note the refusal, construct a clearly labeled placeholder
+  in the same shape yourself, and apply the critique against
+  the placeholder — the workflow becomes "what would a
+  critique-and-revise of an AI draft of this kind look
+  like?"
+- **The AI draft is missing one of the required elements.**
+  That is itself a critique finding for the relevant
+  category. Note it as a finding, verify whatever elements
+  are present, and in the revised draft add the missing
+  element yourself.
+- **The cited reference doesn't exist.** A citation-category
+  finding. Document the search you performed and the
+  zero-result outcome. In the revised draft, replace the bad
+  citation with a verifiable real one.
+- **The R chunk doesn't run.** A code-category finding. Run
+  the chunk, observe the actual error, name the error
+  specifically in the verification chain, and fix the chunk
+  in the revised draft.
+- **The AI's prose about the rendered output is wrong.** A
+  rendered-output-consistency finding. Render the chunk
+  yourself, observe the actual output, and in the revised
+  draft restate the prose so it matches what the render
+  produces.
+
+In all of these, the report is graded on the **application
+of the checklist**, the **verification chain**, the
+**revised draft**, and the **evidence-grounded Reflection
+paragraph** — not on whether the AI made a dramatic error.
+
+## Finishing well
+
+Before you submit, **render the document twice in a row** and
+confirm the document is the same in both renders. This
+catches the same kinds of stability issues you saw in Weeks
+9 and 10 (`set.seed()` placement; non-deterministic steps),
+now applied to a prose-heavy critique-and-revise document
+that includes the AI's quoted draft and your revised
+paragraph.
+
+A small Week 12 debugging-hint list:
+
+- **The render fails.** Comment out the AI's quoted R chunk
+  (which should appear as a static code block in your
+  document, not an executable `{r}` chunk) if you have
+  accidentally turned it executable; re-render; isolate the
+  error.
+- **The PDF is suddenly enormous.** Probably a pasted long
+  transcript or a screenshot. Summarize the AI's response
+  to the load-bearing paragraph instead of pasting the full
+  conversation.
+- **The structured critique reads as a free-form summary.**
+  Re-write it as one entry per checklist category — each
+  category named, what the AI did named, what your critique
+  finding is named.
+- **The verification chain reads as generic.** Each entry
+  should be **verb + target + outcome**. "Verified the
+  citation" is not an entry; "Opened the documentation page
+  the assistant cited; confirmed the page exists and supports
+  the specific function or claim" is.
+- **The revised draft looks the same as the AI draft.** That
+  is not a revised draft. Sharpen at least one qualification,
+  citation, code comment, or rendered-output sentence.
+- **The Reflection paragraph reads as an opinion essay.** Cut
+  the philosophy. Name what the critique surfaced in the
+  body; name what the revision changed in the body; name one
+  operational lesson.
+- **The AI Use Note Verification line and the Reflection
+  paragraph look like the same thing.** They aren't. The
+  Verification line summarizes the verification chain in the
+  body. The Reflection paragraph names what the critique
+  surfaced, what the revision changed, and what you'd do
+  differently next time. The two artifacts have different
+  jobs.
+
+## Looking ahead
+
+Next week is **Week 13** — the workflow bridge / second-tool
+exploration, which includes the required **Portfolio/workflow
+conference**. The conference reviews your Week 11 AI
+debugging audit, your Week 12 AI Use Reflection, and your AI
+Use Notes from earlier weeks together with your portfolio
+organization. Then Weeks 14–15 are portfolio assembly + final
+polish and the final reflection.
+
+The exact Week 12 prompt and submission details live in the
+course LMS. Bring the rest yourself.

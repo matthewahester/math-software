@@ -84,15 +84,22 @@ the course LMS.
   paid tier required; the "no detectors" position; privacy
   carryforward; the Week 11 AI debugging audit shape; pointers
   to the existing AI use guidelines and AI reading spine.
+- [Week 12 — Catching AI hallucinations: a checklist for math, code, and citations](week12-critiquing-ai.qmd) —
+  closing Module D (Generative AI literacy): AI as drafter and you
+  as critic and reviser; the five-category hallucination checklist
+  (math / code / citations / prose claims / rendered output
+  consistency); the critique → verify → revise loop; the
+  evidence-grounded Reflection paragraph as a separate artifact
+  from the AI Use Note; tool-agnosticism with no paid tier
+  required; the "no detectors" position carried forward; privacy
+  carryforward; Lab 8 as the workflow walkthrough mapped from
+  debugging to drafting; pointers ahead to the Week 13
+  Portfolio/workflow conference.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
-
-**AI module continued (Week 12)**
-
-- Week 12 — Catching AI hallucinations: a checklist for math, code, and citations
 
 **Workflow bridge and portfolio (Weeks 13–15)**
 

@@ -58,6 +58,8 @@ website:
             text: "10 — The R Project"
           - href: notes/week11-using-ai.qmd
             text: "11 — A mental model for AI assistants"
+          - href: notes/week12-critiquing-ai.qmd
+            text: "12 — Catching AI hallucinations"
       - section: "Labs"
         href: labs/index.qmd
         contents:
