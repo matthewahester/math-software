@@ -66,6 +66,15 @@ a:hover {
   color: #ffffff !important;
 }
 
+/* Course crystal mark — small brand icon to the left of the title. */
+.navbar-logo {
+  max-height: 1.5rem;
+  width: auto;
+}
+.navbar-brand .navbar-logo {
+  margin-right: 0.35rem;
+}
+
 /* Sidebar — quiet, with the active item in iron. */
 .sidebar-title {
   color: var(--stone-900);

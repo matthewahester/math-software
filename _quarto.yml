@@ -20,6 +20,8 @@ website:
   navbar:
     pinned: true
     background: dark
+    logo: assets/intro-math-software-icon.png
+    logo-alt: "Intro to Mathematical Software crystal mark"
     left:
       - href: index.qmd
         text: Home
