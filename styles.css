@@ -98,6 +98,16 @@ code {
   font-size: 0.9em;
 }
 
+/* Course landing hero image — framed image already carries its own
+   styling, so this just sizes and spaces it on the page. */
+.course-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0 2rem 0;
+  border-radius: 0.5rem;
+}
+
 /* Misc */
 blockquote {
   border-left: 3px solid var(--crystal-blue);

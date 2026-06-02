@@ -13,6 +13,8 @@ It is a **curated resource site**, not a raw course archive. Anything
 section- or roster-specific lives in the course LMS; this site is
 what stays public.
 
+![](assets/intro-math-software-hero.png){fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
+
 ## Where to start
 
 - [Syllabus](syllabus.qmd) — course identity, conferences, grading,
