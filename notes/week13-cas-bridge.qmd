@@ -1,0 +1,95 @@
+---
+title: "When you'd reach for SageMath, SymPy, or a CAS"
+subtitle: "Week 13 — an optional second-tool bridge: exact symbolic work alongside R's numerics"
+toc: true
+---
+
+> A short, **optional** reading for the curious. R is the course's
+> computation language, and it is excellent at numbers and statistics.
+> This note explains when you might reach for a different kind of tool —
+> a **computer algebra system (CAS)** — and points you at the
+> already-written [Computer algebra systems and the optional
+> bridge](../resources/cas-options.qmd) resource for the tool menu. The
+> required Week 13 work is in
+> [Organizing your portfolio folder, the easy way](week13-portfolio-repo.qmd);
+> this note is enrichment, not the spine.
+
+This note is **optional.** There is **no required tool, no required
+install, and no required bridge report.** Read it if you are curious
+about computing past R; skip it without consequence if you are not.
+
+## Numerical vs symbolic computing
+
+R is a **numerical** language. Ask it for the mean of a dataset, a
+simulation, or a regression, and it gives you numbers — fast and well.
+But ask R to *factor a polynomial symbolically*, *take an exact
+derivative or integral*, or *solve an equation in closed form*, and it
+is the wrong tool. Those are jobs for a **computer algebra system
+(CAS)** — software that manipulates mathematical expressions
+*symbolically* rather than numerically.
+
+A quick contrast:
+
+- **R is great for numerics.** Summaries, plots, simulations,
+  statistical models — the work you did in Weeks 7–10.
+- **A CAS is great for exact symbolic work.** Factoring, exact
+  derivatives and integrals, solving equations exactly, symbolic
+  matrix and group computations.
+
+Neither replaces the other. A working mathematician often keeps both
+within reach and picks the one that fits the question.
+
+## When you'd reach for one
+
+You might reach for a CAS or a symbolic tool when you want to:
+
+- factor or expand a polynomial exactly,
+- compute a derivative or integral in closed form,
+- solve an equation or system symbolically,
+- simplify a messy algebraic expression,
+- work with exact fractions, radicals, or symbolic constants instead of
+  floating-point approximations.
+
+If your question is "what is the *number*?", reach for R. If your
+question is "what is the *exact expression*?", a CAS is often the better
+fit.
+
+## Where to look (no install required)
+
+The Resources page
+[Computer algebra systems and the optional bridge](../resources/cas-options.qmd)
+already lays out the options in detail — including several you can run
+**in a browser with no install and no account**:
+
+- **SageMathCell** — a free, browser-based Sage environment; the
+  lightest possible way to try symbolic work.
+- **Python + SymPy** in a browser notebook — natural if you already
+  know some Python.
+- **WolframAlpha**, **Maple Learn**, **Octave Online**, and others, with
+  notes on what each is good for.
+
+The Resources page also describes what a short optional bridge
+exploration would look like if you chose to do one — copy-pasteable
+commands, the output, the tool and version named, and a clean rendered
+PDF — using the same reproducibility habits you have practiced all term.
+
+## What this is and isn't
+
+- **It is** a pointer for the curious: when symbolic tools help, and
+  where to find browser-based ones.
+- **It is not** a required part of Week 13. The required Week 13 work is
+  portfolio organization and the Portfolio/workflow conference.
+- **It is not** a graded CAS assignment. There is no required tool, no
+  required install, and no required bridge report. If you choose to
+  write a short optional bridge mini-report, keep it in an optional
+  `bridge/` folder in your portfolio — separate from the required
+  portfolio/workflow work.
+
+## Looking ahead
+
+If a CAS turns out to be useful for your own mathematics, the
+[CAS options resource](../resources/cas-options.qmd) is a standing
+reference you can come back to after the course. For Week 13 itself,
+the main work is in
+[Organizing your portfolio folder, the easy way](week13-portfolio-repo.qmd)
+and the required Portfolio/workflow conference.

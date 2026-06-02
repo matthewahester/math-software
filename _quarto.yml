@@ -62,6 +62,10 @@ website:
             text: "11 — A mental model for AI assistants"
           - href: notes/week12-critiquing-ai.qmd
             text: "12 — Catching AI hallucinations"
+          - href: notes/week13-portfolio-repo.qmd
+            text: "13 — Organizing your portfolio folder"
+          - href: notes/week13-cas-bridge.qmd
+            text: "13 — When you'd reach for a CAS"
       - section: "Labs"
         href: labs/index.qmd
         contents:
@@ -82,6 +86,8 @@ website:
             text: "7 — A small reproducible simulation in R"
           - href: labs/lab08-ai-debugging.qmd
             text: "8 — Drafting and verifying with AI"
+          - href: labs/lab09-portfolio-folder.qmd
+            text: "9 — Organizing your portfolio folder"
       - section: "Examples"
         href: examples/index.qmd
         contents:

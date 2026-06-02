@@ -95,16 +95,32 @@ the course LMS.
   carryforward; Lab 8 as the workflow walkthrough mapped from
   debugging to drafting; pointers ahead to the Week 13
   Portfolio/workflow conference.
+- [Week 13 — Organizing your portfolio folder, the easy way](week13-portfolio-repo.qmd) —
+  reopening the workflow thread: what makes a technical portfolio
+  reproducible and legible; source and rendered output together;
+  relative paths; opening the folder, not one file; auditing the
+  term's accumulated work in place without restructuring it; a
+  one-screen portfolio map; surveying your AI Use Notes as a set;
+  naming your workflow habits; preparing for the required
+  Portfolio/workflow conference; planning the final reflection
+  without writing it; and optional local Git as enrichment, not a
+  requirement.
+- [Week 13 — When you'd reach for SageMath, SymPy, or a CAS](week13-cas-bridge.qmd) —
+  an optional second-tool bridge: numerical vs symbolic computing;
+  when a computer algebra system fits better than R; browser-based
+  options that need no install; and what an optional bridge
+  exploration could look like. Enrichment only — no required tool,
+  no required install, no required report.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
 
-**Workflow bridge and portfolio (Weeks 13–15)**
+**Final portfolio (Weeks 14–15)**
 
-- Week 13 — When you'd reach for SageMath, SymPy, or a CAS
-- Week 13 — A small portfolio repo, the easy way
+- Week 14 — Portfolio assembly
+- Week 15 — Final polish and the portfolio reflection
 
 For software install instructions, see
 [resources/software-setup.qmd](../resources/software-setup.qmd) and

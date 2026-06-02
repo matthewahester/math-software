@@ -59,12 +59,19 @@ help.
   disclose with a three-line AI Use Note. The lab is shared
   across Weeks 11 (debugging audit prep) and 12 (drafting +
   critique prep).
+- [Lab 9 — Organizing your portfolio folder (and an optional Git workflow)](lab09-portfolio-folder.qmd) *(Week 13)* —
+  audit your `math-software-portfolio/` folder in place without
+  restructuring it: open the whole folder, confirm source and
+  rendered output are together, render-check one artifact, fix any
+  absolute paths, and add a one-screen portfolio map (README) at the
+  root. Then, **optionally**, put the folder under a lightweight
+  **local** Git workflow (`git init` → `git add` → `git commit` →
+  `git log`) — no branches, no remote, no GitHub required. The
+  non-Git path is complete on its own.
 
 ## Planned
 
-Labs are added as the course is built. The rough plan, aligned with
-the weekly module spine:
-
-- Lab 9 — A first portfolio folder, optional Git workflow *(Week 13)*
-
-Lab numbering is rough — not every week has a paired lab.
+Lab numbering is rough — not every week has a paired lab. The lab
+sequence is complete with Lab 9; Weeks 14–15 are final portfolio
+assembly and reflection, supported by the Week 13 portfolio note and
+Lab 9 rather than by new labs.

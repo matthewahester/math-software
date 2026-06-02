@@ -1,0 +1,236 @@
+---
+title: "Organizing your portfolio folder, the easy way"
+subtitle: "Week 13 — reopening the workflow thread: a reproducible, legible portfolio and the Portfolio/workflow conference"
+toc: true
+---
+
+> A short conceptual reading on what makes a technical portfolio
+> **reproducible and legible**, how to audit the work you have already
+> built **without restructuring it**, and how to come prepared for the
+> required **Portfolio/workflow conference**. The companion hands-on
+> walkthrough is
+> [Lab 9 — Organizing your portfolio folder (and an optional Git
+> workflow)](../labs/lab09-portfolio-folder.qmd). The exact prompts,
+> due dates, submission details, conference sign-up, and grading
+> mechanics for the Week 13 work live in the **Assignments/LMS space**.
+
+Week 13 reopens a thread the course has not touched directly since
+Week 1: **the workflow itself.** For most of the term the substance was
+the content — LaTeX, R, visualization, simulation, AI use. This week the
+substance is **the body of work you have built** and how you keep it.
+
+You stay in the same VS Code + R + Quarto + TinyTeX stack you have used
+since Week 1. There is **no new editor, no new render engine, no new
+required package, and no folder restructuring**. This is a
+consolidation week: you take the portfolio folder you created in Week 1,
+get it into clean shape, and confirm you are ready for the final weeks.
+
+## Where Week 13 sits
+
+Week 13 is the **bridge** from the content modules into the
+final-portfolio phase:
+
+- **Weeks 1–12** built the artifacts — mathematical writing, the LaTeX
+  Project, R reports, visualization, simulation, the R Project, and the
+  two AI-module pieces.
+- **Week 13 (this week)** organizes that work, surveys your AI Use
+  Notes, names the workflow habits you have built, and plans the final
+  reflection — all anchored by the required **Portfolio/workflow
+  conference**.
+- **Weeks 14–15** assemble the portfolio (Week 14) and write the 1–2
+  page reflection and submit (Week 15).
+
+This week is deliberately **light** — a place to catch your breath
+after two demanding AI-module weeks and get organized before the final
+stretch. The optional Git and the optional second-tool bridge (see
+below and the companion note) are there if you want them; neither is
+required.
+
+## What makes a portfolio reproducible and legible
+
+A good technical portfolio is not just neat — it is **trustworthy and
+reusable**. Someone who was not in the room (a collaborator, a future
+employer, or you in six months) should be able to open it and
+understand it. Four habits carry most of the weight:
+
+- **Source and rendered output live together.** Every piece keeps both
+  its source (the `.qmd`) and its rendered result (usually a `.pdf`) in
+  the same place. The source proves the work is reproducible; the
+  rendered output shows what it produces.
+- **Paths are relative, not absolute.** A path like
+  `data/results.csv` works on any machine; a path like
+  `C:/Users/yourname/Desktop/...` works only on yours. Relative paths
+  are what let the work re-render somewhere else.
+- **You open the folder, not just one file.** Opening the whole
+  `math-software-portfolio/` folder in VS Code (File → Open Folder…)
+  lets the editor and Quarto resolve paths from the project root — the
+  same habit you started in Week 1.
+- **A reader can navigate without you.** Clear folder names and a short
+  map at the top mean nobody needs a guided tour to find their way
+  around.
+
+These are the same ideas behind every weekly artifact — render, read,
+keep the source — applied now to the **whole term** at once.
+
+## The folder convention you already have
+
+You set this up in Week 1 and have been filling it ever since. By now
+your `math-software-portfolio/` holds the weekly and project work you
+completed during the term:
+
+```text
+math-software-portfolio/
+├── hw01/            first render
+├── hw02/ … hw0N/    weekly artifacts (LaTeX writing, then R work)
+├── latex-project/   the LaTeX Project (Weeks 5–6)
+├── r-project/       the R Project (Week 10)
+├── hw11/  hw12/     the AI module (Weeks 11–12)
+└── reflection.qmd   the final reflection (written in Week 15)
+```
+
+Your exact set of folders will differ — because of the best-9-of-11
+weekly rule, some weekly folders may legitimately be missing, and that
+is fine. The point of Week 13 is not to have *every* folder; it is to
+have the work you kept **organized and reproducible**.
+
+The convention you adopted in Week 1 — described on the
+[Software setup page](../resources/software-setup.qmd) — does not change
+this week.
+
+## Auditing without restructuring
+
+The Week 13 move is an **audit and a tidy-up**, not a redesign. **Do
+not rename or rearrange the layout you have used all term** — that would
+break the relative paths inside your documents and undo months of
+consistency. Instead, walk the folder and confirm:
+
+- each completed week's work is in **its own subfolder**;
+- each subfolder has both the **source `.qmd`** and the **rendered
+  output** present together;
+- filenames are clear and consistent;
+- paths inside your `.qmd` files are **relative**;
+- one finished artifact still **re-renders cleanly** from source on
+  your current machine (a quick reproducibility check).
+
+[Lab 9](../labs/lab09-portfolio-folder.qmd) walks each of these steps
+hands-on.
+
+### A one-screen portfolio map
+
+The one small thing worth **adding** this week is a short **portfolio
+map** — a `README.md` (or `portfolio-map.md`) at the root of
+`math-software-portfolio/` that names each major folder and says in one
+line what it contains. It should fit on roughly one screen and be
+readable by someone outside the class. This is **additive**: it does
+not change any existing folder; it just makes the portfolio navigable.
+Lab 9 shows a short template you can adapt.
+
+## Surveying your AI Use Notes as a set
+
+All term, every submission where you used AI carried an **AI Use Note**
+with three labeled lines — **Tool**, **Purpose**, **Verification**.
+Week 13 is the first time you look at them **as a set** instead of one
+at a time. Skim back through them and ask:
+
+- Is the three-line Note present wherever you used AI?
+- Did your **Verification** line stay honest and specific over the term
+  — or did it thin out into "I checked it"?
+- What is one thing your AI Use Notes show you got *better* at?
+
+You do **not** rewrite old AI Use Notes — this is a survey, not a
+revision. It is also exactly what the
+[AI module](week12-critiquing-ai.qmd) was building toward: a
+disclosure-and-verification habit you can see across the whole term.
+
+## Naming your workflow habits
+
+By Week 13 you have built a set of habits worth naming, because they are
+the transferable part of the course:
+
+- **render, then read** — you look at the rendered output, not just the
+  source;
+- **render twice** — you confirm the document is stable across two
+  renders (especially with simulated output);
+- **relative paths** — your work moves between machines;
+- **open the folder, not the file** — the project, not a fragment;
+- **source and rendered output together** — every piece is
+  reproducible.
+
+These are the Technical Workflow pillar of the course. The conference is
+where you talk through which of them took hold.
+
+## Preparing for the Portfolio/workflow conference
+
+Week 13 includes the required **Portfolio/workflow conference** — a
+short 10–15 minute one-on-one. It is a **progress check, not an exam.**
+It reviews your **portfolio organization, your AI Use Notes, your
+workflow habits, and your final-reflection plan** before the final
+assembly and submission weeks.
+
+To come prepared, bring:
+
+- your `math-software-portfolio/` open in VS Code (the whole folder),
+- your one-screen portfolio map,
+- a sense of your AI Use Notes as a set,
+- your short final-reflection plan (see below).
+
+Conference sign-up, the exact schedule, and what counts for credit live
+in the course LMS. If you have to miss it, the conference can be
+rescheduled into Week 14 when possible, or replaced by a short recorded
+walkthrough if approved — arrange this with me through the LMS or email.
+
+## Planning the final reflection (without writing it)
+
+The final **1–2 page reflection** is a **Week 15** deliverable. This
+week you only **plan** it. Jot a few bullets:
+
+- which artifacts you might point to as evidence of growth in each area
+  — writing, computation, workflow, and AI use;
+- one or two things you want the reflection to say;
+- anything you want to tidy before Week 15.
+
+**Do not write the reflection itself this week.** A plan is enough — it
+makes Week 15 straightforward.
+
+## Optional: a lightweight local Git habit
+
+If you want a version-control habit, you can put your portfolio folder
+under **local** Git — a one-time `git init`, then a first commit that
+snapshots your work. [Lab 9](../labs/lab09-portfolio-folder.qmd) walks
+the few commands.
+
+Git is **optional enrichment, not a requirement.** You never need a
+public GitHub repository, and a plain local folder is completely
+acceptable for this course — the syllabus is explicit that "a local
+folder or private repository is acceptable." If version control is new
+to you and you would rather not add it right now, skip it; the non-Git
+path is complete on its own.
+
+## Optional: a second-tool bridge
+
+R is excellent for numerical and statistical work, but some problems
+call for **exact symbolic** computation — factoring, exact integrals,
+symbolic solving. That is what a **computer algebra system (CAS)** is
+for. If you are curious, the companion note
+[When you'd reach for SageMath, SymPy, or a CAS](week13-cas-bridge.qmd)
+and the Resources page
+[Computer algebra systems and the optional bridge](../resources/cas-options.qmd)
+describe browser-based options that need no install.
+
+This is **optional enrichment only** — there is no required tool, no
+required install, and no required bridge report. It is here for students
+who want to look past R for a moment, not a requirement of Week 13.
+
+## Looking ahead
+
+- **Week 14 — Portfolio assembly.** Assemble the portfolio into its
+  final shape, building on the organization you did this week.
+- **Week 15 — Final polish and reflection.** Write the 1–2 page
+  reflection you planned this week and submit the final portfolio
+  through the course LMS.
+
+Week 13 gets the folder, the workflow story, and the reflection plan
+into place so the last two weeks are about finishing, not scrambling.
+
+The exact Week 13 prompt, the conference sign-up, and the
+final-portfolio submission details live in the course LMS.

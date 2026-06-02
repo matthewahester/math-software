@@ -1,0 +1,264 @@
+---
+title: "Lab 9 — Organizing your portfolio folder (and an optional Git workflow)"
+subtitle: "Week 13 — audit your math-software-portfolio/ in place, add a portfolio map, and (optionally) put it under local version control"
+toc: true
+---
+
+> A hands-on walkthrough for getting your `math-software-portfolio/`
+> folder into clean, reproducible shape before the final weeks. The
+> companion conceptual reading is
+> [Organizing your portfolio folder, the easy way](../notes/week13-portfolio-repo.qmd).
+> The exact Week 13 prompt, the conference sign-up, and submission
+> details live in the course LMS.
+
+This lab has two parts. **Part A is the core workflow everyone should
+complete: audit and tidy your existing portfolio folder in place, and
+add a short portfolio map.** **Part B is optional: put the folder under local
+version control with Git.** The non-Git path is complete on its own —
+if you skip Part B you have still done everything Week 13 asks.
+
+You do not need any new R packages, any new LaTeX packages, or any new
+editor. You will not restructure your folder — this is a tidy-up of the
+layout you have used since Week 1.
+
+## What you'll need
+
+- VS Code with the Quarto extension (Lab 1).
+- Your `math-software-portfolio/` folder, with the term's work in it.
+- A working Quarto + TinyTeX render chain (you have rendered PDFs since
+  Week 1).
+- For the optional Part B only: Git installed. Check with
+  `git --version` in a terminal; if it is missing, see
+  <https://git-scm.com/downloads>. **Part B is optional — skip it if you
+  do not want Git.**
+
+---
+
+# Part A — Audit and organize (everyone)
+
+## Step 1 — open the whole folder
+
+Open `math-software-portfolio/` in VS Code with **File → Open Folder…**,
+not a single `.qmd`. This is the Week 1 habit applied to the whole term:
+the editor sees the whole project and paths resolve from the folder
+root. The Explorer pane on the left now shows your entire portfolio.
+
+## Step 2 — audit the structure in place
+
+Look at what you have. By Week 13 a typical portfolio looks roughly like
+this (your exact folders will differ — dropped weeks may be missing, and
+that is fine):
+
+```text
+math-software-portfolio/
+├── hw01/            first render
+├── hw02/ … hw0N/    weekly artifacts
+├── latex-project/   the LaTeX Project (Weeks 5–6)
+├── r-project/       the R Project (Week 10)
+├── hw11/  hw12/     the AI module (Weeks 11–12)
+└── reflection.qmd   the final reflection (written in Week 15)
+```
+
+Walk your folder and confirm, **without renaming or moving anything**:
+
+- each completed week's work is in **its own subfolder**;
+- filenames are clear and consistent;
+- nothing important is loose at the root or duplicated.
+
+> **Do not restructure.** Renaming or rearranging the layout you have
+> used all term breaks the relative paths inside your documents. Week 13
+> is an audit and a tidy-up, not a redesign. If something is genuinely
+> misplaced, move that one thing — do not redesign the whole layout.
+
+## Step 3 — confirm source and rendered output are together
+
+Open two or three of your subfolders. Each finished piece should have
+**both**:
+
+- its **source** (the `.qmd`), and
+- its **rendered output** (usually a `.pdf`).
+
+```text
+hw08/
+├── hw08.qmd     ← source
+└── hw08.pdf     ← rendered output
+```
+
+If a folder has a source but no rendered output, render it (Step 4). If
+it has a rendered output but you cannot find the source, locate the
+source — a rendered PDF without its source is not reproducible.
+
+## Step 4 — render-check one artifact
+
+Pick **one** finished artifact and re-render it from source on your
+current machine to confirm it still works. From a terminal opened in
+that artifact's folder:
+
+```bash
+quarto render hw08.qmd
+```
+
+Open the resulting PDF. If it renders cleanly, your chain still works.
+If it fails, fix the **smallest** thing that is broken — usually a path
+or a missing file — and render again. Two common fixes:
+
+- **An absolute path.** If a document points at something like
+  `C:/Users/yourname/Desktop/data.csv`, change it to a **relative**
+  path (`data.csv` or `../shared/data.csv`) so it renders on any
+  machine.
+- **A missing input file.** Make sure any data or image a document needs
+  lives inside the portfolio, referenced by a relative path.
+
+A portfolio is only reproducible if the work still renders.
+
+## Step 5 — add a one-screen portfolio map
+
+Create a short **`README.md`** at the **root** of
+`math-software-portfolio/` — a one-screen map of the portfolio that
+names each major folder and what it contains. This is the one thing you
+**add** this week. It is additive: it changes no existing folder.
+
+Adapt this template (rewrite it in your own words — it is your
+portfolio):
+
+````markdown
+# Math Software Portfolio — Your Name
+
+Course portfolio for MATH 12362, Fall 2026. Each folder holds one
+piece of the term's work, with its source and rendered output together.
+
+- `hw01/` … `hw0N/` — weekly artifacts (LaTeX writing, then R reports,
+  visualization, and simulation).
+- `latex-project/` — the LaTeX Project (Weeks 5–6): a short
+  replication of an open-access paper.
+- `r-project/` — the R Project (Week 10): a short focused R report.
+- `hw11/`, `hw12/` — the AI module: an AI debugging audit and an
+  AI Use Reflection.
+- `reflection.qmd` — the final reflection (written in Week 15).
+````
+
+Save it as `README.md` at the portfolio root. Now anyone opening your
+folder gets a map before they start clicking.
+
+## Step 6 — survey your AI Use Notes as a set
+
+You have written an **AI Use Note** (Tool / Purpose / Verification) on
+each submission where you used AI. Skim back through them **as a set**
+and notice:
+
+- is the three-line Note present wherever you used AI?
+- did your **Verification** line stay specific, or thin out?
+- what is one thing your Notes show you got better at?
+
+You do **not** rewrite old Notes — this is a survey. It is part of what
+the Portfolio/workflow conference reviews.
+
+## Step 7 — prepare for the Portfolio/workflow conference
+
+The required **Portfolio/workflow conference** is a short 10–15 minute
+one-on-one — a progress check, not an exam. It reviews your portfolio
+organization, your AI Use Notes, your workflow habits, and your
+final-reflection plan. Come with:
+
+- `math-software-portfolio/` open in VS Code,
+- your portfolio map (`README.md`),
+- a sense of your AI Use Notes as a set,
+- a short final-reflection **plan** (a few bullets — *not* the
+  reflection itself; that is written in Week 15).
+
+Sign-up and timing are in the course LMS.
+
+---
+
+# Part B — Optional: a local Git workflow
+
+**This part is optional.** Git is a version-control tool that snapshots
+your folder over time so you can see what changed and roll back if you
+break something. It is a genuinely useful professional habit — but for
+this course it is **enrichment, not a requirement.** You never need a
+public GitHub repository, and **a plain local folder is completely
+acceptable.** If you would rather not add Git right now, you are done
+after Part A.
+
+If you do want to try it, this is the lightest possible local workflow —
+**no branches, no remotes, no GitHub account.**
+
+## B1 — initialize a local repository
+
+In a terminal opened at the root of `math-software-portfolio/`:
+
+```bash
+git init
+```
+
+This creates a hidden `.git/` folder that will track changes. It does
+not upload anything anywhere — everything stays on your machine.
+
+## B2 — see what Git sees
+
+```bash
+git status
+```
+
+Git lists the files it has noticed but is not yet tracking. Nothing has
+been saved into version control yet.
+
+## B3 — stage your work
+
+```bash
+git add .
+```
+
+The `.` stages **everything in the folder** for the first snapshot.
+(You may later choose to add a `.gitignore` to skip large or generated
+files, but you do not need one to do this lab.)
+
+## B4 — make your first commit
+
+```bash
+git commit -m "First snapshot of my math software portfolio"
+```
+
+A **commit** is a saved snapshot with a short message. This one records
+the state of your whole portfolio at Week 13.
+
+## B5 — confirm the snapshot
+
+```bash
+git log
+```
+
+You will see your commit with its message, author, and timestamp. That
+is your portfolio under local version control. From here on, each time
+you finish a meaningful change you can `git add .` and `git commit -m
+"..."` again to record a new snapshot.
+
+> **That is the whole optional workflow.** No branches, no merges, no
+> remote, no GitHub. If you ever want to back the folder up to a
+> **private** remote later, you can — but it is never required for this
+> course, and public posting of your work is never required.
+
+---
+
+## What this lab prepares you for
+
+After this lab your portfolio is **organized, reproducible, and
+navigable**, your AI Use Notes are surveyed, and you have a
+final-reflection plan — exactly what the Portfolio/workflow conference
+reviews, and exactly what makes the final two weeks straightforward.
+
+If you used an AI assistant for any part of this (for example, to help
+write a `.gitignore` or fix a path), disclose it with the usual
+three-line **AI Use Note** and verify whatever it suggested by running
+it — the same habit you have used all term.
+
+## Looking ahead
+
+- **Week 14 — Portfolio assembly.** You assemble the organized
+  portfolio into its final shape.
+- **Week 15 — Final polish and reflection.** You write the 1–2 page
+  reflection you planned this week and submit the final portfolio
+  through the course LMS.
+
+The exact prompts, conference sign-up, and submission details live in
+the course LMS.
