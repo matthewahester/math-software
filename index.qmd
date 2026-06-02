@@ -1,19 +1,24 @@
 ---
-title: "Intro to Mathematical Software"
-subtitle: "Public course resources"
+pagetitle: "Intro to Mathematical Software"
+description: |
+  Public course resources for Intro to Mathematical Software —
+  mathematical writing, R-based computation, reproducible Quarto
+  workflows, and responsible AI-assisted technical work.
 toc: false
 ---
 
+![](assets/intro-math-software-hero.png){fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
+
 This site collects public-facing resources for **Intro to Mathematical
-Software** — a conference-based studio course in modern mathematical
-and computational workflow. Curated by
+Software** — a conference-based studio course in modern mathematical and
+computational workflow: mathematical writing in LaTeX, computation and
+visualization in R, reproducible Quarto projects, and the careful,
+verified use of AI assistants. Curated by
 [Matt Hester](https://matthewhester.com).
 
 It is a **curated resource site**, not a raw course archive. Anything
 section- or roster-specific lives in the course LMS; this site is
 what stays public.
-
-![](assets/intro-math-software-hero.png){fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
 
 ## Where to start
 

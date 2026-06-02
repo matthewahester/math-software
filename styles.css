@@ -107,13 +107,20 @@ code {
   font-size: 0.9em;
 }
 
+/* The landing page sets `pagetitle` (not `title`), so Quarto emits an
+   empty title block. Hide only the empty one so the hero sits flush at
+   the top; populated title blocks on other pages are unaffected. */
+#title-block-header:empty {
+  display: none;
+}
+
 /* Course landing hero image — framed image already carries its own
    styling, so this just sizes and spaces it on the page. */
 .course-hero-img {
   display: block;
   width: 100%;
   height: auto;
-  margin: 1.5rem 0 2rem 0;
+  margin: 0 0 1.75rem 0;
   border-radius: 0.5rem;
 }
 
