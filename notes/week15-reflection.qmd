@@ -1,0 +1,157 @@
+---
+title: "Final polish and the portfolio reflection"
+subtitle: "Week 15 — write the reflection, do the final polish, submit, and close the course"
+toc: true
+---
+
+> A short conceptual reading on the **last** move of the course: writing
+> the **1–2 page reflection** that explains your growth, doing a final
+> polish, and submitting your finished portfolio. This completes the arc
+> begun in
+> [Organizing your portfolio folder, the easy way](week13-portfolio-repo.qmd)
+> (Week 13) and
+> [Assembling your final portfolio](week14-portfolio-assembly.qmd)
+> (Week 14). The exact submission steps, how the portfolio is
+> evaluated, and the **deadline** live in the **Assignments/LMS space** —
+> this note is about *how to write a good reflection and finish well*.
+
+Week 13 got your `math-software-portfolio/` **organized**. Week 14
+**assembled** it into a coherent, complete, submission-ready final
+portfolio, with the reflection slot reserved. Week 15 — the last week of
+the course — is where you **write the reflection, do a final polish, and
+submit**.
+
+You stay in the same VS Code + R + Quarto + TinyTeX stack you have used
+since Week 1. There is **nothing new to install or learn** this week. The
+reflection is a short Quarto document, written the same way as everything
+else you have built.
+
+## Where Week 15 sits: organize → assemble → reflect
+
+The last three weeks form a short arc, and this week closes it:
+
+- **Week 13 — organize.** Get the working folder in order and *plan* the
+  reflection.
+- **Week 14 — assemble.** Curate across the four areas, confirm everything
+  renders, finalize the portfolio map, become submission-ready.
+- **Week 15 (this week) — reflect, polish, submit.** Write the 1–2 page
+  reflection you planned, do a last polish, and submit the final portfolio
+  through the course LMS.
+
+Week 15 is a **studio week** — protected, optional time to finish well.
+There is no required conference this week.
+
+## What an evidence-grounded reflection is
+
+Your portfolio shows *what you made*. The reflection explains *what you
+can now do and how you grew* — it is the part of the course goal,
+"**communicate growth**," that the artifacts cannot show on their own.
+
+A weak reflection says "I learned a lot and got better at coding." A
+strong reflection makes the *same* point by **pointing at a specific piece
+of your portfolio**: it names an artifact and says what that artifact
+demonstrates. That is the whole technique, and you repeat it throughout:
+
+- make a claim about your growth, and
+- **anchor it to a specific artifact** in your portfolio that shows it.
+
+A claim with no artifact behind it is just an opinion; a claim anchored to
+a real file is **evidence**. You are not writing a feelings essay — you are
+writing a short, honest account a reader could verify by opening the files
+you name.
+
+Keep it to the **1–2 pages** named in the syllabus. Short, specific, and
+concrete beats long and vague.
+
+## The four areas as your frame
+
+The course — and your portfolio — cover **four areas**. They are the
+natural skeleton of the reflection; aim to say something grounded about
+each:
+
+- **Mathematical writing** — your LaTeX/Quarto documents and the
+  `latex-project/`.
+- **Computation with R** — your R-in-Quarto reports, your visualization,
+  your simulation, and the `r-project/`.
+- **Reproducible workflow** — how you keep your work: organized folders,
+  source kept with rendered output, relative paths, the render-twice
+  habit, your portfolio map.
+- **Responsible AI use** — your AI module work and the **AI Use Notes** you
+  wrote across the term.
+
+You do not need equal space for each, and because of the best-9-of-11
+weekly rule some folders may legitimately be missing. Reflect on the work
+you **kept**, and be **selective**: a few well-chosen artifacts per area,
+named specifically, carry more weight than gesturing at "all my work."
+
+## From your Week 13 plan to prose
+
+In Week 13 you wrote a short **plan** — a few bullets on which artifacts
+show growth in each area and what you wanted the reflection to say. This
+week you turn those bullets into prose:
+
+- start from your Week 13 bullets, grouped by the four areas;
+- confirm each artifact you named still exists and still renders (you may
+  have curated during Week 14 — update the plan to match what you kept);
+- write each grounded claim in your own words, in whatever order reads
+  best;
+- add an honest thread on what was genuinely hard and what you would do
+  next.
+
+If you never wrote a plan, build one quickly: skim your portfolio, jot the
+strongest artifact in each area, and write from there.
+
+## How this differs from the Week 12 AI Use Reflection
+
+You wrote an **AI Use Reflection** in Week 12 — a narrow *before/after*
+account of a single AI interaction. This **final reflection is broader**:
+it is about your growth across the **whole course** and all four areas,
+grounded in portfolio artifacts. It is a new, wider piece of writing — not
+a reuse of the Week 12 one.
+
+## The final polish
+
+The reflection is a small Quarto document. Render it the same way you have
+rendered everything all term:
+
+```bash
+quarto render reflection.qmd
+```
+
+Then **read the rendered output the way the grader will** — top to bottom,
+once through. Confirm every artifact you name actually exists in your
+portfolio, that the prose is yours and honest, and that it fits in the 1–2
+pages. While you are at it, give the whole portfolio one last read: open
+the folder, skim the map, and re-render anything you touched. The same
+render-then-read habit, one last time.
+
+If an AI assistant helped you draft or tighten the reflection, include the
+standard **AI Use Note** (Tool / Purpose / Verification) — and remember a
+reflection is a poor thing to outsource, because its whole value is that it
+is **your** honest account of **your** growth.
+
+## Submitting and the end of the course
+
+You submit your finished portfolio — including the reflection — through the
+course **LMS**. The exact submission steps, how the portfolio
+is evaluated, and the **deadline** are all in the **Assignments/LMS space**
+(in the final-portfolio materials you already have). This note is about the
+*writing and finishing*; the operational details live in the LMS.
+
+There is **no traditional final exam** in this course. The final portfolio
+is how the course concludes — there is nothing else to study for.
+
+## A look back
+
+Over the term you learned to **write mathematics** clearly in LaTeX/Quarto,
+to **compute, visualize, and simulate** with R, to keep a **reproducible
+workflow**, and to **use AI responsibly** — disclosing it and verifying its
+output. Your portfolio now shows all four in one place, and your reflection
+explains what it means.
+
+The most durable parts of this course are not any single tool — they are
+the **habits**: render, then read; render twice; use relative paths; open
+the folder, not just one file; and verify rather than outsource. Those
+travel with you into any technical work you do next.
+
+Nicely done. Submit your portfolio, and finish the course well.

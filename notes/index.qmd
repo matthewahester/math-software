@@ -119,15 +119,22 @@ the course LMS.
   finalizing the portfolio map as a reader's guide; becoming
   submission-ready without submitting; and keeping your Week 13
   reflection plan warm without writing the reflection yet.
+- [Week 15 — Final polish and the portfolio reflection](week15-reflection.qmd) —
+  closing the course: completing the organize → assemble → reflect arc
+  at *reflect*; what an evidence-grounded reflection is and grounding
+  every claim in a specific artifact; the four course areas as the
+  reflection's frame; turning your Week 13 reflection plan into prose;
+  how this reflection differs from the Week 12 AI Use Reflection; the
+  final-polish habit (render, then read the whole portfolio); a
+  high-level note that submission details and the deadline live in the
+  LMS; that there is no traditional final exam; and a brief look back
+  across the course.
 
-## Planned
+## The note sequence is complete
 
-Notes are added a few at a time as the course is built. The sequence
-follows the module spine:
-
-**Final portfolio (Week 15)**
-
-- Week 15 — Final polish and the portfolio reflection
+These notes span the full course, from your first render in Week 1 to the
+final portfolio reflection in Week 15. There are no further notes to add —
+the course concludes with Week 15.
 
 For software install instructions, see
 [resources/software-setup.qmd](../resources/software-setup.qmd) and

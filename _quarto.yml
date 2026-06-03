@@ -68,6 +68,8 @@ website:
             text: "13 — When you'd reach for a CAS"
           - href: notes/week14-portfolio-assembly.qmd
             text: "14 — Assembling your final portfolio"
+          - href: notes/week15-reflection.qmd
+            text: "15 — Final polish and the portfolio reflection"
       - section: "Labs"
         href: labs/index.qmd
         contents:
