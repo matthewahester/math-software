@@ -111,15 +111,22 @@ the course LMS.
   options that need no install; and what an optional bridge
   exploration could look like. Enrichment only — no required tool,
   no required install, no required report.
+- [Week 14 — Assembling your final portfolio](week14-portfolio-assembly.qmd) —
+  turning your organized folder into a coherent, submission-ready final
+  portfolio: the organize → assemble → reflect arc; curating across the
+  four course areas (mathematical writing, computation, workflow,
+  responsible AI use); a final reproducibility/render-verification pass;
+  finalizing the portfolio map as a reader's guide; becoming
+  submission-ready without submitting; and keeping your Week 13
+  reflection plan warm without writing the reflection yet.
 
 ## Planned
 
 Notes are added a few at a time as the course is built. The sequence
 follows the module spine:
 
-**Final portfolio (Weeks 14–15)**
+**Final portfolio (Week 15)**
 
-- Week 14 — Portfolio assembly
 - Week 15 — Final polish and the portfolio reflection
 
 For software install instructions, see

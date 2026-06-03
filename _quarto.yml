@@ -66,6 +66,8 @@ website:
             text: "13 — Organizing your portfolio folder"
           - href: notes/week13-cas-bridge.qmd
             text: "13 — When you'd reach for a CAS"
+          - href: notes/week14-portfolio-assembly.qmd
+            text: "14 — Assembling your final portfolio"
       - section: "Labs"
         href: labs/index.qmd
         contents:

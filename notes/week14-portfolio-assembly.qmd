@@ -1,0 +1,164 @@
+---
+title: "Assembling your final portfolio"
+subtitle: "Week 14 — from an organized folder to a coherent, submission-ready final portfolio"
+toc: true
+---
+
+> A short conceptual reading on what it means to **assemble** your final
+> portfolio: curating across the four areas of the course, running a
+> final reproducibility pass, finalizing a portfolio map a reader can
+> follow, and becoming submission-ready — **without** writing the
+> reflection or submitting yet (both happen in Week 15). The companion
+> hands-on walkthrough for getting your folder in shape is
+> [Lab 9 — Organizing your portfolio folder (and an optional Git
+> workflow)](../labs/lab09-portfolio-folder.qmd), and the conceptual
+> frame is
+> [Organizing your portfolio folder, the easy way](week13-portfolio-repo.qmd).
+> The exact final-portfolio prompt, due date, submission details, and
+> grading live in the **Assignments/LMS space**.
+
+Week 13 got your `math-software-portfolio/` **organized** — audited in
+place, with a one-screen portfolio map and your AI Use Notes surveyed,
+and a reflection plan jotted down. Week 14 is the **assembly** week: you
+turn that organized folder into a coherent, complete, reproducible
+**final portfolio** that is ready to submit.
+
+You stay in the same VS Code + R + Quarto + TinyTeX stack you have used
+since Week 1. There is **no new editor, no new render engine, no new
+required package, and no folder restructuring** — assembly works inside
+the layout you already have.
+
+## Where Week 14 sits: organize → assemble → reflect
+
+The last three weeks of the course form a short arc:
+
+- **Week 13 — organize.** Get the working folder in order: each piece in
+  its own subfolder, source and rendered output together, a portfolio
+  map at the root, AI Use Notes surveyed, and a *plan* for the
+  reflection.
+- **Week 14 (this week) — assemble.** Turn the organized folder into the
+  final portfolio: curate what represents you across the four areas,
+  confirm everything still renders, finalize the map as a reader's
+  guide, and get **submission-ready**.
+- **Week 15 — reflect and submit.** Write the 1–2 page reflection you
+  planned, do a final polish, and submit through the course LMS.
+
+Week 14 is deliberately a **studio week** — protected time to assemble
+and polish, with no new material to learn. There is no required
+conference this week. (If your Week 13 conference was moved into this
+week, that still counts as your Week 13 conference, not a new one.)
+
+## What "assembling" adds beyond "organizing"
+
+Organizing was about *order*. Assembling is about *coherence and
+completeness*. Four moves carry the week:
+
+1. **Curate across the four areas.**
+2. **Run a final reproducibility pass.**
+3. **Finalize the portfolio map / front-matter.**
+4. **Become submission-ready.**
+
+The rest of this note takes each in turn.
+
+## 1. Curate across the four areas
+
+Your final portfolio should show your growth across the **four areas of
+the course**:
+
+- **Mathematical writing** — your LaTeX/Quarto work (the early weekly
+  documents and the `latex-project/`).
+- **Computation with R** — your R-in-Quarto reports, your visualization,
+  your simulation, and the `r-project/`.
+- **Reproducible workflow** — clean folder organization, source kept
+  with rendered output, relative paths, render-twice habits.
+- **Responsible AI use** — your AI module work (`hw11/`, `hw12/`) and the
+  AI Use Notes you wrote across the term.
+
+Walk your folder and, for each area, identify the work that best
+represents what you can do. Because of the best-9-of-11 weekly rule,
+some weekly folders may legitimately be missing — that is fine. Curation
+is about making sure **each of the four areas is represented by work you
+kept**, not about having every folder.
+
+## 2. Run a final reproducibility pass
+
+A portfolio is only credible if it still runs. Pick the artifacts you
+intend to include and **re-render each one from source** on your current
+machine to confirm it produces a clean output. The habit is the same one
+you have used all term:
+
+```bash
+quarto render hw08.qmd
+```
+
+If something does not render, fix the smallest thing that is broken —
+usually a **relative-path** issue or a missing input file — and render
+again. Two common fixes:
+
+- replace any absolute path (like `C:/Users/yourname/Desktop/data.csv`)
+  with a **relative** path so the work renders on any machine;
+- make sure any data or image a document needs lives **inside** the
+  portfolio, referenced relatively.
+
+When the pass is done, every artifact in your portfolio renders cleanly
+from source. That is what "reproducible" means in practice.
+
+## 3. Finalize the portfolio map / front-matter
+
+In Week 13 you added a short portfolio map (a `README.md` at the root).
+This week, **finalize** it into a clear front-matter that a reader can
+follow without you: name each major folder, say in one line what it
+contains, and make the **four-area** structure visible. A reader should
+be able to open your portfolio and, in one screen, see what is inside
+and how it maps to the course.
+
+A folder shaped roughly like this — yours will differ — is what an
+assembled portfolio looks like:
+
+```text
+math-software-portfolio/
+├── README.md          one-screen map of the portfolio
+├── hw01/ … hw0N/      weekly artifacts (writing, then R work)
+├── latex-project/     the LaTeX Project (mathematical writing)
+├── r-project/         the R Project (computation)
+├── hw11/  hw12/        the AI module (responsible AI use)
+└── reflection.qmd     the final reflection (written in Week 15)
+```
+
+Leave a **reserved reflection file** at the root — you write the
+reflection in Week 15, not this week.
+
+## 4. Become submission-ready (without submitting)
+
+By the end of Week 14 your portfolio should be in the form you will
+submit — organized, complete across the four areas, everything
+rendering, with the map finalized and the reflection slot reserved. You
+do **not** submit this week. Getting submission-ready now means Week 15
+is a finish, not a scramble.
+
+The exact submission steps, the due date, and how the portfolio is
+evaluated are in the **Assignments/LMS space** for the course. This note
+is about the *concepts* of a good assembly; the operational details live
+in the LMS.
+
+## Keep your reflection plan warm
+
+In Week 13 you planned the reflection — a few bullets on which artifacts
+show growth in each area and what you want the reflection to say. **Keep
+that plan handy this week.** As you assemble and re-read your work, you
+will notice evidence worth pointing to; jot it down. But **do not write
+the reflection itself this week** — that is the Week 15 deliverable. A
+warm plan plus an assembled portfolio is exactly what makes Week 15
+straightforward.
+
+## Looking ahead
+
+- **Week 15 — Final polish and the portfolio reflection.** Write the
+  1–2 page reflection you planned, do a last polish, and submit the
+  final portfolio through the course LMS.
+
+Week 14 gets the portfolio itself into finished shape so that the final
+week is about reflecting and submitting, not assembling.
+
+The exact final-portfolio prompt, submission mechanics, and due date
+live in the course LMS.
