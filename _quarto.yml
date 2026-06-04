@@ -37,7 +37,6 @@ website:
       - section: "Notes"
         href: notes/index.qmd
         contents:
-          - notes/index.qmd
           - href: notes/week01-first-render.qmd
             text: "1 — Your first render"
           - href: notes/week02-latex-foundations.qmd
@@ -65,7 +64,7 @@ website:
           - href: notes/week13-portfolio-repo.qmd
             text: "13 — Organizing your portfolio folder"
           - href: notes/week13-cas-bridge.qmd
-            text: "13 — When you'd reach for a CAS"
+            text: "Optional — CAS bridge"
           - href: notes/week14-portfolio-assembly.qmd
             text: "14 — Assembling your final portfolio"
           - href: notes/week15-reflection.qmd
@@ -73,33 +72,29 @@ website:
       - section: "Labs"
         href: labs/index.qmd
         contents:
-          - labs/index.qmd
           - href: labs/lab01-install-stack.qmd
             text: "1 — Install the stack"
           - href: labs/lab02-first-latex-math.qmd
             text: "2 — First LaTeX math"
           - href: labs/lab03-claim-example-justification.qmd
-            text: "3 — Claim, example, and justification"
+            text: "3 — Claim, example, justification"
           - href: labs/lab04-figure-table-citation.qmd
-            text: "4 — Figure, table, and citation"
+            text: "4 — Figures, tables, citations"
           - href: labs/lab05-first-r.qmd
-            text: "5 — A tour of a tidy dataset in R"
+            text: "5 — R dataset tour (Week 7)"
           - href: labs/lab06-ggplot.qmd
-            text: "6 — A ggplot2 walkthrough"
+            text: "6 — ggplot2 walkthrough (Week 8)"
           - href: labs/lab07-simulation.qmd
-            text: "7 — A small reproducible simulation in R"
+            text: "7 — Simulation (Week 9)"
           - href: labs/lab08-ai-debugging.qmd
-            text: "8 — Drafting and verifying with AI"
+            text: "8 — AI verification (Weeks 11–12)"
           - href: labs/lab09-portfolio-folder.qmd
-            text: "9 — Organizing your portfolio folder"
-      - section: "Examples"
-        href: examples/index.qmd
-        contents:
-          - examples/index.qmd
+            text: "9 — Portfolio folder (Week 13)"
+      - href: examples/index.qmd
+        text: "Examples"
       - section: "Resources"
         href: resources/index.qmd
         contents:
-          - resources/index.qmd
           - resources/software-setup.qmd
           - resources/data-guidelines.qmd
           - resources/finding-open-access-papers.qmd

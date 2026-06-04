@@ -137,5 +137,5 @@ final portfolio reflection in Week 15. There are no further notes to add —
 the course concludes with Week 15.
 
 For software install instructions, see
-[resources/software-setup.qmd](../resources/software-setup.qmd) and
-[labs/lab01-install-stack.qmd](../labs/lab01-install-stack.qmd).
+[Software setup](../resources/software-setup.qmd) and
+[Lab 1 — Install the stack](../labs/lab01-install-stack.qmd).

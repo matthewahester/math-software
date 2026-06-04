@@ -1,15 +1,184 @@
 ---
 title: "Examples"
-toc: false
+toc: true
 ---
 
-Small, self-contained code examples that demonstrate one idea at a
-time. Each example should be copy-pasteable and run end-to-end.
+A small library of **workflow patterns** — short snippets that show the
+*shape* of the things you do in this course, so you can recognize the
+syntax and the habits behind it. Use them to get unstuck, not to fill in.
 
-Planned examples (placeholders):
+::: {.callout-important}
+## These are patterns, not assignment models
 
-- A minimal Quarto document
-- Reading and plotting a CSV with R
-- A LaTeX document with a theorem environment and a figure
-- A first Git workflow: clone, edit, commit, push
-- A Quarto document that includes R, equations, and a citation
+- Every snippet here is a **small workflow pattern** — not a finished
+  assignment, portfolio, or reflection you can hand in.
+- The **exact requirements for any assignment live in the course LMS** —
+  this page never restates them.
+- **Adapt these patterns thoughtfully to your own work.** Copying a
+  snippet mechanically will not match what an assignment actually asks
+  for, and the point of the course is work you can explain and re-run.
+
+The code blocks below are shown as **source** so you can read the syntax.
+In your own document the `{r}` chunks run when you render; here they are
+displayed literally.
+:::
+
+## 1. A tiny Quarto math note
+
+The smallest useful Quarto document: a title, a sentence of prose, some
+**inline** math, and one **display** equation.
+
+````markdown
+---
+title: "A short note"
+format: pdf
+---
+
+The area of a circle of radius $r$ is $A = \pi r^2$. The same idea, written
+as a displayed equation, reads:
+
+$$
+\int_0^1 x^2 \, dx = \frac{1}{3}.
+$$
+
+A displayed equation should be introduced by the sentence before it and
+explained by the sentence after it.
+````
+
+Render it, then **read the PDF** — does the math look the way you meant?
+
+## 2. Aligned equations with prose
+
+When one line of algebra leads to the next, an `aligned` block keeps the
+`=` signs lined up. Notice the sentence *before* the display sets it up,
+and the sentence *after* says what it means.
+
+````markdown
+Expanding the square term by term gives:
+
+$$
+\begin{aligned}
+(a + b)^2 &= a^2 + 2ab + b^2 \\
+          &= a^2 + b^2 + 2ab.
+\end{aligned}
+$$
+
+The two lines are equal because addition is commutative; the second line
+just reorders the terms.
+````
+
+An equation with no words around it makes the reader guess. **Equations
+need explanation.**
+
+## 3. Figure, table, and citation pattern
+
+The supporting apparatus of a technical document: a captioned figure, a
+small captioned table, and a citation. The citation key (`@source2020`)
+refers to an entry in a `.bib` file you keep beside the document.
+
+````markdown
+As shown in @fig-shape, the outline is simple.
+
+![A simple shape.](shape.png){#fig-shape width=60%}
+
+A small summary table:
+
+| Quantity | Value |
+|----------|------:|
+| Width    |   4.0 |
+| Height   |   2.5 |
+
+: A few measurements. {#tbl-measures}
+
+This approach follows a standard construction [@source2020].
+````
+
+Use **generic stand-in keys** like `@source2020` while you learn the
+pattern; the real reference goes in your `.bib`. Do not reconstruct a real
+paper here — that belongs in your own project, cited properly.
+
+## 4. A tiny R-in-Quarto report
+
+One chunk, one summary, one sentence of interpretation. This uses the
+built-in `cars` dataset (stopping distances of 1920s cars) so it runs
+anywhere with no setup.
+
+````markdown
+```{{r}}
+summary(cars$speed)
+```
+
+The median speed is 15 mph, and most speeds fall between about 12 and 19
+mph in this small built-in dataset.
+````
+
+The shape is always the same: **code → output → a sentence that says what
+the output means.** The prose is the part that shows you understood it.
+
+## 5. A tiny ggplot2 evidence example
+
+`ggplot2` builds a plot from **data**, an **aesthetic mapping**
+(`aes(...)`), a **geometry** (`geom_*`), and **labels**. This uses the
+built-in `pressure` dataset (vapor pressure of mercury vs. temperature).
+
+````markdown
+```{{r}}
+library(ggplot2)
+
+ggplot(pressure, aes(x = temperature, y = pressure)) +
+  geom_point() +
+  labs(
+    title = "Vapor pressure rises with temperature",
+    x = "Temperature (°C)",
+    y = "Pressure (mm Hg)"
+  )
+```
+````
+
+A short reading: *the plot shows pressure increasing sharply as
+temperature rises.* What it **does not** prove is *why* — a plot shows a
+pattern; the explanation is still your job.
+
+## 6. A tiny simulation with `set.seed()`
+
+Random functions give different output each run — unless you fix the
+starting point with `set.seed()`. That is what makes a simulation
+**reproducible**.
+
+````markdown
+```{{r}}
+set.seed(123)
+sample(1:6, size = 5, replace = TRUE)
+```
+````
+
+Anyone who runs this with the **same seed** gets the **same five "rolls."**
+The seed matters because it lets a reader reproduce your exact result —
+without it, your numbers can never be checked.
+
+## 7. A tiny AI verification note
+
+When AI helps with your work, the course asks for a short **AI Use Note**
+with three labeled lines — **Tool**, **Purpose**, **Verification**. The
+load-bearing line is *Verification*: it should say **what you checked,
+against what, and what you changed.**
+
+````markdown
+**AI Use Note**
+
+- **Tool:** an AI assistant (name it, with an approximate date or version).
+- **Purpose:** asked it to explain why a Quarto document would not render.
+- **Verification:** it suggested an option name; I checked that name against
+  the Quarto documentation and re-rendered the document. The suggested
+  spelling was wrong, so I corrected it and confirmed the PDF built.
+````
+
+The point of the note is not that you used AI — it is that **you verified
+the output** against something trustworthy (a re-render, the docs, your own
+reasoning) and took responsibility for the result. AI output is a draft to
+check, never an answer to trust.
+
+---
+
+*These examples are patterns to learn from, not templates to submit. The
+exact requirements for your assignments are in the course LMS.*

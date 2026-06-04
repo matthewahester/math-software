@@ -121,7 +121,7 @@ AI assistants log and may train on what you send them. **Do not paste:**
 
 If a dataset is sensitive, **describe its structure** to AI rather
 than pasting it: column names, row counts, types. See
-[resources/data-guidelines.qmd](data-guidelines.qmd) for what counts
+[Data guidelines](data-guidelines.qmd) for what counts
 as appropriate data in this course.
 
 ## A note on AI detectors and accusations

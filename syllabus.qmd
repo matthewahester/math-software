@@ -39,7 +39,7 @@ organization, AI Use Notes, and instructor conferences.
 **Optional second-tool exploration** in Week 13: a short look at a
 second computational tool — SageMath / SageMathCell, Python + SymPy,
 MATLAB / Octave, or a CAS option such as Maple. See
-[resources/cas-options.qmd](resources/cas-options.qmd).
+[CAS options](resources/cas-options.qmd).
 
 ## Learning outcomes
 
@@ -126,12 +126,12 @@ You will use:
 
 - **VS Code, R, Quarto, and TinyTeX.** VS Code is the course's
   standard editor; R is the primary computation language. See
-  [resources/software-setup.qmd](resources/software-setup.qmd) and
+  [Software setup](resources/software-setup.qmd) and
   [Lab 1](labs/lab01-install-stack.qmd).
 - **Datasets** from one of four sources: **built-in R datasets**,
   **simulated data**, **public datasets with verifiable provenance and
   license**, or **instructor-approved student-selected datasets**. See
-  [resources/data-guidelines.qmd](resources/data-guidelines.qmd).
+  [Data guidelines](resources/data-guidelines.qmd).
 
 ## Final assessment
 
@@ -206,8 +206,8 @@ explain, and visible verification.
 
 Full guidelines and the published sources:
 
-- [resources/ai-use-guidelines.qmd](resources/ai-use-guidelines.qmd)
-- [resources/ai-reading-spine.qmd](resources/ai-reading-spine.qmd)
+- [AI use guidelines](resources/ai-use-guidelines.qmd)
+- [AI reading spine](resources/ai-reading-spine.qmd)
 
 ## Where things live
 

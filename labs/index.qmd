@@ -69,7 +69,7 @@ help.
   `git log`) — no branches, no remote, no GitHub required. The
   non-Git path is complete on its own.
 
-## Planned
+## Lab sequence complete
 
 Lab numbering is rough — not every week has a paired lab. The lab
 sequence is complete with Lab 9; Weeks 14–15 are final portfolio

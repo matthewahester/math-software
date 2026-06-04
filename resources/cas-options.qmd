@@ -64,7 +64,7 @@ R is great for *numerics*. CAS is great for *exact symbolic work*.
 - **What it is.** Maplesoft's commercial CAS.
   - **Maple** — full desktop application; available on lab machines
     when the institution provides it.
-  - **Maple Learn** (<https://www.maplelearn.com>) — a free
+  - **Maple Learn** — a free
     browser-based mini-version. Note: the **free tier does not save
     worksheets**, which makes it awkward for sustained projects;
     screenshots are the workaround.
