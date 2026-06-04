@@ -1,0 +1,259 @@
+---
+title: "Advanced showcases"
+subtitle: "How the course's basic habits scale into polished, reproducible real-world work"
+toc: true
+---
+
+<!--
+PROVENANCE — copied research assets on this page
+  Source project : Evidential Audit Workflow (RoBMA-PSMA), Matt Hester
+  Public repo    : https://github.com/matthewahester/evidential-audit-workflow
+  Release        : v1.0.0 (2026-05-30); Zenodo DOI 10.5281/zenodo.20467258
+  License        : MIT (code) / CC BY 4.0 (data & figures)
+  Figure sources : output/caffeine/plots/caffeine_rigor_ranking.pdf
+                   output/caffeine/plots/caffeine_effect_estimate_comparison.pdf
+                   output/caffeine/plots/caffeine_component_violin_stack.pdf
+  Local PNGs     : assets/examples/rigor-ranking-caffeine.png
+                   assets/examples/effect-comparison-caffeine.png
+                   assets/examples/component-violin-stack-caffeine.png
+  Conversion     : static PNG export of the published PDFs (not generated at
+                   site-render time); no R chunks execute on this page.
+-->
+
+This page collects a few **advanced showcases** — examples of finished,
+real reproducible work that grew out of exactly the habits you practice
+all term: write in source, render to output, keep things organized, and
+let configuration (not hand-editing) build the result.
+
+::: {.callout-important}
+## These are showcases, not assignment models
+
+- The figures and the website below are **finished, real projects**, shown
+  to illustrate where the course's habits lead — **not** templates to copy
+  for an assignment.
+- The **exact requirements for any assignment live in the course LMS.**
+- The research figures come from a **separate, published** open-source
+  project (linked below). You are not expected to reproduce them; they are
+  here so you can see professional reproducible output and recognize the
+  same source → render → output ideas at a larger scale.
+:::
+
+## Why advanced showcases?
+
+In the weekly work you build small things: a short math note, a first
+`ggplot`, a tiny simulation, a tidy portfolio folder. It is easy to think
+those habits stop being useful once the documents get bigger. They do not.
+The same handful of habits — **plain-text source, render-to-output,
+relative paths, organized folders, configuration over hand-editing** — are
+what make large, trustworthy, reproducible projects possible. The
+showcases below are real examples of that.
+
+## Showcase 1 — A polished research figure
+
+The figure below is a published, automatically-generated figure from an
+open-source meta-analysis project. It ranks research outcomes by an
+evidence measure ("rigor") and colors each by its direction. Every label,
+point, and axis was produced **from data by code** — nobody placed dots by
+hand — which is why the figure can be regenerated exactly whenever the
+underlying data changes.
+
+![A horizontal lollipop chart titled "Rigor ranking — Caffeine." Each row is a research outcome (with its source study and sample size); a point shows that outcome's rigor value on a base-10 log Bayes-factor axis, connected by a line to zero, and colored by rigor direction (effect vs. no-effect).](../assets/examples/rigor-ranking-caffeine.png){#fig-rigor-ranking fig-alt="Lollipop chart ranking caffeine research outcomes by a rigor evidence measure, points colored by rigor direction." width=85%}
+
+It is the same shape you practice in Lab 6 and Week 8 — **data → aesthetic
+mapping → geometry → labels** — just applied to a real research corpus. A
+simplified sketch of the pattern behind it:
+
+```r
+# Simplified from scripts/50_stratum_visuals.R (evidential-audit-workflow).
+# The real script adds colors, guide lines, and axis formatting.
+ggplot(ranking, aes(x = rigor, y = outcome, color = rigor_direction)) +
+  geom_segment(aes(x = 0, xend = rigor, yend = outcome),
+               color = "gray70") +
+  geom_point(size = 3) +
+  labs(title = "Rigor ranking — Caffeine",
+       x = expression(log[10](BF[rigor])), y = NULL,
+       color = "Rigor direction") +
+  theme_minimal()
+```
+
+*Source: [evidential-audit-workflow](https://github.com/matthewahester/evidential-audit-workflow)
+(`output/caffeine/plots/caffeine_rigor_ranking.pdf`), © Matt Hester,
+CC BY 4.0.*
+
+## Showcase 2 — Comparing baseline and bias-aware estimates
+
+The same study can give a different answer depending on how carefully you
+model it. The figure below compares each outcome's effect under a plain
+**baseline** model with the same outcome under a **bias-aware** model;
+each line connects the two estimates for one outcome. Many lines slope
+toward zero — the bias-aware model **attenuates** (shrinks) effects that
+the simpler model reported.
+
+![A paired comparison titled "Meta-analysis effect sizes — Caffeine." Two boxplots — Baseline RE and RoBMA-PSMA (bias-adjusted) — sit on a standardized-effect-size axis, with a line connecting each outcome's two estimates; most lines slope downward toward a dashed zero line.](../assets/examples/effect-comparison-caffeine.png){#fig-effect-comparison fig-alt="Paired boxplot comparison of caffeine outcome effect sizes under a baseline model versus a bias-aware model, with most outcomes shrinking toward zero." width=70%}
+
+The point for this course is not the statistics — it is that a **single
+reproducible figure** can carry a real comparison, built from data by
+code. A simplified sketch of the pattern:
+
+```r
+# Simplified from scripts/50_stratum_visuals.R (evidential-audit-workflow).
+ggplot(estimates, aes(x = method, y = effect)) +
+  geom_boxplot(aes(fill = method)) +
+  geom_line(aes(group = outcome), color = "gray60") +   # one line per outcome
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(title = "Meta-analysis effect sizes — Caffeine",
+       subtitle = "Baseline vs. bias-aware estimates",
+       x = NULL, y = "Standardized effect size") +
+  theme_minimal()
+```
+
+*Source: [evidential-audit-workflow](https://github.com/matthewahester/evidential-audit-workflow)
+(`output/caffeine/plots/caffeine_effect_estimate_comparison.pdf`),
+© Matt Hester, CC BY 4.0.*
+
+## Showcase 3 — A multi-panel research figure
+
+A single plot answers one question; a **multi-panel** figure puts several
+related views side by side under one title so they can be read together.
+The figure below stacks **three panels** — effect evidence, heterogeneity
+evidence, and modeled-bias evidence — each a violin showing a distribution
+of values across the same set of outcomes.
+
+![A three-panel figure titled "Component Bayes factors — Caffeine." Panel A (Effect evidence, blue), Panel B (Heterogeneity evidence, green), and Panel C (Modeled bias evidence, orange) each show a violin distribution with jittered points and a boxplot on a shared base-10 log Bayes-factor axis.](../assets/examples/component-violin-stack-caffeine.png){#fig-violin-stack fig-alt="Three stacked violin panels (effect, heterogeneity, modeled bias evidence) for caffeine outcomes on a log Bayes-factor axis." width=80%}
+
+Each panel is an ordinary `ggplot`; the three are **combined** into one
+figure. That composition is itself reproducible — change the data and all
+three panels update at once. A simplified sketch of one panel:
+
+```r
+# Simplified from scripts/50_stratum_visuals.R (evidential-audit-workflow).
+# One component panel; the real figure stacks three (effect / het / bias).
+ggplot(component, aes(x = log10BF, y = "")) +
+  geom_violin(fill = "#4F9DCB", color = "gray40") +
+  geom_jitter(height = 0.15, alpha = 0.8) +
+  labs(title = "A. Effect evidence",
+       x = expression(log[10](BF)), y = NULL) +
+  theme_minimal()
+
+# The panels A / B / C are then combined into one figure, e.g. with
+# the patchwork package:   pA / pB / pC
+```
+
+*Source: [evidential-audit-workflow](https://github.com/matthewahester/evidential-audit-workflow)
+(`output/caffeine/plots/caffeine_component_violin_stack.pdf`), © Matt
+Hester, CC BY 4.0.*
+
+## Showcase 4 — This website is a Quarto project
+
+You do not have to leave the course to see a larger reproducible project —
+**this website is one.** Every page you read here is a plain-text source
+file that Quarto renders to HTML, organized into folders by purpose and
+assembled by a configuration file. It is the same idea as a single
+rendered document, scaled up to a whole site.
+
+### The folder structure
+
+```text
+math-software/
+├── _quarto.yml          # site configuration: navbar, sidebar, format
+├── index.qmd            # the landing page
+├── syllabus.qmd  schedule.qmd
+├── notes/               # one .qmd per conceptual note (weeks 1–15)
+├── labs/                # one .qmd per hands-on lab (1–9)
+├── examples/            # this page lives here
+├── resources/           # setup, data, AI, and CAS references
+├── assets/              # images and figures
+└── styles.css           # a little styling
+#  _site/  .quarto/      # generated output + cache — never committed
+```
+
+Source files are **organized by purpose**, not dumped in one place — the
+same habit you practice in your portfolio folder.
+
+### Navigation is configuration, not magic
+
+The sidebar and navbar are not hand-built on every page. They are
+**declared once** in `_quarto.yml`, and Quarto applies them everywhere:
+
+```yaml
+website:
+  title: "Intro to Mathematical Software"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+  sidebar:
+    contents:
+      - section: "Notes"
+        href: notes/index.qmd
+        contents:
+          - href: notes/week01-first-render.qmd
+            text: "1 — Your first render"
+          # … one entry per note …
+      - section: "Labs"
+        href: labs/index.qmd
+        contents:
+          - href: labs/lab01-install-stack.qmd
+            text: "1 — Install the stack"
+          # … one entry per lab …
+```
+
+### Pages are just source files
+
+Each page is a `.qmd` with a small YAML header and ordinary prose —
+exactly like the documents you write:
+
+```markdown
+---
+title: "Your first render"
+subtitle: "Week 1 — source files, rendered output, and the course container"
+---
+
+Every document in this course starts as a plain-text source file that you
+render into a finished output …
+```
+
+### From source to a live site
+
+The whole site is built the same way you render a single document:
+
+```bash
+quarto render        # turns every .qmd into HTML under _site/
+```
+
+Rendering produces a `_site/` folder of HTML. That generated output — and
+the local `.quarto/` cache — are **deliberately not committed** to the
+repository; only the **source** is tracked. A separate publishing step
+takes the committed source, renders it, and deploys the result to the live
+web address through a GitHub Pages workflow. Source in, website out.
+
+### What makes this reproducible
+
+- The site is **generated from source**, not hand-built page by page in a
+  visual editor.
+- **Navigation is configuration** in one file, not repeated on every page.
+- **Generated and local files are ignored** — they are rebuilt from
+  source, so they never clutter or bloat the repository.
+- Anyone with the source can rebuild the entire site exactly.
+
+## What students should take from these examples
+
+- The habits scale. **Source → render → output** is the same whether the
+  output is a one-page note or an entire website or a publication figure.
+- **Code-built figures are reproducible figures.** Because the research
+  figures above are produced from data by code, they can be regenerated
+  exactly — which is what makes them trustworthy.
+- **Organization and configuration** are not busywork; they are what let a
+  project stay legible and rebuildable as it grows.
+- You are already practicing all of this at small scale. These showcases
+  are just the same ideas, grown up.
+
+## Reminder
+
+These are **advanced showcases**, not assignment models. Do not copy them
+as submissions. The research figures belong to a separate published
+project (linked above, CC BY 4.0); the website is this course site itself.
+The exact requirements for your own assignments are in the course LMS.

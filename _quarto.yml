@@ -90,8 +90,11 @@ website:
             text: "8 — AI verification (Weeks 11–12)"
           - href: labs/lab09-portfolio-folder.qmd
             text: "9 — Portfolio folder (Week 13)"
-      - href: examples/index.qmd
-        text: "Examples"
+      - section: "Examples"
+        href: examples/index.qmd
+        contents:
+          - href: examples/advanced-showcases.qmd
+            text: "Advanced showcases"
       - section: "Resources"
         href: resources/index.qmd
         contents:
