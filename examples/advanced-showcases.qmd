@@ -9,15 +9,26 @@ PROVENANCE — copied research assets on this page
   Source project : Evidential Audit Workflow (RoBMA-PSMA), Matt Hester
   Public repo    : https://github.com/matthewahester/evidential-audit-workflow
   Release        : v1.0.0 (2026-05-30); Zenodo DOI 10.5281/zenodo.20467258
-  License        : MIT (code) / CC BY 4.0 (data & figures)
-  Figure sources : output/caffeine/plots/caffeine_rigor_ranking.pdf
-                   output/caffeine/plots/caffeine_effect_estimate_comparison.pdf
-                   output/caffeine/plots/caffeine_component_violin_stack.pdf
-  Local PNGs     : assets/examples/rigor-ranking-caffeine.png
-                   assets/examples/effect-comparison-caffeine.png
-                   assets/examples/component-violin-stack-caffeine.png
-  Conversion     : static PNG export of the published PDFs (not generated at
-                   site-render time); no R chunks execute on this page.
+
+  PUBLIC figures — from the v1.0.0 public release (MIT code / CC BY 4.0):
+    output/caffeine/plots/caffeine_effect_estimate_comparison.pdf
+      -> assets/examples/effect-comparison-caffeine.png
+    output/caffeine/plots/caffeine_component_violin_stack.pdf
+      -> assets/examples/component-violin-stack-caffeine.png
+    output/overview/corpus_effect_attenuation_strip.pdf
+      -> assets/examples/corpus-effect-attenuation-strip.png
+
+  MANUSCRIPT figure — author Matt Hester; the selected-rigor / effect /
+  modeled-bias version of corpus_component_violin_stack.pdf. This version
+  is NOT in the public v1.0.0 / Zenodo release (the public repo's
+  same-named file is a different effect/heterogeneity/bias composition).
+  Used here with the author's permission; do NOT claim CC BY 4.0/Zenodo
+  for this one.
+    Rigor_Manuscript/05_artifacts/current/figures/corpus/corpus_component_violin_stack.pdf
+      -> assets/examples/corpus-component-violin-stack.png
+
+  Conversion : static PNG export of the source PDFs (not generated at
+               site-render time); no R chunks execute on this page.
 -->
 
 This page collects a few **advanced showcases** — examples of finished,
@@ -32,10 +43,11 @@ let configuration (not hand-editing) build the result.
   to illustrate where the course's habits lead — **not** templates to copy
   for an assignment.
 - The **exact requirements for any assignment live in the course LMS.**
-- The research figures come from a **separate, published** open-source
-  project (linked below). You are not expected to reproduce them; they are
-  here so you can see professional reproducible output and recognize the
-  same source → render → output ideas at a larger scale.
+- The research figures come from a **separate research project** by the
+  course instructor (its open-source workflow is linked below). You are not
+  expected to reproduce them; they are here so you can see professional
+  reproducible output and recognize the same source → render → output ideas
+  at a larger scale.
 :::
 
 ## Why advanced showcases?
@@ -48,39 +60,7 @@ relative paths, organized folders, configuration over hand-editing** — are
 what make large, trustworthy, reproducible projects possible. The
 showcases below are real examples of that.
 
-## Showcase 1 — A polished research figure
-
-The figure below is a published, automatically-generated figure from an
-open-source meta-analysis project. It ranks research outcomes by an
-evidence measure ("rigor") and colors each by its direction. Every label,
-point, and axis was produced **from data by code** — nobody placed dots by
-hand — which is why the figure can be regenerated exactly whenever the
-underlying data changes.
-
-![A horizontal lollipop chart titled "Rigor ranking — Caffeine." Each row is a research outcome (with its source study and sample size); a point shows that outcome's rigor value on a base-10 log Bayes-factor axis, connected by a line to zero, and colored by rigor direction (effect vs. no-effect).](../assets/examples/rigor-ranking-caffeine.png){#fig-rigor-ranking fig-alt="Lollipop chart ranking caffeine research outcomes by a rigor evidence measure, points colored by rigor direction." width=85%}
-
-It is the same shape you practice in Lab 6 and Week 8 — **data → aesthetic
-mapping → geometry → labels** — just applied to a real research corpus. A
-simplified sketch of the pattern behind it:
-
-```r
-# Simplified from scripts/50_stratum_visuals.R (evidential-audit-workflow).
-# The real script adds colors, guide lines, and axis formatting.
-ggplot(ranking, aes(x = rigor, y = outcome, color = rigor_direction)) +
-  geom_segment(aes(x = 0, xend = rigor, yend = outcome),
-               color = "gray70") +
-  geom_point(size = 3) +
-  labs(title = "Rigor ranking — Caffeine",
-       x = expression(log[10](BF[rigor])), y = NULL,
-       color = "Rigor direction") +
-  theme_minimal()
-```
-
-*Source: [evidential-audit-workflow](https://github.com/matthewahester/evidential-audit-workflow)
-(`output/caffeine/plots/caffeine_rigor_ranking.pdf`), © Matt Hester,
-CC BY 4.0.*
-
-## Showcase 2 — Comparing baseline and bias-aware estimates
+## Showcase 1 — Comparing baseline and bias-aware estimates
 
 The same study can give a different answer depending on how carefully you
 model it. The figure below compares each outcome's effect under a plain
@@ -112,7 +92,7 @@ ggplot(estimates, aes(x = method, y = effect)) +
 (`output/caffeine/plots/caffeine_effect_estimate_comparison.pdf`),
 © Matt Hester, CC BY 4.0.*
 
-## Showcase 3 — A multi-panel research figure
+## Showcase 2 — A multi-panel research figure
 
 A single plot answers one question; a **multi-panel** figure puts several
 related views side by side under one title so they can be read together.
@@ -144,7 +124,7 @@ ggplot(component, aes(x = log10BF, y = "")) +
 (`output/caffeine/plots/caffeine_component_violin_stack.pdf`), © Matt
 Hester, CC BY 4.0.*
 
-## Showcase 4 — This website is a Quarto project
+## Showcase 3 — This website is a Quarto project
 
 You do not have to leave the course to see a larger reproducible project —
 **this website is one.** Every page you read here is a plain-text source
@@ -239,6 +219,71 @@ web address through a GitHub Pages workflow. Source in, website out.
   source, so they never clutter or bloat the repository.
 - Anyone with the source can rebuild the entire site exactly.
 
+## Culmination — Corpus-scale effect attenuation
+
+The first two showcases looked at a single research area (caffeine). The
+real payoff of a reproducible workflow is that the *same* code scales to
+the *whole* project. This figure runs the baseline-vs-bias-aware
+comparison across **every nutrition stratum at once** — eight areas in one
+view — ordered so the patterns line up.
+
+![A corpus-wide figure titled "Meta-analysis effect sizes — Corpus (all strata)." For each of eight nutrition strata, a solid boxplot (baseline) sits beside a faded boxplot (bias-aware), with thin lines connecting each outcome's two estimates and a dashed line at zero; bias-aware estimates are generally pulled toward zero.](../assets/examples/corpus-effect-attenuation-strip.png){#fig-corpus-attenuation fig-alt="Per-stratum paired boxplots comparing baseline and bias-aware effect sizes across eight nutrition strata, with estimates shrinking toward zero." width=90%}
+
+Nobody arranged eight strata by hand. The figure is built from one tidy
+table by code, so adding a stratum or revising the data redraws the whole
+thing. A simplified sketch:
+
+```r
+# Simplified from scripts/70_corpus_visuals.R (evidential-audit-workflow).
+ggplot(corpus, aes(x = stratum, y = effect, alpha = method)) +
+  geom_boxplot(aes(fill = stratum), position = position_dodge(width = 0.7)) +
+  geom_segment(aes(x = x_baseline, xend = x_bias,
+                   y = mu_baseline, yend = mu_bias),
+               color = "gray70") +                       # one line per outcome
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(title = "Meta-analysis effect sizes — Corpus (all strata)",
+       x = NULL, y = "Standardized effect size") +
+  theme_minimal()
+```
+
+*Source: [evidential-audit-workflow](https://github.com/matthewahester/evidential-audit-workflow)
+(`output/overview/corpus_effect_attenuation_strip.pdf`), © Matt Hester,
+CC BY 4.0.*
+
+## Culmination — Corpus-scale evidence components
+
+The multi-panel idea also scales to the whole corpus. This three-panel
+figure shows three evidence components — **selected rigor**, **effect
+evidence**, and **modeled-bias evidence** — for **every stratum**, so the
+three views can be read together across the entire project.
+
+![A corpus-wide three-panel figure. Panel A (Selected rigor), Panel B (Effect evidence), and Panel C (Modeled bias evidence) each show one violin per nutrition stratum, with jittered points, on a shared base-10 log Bayes-factor axis.](../assets/examples/corpus-component-violin-stack.png){#fig-corpus-violin fig-alt="Three side-by-side panels (selected rigor, effect evidence, modeled bias evidence), each with one violin per nutrition stratum on a log Bayes-factor axis." width=95%}
+
+It is the same composition habit as Showcase 2 — several ordinary plots
+combined into one coherent figure — applied at corpus scale. A simplified
+sketch of one panel:
+
+```r
+# Simplified from scripts/70_corpus_visuals.R.
+# One component panel; the real figure places three side by side.
+ggplot(corpus, aes(x = log10BF, y = stratum, fill = stratum)) +
+  geom_violin(color = "gray40") +
+  geom_jitter(height = 0.15, alpha = 0.8) +
+  labs(title = "A. Selected rigor",
+       x = expression(log[10](BF)), y = NULL) +
+  theme_minimal()
+
+# Panels A (selected rigor) / B (effect) / C (modeled bias) are combined
+# side by side, e.g. with patchwork:  pA | pB | pC
+```
+
+*Source: a corpus-level figure from the instructor's evidential-rigor
+research project, © Matt Hester. This selected-rigor / effect /
+modeled-bias version is included here by the author as a teaching
+showcase, and is not part of the public v1.0.0 / Zenodo release. The
+related open-source workflow is public at
+[evidential-audit-workflow](https://github.com/matthewahester/evidential-audit-workflow).*
+
 ## What students should take from these examples
 
 - The habits scale. **Source → render → output** is the same whether the
@@ -254,6 +299,8 @@ web address through a GitHub Pages workflow. Source in, website out.
 ## Reminder
 
 These are **advanced showcases**, not assignment models. Do not copy them
-as submissions. The research figures belong to a separate published
-project (linked above, CC BY 4.0); the website is this course site itself.
-The exact requirements for your own assignments are in the course LMS.
+as submissions. The research figures come from the instructor's separate
+research project — most from its public open-source release (CC BY 4.0),
+and one from the associated manuscript, used with permission; the website
+is this course site itself. The exact requirements for your own
+assignments are in the course LMS.
