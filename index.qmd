@@ -7,7 +7,9 @@ description: |
 toc: false
 ---
 
-![](assets/intro-math-software-hero.png){fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
+![](assets/intro-math-software-hero-web.webp){fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
+
+# Intro to Mathematical Software {.course-landing-title}
 
 This site collects public-facing resources for **Intro to Mathematical
 Software** — a conference-based studio course in modern mathematical and
