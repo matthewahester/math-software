@@ -8,6 +8,9 @@ project:
     - "examples/*.qmd"
     - "resources/*.qmd"
 
+  resources:
+    - assets/intro-math-software-hero-web.webp
+    - assets/intro-math-software-hero-web-800.webp
 website:
   title: "Intro to Mathematical Software"
   site-url: https://matthewhester.com/math-software/

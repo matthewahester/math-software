@@ -7,7 +7,7 @@ description: |
 toc: false
 ---
 
-![](assets/intro-math-software-hero-web.webp){fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
+![](assets/intro-math-software-hero-web-800.webp){srcset="assets/intro-math-software-hero-web-800.webp 800w, assets/intro-math-software-hero-web.webp 1400w" sizes="(min-width: 992px) 760px, 92vw" fig-alt="Wide illustrated course identity image for Intro to Mathematical Software, showing a cool-toned crystal cluster surrounded by mathematical software, workflow, simulation, and version-control graphics." .course-hero-img}
 
 # Intro to Mathematical Software {.course-landing-title}
 
